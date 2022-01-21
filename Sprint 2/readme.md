@@ -1,4 +1,4 @@
-# Sprint 1
+# Sprint 2
 
 All information about your first sprint should be put into this folder. Additionally, the information below should be updated to give a short summary of your daily scrum meetings.
 
