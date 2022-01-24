@@ -8,6 +8,8 @@ $rules = array(
     'apiShowGoals' => "/api/allGoals",
     'apiShowSingleGoal' => "/api/singleGoal/(?'goalID'[\w\-]+)",
     'map' => "/map",
+    'events' => "/api/inDundee",
+
 
 
     //Admin Pages
