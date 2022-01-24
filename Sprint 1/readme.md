@@ -6,19 +6,19 @@ All information about your first sprint should be put into this folder. Addition
 
 ---
 
-## Day [X] - Scrum Meeting summary
-The Scrum Master for this meeting was **Mike Crabb**
+## Day 1 - Scrum Meeting summary
+The Scrum Master for this meeting was Laura
 
 ### Members Present:
-Mike, Rachel, information
+Jamie, Euan, Sem, Eddie, Matthew, Laura
 
 ### Members Not Present:
-Naughty Student 1, Naughty Student 2
+-
 
 ### Apologies:
-Ill Student 1.
+-
 
 ### Summary of Conversation:
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Creating a product backlog with user stories, adding priority and task difficulty labels, categorising user stories in to sprints, making a to do list for each user story in sprint one.  
 
 ---
