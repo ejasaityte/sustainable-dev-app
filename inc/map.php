@@ -26,7 +26,7 @@
                 </div>
             </div>
         </nav>
-        <div class="row gx-lg-5 align-items-center">
+        <div class="row gx-lg-5 align-text-center">
             <h1 class="display-5 fw-bold">See our locations!</h1>
         </div>
         <div class="row gx-lg-5 align-items-center">

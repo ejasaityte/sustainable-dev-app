@@ -279,6 +279,12 @@ a > code {
   color: inherit;
 }
 
+footer {
+  position: absolute;
+  bottom: 0;
+  height: 100px;
+}
+
 kbd {
   padding: 0.2rem 0.4rem;
   font-size: 0.875em;
@@ -12201,4 +12207,8 @@ textarea.form-control-lg {
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+body {
+  padding-bottom: 100px;
 }
