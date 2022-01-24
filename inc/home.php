@@ -20,8 +20,8 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/map.php">Explore</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/map">Explore</a></li>
                     </ul>
                 </div>
             </div>
@@ -56,8 +56,6 @@
 
                         // All user data exists in 'data' object
                         $goal_data = $response_data->data;
-
-                        print_r($goal_data);
 
                         foreach ($goal_data as $goal) {
                             echo '<div class="col-lg-6 col-xxl-4 mb-5">
