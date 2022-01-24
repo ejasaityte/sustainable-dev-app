@@ -21,7 +21,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/map">Explore</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/map.php">Explore</a></li>
                     </ul>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                     <div class="m-4 m-lg-5">
                         <h1 class="display-5 fw-bold">A Sustainable Dundee</h1>
                         <p class="fs-4">Sustainability is concerned with looking after our natural environment whilst ensuring a strong economy and a fair and healthy society.</p>
-                        <a class="btn btn-primary btn-lg" href="/map">Explore the map!</a>
+                        <a class="btn btn-primary btn-lg" href="/map.php">Explore the map!</a>
                     </div>
                 </div>
             </div>
@@ -45,19 +45,29 @@
                 <div class="row gx-lg-5">
 
                     <?php
-                    
-                        include("dbconnect.php");
 
-                        $sql = "SELECT * FROM sustainablegoals";
+                        $api_url = 'https://sustainabledundeeapp.azurewebsites.net/api/allGoals';
 
-                        $result = $db->query($sql);
-                        while ($row = $result->fetch_array()) {
+                        // Read JSON file
+                        $json_data = file_get_contents($api_url);
+
+                        // Decode JSON data into PHP array
+                        $response_data = json_decode($json_data);
+
+                        // All user data exists in 'data' object
+                        $goal_data = $response_data->data;
+
+                        foreach ($goal_data as $goal) {
+                            echo "name: ".$user->employee_name;
+                            echo "<br />";
+                            echo "name: ".$user->employee_age;
+                            echo "<br /> <br />";
                             echo '<div class="col-lg-6 col-xxl-4 mb-5">
                             <div class="card bg-light border-0 h-100">
                                 <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                                    <img class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4" src="' . $row['goalPicture'] . '">
-                                    <a href="/goals.php?goal=' . $row['goalID'] . '"><h2 class="fs-4 fw-bold">' . $row['goalName'] . '</h2></a>
-                                    <p class="mb-0">' . $row['goalDescription'] . '</p>
+                                    <img class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4" src="' . $goal->goalPicture . '">
+                                    <a href="/goals.php?goal=' . $goal->goalID . '"><h2 class="fs-4 fw-bold">' . $goal->goalName . '</h2></a>
+                                    <p class="mb-0">' . $goal->goalDescription . '</p>
                                     </div>
                                 </div>
                             </div>';
