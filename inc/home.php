@@ -20,8 +20,8 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/map.php">Explore</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/map">Explore</a></li>
                     </ul>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                     <div class="m-4 m-lg-5">
                         <h1 class="display-5 fw-bold">A Sustainable Dundee</h1>
                         <p class="fs-4">Sustainability is concerned with looking after our natural environment whilst ensuring a strong economy and a fair and healthy society.</p>
-                        <a class="btn btn-primary btn-lg" href="/map.php">Explore the map!</a>
+                        <a class="btn btn-primary btn-lg" href="/map">Explore the map!</a>
                     </div>
                 </div>
             </div>
@@ -55,9 +55,10 @@
                             echo '<div class="col-lg-6 col-xxl-4 mb-5">
                             <div class="card bg-light border-0 h-100">
                                 <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                                    <img class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4" src="' . $row['goalPicture'] . '">
-                                    <a href="#"><h2 class="fs-4 fw-bold">' . $row['goalName'] . '</h2></a>
+                                    <img class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4" src="' . $row['goalPicture'] . '"></img>
+                                    <h2 class="fs-4 fw-bold">' . $row['goalName'] . '</h2>
                                     <p class="mb-0">' . $row['goalDescription'] . '</p>
+                                    <a class="btn btn-primary btn-sm" href="/map">Learn more!</a>
                                     </div>
                                 </div>
                             </div>';
