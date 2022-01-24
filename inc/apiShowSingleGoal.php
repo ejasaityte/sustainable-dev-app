@@ -1,7 +1,7 @@
 <?php
 include("dbconnect.php");
 
-$dogID = $params['goalID'];
+$goalID = $params['goalID'];
 
 $sql = "SELECT * FROM sustainablegoals WHERE goalID='". $goalID ."'";
 
