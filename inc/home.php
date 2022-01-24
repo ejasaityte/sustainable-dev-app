@@ -57,6 +57,8 @@
                         // All user data exists in 'data' object
                         $goal_data = $response_data->data;
 
+                        print_r($goal_data);
+
                         foreach ($goal_data as $goal) {
                             echo '<div class="col-lg-6 col-xxl-4 mb-5">
                             <div class="card bg-light border-0 h-100">
