@@ -21,7 +21,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/map.php">Explore</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/map">Explore</a></li>
                     </ul>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                     <div class="m-4 m-lg-5">
                         <h1 class="display-5 fw-bold">A Sustainable Dundee</h1>
                         <p class="fs-4">Sustainability is concerned with looking after our natural environment whilst ensuring a strong economy and a fair and healthy society.</p>
-                        <a class="btn btn-primary btn-lg" href="/map.php">Explore the map!</a>
+                        <a class="btn btn-primary btn-lg" href="/map">Explore the map!</a>
                     </div>
                 </div>
             </div>
