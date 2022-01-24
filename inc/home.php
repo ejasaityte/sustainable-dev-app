@@ -46,14 +46,26 @@
 
                     <?php
 
-                        $api_url = 'https://sustainabledundeeapp.azurewebsites.net/api/allGoals';
+                        $curl = curl_init();
 
-                        // Read JSON file
-                        $json_data = file_get_contents($api_url, true);
-                        echo $json_data;
+                        curl_setopt_array($curl, array(
+                        CURLOPT_URL => "https://sustainabledundeeapp.azurewebsites.net/api/allGoals",
+                        CURLOPT_RETURNTRANSFER => true,
+                        CURLOPT_TIMEOUT => 30,
+                        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                        CURLOPT_CUSTOMREQUEST => "GET",
+                        CURLOPT_HTTPHEADER => array(
+                            "cache-control: no-cache"
+                        ),
+                        ));
+
+                        $response = curl_exec($curl);
+                        $err = curl_error($curl);
+
+                        curl_close($curl);
 
                         // Decode JSON data into PHP array
-                        $response_data = json_decode($json_data);
+                        $response_data = json_decode($response, true);
 
                         // All user data exists in 'data' object
                         $goal_data = $response_data->data;
