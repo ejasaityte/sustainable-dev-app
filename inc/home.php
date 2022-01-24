@@ -45,6 +45,7 @@
                 <div class="row gx-lg-5">
 
                 <?php
+                /*
                     include("dbconnect.php");
 
                     $sql = "SELECT * FROM sustainablegoals";
@@ -61,7 +62,7 @@
                             </div>
                         </div>";
                     }
-
+                    */
                 php?>
 
                     <div class="col-lg-6 col-xxl-4 mb-5">
