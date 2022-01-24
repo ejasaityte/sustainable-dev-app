@@ -12,5 +12,4 @@ while ($row = $result->fetch_array()) {
   header('Content-type: application/json');
   echo json_encode($rows, true);
 
-
 php?>
