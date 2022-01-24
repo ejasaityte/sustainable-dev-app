@@ -26,13 +26,11 @@
                 </div>
             </div>
         </nav>
-        <div class="row gx-lg-5">
+        <div class="row gx-lg-5 align-items-center">
             <h1 class="display-5 fw-bold">See our locations!</h1>
-            <div class="mapouter">
-                <div class="gmap_canvas">
-                    <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=university%20of%20dundee&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-                </div>
-            </div>
+        </div>
+        <div class="row gx-lg-5 align-items-center">
+            <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=university%20of%20dundee&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>            <div class="mapouter">
         </div>
         <!-- Footer-->
         <footer class="py-5 bg-dark">
