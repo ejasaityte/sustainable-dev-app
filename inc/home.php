@@ -58,10 +58,6 @@
                         $goal_data = $response_data->data;
 
                         foreach ($goal_data as $goal) {
-                            echo "name: ".$user->employee_name;
-                            echo "<br />";
-                            echo "name: ".$user->employee_age;
-                            echo "<br /> <br />";
                             echo '<div class="col-lg-6 col-xxl-4 mb-5">
                             <div class="card bg-light border-0 h-100">
                                 <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
