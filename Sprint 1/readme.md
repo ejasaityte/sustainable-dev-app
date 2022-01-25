@@ -13,7 +13,17 @@ The Scrum Master for this meeting was Laura
 Jamie, Euan, Sem, Eddie, Matthew, Laura
 
 ### Summary of Conversation:
-Created a product backlog with user stories, added priority and task difficulty labels, categorised user stories into sprints, made a to do list for each user story in sprint one.
-Started working on a back end API using Microsoft Azure (have already created and populated 17 goals, started to use API in front-end), started  on home page and implementation of maps. Started with populating a SQL table for events/organisations.
+Created a product backlog with user stories, added priority and task difficulty labels, categorised user stories into sprints, made a to do list for each user story in sprint one. Decided on roles.
+
+## Day 2 - Scrum Meeting summary
+The Scrum Master for this meeting was Laura
+
+### Members Present:
+Jamie, Euan, Sem, Eddie, Matthew, Laura
+
+### Summary of Conversation:
+Discussed yesterday's work - creating a back end API using Microsoft Azure, populating 17goals table,  applying API in fron-end, working on home page and implementation of maps, processing data of events held in Dundee.
+
+Talked about plans for today - finding errors in applying api in index page, creating events table, formalising product backlog, implementing a favourite list, maps and user logins, properly displaying goals and events happenign in Dundee based on each goal in home page.
 
 ---
