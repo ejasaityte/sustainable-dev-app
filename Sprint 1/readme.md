@@ -22,7 +22,7 @@ The Scrum Master for this meeting was Laura
 Jamie, Euan, Sem, Eddie, Matthew, Laura
 
 ### Summary of Conversation:
-Discussed yesterday's work - creating a back end API using Microsoft Azure, populating 17goals table,  applying API in fron-end, working on home page and implementation of maps, processing data of events held in Dundee.
+Discussed yesterday's work - creating a back end API using Microsoft Azure, populating 17goals table,  trying to make API work, working on home page and implementation of maps, processing data of events held in Dundee, making a footer properly displayed. 
 
 Talked about plans for today - finding errors in applying api in index page, creating events table, formalising product backlog, implementing a favourite list, maps and user logins, properly displaying goals and events happenign in Dundee based on each goal in home page.
 
