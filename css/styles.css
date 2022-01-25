@@ -281,8 +281,8 @@ a > code {
 
 footer {
   position: absolute;
-  bottom: 0;
   height: 100px;
+  width: 100%;
 }
 
 kbd {
@@ -12203,6 +12203,7 @@ textarea.form-control-lg {
 
 .mapouter {
   position: absolute;
+  padding: 100px;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
