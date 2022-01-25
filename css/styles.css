@@ -478,6 +478,9 @@ output {
 
 iframe {
   border: 0;
+  padding-right:100px;
+  padding-left: 100px;
+  width:100%;
 }
 
 summary {
