@@ -8,7 +8,7 @@ $rules = array(
     'apiShowGoals' => "/api/allGoals",
     'apiShowSingleGoal' => "/api/singleGoal/(?'goalID'[\w\-]+)",
     'apiShowEvents' => "/api/allEvents",
-    'map' => "/map",
+    'map' => "/map"
 
 
 
