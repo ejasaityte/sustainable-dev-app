@@ -63,7 +63,7 @@
                         $err = curl_error($curl);
 
                         curl_close($curl);
-
+                        echo "test here"; 
                         // Decode JSON data into PHP array
                         $response = json_decode($response, true);
 
