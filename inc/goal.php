@@ -36,7 +36,7 @@
 
                         $curl = curl_init();
                         curl_setopt_array($curl, array(
-                        CURLOPT_URL => "https://sustainabledundeeapp.azurewebsites.net/api/singleGoal/0",
+                        CURLOPT_URL => "https://sustainabledundeeapp.azurewebsites.net/api/singleGoal/$goalID",
                         CURLOPT_RETURNTRANSFER => true,
                         CURLOPT_TIMEOUT => 29,
                         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_0_1,
