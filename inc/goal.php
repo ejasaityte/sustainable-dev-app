@@ -72,11 +72,11 @@
                 <div class="row gx-lg-5">
 
                 <?php
-                /*
+                
                 $curl = curl_init();
 
                 curl_setopt_array($curl, array(
-                CURLOPT_URL => "https://sustainabledundeeapp.azurewebsites.net/api/allGoals",
+                CURLOPT_URL => "https://sustainabledundeeapp.azurewebsites.net/api/allGoals/$goalID",
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_TIMEOUT => 30,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
@@ -92,20 +92,20 @@
                 curl_close($curl);
                 // Decode JSON data into PHP array
                 $response = json_decode($response, true);
-
-
-                foreach ($response as $goal) {
+                print_r($response);
+                /*
+                foreach ($response as $event) {
                     echo '<div class="col-lg-6 col-xxl-4 mb-5">
                     <div class="card bg-light border-0 h-100">
                         <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                            <img class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4" src="' . $goal['goalPicture'] . '">
-                            <h2 class="fs-4 fw-bold">' . $goal['goalName'] . '</h2></a>
-                            <p class="mb-0">' . $goal['goalDescription'] . '</p>
+                            <img class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4" src="' . $event['goalPicture'] . '">
+                            <h2 class="fs-4 fw-bold">' . $event['goalName'] . '</h2></a>
+                            <p class="mb-0">' . $event['goalDescription'] . '</p>
                             </div>
                         <div class="container" style="padding-bottom:10px;">
                             <div class="row">
                             <div class="col text-center">
-                                <a class="btn btn-primary btn-sm mt-auto" href="/goal/' . $goal['goalID'] . '"">Learn more</a>
+                                <a class="btn btn-primary btn-sm mt-auto" href="/goal/' . $event['goalID'] . '"">Learn more</a>
                             </div>
                             </div>
                         </div>
