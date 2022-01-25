@@ -13,6 +13,7 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
+    <?php session_start(); ?>
     <body>
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -22,7 +23,16 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="/map">Explore</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                        <?php
+        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+          ?>
+                <li class="nav-item"><a class="nav-link" href="/favouriteslist">Favourites</a></li>
+                <li class="nav-item"><a class="nav-link" href="/additem"><span class="glyphicon glyphicon-pencil"></span>Add Item</a></li>
+                <?php } 
+                else{
+                ?>
+                <li class="nav-item"><a class="nav-link" href="/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+        <?php } ?>
                     </ul>
                 </div>
             </div>
