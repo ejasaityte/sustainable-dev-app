@@ -14,6 +14,10 @@
         <link href="/css/styles.css" rel="stylesheet" />
     </head>
     <?php session_start(); 
+    if (!isset($_SESSION['favouriteslist']))
+    {
+        $_SESSION['favouriteslist'] = array();
+    }
     ?>
     <body>
         <!-- Responsive navbar-->
