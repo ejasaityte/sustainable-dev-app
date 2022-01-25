@@ -69,8 +69,7 @@
                         //TEST Loop
                         foreach ($response as $goal => $value) {
                             echo "$goal\n";
-                            //print_r($value);
-                            echo $value[2];
+                            print_r($value);
                             echo "<br><br>"
                         }
 
