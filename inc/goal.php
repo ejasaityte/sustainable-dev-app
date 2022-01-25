@@ -45,8 +45,8 @@
                 <div class="row gx-lg-5">
 
                     <?php
-                        $goalNumber = $_GET('goal');
-                        echo $goalNumber;
+                        $goalID = $params['goal'];
+                        echo $goalID;
 
                         $curl = curl_init();
 
