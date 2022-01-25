@@ -78,7 +78,7 @@
                                 <div class="container" style="padding-bottom:10px;">
                                     <div class="row">
                                       <div class="col text-center">
-                                         <a class="btn btn-primary btn-sm mt-auto" href="/goal.php/' . $goal['goalID'] . '"">Learn more</a>
+                                         <a class="btn btn-primary btn-sm mt-auto" href="/goal/?goal=' . $goal['goalID'] . '"">Learn more</a>
                                       </div>
                                     </div>
                                   </div>
