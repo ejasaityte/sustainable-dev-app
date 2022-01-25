@@ -34,7 +34,7 @@
             </div>
         </nav>
         <!-- Header-->
-        <div class="main"><div class="inner-main">
+        <div class="main">
         <header class="py-5">
             <div class="container px-lg-5">
                 <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
@@ -130,7 +130,7 @@
                 </div>
             </div>
         </section>
-        </div></div>
+        </div>
         <!-- Footer-->
         <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Sustainable Dundee 2021</p></div>
