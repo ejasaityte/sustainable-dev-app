@@ -51,7 +51,7 @@
                         $curl = curl_init();
 
                         curl_setopt_array($curl, array(
-                        CURLOPT_URL => "https://sustainabledundeeapp.azurewebsites.net/api/singleGoal/1",
+                        CURLOPT_URL => "https://sustainabledundeeapp.azurewebsites.net/api/singleGoal/$goalID",
                         CURLOPT_RETURNTRANSFER => true,
                         CURLOPT_TIMEOUT => 30,
                         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
@@ -67,7 +67,7 @@
                         curl_close($curl);
                         // Decode JSON data into PHP array
                         $response = json_decode($response, true);
-
+                        print_r($response);
 
                         /*foreach ($response as $goal) {
                             echo '<div class="col-lg-6 col-xxl-4 mb-5">
