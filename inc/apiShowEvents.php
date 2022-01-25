@@ -1,7 +1,9 @@
 <?php
 include("dbconnect.php");
 
-$sql = "SELECT * FROM events";
+$goalID = $params['goalID'];
+
+$sql = "SELECT * FROM events WHERE goalID='". $goalID ."'";
 
 $rows = array();
 $result = $db->query($sql);
