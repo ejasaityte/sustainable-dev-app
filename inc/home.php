@@ -68,7 +68,7 @@
 
                         //TEST Loop
                         foreach ($response as $goal => $value) {
-                            echo "$goal\n";
+                            echo "Goal: $goal<br>Whole object: ";
                             print_r($value);
                             echo "<br><br>"
                         }
