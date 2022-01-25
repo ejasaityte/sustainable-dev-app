@@ -101,6 +101,7 @@
                             <h2 class="fs-4 fw-bold">' . $event['name'] . '</h2></a>
                             <p class="mb-0">' . $event['description'] . '</p>
                         </div>
+                        </div>
                     </div>';
                 }
 

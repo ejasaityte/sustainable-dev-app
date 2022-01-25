@@ -28,7 +28,6 @@
           ?>
                 <li class="nav-item"><a class="nav-link" href="/favouriteslist">Favourites</a></li>
                 <li class="nav-item"><a class="nav-link" href="/additem"><span class="glyphicon glyphicon-pencil"></span>Add Item</a></li>
-                <li class="nav-item"><a class="nav-link" href="/logout">Log out</a></li>
                 <?php } 
                 else{
                 ?>
@@ -86,7 +85,7 @@
                                     <img class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4" src="' . $goal['goalPicture'] . '">
                                     <h2 class="fs-4 fw-bold">' . $goal['goalName'] . '</h2></a>
                                     <p class="mb-0">' . $goal['goalDescription'] . '</p>
-                                    </div>
+                                </div>
                                 <div class="container" style="padding-bottom:10px;">
                                     <div class="row">
                                       <div class="col text-center">
