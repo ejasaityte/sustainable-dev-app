@@ -28,6 +28,7 @@
             </div>
         </nav>
         <!-- Header-->
+        <div class="main"><div class="inner-main">
         <header class="py-5">
             <div class="container px-lg-5">
                 <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
@@ -101,19 +102,7 @@
                             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
                                 <h2 class="fs-4 fw-bold">' . $event['name'] . '</h2></a>
                                 <p class="mb-0">' . $event['description'] . '</p>
-                            </div>';
-                    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-                        echo '
-                        <div class="container" style="padding-bottom:10px;">
-                                        <div class="row">
-                                            <div class="col text-center">
-                                                <a class="btn btn-primary btn-sm mt-auto" href="/additem/' . $event['id'] . '"">Favourite</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                        ';
-                    }
-                    echo '
+                            </div>
                         </div>
                     </div>';
                 }
@@ -123,6 +112,7 @@
                 </div>
             </div>
         </section>
+        </div></div>
         <!-- Footer-->
         <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Sustainable Dundee 2021</p></div>
