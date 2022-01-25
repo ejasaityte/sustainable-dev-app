@@ -9,7 +9,7 @@ while ($row = $result->fetch_array()) {
     $rows[] = $row;
 }
 
-  while($row['goalID'] == 5){
+  while($row['goalID'] == '5'){
     echo $row;
   }
 
