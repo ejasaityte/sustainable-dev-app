@@ -1,20 +1,19 @@
 <?php
 include("dbconnect.php");
 
-$goalID = $params['goalID'];
-
-$sql = "SELECT * FROM events WHERE goalID='". $goalID ."'";
+$sql = "SELECT * FROM events";
 
 $rows = array();
 $result = $db->query($sql);
 while ($row = $result->fetch_array()) {
     $rows[] = $row;
 }
+
   foreach($rows as $row){
-        echo $row;
+    echo $row;
   }
-  
+
   header('Content-type: application/json');
-  echo json_encode($rows);
+  echo json_encode($rows, true);
 
 php?>
