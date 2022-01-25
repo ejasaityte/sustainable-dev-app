@@ -106,13 +106,6 @@
         </div>
 <?php
         }
-        else{
-            ?>
-            <tr>
-                <td colspan="4" class="text-center">No favourited items</td>
-            </tr>
-            <?php
-        }
         ?>
         <!-- Footer-->
         <footer class="py-5 bg-dark" style="bottom:0;">

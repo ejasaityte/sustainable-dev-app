@@ -101,7 +101,19 @@
                             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
                                 <h2 class="fs-4 fw-bold">' . $event['name'] . '</h2></a>
                                 <p class="mb-0">' . $event['description'] . '</p>
-                            </div>
+                            </div>'
+                    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                        echo '
+                        <div class="container" style="padding-bottom:10px;">
+                                        <div class="row">
+                                            <div class="col text-center">
+                                                <a class="btn btn-primary btn-sm mt-auto" href="/additem/' . $event['id'] . '"">Favourite</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                        '
+                    }
+                    echo '
                         </div>
                     </div>';
                 }
