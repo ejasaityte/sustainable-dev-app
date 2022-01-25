@@ -13,6 +13,7 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
+    <?php session_start(); ?>
     <body>
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -22,7 +23,16 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="/map">Explore</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                        <?php
+        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+          ?>
+                <li><a href="/favouriteslist"><span class="glyphicon glyphicon-star"></span>Favourites</a></li>
+                <li><a href="/additem"><span class="glyphicon glyphicon-pencil"></span>Add Item</a></li>
+                <?php } 
+                else{
+                ?>
+                <li class="nav-item"><a class="nav-link" href="/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+        <?php } ?>
                     </ul>
                 </div>
             </div>
@@ -32,7 +42,7 @@
             <div class="container px-lg-5">
                 <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
                     <div class="m-4 m-lg-5">
-                        <h1 class="display-5 fw-bold">A Sustainable Dundee v0.2.5.3</h1>
+                        <h1 class="display-5 fw-bold">A Sustainable Dundee v0.2.5.4</h1>
                         <p class="fs-4">Sustainability is concerned with looking after our natural environment whilst ensuring a strong economy and a fair and healthy society.</p>
                         <a class="btn btn-primary btn-lg" href="/map">Explore the map!</a>
                     </div>
@@ -79,7 +89,7 @@
                                 <div class="container" style="padding-bottom:10px;">
                                     <div class="row">
                                       <div class="col text-center">
-                                         <a class="btn btn-primary btn-sm mt-auto" href="/goal/' . $goal['goalID'] . '"">Learn more</a>
+                                         <a class="btn btn-primary btn-sm mt-auto" href="/goals.php?goal=' . $goal['goalID'] . '"">Learn more</a>
                                       </div>
                                     </div>
                                   </div>

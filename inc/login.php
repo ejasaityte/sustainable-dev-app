@@ -55,9 +55,15 @@
 
     </form>
     <?php
-        /** 
         $username = $_POST['username'];
         $password = $_POST['password'];
+        if(($username=="admin")&&($password=="admin"))
+        {
+            $_SESSION['loggedin'] = true;
+            $_SESSION['username'] = $username;
+            header("Location: https://sustainabledundeeapp.azurewebsites.net");
+        }
+        /** 
         $loginQ = "SELECT password FROM LOGIN WHERE username = '$username'";  
         $res = mysql_query($loginQ);
         $res = mysql_fetch_array($res);    
