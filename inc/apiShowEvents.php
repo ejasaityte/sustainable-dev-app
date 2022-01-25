@@ -5,7 +5,7 @@ $sql = "SELECT * FROM events";
 
 $rows = array();
 $result = $db->query($sql);
-while ($row = $result->fetch_array()) {
+while ($row = $result->fetch_assoc()) {
     $rows[] = $row;
 }
 

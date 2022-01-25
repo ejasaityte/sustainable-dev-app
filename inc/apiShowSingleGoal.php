@@ -7,7 +7,7 @@ $sql = "SELECT * FROM sustainablegoals WHERE goalID='". $goalID ."'";
 
 $rows = array();
 $result = $db->query($sql);
-while ($row = $result->fetch_array()) {
+while ($row = $result->fetch_assoc()) {
     $rows[] = $row;
 }
 
