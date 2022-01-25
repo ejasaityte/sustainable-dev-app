@@ -7,7 +7,7 @@ $rules = array(
     //API Routes
     'apiShowGoals' => "/api/allGoals",
     'apiShowSingleGoal' => "/api/singleGoal/(?'goalID'[\w\-]+)",
-    'events' => "/api/allEvents"
+    'apiShowEvents' => "/api/allEvents"
     'map' => "/map",
     'events' => "/indundee",
 
