@@ -13,7 +13,12 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
-    <?php session_start(); ?>
+    <?php session_start(); 
+    if (!isset($_SESSION['favouriteslist']))
+    {
+        $_SESSION['favouriteslist'] = array();
+    }
+    ?>
     <body>
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -28,6 +33,7 @@
           ?>
                 <li class="nav-item"><a class="nav-link" href="/favouriteslist">Favourites</a></li>
                 <li class="nav-item"><a class="nav-link" href="/additem"><span class="glyphicon glyphicon-pencil"></span>Add Item</a></li>
+                <li class="nav-item"><a class="nav-link" href="/logout">Log out</a></li>
                 <?php } 
                 else{
                 ?>
@@ -85,7 +91,7 @@
                                     <img class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4" src="' . $goal['goalPicture'] . '">
                                     <h2 class="fs-4 fw-bold">' . $goal['goalName'] . '</h2></a>
                                     <p class="mb-0">' . $goal['goalDescription'] . '</p>
-                                </div>
+                                    </div>
                                 <div class="container" style="padding-bottom:10px;">
                                     <div class="row">
                                       <div class="col text-center">

@@ -44,7 +44,7 @@
         </div>
         <br>
         <?php
-        if (isset($_SESSION['favouriteslist'])
+        if (!empty($_SESSION['favouriteslist'])
         {
             ?>
 
@@ -63,7 +63,6 @@
                         </thead>
                         <tbody>
                         <?php
-                                //connection
                                 $index = 0;
                                 $sqlQ1 = "SELECT id, name, description, goalID, postcode, website FROM events WHERE events.id IN (".implode(',',$_SESSION['favouriteslist']).")" 
                                 or die(mysql_error());
