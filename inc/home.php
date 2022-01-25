@@ -85,20 +85,21 @@
 
 
                         foreach ($response as $goal) {
-                            echo '<div class="col-lg-6 col-xxl-4 mb-5">
-                            <div class="card bg-light border-0 h-100">
-                                <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                                    <img class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4" src="' . $goal['goalPicture'] . '">
-                                    <h2 class="fs-4 fw-bold">' . $goal['goalName'] . '</h2></a>
-                                    <p class="mb-0">' . $goal['goalDescription'] . '</p>
+                            echo '
+                            <div class="col-lg-6 col-xxl-4 mb-5">
+                                <div class="card bg-light border-0 h-100">
+                                    <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                                        <img class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4" src="' . $goal['goalPicture'] . '">
+                                        <h2 class="fs-4 fw-bold">' . $goal['goalName'] . '</h2></a>
+                                        <p class="mb-0">' . $goal['goalDescription'] . '</p>
                                     </div>
-                                <div class="container" style="padding-bottom:10px;">
-                                    <div class="row">
-                                      <div class="col text-center">
-                                         <a class="btn btn-primary btn-sm mt-auto" href="/goal/' . $goal['goalID'] . '"">Learn more</a>
-                                      </div>
+                                    <div class="container" style="padding-bottom:10px;">
+                                        <div class="row">
+                                            <div class="col text-center">
+                                                <a class="btn btn-primary btn-sm mt-auto" href="/goal/' . $goal['goalID'] . '"">Learn more</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                  </div>
                                 </div>
                             </div>';
                         }
