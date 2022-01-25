@@ -33,7 +33,7 @@
         <br>
         <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=university%20of%20dundee&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
         <!-- Footer-->
-        <footer class="py-5 bg-dark" style="bottom:0;">
+        <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Sustainable Dundee 2021</p></div>
         </footer>
         <!-- Bootstrap core JS-->
