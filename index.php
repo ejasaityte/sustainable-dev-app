@@ -21,6 +21,7 @@ $rules = array(
     // Home Page
     //
     'home' => "/"
+    'goal' => "/goal"
     //
     // Style
     //
