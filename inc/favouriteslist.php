@@ -44,7 +44,7 @@
         </div>
         <br>
         <?php
-        if (!empty($_SESSION['favouriteslist'])
+        if (!empty($_SESSION['favouriteslist']))
         {
             ?>
 
