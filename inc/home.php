@@ -66,14 +66,6 @@
                         // Decode JSON data into PHP array
                         $response = json_decode($response, true);
 
-                        //$simple = array("test", "test2");
-                        //print_r($simple);
-                        //TEST Loop
-                        foreach ($response as $goal => $value) {
-                            echo "Goal: $goal<br>Whole object: ";
-                            print_r($value);
-                            //echo "<br><br>Description$value[2]";
-                        }
 
                         foreach ($response as $goal) {
                             echo '<div class="col-lg-6 col-xxl-4 mb-5">
