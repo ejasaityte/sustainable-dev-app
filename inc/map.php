@@ -28,6 +28,7 @@
           ?>
                 <li class="nav-item"><a class="nav-link" href="/favouriteslist">Favourites</a></li>
                 <li class="nav-item"><a class="nav-link" href="/additem"><span class="glyphicon glyphicon-pencil"></span>Add Item</a></li>
+                <li class="nav-item"><a class="nav-link" href="/logout">Log out</a></li>
                 <?php } 
                 else{
                 ?>
