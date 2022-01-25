@@ -28,6 +28,7 @@
           ?>
                 <li class="nav-item"><a class="nav-link" href="/favouriteslist">Favourites</a></li>
                 <li class="nav-item"><a class="nav-link" href="/additem"><span class="glyphicon glyphicon-pencil"></span>Add Item</a></li>
+                <li class="nav-item"><a class="nav-link" href="/logout">Log out</a></li>
                 <?php } 
                 else{
                 ?>
@@ -42,7 +43,7 @@
             <div class="container px-lg-5">
                 <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
                     <div class="m-4 m-lg-5">
-                        <h1 class="display-5 fw-bold">A Sustainable Dundee v0.2.7.0</h1>
+                        <h1 class="display-5 fw-bold">A Sustainable Dundee v0.2.7.1</h1>
                         <p class="fs-4">Sustainability is concerned with looking after our natural environment whilst ensuring a strong economy and a fair and healthy society.</p>
                         <a class="btn btn-primary btn-lg" href="/map">Explore the map!</a>
                     </div>
