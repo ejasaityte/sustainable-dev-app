@@ -7,6 +7,7 @@ $rows = array();
 $result = $db->query($sql);
 while ($row = $result->fetch_array()) {
     $rows[] = $row;
+    echo $row;
 }
 
   header('Content-type: application/json');
