@@ -79,7 +79,7 @@
 
                                             <td>
                                             <?php
-                                            $sqlQ2 = "SELECT goalName FROM sustainablegoals WHERE sustainablegoals.goalID = $row['goalID']" 
+                                            $sqlQ2 = "SELECT goalName FROM sustainablegoals WHERE sustainablegoals.goalID =". $row['goalID']
                                             or die(mysql_error());
                                             $sqlQN = mysql_query($sqlQ2);
                                             echo mysql_fetch_array($sqlQ);
