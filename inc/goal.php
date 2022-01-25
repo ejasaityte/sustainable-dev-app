@@ -28,7 +28,20 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="/map">Explore</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                        <?php
+        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+          ?>
+                <li class="nav-item"><a class="nav-link" href="/favouriteslist">Favourites</a></li>
+                <li class="nav-item"><a class="nav-link" href="/additem"><span class="glyphicon glyphicon-pencil"></span>Add Item</a></li>
+                <li class="nav-item"><a class="nav-link" href="/logout">Log out</a></li>
+                <?php } 
+                else{
+                ?>
+                <li class="nav-item"><a class="nav-link" href="/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+        <?php } ?>
+                    </ul>
+                </div>
+            </div>
                     </ul>
                 </div>
             </div>
@@ -119,12 +132,12 @@
                                         </div>
                                     </div>
                         ';
-                    }
+                    } 
                     echo '
                         </div>
                     </div>';
                 }
-
+                
                 php?>
 
                 </div>
