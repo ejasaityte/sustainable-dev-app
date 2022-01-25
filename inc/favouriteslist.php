@@ -64,6 +64,7 @@
                         <tbody>
                         <?php
                                 $index = 0;
+                                echo $_SESSION['favouriteslist']
                                 $sqlQ1 = "SELECT id, name, description, goalID, postcode, website FROM events WHERE events.id IN (".implode(',',$_SESSION['favouriteslist']).")" 
                                 or die(mysql_error());
                                 $sqlQ = mysql_query($sqlQ1);
@@ -82,7 +83,8 @@
                                             $sqlQ2 = "SELECT goalName FROM sustainablegoals WHERE sustainablegoals.goalID =". $row['goalID']
                                             or die(mysql_error());
                                             $sqlQN = mysql_query($sqlQ2);
-                                            echo mysql_fetch_array($sqlQ);
+                                            $rowN= mysql_fetch_array($sqlQN));
+                                            echo mysql_fetch_array($rowN['goalName']);
                                             ?>
                                             </td>
                                             <td><?php echo $row['postcode']; ?></td>
