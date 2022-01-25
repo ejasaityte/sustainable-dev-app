@@ -31,6 +31,42 @@
             <div class="container px-lg-5">
                 <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
                     <div class="m-4 m-lg-5">
+                        <?php
+                        $goalID = $params['goal'];
+
+                        $curl = curl_init();
+                        curl_setopt_array($curl, array(
+                        CURLOPT_URL => "https://sustainabledundeeapp.azurewebsites.net/api/singleGoal/0",
+                        CURLOPT_RETURNTRANSFER => true,
+                        CURLOPT_TIMEOUT => 29,
+                        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_0_1,
+                        CURLOPT_CUSTOMREQUEST => "GET",
+                        CURLOPT_HTTPHEADER => array(
+                            "cache-control: no-cache"
+                        ),
+                        ));
+
+                        $response = curl_exec($curl);
+                        $err = curl_error($curl);
+
+                        curl_close($curl);
+                        // Decode JSON data into PHP array
+                        $response = json_decode($response, true);
+                        echo "<h1 class="display-5 fw-bold">$response['goalName']</h1>"
+
+                        /*foreach ($response as $goal) {
+                            echo '<div class="col-lg-7 col-xxl-4 mb-5">
+                            <div class="card bg-light border-1 h-100">
+                                <div class="card-body text-center p-5 p-lg-5 pt-0 pt-lg-0">
+                                    <img class="feature bg-primary bg-gradient text-white rounded-4 mb-4 mt-n4" src="' . $goal['goalPicture'] . '">
+                                    <a href="/goals.php?goal=' . $goal['goalID'] . '"><h1 class="fs-4 fw-bold">' . $goal['goalName'] . '</h2></a>
+                                    <p class="mb-1">' . $goal['goalDescription'] . '</p>
+                                    </div>
+                                </div>
+                            </div>';
+                        }*/
+                        
+                    php?>
                         <h1 class="display-5 fw-bold">A Sustainable Dundee v0.2.6</h1>
                         <p class="fs-4">Sustainability is concerned with looking after our natural environment whilst ensuring a strong economy and a fair and healthy society.</p>
                         <a class="btn btn-primary btn-lg" href="/map">Explore the map!</a>
@@ -44,44 +80,7 @@
                 <!-- Page Features-->
                 <div class="row gx-lg-5">
 
-                    <?php
-                        $goalID = $params['goal'];
-                        echo $goalID;
-
-                        $curl = curl_init();
-
-                        curl_setopt_array($curl, array(
-                        CURLOPT_URL => "https://sustainabledundeeapp.azurewebsites.net/api/singleGoal/$goalID",
-                        CURLOPT_RETURNTRANSFER => true,
-                        CURLOPT_TIMEOUT => 30,
-                        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                        CURLOPT_CUSTOMREQUEST => "GET",
-                        CURLOPT_HTTPHEADER => array(
-                            "cache-control: no-cache"
-                        ),
-                        ));
-
-                        $response = curl_exec($curl);
-                        $err = curl_error($curl);
-
-                        curl_close($curl);
-                        // Decode JSON data into PHP array
-                        $response = json_decode($response, true);
-                        print_r($response);
-
-                        /*foreach ($response as $goal) {
-                            echo '<div class="col-lg-6 col-xxl-4 mb-5">
-                            <div class="card bg-light border-0 h-100">
-                                <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                                    <img class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4" src="' . $goal['goalPicture'] . '">
-                                    <a href="/goals.php?goal=' . $goal['goalID'] . '"><h2 class="fs-4 fw-bold">' . $goal['goalName'] . '</h2></a>
-                                    <p class="mb-0">' . $goal['goalDescription'] . '</p>
-                                    </div>
-                                </div>
-                            </div>';
-                        }*/
-                        
-                    php?>
+                    
 
                 </div>
             </div>
