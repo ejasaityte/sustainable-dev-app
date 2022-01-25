@@ -15,7 +15,7 @@ $rules = array(
     //Admin Pages
     //
     'login' => "/login",
-    'additem' => "/additem",
+    'additem' => "/additem/(?'id'[\w\-]+)",
     'deleteitem' => "/deleteitem",
     'favouriteslist' => "/favouriteslist",
     'logout' => "/logout",
