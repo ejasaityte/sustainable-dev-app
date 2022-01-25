@@ -70,7 +70,7 @@
                         foreach ($response as $goal => $value) {
                             echo "Goal: $goal<br>Whole object: ";
                             print_r($value);
-                            echo "<br><br>"
+                            echo "<br><br>";
                         }
 
                         foreach ($response as $goal) {
