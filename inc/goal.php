@@ -53,14 +53,13 @@
                         // Decode JSON data into PHP array
                         $response = json_decode($response, true);
 
-                        foreach ($response as $goal) {
+                        foreach ($response as $goal) { // TODO refactor
                             echo '<h1 class="display-5 fw-bold">'.$goal['goalName'].'</h1>';
+                            echo '<p class="fs-4">'.$goal['goalDescription'].'</p>';
                             break; // This should run once
                         }
                         
                     php?>
-                        <h1 class="display-5 fw-bold">A Sustainable Dundee v0.2.6</h1>
-                        <p class="fs-4">Sustainability is concerned with looking after our natural environment whilst ensuring a strong economy and a fair and healthy society.</p>
                         <a class="btn btn-primary btn-lg" href="/map">Explore the map!</a>
                     </div>
                 </div>
