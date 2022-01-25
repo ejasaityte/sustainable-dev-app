@@ -20,7 +20,7 @@ $rules = array(
     //
     // Home Page
     //
-    'home' => "/"
+    'home' => "/",
     'goal' => "/goal/(?'goal'[\w\-]+)"
     //
     // Style
