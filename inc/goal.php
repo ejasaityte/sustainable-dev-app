@@ -52,7 +52,7 @@
                         curl_close($curl);
                         // Decode JSON data into PHP array
                         $response = json_decode($response, true);
-                        echo "<h1 class="display-5 fw-bold">$response['goalName']</h1>"
+                        echo "<h1 class="display-5 fw-bold">$response['goalName']</h1>";
 
                         /*foreach ($response as $goal) {
                             echo '<div class="col-lg-7 col-xxl-4 mb-5">
