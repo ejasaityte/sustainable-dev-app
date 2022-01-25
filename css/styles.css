@@ -280,9 +280,11 @@ a > code {
 }
 
 footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   position: absolute;
   height: 100px;
-  width: 100%;
 }
 
 kbd {
