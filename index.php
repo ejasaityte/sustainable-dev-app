@@ -17,6 +17,7 @@ $rules = array(
     //
     'login' => "/login",
     'additem' => "/additem/(?'id'[\w\-]+)",
+    'adduser' => "/adduser",
     'deleteitem' => "/deleteitem",
     'favouriteslist' => "/favouriteslist",
     'logout' => "/logout",

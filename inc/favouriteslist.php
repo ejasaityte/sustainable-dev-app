@@ -27,7 +27,11 @@
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
           ?>
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="/favouriteslist">Favourites</a></li>
-                <li class="nav-item"><a class="nav-link" href="/additem"><span class="glyphicon glyphicon-pencil"></span>Add Item</a></li>
+                <li class="nav-item"><a class="nav-link" href="/additem">Add Item</a></li>
+                <?php 
+                if ($_SESSION['username']=='admin') { ?>
+                <li class="nav-item"><a class="nav-link" href="/adduser">Add User</a></li>
+                <?php } ?>
                 <li class="nav-item"><a class="nav-link" href="/logout">Log out</a></li>
                 <?php } 
                 else{

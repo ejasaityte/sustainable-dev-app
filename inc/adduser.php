@@ -13,29 +13,41 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
-<body>
-    <?php
-    session_start();
-    include("dbconnect.php");
-    
-    error_reporting(0);
-
-  ?>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <?php session_start(); ?>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container px-lg-5">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link"href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="/map">Explore</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                        <?php
+        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+          ?>
+                <li class="nav-item"><a class="nav-link" href="/favouriteslist">Favourites</a></li>
+                <li class="nav-item"><a class="nav-link" href="/additem">Add Item</a></li>
+                <?php 
+                if ($_SESSION['username']=='admin') { ?>
+                <li class="nav-item"><a class="nav-link" href="/adduser">Add User</a></li>
+                <?php } ?>
+                <li class="nav-item"><a class="nav-link" href="/logout">Log out</a></li>
+                <?php } 
+                else{
+                ?>
+                <li class="nav-item"><a class="nav-link" href="/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+        <?php } ?>
                     </ul>
                 </div>
             </div>
         </nav>
-
-
-    <div class="position-absolute top-50 start-50 translate-middle">
+        <br>
+        <div class="container-fluid text-center">
+            <h1 class="display-5 fw-bold">Add new user</h1>
+        </div>
+        <br>
+        <div class="position-absolute top-50 start-50 translate-middle">
         <form action="" method="post">
             <div class="d-grid gap-2">
                 <div class="input-group">
@@ -46,40 +58,47 @@
                     <input type="password" class="form-control" id="password" name="password" placeholder="Password" aria-describedby="passwordHelpBlock" required>
                     <div class="invalid-tooltip"> Please enter a password.</div>
                 </div>
-                <button type="submit" class="btn btn-primary">Log in</button>
+                <button type="submit" class="btn btn-primary">Add User</button>
             </div>
-
-
-    </div>
-    </div>
-
-    </form>
-    <?php
+        <?php
         $username = $_POST['username'];
         $password = $_POST['password'];
-
-        $loginQ = "SELECT password FROM users WHERE username = '$username'";  
+        if($username=="admin")
+        {
+            ?><div class="alert alert-warning" role="alert">
+  A simple warning alert—check it out!
+</div> <?php
+            header("Location: https://sustainabledundeeapp.azurewebsites.net/adduser");
+        }
+        else {
+            echo('Success')
+        }
+        /** 
+        $loginQ = "SELECT password FROM LOGIN WHERE username = '$username'";  
         $res = mysql_query($loginQ);
         $res = mysql_fetch_array($res);    
+    
 
-
-        elseif(password_verify($password, $res[0])){
-            if((preg_match("/@/", $username)||($username=="admin"))
+        if(password_verify($password, $res[0])){
+            if(preg_match("/@/", $username))
             {
                 $_SESSION['loggedin'] = true;
                 $_SESSION['username'] = $username;
                  header("Location: https://sustainabledundeeapp.azurewebsites.net");
             }
 
-        }
+        }*/
     ?>
+
     </div>
-
-
-</body>
-
+    </div>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark" style="bottom:0;">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Sustainable Dundee 2021</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
 </html>
-
-
-
-<!-- https://www.bootstrapdash.com/use-bootstrap-with-php/ -->
