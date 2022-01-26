@@ -70,7 +70,7 @@
                 'type': 'geojson',
                 'data': {
                 'type': 'FeatureCollection',
-                'features': [{";
+                'features': [";
 
                 $curl = curl_init();
                         curl_setopt_array($curl, array(
@@ -95,6 +95,7 @@
                         foreach ($response as $event) { // TODO refactor
                             $i += 1;
                             echo "
+                            {
                             'type': 'Feature',
                             'properties': {
                                 'description':
