@@ -77,11 +77,15 @@
                                 ?><div class="alert alert-warning" role="alert">
     Success!
     </div> <?php
-                                $sqlQ = mysql_query($sqlQ1);
+                                $rows = array();
+                                $result = $db->query($sqlQ1);
+                                while ($row = $result->fetch_assoc()) {
+                                    $rows[] = $row;
+                                }
                                 ?><div class="alert alert-warning" role="alert">
     Success!
     </div> <?php
-                                while ($row= mysql_fetch_array($sqlQ)){
+                                foreach ($rows as $row){
                                     ?><div class="alert alert-warning" role="alert">
     Success!
     </div> <?php
