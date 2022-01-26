@@ -58,12 +58,13 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        $loginQ = "SELECT password FROM users WHERE username = '$username'";  
+        $loginQ = "SELECT password FROM users WHERE email = '$username'";  
         $res = mysql_query($loginQ);
         $res = mysql_fetch_array($res);    
 
 
         if(password_verify($password, $res[0])){
+            
             if((preg_match("/@/", $username))||($username=="admin"))
             {
                 $_SESSION['loggedin'] = true;
