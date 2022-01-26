@@ -84,7 +84,9 @@
         }
         else{
             ?><div class="alert alert-warning" role="alert">
-  Wrong password!
+  <?php echo $rows[0]; ?></div>
+  <div class="alert alert-warning" role="alert">
+  <?php echo $rows; ?>
 </div> <?php
         }
     ?>
