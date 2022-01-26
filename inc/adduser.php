@@ -71,29 +71,31 @@
 </div> <?php
         }
         else {
-        $sql = "SELECT * FROM users WHERE email='". $username ."'";
-        $rows = array();
-        $result = $db->query($sql);
-        while ($row = $result->fetch_assoc()) {
-            $rows[] = $row;
-        }
-        $output = '';
-        foreach($rows as $item) {
-            $output .= implode("\n" , $item);
-        }
-        if($rows->rowCount() == 0){
-            $updateReq = "INSERT INTO users (email, password) VALUES ('".$username."','".password_hash($password,PASSWORD_DEFAULT)."');";
-            $updateRes =$db->query($updateReq);
+            $sql = "SELECT * FROM users WHERE email='". $username ."'";
+            $rows = array();
+            $result = $db->query($sql);
 
-            ?><div class="alert alert-warning" role="alert">
-  Success! <?php echo $updateReq; echo $updateRes; echo $output; ?>
-</div> <?php
-        }
-        else {
-            ?><div class="alert alert-warning" role="alert">
-  Success! <?php echo $rows; echo $rows->rowCount(); echo $output; ?>
-</div> <?php
-        }
+            while ($row = $result->fetch_assoc()) {
+                $rows[] = $row;
+            }
+            $output = '';
+            foreach($rows as $item) {
+                $output .= implode("\n" , $item);
+            }
+
+            if($rows->rowCount() == 0){
+                $updateReq = "INSERT INTO users (userID, email, password) VALUES (NULL,'".$username."','".password_hash($password,PASSWORD_DEFAULT)."')";
+                $updateRes =$db->query($updateReq);
+
+                ?><div class="alert alert-warning" role="alert">
+    Success! <?php echo $updateReq; echo $updateRes; echo $output; ?>
+    </div> <?php
+            }
+            else {
+                ?><div class="alert alert-warning" role="alert">
+    Success! <?php echo $rows; echo $rows->rowCount(); echo $output; ?>
+    </div> <?php
+            }
     }
     ?>
 
