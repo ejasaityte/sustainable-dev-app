@@ -66,8 +66,12 @@
             $rows[] = $row;
         }
 
+        $output = '';
+        foreach($item in $rows) {
+            $output .= implode("\n" , $item);
+        }
 
-        if(password_verify($password, $rows[0])){
+        if(password_verify($password, $output)){
             
             if((preg_match("/@/", $username))||($username=="admin"))
             {
