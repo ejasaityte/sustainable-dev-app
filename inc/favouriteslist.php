@@ -72,13 +72,15 @@
                                 ?><div class="alert alert-warning" role="alert">
     Success!
     </div> <?php                                
-                                $sqlQ1 = "SELECT id, name, description, goalID, postcode, website FROM events WHERE events.id IN (".implode(',',$_SESSION['favouriteslist']).")" 
-                                or die(mysql_error());
+                                $sqlQ1 = "SELECT id, name, description, goalID, postcode, website FROM events WHERE events.id IN (".implode(',',$_SESSION['favouriteslist']).")";
                                 ?><div class="alert alert-warning" role="alert">
-    Success!
+    Success! <?php echo $sqlQ1; ?>
     </div> <?php
                                 $rows = array();
                                 $result = $db->query($sqlQ1);
+                                ?><div class="alert alert-warning" role="alert">
+    Success!
+    </div> <?php
                                 while ($row = $result->fetch_assoc()) {
                                     $rows[] = $row;
                                 }
