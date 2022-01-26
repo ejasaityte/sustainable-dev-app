@@ -1,4 +1,4 @@
-# sustainable-dev-app
+# Project Charter - UN Sustainable Development Goal Activity in Dundee
 https://docs.google.com/document/d/1AyjlOQw0fItz1TpYrtFvUCq-lOr6kmxGv2hhwO9AjwQ/edit#heading=h.x8hjs07vy8u1
 # Vision 
 For any eager Dundonian who is willing to improve sustainability in Dundee, the Sustainable Development Goal web application provides information about 17 goals as well as their progress in the city.
