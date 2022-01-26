@@ -93,7 +93,7 @@
 
                         $i = 0;
                         foreach ($response as $event) { // TODO refactor
-                            i = i + 1;
+                            $i += 1;
                             echo "
                             'type': 'Feature',
                             'properties': {
@@ -105,7 +105,7 @@
                                 'coordinates': [-77.038659, 38.931567]
                             }
                             }";
-                            if ($i != count($response) - 1) {
+                            if ($i != count($response)-1) {
                                 echo ","; 
                             }
                         }
