@@ -106,7 +106,7 @@
                                 'coordinates': [-77.038659, 38.931567]
                             }
                             }";
-                            if ($i != count($response)-1) {
+                            if ($i != count($response)) {
                                 echo ","; 
                             }
                         }
