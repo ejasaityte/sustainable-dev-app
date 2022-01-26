@@ -88,7 +88,7 @@
                                             $sqlQ2 = "SELECT goalName FROM sustainablegoals WHERE sustainablegoals.goalID =". $row['goalID']
                                             or die(mysql_error());
                                             $sqlQN = mysql_query($sqlQ2);
-                                            $rowN= mysql_fetch_array($sqlQN));
+                                            $rowN= mysql_fetch_array($sqlQN);
                                             echo mysql_fetch_array($rowN['goalName']);
                                             ?>
                                             </td>
