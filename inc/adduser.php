@@ -13,7 +13,8 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
-    <?php session_start(); ?>
+    <?php session_start(); 
+    include("dbconnect.php");?>
     <body>
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -63,33 +64,29 @@
         <?php
         $username = $_POST['username'];
         $password = $_POST['password'];
-        if($username=="admin")
+        if(($username=="admin")||!(preg_match("/@/", $username)))
         {
             ?><div class="alert alert-warning" role="alert">
   Choose another username!
 </div> <?php
-            header("Location: https://sustainabledundeeapp.azurewebsites.net/adduser");
         }
         else {
+        $sql = "SELECT * FROM users WHERE email='". $username ."'";
+        $rows = array();
+        $result = $db->query($sql);
+        while ($row = $result->fetch_assoc()) {
+            $rows[] = $row;
+        }
+
+        if($rows->rowCount() == 0){
+            $updateReq = "INSERT INTO users (email, password) VALUES ('".$username."','".password_hash($password,PASSWORD_DEFAULT)."');";
+            $updateRes =$db->query($updateReq);
+
             ?><div class="alert alert-warning" role="alert">
   Success!
 </div> <?php
         }
-        /** 
-        $loginQ = "SELECT password FROM LOGIN WHERE username = '$username'";  
-        $res = mysql_query($loginQ);
-        $res = mysql_fetch_array($res);    
-    
-
-        if(password_verify($password, $res[0])){
-            if(preg_match("/@/", $username))
-            {
-                $_SESSION['loggedin'] = true;
-                $_SESSION['username'] = $username;
-                 header("Location: https://sustainabledundeeapp.azurewebsites.net");
-            }
-
-        }*/
+    }
     ?>
 
     </div>
