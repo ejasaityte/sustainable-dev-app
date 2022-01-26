@@ -64,7 +64,7 @@
                         <tbody>
                         <?php
                                 $index = 0;
-                                echo $_SESSION['favouriteslist']
+                                echo $_SESSION['favouriteslist'];
                                 $sqlQ1 = "SELECT id, name, description, goalID, postcode, website FROM events WHERE events.id IN (".implode(',',$_SESSION['favouriteslist']).")" 
                                 or die(mysql_error());
                                 $sqlQ = mysql_query($sqlQ1);
