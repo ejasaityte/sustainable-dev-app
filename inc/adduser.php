@@ -77,13 +77,21 @@
         while ($row = $result->fetch_assoc()) {
             $rows[] = $row;
         }
-
+        $output = '';
+        foreach($rows as $item) {
+            $output .= implode("\n" , $item);
+        }
         if($rows->rowCount() == 0){
             $updateReq = "INSERT INTO users (email, password) VALUES ('".$username."','".password_hash($password,PASSWORD_DEFAULT)."');";
             $updateRes =$db->query($updateReq);
 
             ?><div class="alert alert-warning" role="alert">
-  Success!
+  Success! <?php echo $updateReq; echo $updateRes; echo $output; ?>
+</div> <?php
+        }
+        else {
+            ?><div class="alert alert-warning" role="alert">
+  Success! <?php echo $rows; echo $rows->rowCount(); echo $output; ?>
 </div> <?php
         }
     }
