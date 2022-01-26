@@ -63,7 +63,7 @@
         $res = mysql_fetch_array($res);    
 
 
-        elseif(password_verify($password, $res[0])){
+        if(password_verify($password, $res[0])){
             if((preg_match("/@/", $username)||($username=="admin"))
             {
                 $_SESSION['loggedin'] = true;
