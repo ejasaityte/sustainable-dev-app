@@ -66,12 +66,14 @@
         if($username=="admin")
         {
             ?><div class="alert alert-warning" role="alert">
-  A simple warning alert—check it out!
+  Choose another username!
 </div> <?php
             header("Location: https://sustainabledundeeapp.azurewebsites.net/adduser");
         }
         else {
-            echo('Success')
+            ?><div class="alert alert-warning" role="alert">
+  Success!
+</div> <?php
         }
         /** 
         $loginQ = "SELECT password FROM LOGIN WHERE username = '$username'";  

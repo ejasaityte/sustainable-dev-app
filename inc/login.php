@@ -58,12 +58,16 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        $loginQ = "SELECT password FROM users WHERE email = '$username'";  
-        $res = mysql_query($loginQ);
-        $res = mysql_fetch_array($res);    
+
+        $sql = "SELECT password FROM users WHERE email='". $username ."'";
+        $rows = array();
+        $result = $db->query($sql);
+        while ($row = $result->fetch_assoc()) {
+            $rows[] = $row;
+        }
 
 
-        if(password_verify($password, $res[0])){
+        if(password_verify($password, $rows[0])){
             
             if((preg_match("/@/", $username))||($username=="admin"))
             {
