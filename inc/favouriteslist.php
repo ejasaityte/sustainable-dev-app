@@ -69,11 +69,22 @@
                         <tbody>
                         <?php
                                 $index = 0;
-                                echo $_SESSION['favouriteslist'];
+                                ?><div class="alert alert-warning" role="alert">
+    Success!
+    </div> <?php                                
                                 $sqlQ1 = "SELECT id, name, description, goalID, postcode, website FROM events WHERE events.id IN (".implode(',',$_SESSION['favouriteslist']).")" 
                                 or die(mysql_error());
+                                ?><div class="alert alert-warning" role="alert">
+    Success!
+    </div> <?php
                                 $sqlQ = mysql_query($sqlQ1);
+                                ?><div class="alert alert-warning" role="alert">
+    Success!
+    </div> <?php
                                 while ($row= mysql_fetch_array($sqlQ)){
+                                    ?><div class="alert alert-warning" role="alert">
+    Success!
+    </div> <?php
                                         ?>
                                         <tr>
                                             <td>
@@ -85,11 +96,26 @@
 
                                             <td>
                                             <?php
+                                            ?><div class="alert alert-warning" role="alert">
+                                            Success!
+                                            </div> <?php
                                             $sqlQ2 = "SELECT goalName FROM sustainablegoals WHERE sustainablegoals.goalID =". $row['goalID']
                                             or die(mysql_error());
+                                            ?><div class="alert alert-warning" role="alert">
+    Success!
+    </div> <?php
                                             $sqlQN = mysql_query($sqlQ2);
+                                            ?><div class="alert alert-warning" role="alert">
+    Success!
+    </div> <?php
                                             $rowN= mysql_fetch_array($sqlQN);
+                                            ?><div class="alert alert-warning" role="alert">
+    Success!
+    </div> <?php
                                             echo mysql_fetch_array($rowN['goalName']);
+                                            ?><div class="alert alert-warning" role="alert">
+    Success!
+    </div> <?php
                                             ?>
                                             </td>
                                             <td><?php echo $row['postcode']; ?></td>
