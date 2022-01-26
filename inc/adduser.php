@@ -64,7 +64,7 @@
         <?php
         $username = $_POST['username'];
         $password = $_POST['password'];
-        if(($username=="admin")||!(preg_match("/@/", $username)))
+        if(($username=="admin")||(!(preg_match("/@/", $username))&&($username!='')))
         {
             ?><div class="alert alert-warning" role="alert">
   Choose another username!
