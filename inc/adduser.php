@@ -87,7 +87,7 @@
             Success! <?php echo 'no match found';?>
             </div> <?php
 
-            if(empty($rows) == 0){
+            if(empty($rows)){
                 ?><div class="alert alert-warning" role="alert">
     Success! <?php echo 'no match found';?>
     </div> <?php
