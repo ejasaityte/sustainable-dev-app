@@ -1,7 +1,7 @@
 <?php
 include("dbconnect.php");
 
-$sql = "SELECT * FROM events INNER JOIN coords ON events.postcode = coords.postcode;";
+$sql = "SELECT * FROM events INNER JOIN coord ON events.postcode = coord.postcode;";
 
 $rows = array();
 $result = $db->query($sql);
