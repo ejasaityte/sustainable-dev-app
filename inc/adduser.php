@@ -79,11 +79,15 @@
     </div> <?php
             while ($row = $result->fetch_assoc()) {
                 $rows[] = $row;
-            }
-            ?><div class="alert alert-warning" role="alert">
+                ?><div class="alert alert-warning" role="alert">
     Success! <?php echo 'no match found';?>
     </div> <?php
-            if($rows->rowCount() == 0){
+            }
+            ?><div class="alert alert-warning" role="alert">
+            Success! <?php echo 'no match found';?>
+            </div> <?php
+
+            if(empty($rows) == 0){
                 ?><div class="alert alert-warning" role="alert">
     Success! <?php echo 'no match found';?>
     </div> <?php
