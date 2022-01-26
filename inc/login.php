@@ -64,7 +64,7 @@
 
 
         if(password_verify($password, $res[0])){
-            if((preg_match("/@/", $username)||($username=="admin"))
+            if((preg_match("/@/", $username))||($username=="admin"))
             {
                 $_SESSION['loggedin'] = true;
                 $_SESSION['username'] = $username;
