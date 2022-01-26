@@ -74,40 +74,20 @@
             $sql = "SELECT * FROM users WHERE email='". $username ."'";
             $rows = array();
             $result = $db->query($sql);
-            ?><div class="alert alert-warning" role="alert">
-    Success! <?php echo 'no match found';?>
-    </div> <?php
             while ($row = $result->fetch_assoc()) {
                 $rows[] = $row;
-                ?><div class="alert alert-warning" role="alert">
-    Success! <?php echo 'no match found';?>
-    </div> <?php
+
             }
-            ?><div class="alert alert-warning" role="alert">
-            Success! <?php echo 'no match found';?>
-            </div> <?php
 
             if(empty($rows)){
-                ?><div class="alert alert-warning" role="alert">
-    Success! <?php echo 'no match found';?>
-    </div> <?php
                 $hashedPass = password_hash($password,PASSWORD_DEFAULT);
-                ?><div class="alert alert-warning" role="alert">
-    Success! <?php echo 'no match found';?>
-    </div> <?php
                 $updateReq = "INSERT INTO users (userID, email, password) VALUES (NULL,'".$username."','".$hashedPass."')";
-                ?><div class="alert alert-warning" role="alert">
-    Success! <?php echo 'no match found';?>
-    </div> <?php
                 $updateRes =$db->query($updateReq);
 
-                ?><div class="alert alert-warning" role="alert">
-    Success! <?php echo $updateReq; echo $updateRes; echo $output; ?>
-    </div> <?php
             }
             else {
                 ?><div class="alert alert-warning" role="alert">
-    Success! <?php echo $rows; echo $rows->rowCount(); echo $output; ?>
+    Success!
     </div> <?php
             }
     }
