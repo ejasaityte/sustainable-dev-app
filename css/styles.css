@@ -276,6 +276,7 @@ pre code {
   display:flex;
   flex-direction:column; 
   justify-content:space-between;
+  padding-bottom: 200px;
 }
 
 code {
@@ -291,6 +292,7 @@ html, body {
   height: 100%;
   min-height: 100%;
   margin: 0;
+  padding-bottom: 200px;
 }
 
 footer {
