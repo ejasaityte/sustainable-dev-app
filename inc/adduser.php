@@ -74,17 +74,27 @@
             $sql = "SELECT * FROM users WHERE email='". $username ."'";
             $rows = array();
             $result = $db->query($sql);
-
+            ?><div class="alert alert-warning" role="alert">
+    Success! <?php echo 'no match found';?>
+    </div> <?php
             while ($row = $result->fetch_assoc()) {
                 $rows[] = $row;
             }
-            $output = '';
-            foreach($rows as $item) {
-                $output .= implode("\n" , $item);
-            }
-
+            ?><div class="alert alert-warning" role="alert">
+    Success! <?php echo 'no match found';?>
+    </div> <?php
             if($rows->rowCount() == 0){
-                $updateReq = "INSERT INTO users (userID, email, password) VALUES (NULL,'".$username."','".password_hash($password,PASSWORD_DEFAULT)."')";
+                ?><div class="alert alert-warning" role="alert">
+    Success! <?php echo 'no match found';?>
+    </div> <?php
+                $hashedPass = password_hash($password,PASSWORD_DEFAULT);
+                ?><div class="alert alert-warning" role="alert">
+    Success! <?php echo 'no match found';?>
+    </div> <?php
+                $updateReq = "INSERT INTO users (userID, email, password) VALUES (NULL,'".$username."','".$hashedPass."')";
+                ?><div class="alert alert-warning" role="alert">
+    Success! <?php echo 'no match found';?>
+    </div> <?php
                 $updateRes =$db->query($updateReq);
 
                 ?><div class="alert alert-warning" role="alert">
