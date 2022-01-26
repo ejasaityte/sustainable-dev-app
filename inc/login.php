@@ -79,19 +79,6 @@
                 $_SESSION['username'] = $username;
                  header("Location: https://sustainabledundeeapp.azurewebsites.net");
             }
-            else {
-                ?><div class="alert alert-warning" role="alert">
-  Username invalid!
-</div> <?php
-            }
-
-        }
-        else{
-            ?><div class="alert alert-warning" role="alert">
-  <?php echo $rows[0]; ?></div>
-  <div class="alert alert-warning" role="alert">
-  <?php echo $rows; ?>
-</div> <?php
         }
     ?>
     </div>
