@@ -84,8 +84,8 @@
                             break; // This should run once
                         }
                         
+                        echo "<a class="btn btn-primary btn-lg" href='/map/$goalID'>Explore the map!</a>";
                     php?>
-                        <a class="btn btn-primary btn-lg" href="/map">Explore the map!</a>
                     </div>
                 </div>
             </div>

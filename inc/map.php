@@ -73,9 +73,8 @@
                 'features': [";
 
                 $url = "https://sustainabledundeeapp.azurewebsites.net/api/allEventsCoords";
-
-                if (isset($params['goalID'])) {
-                    $goalID = $params['goalID'];
+                $goalID = $params['goalID'];
+                if ($goalID != 0) {
                     $url = "https://sustainabledundeeapp.azurewebsites.net/api/EventsFromGoal/" . $goalID;
                 }
 
