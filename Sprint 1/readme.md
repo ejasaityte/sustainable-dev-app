@@ -26,4 +26,15 @@ Discussed yesterday's work - creating a back end API using Microsoft Azure, popu
 
 Talked about plans for today - finding errors in applying api in index page, creating events table, formalising product backlog, implementing a favourite list, maps and user logins, properly displaying goals and events happening in Dundee based on each goal in home page.
 
+## Day 3 - Scrum Meeting summary
+The Scrum Master for this meeting was Laura
+
+### Members Present:
+Jamie, Euan, Sem, Eddie, Matthew, Laura
+
+### Summary of Conversation:
+Discussed yesterday's work - having API properly working and displaying data from both tables goals and events, having a login for an admin.
+
+Talked about plans for today - making maps working - getting users locations and thus nearby events, adding logins for users. 
+
 ---
