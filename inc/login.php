@@ -67,7 +67,7 @@
         }
 
         $output = '';
-        foreach($item in $rows) {
+        foreach($rows as $item) {
             $output .= implode("\n" , $item);
         }
 
