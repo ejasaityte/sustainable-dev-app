@@ -18,3 +18,4 @@ The project will be developed remotely through online meetings with product owne
 ### How will the project be executed?
 Using a number of resources. These include GitHub to programme the project, Microsoft Teams to communicate, Google docs to create documents such as the Sprint Backlog, Microsoft Azure to create an API and database to be used in the website, and a mapbox to integrate a map feature. 
 
+
