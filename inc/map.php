@@ -47,7 +47,7 @@
             <?php
                 echo "<div id="map"></div>
                 <script>
-                    mapboxgl.accessToken = 'pk.eyJ1IjoiZXVhbmRvY2tpbmciLCJhIjoiY2t5dmtqemxsMDZzbzJ2azQxdHczMzgyNCJ9.qGUYe52Xcxbp3gsCjR4b6w';
+                    mapboxgl.accessToken = 'pk.eyJ1IjoiZXVhbmRvY2tpbmciLCJhIjoiY2t5dmt1aTZvMXpqMTJxcHR2eTF2Z21zOCJ9.yZNbnAG0QP59OzGsTYFX1A';
                 const map = new mapboxgl.Map({
                 container: 'map',
                 style: 'mapbox://styles/mapbox/streets-v11',
