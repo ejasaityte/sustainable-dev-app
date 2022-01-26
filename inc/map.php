@@ -72,9 +72,16 @@
                 'type': 'FeatureCollection',
                 'features': [";
 
+                $url = "https://sustainabledundeeapp.azurewebsites.net/api/allEventsCoords";
+
+                if (isset($params['goalID'])) {
+                    $goalID = $params['goalID'];
+                    $url = "https://sustainabledundeeapp.azurewebsites.net/api/EventsFromGoal/" . $goalID;
+                }
+
                 $curl = curl_init();
                         curl_setopt_array($curl, array(
-                        CURLOPT_URL => "https://sustainabledundeeapp.azurewebsites.net/api/allEventsCoords",
+                        CURLOPT_URL => $url,
                         CURLOPT_RETURNTRANSFER => true,
                         CURLOPT_TIMEOUT => 29,
                         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_0_1,

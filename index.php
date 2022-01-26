@@ -11,7 +11,7 @@ $rules = array(
     'apiShowEventsFromGoal' => "/api/EventsFromGoal/(?'goalID'[\w\-]+)",
     'apiShowEvents' => "/api/allEvents",
     'apiShowEventsCoords' => "/api/allEventsCoords",
-    'map' => "/map",
+    'map' => "/map/(?'goalID'[\w\-]+)",
 
 
 
