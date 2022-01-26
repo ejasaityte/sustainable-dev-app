@@ -35,6 +35,9 @@ Jamie, Euan, Sem, Eddie, Matthew, Laura
 ### Summary of Conversation:
 Discussed yesterday's work - having API properly working and displaying data from both tables goals and events, having a login for an admin.
 
-Talked about plans for today - making maps working - getting users locations and thus nearby events, adding logins for users. 
+Talked about plans for today - making maps working - getting users locations and thus nearby events, adding logins for users, making alterations to product backlog to add new requirements, adding a charter.  
+
+
+Issues: the map is currently only shows specific events for a specific goal, but not all events. 
 
 ---
