@@ -92,23 +92,12 @@
                                                  Choose another username!
                                                </div> <?php
                                             $sqlQ2 = "SELECT goalName FROM sustainablegoals WHERE sustainablegoals.goalID =". $row['goalID'];      
-                                            ?><div class="alert alert-warning" role="alert">
-                                            Choose another username!
-                                          </div> <?php
                                             $rowsg = array();
-                                            ?><div class="alert alert-warning" role="alert">
-                                            Choose another username!
-                                          </div> <?php
                                             $result = $db->query($sqlQ2);
-                                            ?><div class="alert alert-warning" role="alert">
-                                            Choose another username!
-                                          </div> <?php
+
                                             while ($rowg = $result->fetch_assoc()) {
                                                 $rowsg[] = $rowg;
                                             }
-                                            ?><div class="alert alert-warning" role="alert">
-                                            Choose another username!
-                                          </div> <?php
                                             foreach ($rowsg as $rowg){
                                                 echo $rowg['goalName'];
                                             }
