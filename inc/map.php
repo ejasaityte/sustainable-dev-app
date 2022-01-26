@@ -70,7 +70,7 @@
                 'type': 'geojson',
                 'data': {
                 'type': 'FeatureCollection',
-                'features': [";
+                'features': [{";
 
                 $curl = curl_init();
                         curl_setopt_array($curl, array(
