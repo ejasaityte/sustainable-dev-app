@@ -91,7 +91,9 @@
                         // Decode JSON data into PHP array
                         $response = json_decode($response, true);
 
+                        $i = 0;
                         foreach ($response as $event) { // TODO refactor
+                            i = i + 1;
                             echo "
                             'type': 'Feature',
                             'properties': {
@@ -102,7 +104,10 @@
                                 'type': 'Point',
                                 'coordinates': [-77.038659, 38.931567]
                             }
-                            },";
+                            }";
+                            if ($i != count($response) - 1) {
+                                echo ","; 
+                            }
                         }
                 echo "
                 ]
