@@ -69,28 +69,16 @@
                         <tbody>
                         <?php
                                 $index = 0;
-                                ?><div class="alert alert-warning" role="alert">
-    Success!
-    </div> <?php                                
+                           
                                 $sqlQ1 = "SELECT id, name, description, goalID, postcode, website FROM events WHERE events.id IN (".implode(',',$_SESSION['favouriteslist']).")";
-                                ?><div class="alert alert-warning" role="alert">
-    Success! <?php echo $sqlQ1; ?>
-    </div> <?php
+
                                 $rows = array();
                                 $result = $db->query($sqlQ1);
-                                ?><div class="alert alert-warning" role="alert">
-    Success!
-    </div> <?php
+
                                 while ($row = $result->fetch_assoc()) {
                                     $rows[] = $row;
                                 }
-                                ?><div class="alert alert-warning" role="alert">
-    Success!
-    </div> <?php
                                 foreach ($rows as $row){
-                                    ?><div class="alert alert-warning" role="alert">
-    Success!
-    </div> <?php
                                         ?>
                                         <tr>
                                             <td>
@@ -98,30 +86,18 @@
                                             </td>
                                             <td><?php echo $row['name']; ?></td>
                                             <td><?php echo $row['description']; ?></td>
-                                            <input type="hidden" name="indexes[]" value="<?php echo $index; ?>">
-
                                             <td>
                                             <?php
-                                            ?><div class="alert alert-warning" role="alert">
-                                            Success!
-                                            </div> <?php
-                                            $sqlQ2 = "SELECT goalName FROM sustainablegoals WHERE sustainablegoals.goalID =". $row['goalID']
-                                            or die(mysql_error());
-                                            ?><div class="alert alert-warning" role="alert">
-    Success!
-    </div> <?php
-                                            $sqlQN = mysql_query($sqlQ2);
-                                            ?><div class="alert alert-warning" role="alert">
-    Success!
-    </div> <?php
-                                            $rowN= mysql_fetch_array($sqlQN);
-                                            ?><div class="alert alert-warning" role="alert">
-    Success!
-    </div> <?php
-                                            echo mysql_fetch_array($rowN['goalName']);
-                                            ?><div class="alert alert-warning" role="alert">
-    Success!
-    </div> <?php
+                                            $sqlQ2 = "SELECT goalName FROM sustainablegoals WHERE sustainablegoals.goalID =". $row['goalID'];                                            $sqlQN = mysql_query($sqlQ2);
+                                            $rowsg = array();
+                                            $result = $db->query($sqlQ2);
+
+                                            while ($rowg = $result->fetch_assoc()) {
+                                                $rowsg[] = $rowg;
+                                            }
+                                            foreach ($rowsg as $rowg){
+                                                echo mysql_fetch_array($rowN['goalName']);
+                                            }
                                             ?>
                                             </td>
                                             <td><?php echo $row['postcode']; ?></td>
