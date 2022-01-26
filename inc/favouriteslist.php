@@ -96,7 +96,7 @@
                                                 $rowsg[] = $rowg;
                                             }
                                             foreach ($rowsg as $rowg){
-                                                echo mysql_fetch_array($rowN['goalName']);
+                                                echo $rowg['goalName'];
                                             }
                                             ?>
                                             </td>
