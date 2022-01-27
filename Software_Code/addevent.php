@@ -133,67 +133,68 @@
         if($_SESSION['username']=='admin')
         {
             ?>
-            
+            </div>
+            </div>
             <h1 class="display-5 fw-bold">Event holding list</h1>
             <div class="container-responsive">
-            <div class="row justify-content-center">
-                <div class="col-sm-8 col-sm-offset-2">
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-striped">
-                            <thead>
-                                <th></th>
-                                <th>Name</th>
-                                <th>Description</th>
-                                <th>Goal</th>
-                                <th>Postcode</th>
-                                <th>Website</th>
-                            </thead>
-                            <tbody>
-                            <?php                            
-                                    $sqlQ1 = "SELECT id, name, description, goalID, postcode, website, contacts FROM eventsholding";
-                                    $rows = array();
-                                    $result = $db->query($sqlQ1);
+                <div class="row justify-content-center">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <th></th>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Goal</th>
+                                    <th>Postcode</th>
+                                    <th>Website</th>
+                                </thead>
+                                <tbody>
+                                <?php                            
+                                        $sqlQ1 = "SELECT id, name, description, goalID, postcode, website, contacts FROM eventsholding";
+                                        $rows = array();
+                                        $result = $db->query($sqlQ1);
 
-                                    while ($row = $result->fetch_assoc()) {
-                                        $rows[] = $row;
-                                    }
-                                    foreach ($rows as $row){
-                                            ?>
-                                            <tr>
-                                                <td>
-                                                    <a href="/addeventtodatabase/<?php echo $row['id']; ?>"class="btn btn-success btn-sm"></a>
-                                                    <a href="/deleteeventfromholding/<?php echo $row['id']; ?>"class="btn btn-danger btn-sm"></a>
-                                                </td>
-                                                <td><?php echo $row['name']; ?></td>
-                                                <td><?php echo $row['description']; ?></td>
-                                                <td>
-                                                <?php
-                                                $sqlQ2 = "SELECT goalName FROM sustainablegoals WHERE sustainablegoals.goalID =". $row['goalID'];      
-                                                $rowsg = array();
-                                                $result = $db->query($sqlQ2);
-
-                                                while ($rowg = $result->fetch_assoc()) {
-                                                    $rowsg[] = $rowg;
-                                                }
-                                                foreach ($rowsg as $rowg){
-                                                    echo $rowg['goalName'];
-                                                }
-                                                ?>
-                                                </td>
-                                                <td><?php echo $row['postcode']; ?></td>
-                                                <td><?php echo $row['website']; ?></td>
-                                                <td><?php echo $row['contacts']; ?></td>
-                                            </tr>
-                                            <?php
+                                        while ($row = $result->fetch_assoc()) {
+                                            $rows[] = $row;
                                         }
-            
-                                ?>
-                            </tbody>
-                        </table>
+                                        foreach ($rows as $row){
+                                                ?>
+                                                <tr>
+                                                    <td>
+                                                        <a href="/addeventtodatabase/<?php echo $row['id']; ?>"class="btn btn-success btn-sm"></a>
+                                                        <a href="/deleteeventfromholding/<?php echo $row['id']; ?>"class="btn btn-danger btn-sm"></a>
+                                                    </td>
+                                                    <td><?php echo $row['name']; ?></td>
+                                                    <td><?php echo $row['description']; ?></td>
+                                                    <td>
+                                                    <?php
+                                                    $sqlQ2 = "SELECT goalName FROM sustainablegoals WHERE sustainablegoals.goalID =". $row['goalID'];      
+                                                    $rowsg = array();
+                                                    $result = $db->query($sqlQ2);
+
+                                                    while ($rowg = $result->fetch_assoc()) {
+                                                        $rowsg[] = $rowg;
+                                                    }
+                                                    foreach ($rowsg as $rowg){
+                                                        echo $rowg['goalName'];
+                                                    }
+                                                    ?>
+                                                    </td>
+                                                    <td><?php echo $row['postcode']; ?></td>
+                                                    <td><?php echo $row['website']; ?></td>
+                                                    <td><?php echo $row['contacts']; ?></td>
+                                                </tr>
+                                                <?php
+                                            }
+                
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
+                        <a href="/clearholdinglist" class="btn btn-primary btn-sm mt-auto">Clear list</a>
                     </div>
-                    <a href="/clearholdinglist" class="btn btn-primary btn-sm mt-auto">Clear list</a>
                 </div>
-            </div>
         </div>
             
             
@@ -201,9 +202,6 @@
             <?php
         }
     ?>
-
-    </div>
-    </div>
         <!-- Footer-->
         <footer class="py-5 bg-dark" style="bottom:0;">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Sustainable Dundee 2021</p></div>
