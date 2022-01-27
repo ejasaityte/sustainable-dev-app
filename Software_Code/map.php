@@ -177,7 +177,7 @@
                 closeOnClick: true
                 });
                  
-                map.on('mouseenter', 'places', (e) => {
+                map.on('click', 'places', (e) => {
                 // Change the cursor style as a UI indicator.
                 map.getCanvas().style.cursor = 'pointer';
                  
@@ -195,12 +195,6 @@
                 // Populate the popup and set its coordinates
                 // based on the feature found.
                 popup.setLngLat(coordinates).setHTML(description).addTo(map);
-                });
-                 
-                map.on('mouseleave', 'places', () => {
-                map.getCanvas().style.cursor = '';
-                popup.remove();
-                });
                 });
 
                 // Add geolocate control to the map.
