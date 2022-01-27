@@ -11,12 +11,12 @@
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="/css/styles.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
         <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
         <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
         <style>
     body { margin: 0; padding: 0; }
-    #map { position: relative; width: 100%; height: 500px;}
+    #map { position: absolute; top: 0; bottom: 0; width: 100%; }
     </style>
     </head>
     <?php session_start(); ?>
@@ -62,7 +62,9 @@
                 container: 'map',
                 style: 'mapbox://styles/mapbox/streets-v11',
                 center: [-2.9707, 56.4620],
-                zoom: 11
+                pitchWithRotate: false,
+                trackResize: true,
+                zoom: 13
                 });
                  
                 map.on('load', () => {
