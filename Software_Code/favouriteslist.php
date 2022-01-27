@@ -56,7 +56,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-8 col-sm-offset-2">
-                    <form method="POST" action="save_cart.php">
                     <div class="table-responsive">
                         <table class="table table-bordered table-striped">
                             <thead>
@@ -110,7 +109,6 @@
                         </table>
                     </div>
                     <a href="/clearfavourites" class="btn btn-danger">Clear list</a>
-                    </form>
                 </div>
             </div>
         </div>
