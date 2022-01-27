@@ -78,7 +78,7 @@
                                             ?>
                                             <tr>
                                                 <td>
-                                                    <a href="deleteitem.php?id=<?php echo $row['id']; ?>"class="btn btn-danger btn-sm"></span></a>
+                                                    <a href="/deleteitem/<?php echo $row['id']; ?>"class="btn btn-danger btn-sm"></span></a>
                                                 </td>
                                                 <td><?php echo $row['name']; ?></td>
                                                 <td><?php echo $row['description']; ?></td>
