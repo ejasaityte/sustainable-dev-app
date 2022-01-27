@@ -28,7 +28,7 @@
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
           ?>
                 <li class="nav-item"><a class="nav-link" href="/favouriteslist">Favourites</a></li>
-                <li class="nav-item"><a class="nav-link" href="/additem">Add Item</a></li>
+                <li class="nav-item"><a class="nav-link" href="/addevent">Add Event</a></li>
                 <?php 
                 if ($_SESSION['username']=='admin') { ?>
                 <li class="nav-item"><a class="nav-link" href="/adduser">Add User</a></li>
@@ -83,9 +83,6 @@
                 $hashedPass = password_hash($password,PASSWORD_DEFAULT);
                 $updateReq = "INSERT INTO users (userID, email, password) VALUES (NULL,'".$username."','".$hashedPass."')";
                 $updateRes =$db->query($updateReq);
-
-            }
-            else {
                 ?><div class="alert alert-warning" role="alert">
     Success!
     </div> <?php
