@@ -143,7 +143,7 @@
                             'type': 'Feature',
                             'properties': {
                                 'description':
-                                '<strong> " . $event['name'] . " </strong><p>" . $event['description'] . "</p><strong>For more information visit the <a href=" . $event['website'] . ">website</a></strong><p><strong>Contact</strong>: " . $event['contacts'] . "</p>'
+                                '<strong> " . $event['name'] . " </strong><p>" . $event['description'] . "</p><strong>For more information visit the <a href=" . $event['website'] . ">website</a></strong><strong>Contact</strong>: " . $event['contacts'] . "</p>'
                             },
                             'geometry': {
                                 'type': 'Point',
