@@ -86,7 +86,7 @@
                 <div class="input-group">
                     <input type="text" class="form-control" id="contacts" name="contacts" value="<?php if (isset($row['contacts'])) echo $row['contacts'];?>" placeholder="Contacts">
                 </div>
-                <button type="submit" class="btn btn-primary">Add Event</button>
+                <button type="submit" class="btn btn-primary">Edit Event</button>
             </div> 
 
             <?php 
