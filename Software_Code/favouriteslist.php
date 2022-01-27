@@ -126,7 +126,7 @@
         <script lang='javascript'>
         <script type="text/javascript">
         function printPage(){
-                var tableData = '<table border="1">'+document.getElementsByTagName('table')[0].innerHTML+'</table>';
+                var tableData = '<table border="1">'+document.getElementsByTagName('table table-bordered table-striped')[0].innerHTML+'</table>';
                 var data = '<button onclick="window.print()">Print this page</button>'+tableData;       
                 myWindow=window.open('','','width=800,height=600');
                 myWindow.innerWidth = screen.width;
