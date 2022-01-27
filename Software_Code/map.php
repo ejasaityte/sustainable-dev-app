@@ -51,42 +51,6 @@
                 </div>
             </div>
         </nav>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#goalNavContent" aria-controls="goalNavContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="goalNavContent">
-                    <ul class="d-flex flex-wrap navbar-nav ms-auto mb-2 mb-lg-0">
-                    <?php
-
-                        $curl = curl_init();
-
-                        curl_setopt_array($curl, array(
-                        CURLOPT_URL => "https://sustainabledundeeapp.azurewebsites.net/api/allGoals",
-                        CURLOPT_RETURNTRANSFER => true,
-                        CURLOPT_TIMEOUT => 30,
-                        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                        CURLOPT_CUSTOMREQUEST => "GET",
-                        CURLOPT_HTTPHEADER => array(
-                            "cache-control: no-cache"
-                        ),
-                        ));
-
-                        $response = curl_exec($curl);
-                        $err = curl_error($curl);
-
-                        curl_close($curl);
-                        // Decode JSON data into PHP array
-                        $response = json_decode($response, true);
-
-                        foreach ($response as $goal) {
-                            echo '<li class="nav-item"><a class="nav-link" href="/map/'.$goal['goalID'].'"><img class="feature bg-primary bg-gradient text-white rounded-3" src="' . $goal['goalPicture'] . '"></a></li>';
-                        }
-
-                        php?>
-                    </ul>
-                </div>
-            </div>
-        </nav>
             <div class="container-fluid text-center">
                 <h1 class="display-5 fw-bold">See our locations!</h1>
             </div>
@@ -216,6 +180,36 @@
             php?>
             <!-- Footer-->
         </div>
+        <div class="d-flex flex-wrap">
+            <?php
+
+                $curl = curl_init();
+
+                curl_setopt_array($curl, array(
+                CURLOPT_URL => "https://sustainabledundeeapp.azurewebsites.net/api/allGoals",
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_TIMEOUT => 30,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "GET",
+                CURLOPT_HTTPHEADER => array(
+                    "cache-control: no-cache"
+                ),
+                ));
+
+                $response = curl_exec($curl);
+                $err = curl_error($curl);
+
+                curl_close($curl);
+                // Decode JSON data into PHP array
+                $response = json_decode($response, true);
+
+                foreach ($response as $goal) {
+                    echo '<a class="m-3" href="/map/'.$goal['goalID'].'"><img class="feature bg-primary bg-gradient text-white rounded-3" src="' . $goal['goalPicture'] . '"></a>';
+                }
+
+                php?>
+            </div>
+
         <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Sustainable Dundee 2021</p></div>
         </footer>
