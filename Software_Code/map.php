@@ -62,7 +62,7 @@
                 container: 'map',
                 style: 'mapbox://styles/mapbox/streets-v11',
                 center: [-2.9707, 56.4620],
-                zoom: 13
+                zoom: 11
                 });
                  
                 map.on('load', () => {
