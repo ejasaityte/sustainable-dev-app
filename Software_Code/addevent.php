@@ -48,7 +48,7 @@
             <h1 class="display-5 fw-bold">Add new event</h1>
         </div>
         <br>
-        <div class="position-absolute top-50 start-50 translate-middle">
+        <div class="container-fluid">
         <form action="" method="post">
             <div class="d-grid gap-2">
                 <div class="input-group">
@@ -135,7 +135,9 @@
             ?>
             </div>
             </div>
+            <div class="container-fluid text-center">
             <h1 class="display-5 fw-bold">Event holding list</h1>
+        </div>
             <div class="container-responsive">
                 <div class="row justify-content-center">
                     <div class="col-sm-8 col-sm-offset-2">
@@ -148,6 +150,7 @@
                                     <th>Goal</th>
                                     <th>Postcode</th>
                                     <th>Website</th>
+                                    <th>Contacts</th>
                                 </thead>
                                 <tbody>
                                 <?php                            
@@ -203,7 +206,7 @@
         }
     ?>
         <!-- Footer-->
-        <footer class="py-5 bg-dark" style="bottom:0;">
+        <footer class="py-5 bg-dark" style="bottom:0; position:fixed;">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Sustainable Dundee 2021</p></div>
         </footer>
         <!-- Bootstrap core JS-->
