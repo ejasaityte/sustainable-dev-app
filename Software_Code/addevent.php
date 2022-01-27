@@ -118,7 +118,7 @@
             VALUES (NULL,'".$name."','".$description."',".$postcode.",".$output.",". $website .",".$contacts.")";
             $updateRes =$db->query($updateReq);
             ?><div class="alert alert-warning" role="alert">
-            Success!
+            Success! <?php echo $updateReq; ?>
             </div> <?php
             }
     ?>
