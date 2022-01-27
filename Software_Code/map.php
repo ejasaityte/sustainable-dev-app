@@ -198,7 +198,6 @@
                 });
                 map.on('mouseleave', 'places', () => {
                     map.getCanvas().style.cursor = '';
-                    popup.remove();
                     });
                     });
                 // Add geolocate control to the map.
