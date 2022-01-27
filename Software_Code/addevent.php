@@ -130,7 +130,6 @@
             Event placed in holding!
             </div> <?php
             }
-        }
         if($_SESSION['username']=='admin')
         {
             ?>
