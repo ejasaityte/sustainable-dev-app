@@ -56,24 +56,34 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="/map/0">0</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/map/1">1</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/map/2">2</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/map/3">3</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/map/4">4</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/map/5">5</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/map/6">6</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/map/7">7</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/map/8">8</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/map/9">9</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/map/10">10</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/map/11">11</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/map/12">12</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/map/13">13</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/map/14">14</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/map/15">15</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/map/16">16</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/map/17">17</a></li>
+                    <?php
+
+                        $curl = curl_init();
+
+                        curl_setopt_array($curl, array(
+                        CURLOPT_URL => "https://sustainabledundeeapp.azurewebsites.net/api/allGoals",
+                        CURLOPT_RETURNTRANSFER => true,
+                        CURLOPT_TIMEOUT => 30,
+                        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                        CURLOPT_CUSTOMREQUEST => "GET",
+                        CURLOPT_HTTPHEADER => array(
+                            "cache-control: no-cache"
+                        ),
+                        ));
+
+                        $response = curl_exec($curl);
+                        $err = curl_error($curl);
+
+                        curl_close($curl);
+                        // Decode JSON data into PHP array
+                        $response = json_decode($response, true);
+
+                        $goalID = $params['goalID'];
+                        foreach ($response as $goal) {
+                            echo '<li class="nav-item"><a class="nav-link" href="/map/'.$goalID.'">0</a><img class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4" src="' . $goal['goalPicture'] . '"></li>';
+                        }
+
+                        php?>
                     </ul>
                 </div>
             </div>
