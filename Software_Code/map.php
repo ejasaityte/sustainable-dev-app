@@ -51,6 +51,33 @@
                 </div>
             </div>
         </nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-lg-5">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="/map/0">0</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/map/1">1</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/map/2">2</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/map/3">3</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/map/4">4</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/map/5">5</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/map/6">6</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/map/7">7</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/map/8">8</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/map/9">9</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/map/10">10</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/map/11">11</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/map/12">12</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/map/13">13</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/map/14">14</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/map/15">15</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/map/16">16</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/map/17">17</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
             <div class="container-fluid text-center">
                 <h1 class="display-5 fw-bold">See our locations!</h1>
             </div>
@@ -64,7 +91,6 @@
                 center: [-2.9707, 56.4620],
                 pitchWithRotate: false,
                 trackResize: true,
-                dragRotate: false,
                 zoom: 13
                 });
                  
