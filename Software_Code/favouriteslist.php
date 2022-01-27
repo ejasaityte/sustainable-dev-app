@@ -53,13 +53,12 @@
         {
             ?>
 
-        <div class="container">
+        <div class="container-responsive">
             <div class="row justify-content-center">
                 <div class="col-sm-8 col-sm-offset-2">
                     <div class="table-responsive">
                         <table class="table table-bordered table-striped">
                             <thead>
-                                <th></th>
                                 <th>Name</th>
                                 <th>Description</th>
                                 <th>Goal</th>
@@ -69,7 +68,7 @@
                             <tbody>
                             <?php                            
                                     $sqlQ1 = "SELECT id, name, description, goalID, postcode, website FROM events WHERE events.id IN (".implode(',',$_SESSION['favouriteslist']).")";
-
+                                    $index = 0;
                                     $rows = array();
                                     $result = $db->query($sqlQ1);
 
@@ -80,7 +79,7 @@
                                             ?>
                                             <tr>
                                                 <td>
-                                                    <a href="deleteitem.php?id=<?php echo $row['id']; ?>&index=<?php echo $index; ?>" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></a>
+                                                    <a href="deleteitem.php?index=<?php echo $index; ?>" class="btn btn-danger btn-sm"></span></a>
                                                 </td>
                                                 <td><?php echo $row['name']; ?></td>
                                                 <td><?php echo $row['description']; ?></td>
@@ -102,6 +101,7 @@
                                                 <td><?php echo $row['website']; ?></td>
                                             </tr>
                                             <?php
+                                            $index ++;
                                         }
             
                                 ?>
