@@ -206,7 +206,7 @@
         }
         else {
             ?> </div>
-            </div> <?/php
+            </div> <?php
         }
     ?>
         <!-- Footer-->
