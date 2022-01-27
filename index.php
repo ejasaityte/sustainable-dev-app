@@ -23,6 +23,7 @@ $rules = array(
     'adduser' => "/adduser",
     'deleteitem' => "/deleteitem/(?'id'[\w\-]+)",
     'edititem' => "/edititem/(?'id'[\w\-]+)",
+    'deleteevent' => "/deleteevent/(?'id'[\w\-]+)",
     'addeventtodatabase' => "/addeventtodatabase/(?'id'[\w\-]+)",
     'deleteeventfromholding' => "/deleteeventfromholding/(?'id'[\w\-]+)",
     'clearholdinglist' => "/clearholdinglist",

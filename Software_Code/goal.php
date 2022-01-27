@@ -138,7 +138,6 @@
                                                 <a class="btn btn-primary btn-sm mt-auto" href="/additem/' . $event['id'] . '"">Favourite</a>
                                             </div>
                                         </div>
-                                    </div>
                         ';
                         if ($_SESSION['username']=="admin")
                         {
@@ -149,8 +148,20 @@
                                                 <a class="btn btn-primary btn-sm mt-auto" href="/edititem/' . $event['id'] . '"">Edit</a>
                                             </div>
                                         </div>
+                                    
+                        ';
+                        echo '
+                        <div class="container" style="padding-bottom:10px;">
+                                        <div class="row">
+                                            <div class="col text-center">
+                                                <a class="btn btn-primary btn-sm mt-auto" href="/deleteevent/' . $event['id'] . '"">Delete</a>
+                                            </div>
+                                        </div>
                                     </div>
                         ';
+                        }
+                        else {
+                            echo '</div>';
                         }
                     } 
 
