@@ -1,10 +1,7 @@
 <?php
 session_start();
 
-$key=array_search($params['id'],$_SESSION['favouriteslist']);
-if($key!==false)
-    unset($_SESSION['favouriteslist'][$key]);
-$_SESSION["favouriteslist"] = array_values($_SESSION["favouriteslist"]);
+$_SESSION['favouriteslist']=array_diff($_SESSION['favouriteslist'],$params['id']);
 
 header('location: https://sustainabledundeeapp.azurewebsites.net/favouriteslist');
 ?>
