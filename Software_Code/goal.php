@@ -138,6 +138,7 @@
                                                 <a class="btn btn-primary btn-sm mt-auto" href="/additem/' . $event['id'] . '"">Favourite</a>
                                             </div>
                                         </div>
+                                        </div>
                         ';
                         if ($_SESSION['username']=="admin")
                         {
@@ -147,6 +148,7 @@
                                             <div class="col text-center">
                                                 <a class="btn btn-primary btn-sm mt-auto" href="/edititem/' . $event['id'] . '"">Edit</a>
                                             </div>
+                                        </div>
                                         </div>
                                     
                         ';
@@ -159,9 +161,6 @@
                                         </div>
                                     </div>
                         ';
-                        }
-                        else {
-                            echo '</div>';
                         }
                     } 
 
