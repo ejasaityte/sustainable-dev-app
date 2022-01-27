@@ -37,9 +37,6 @@ Discussed yesterday's work - having API properly working and displaying data fro
 
 Talked about plans for today - making maps working - getting users locations and thus nearby events, adding logins for users, making alterations to product backlog to add new requirements, adding a charter.  
 
-
-Issues: the map is currently only shows specific events for a specific goal, but not all events. 
-
 ## Day 4 - Scrum Meeting summary
 The Scrum Master for this meeting was Laura
 
@@ -47,7 +44,7 @@ The Scrum Master for this meeting was Laura
 Jamie, Euan, Sem, Eddie, Matthew, Laura
 
 ### Summary of Conversation:
-Discussed yesterday's work - working on the map, logins of an admin - add new events and user; issue with the map  only showing specific events for a particular goal, but not all events.    
+Discussed yesterday's work - working on the map, logins of an admin - add new events and user; issue with the map  only showing specific events for a particular goal, but not all events, writing a project charter, altering product backlog.
 
 Talked about plans for today - continuing working on a map , detecting users location, implementing an option for an admin to edit events.
 
