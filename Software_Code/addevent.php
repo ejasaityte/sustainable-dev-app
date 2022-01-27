@@ -48,7 +48,7 @@
             <h1 class="display-5 fw-bold">Add new event</h1>
         </div>
         <br>
-        <div class="container-fluid">
+        <div class="container-fluid" style="width:30%;">
         <form action="" method="post">
             <div class="d-grid gap-2">
                 <div class="input-group">
@@ -136,7 +136,7 @@
             </div>
             </div>
             <div class="container-fluid text-center">
-            <h1 class="display-5 fw-bold">Event holding list</h1>
+            <h1 class="display-5 fw-bold" style="padding-top:50px;">Event holding list</h1>
         </div>
             <div class="container-responsive">
                 <div class="row justify-content-center">
