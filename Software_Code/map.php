@@ -64,6 +64,7 @@
                 center: [-2.9707, 56.4620],
                 pitchWithRotate: false,
                 trackResize: true,
+                dragRotate: false,
                 zoom: 13
                 });
                  
