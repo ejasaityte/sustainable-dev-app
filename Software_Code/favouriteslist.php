@@ -108,6 +108,7 @@
                         </table>
                     </div>
                     <a href="/clearfavourites" class="btn btn-danger">Clear list</a>
+                    <a href="javascript:void(0);" id="printPage">Print</a> 
                 </div>
             </div>
         </div>
@@ -122,5 +123,19 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <script lang='javascript'>
+        <script type="text/javascript">
+        function printPage(){
+                var tableData = '<table border="1">'+document.getElementsByTagName('table')[0].innerHTML+'</table>';
+                var data = '<button onclick="window.print()">Print this page</button>'+tableData;       
+                myWindow=window.open('','','width=800,height=600');
+                myWindow.innerWidth = screen.width;
+                myWindow.innerHeight = screen.height;
+                myWindow.screenX = 0;
+                myWindow.screenY = 0;
+                myWindow.document.write(data);
+                myWindow.focus();
+            };
+ </script>
     </body>
 </html>
