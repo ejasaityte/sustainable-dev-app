@@ -79,7 +79,7 @@
                                             ?>
                                             <tr>
                                                 <td>
-                                                    <a href="/deleteitem/<?php echo $row['id']; ?>"class="btn btn-danger btn-sm"></span></a>
+                                                    <a href="/deleteitem/<?php echo $row['id']; ?>"class="btn btn-danger btn-sm"></a>
                                                 </td>
                                                 <td><?php echo $row['name']; ?></td>
                                                 <td><?php echo $row['description']; ?></td>
@@ -119,11 +119,7 @@
         <footer class="py-5 bg-dark" style="bottom:0;">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Sustainable Dundee 2021</p></div>
         </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <script lang='javascript'>
+
         <script type="text/javascript">
         function printPage(){
                 var tableData = '<table border="1">'+document.getElementsByTagName('table table-bordered table-striped')[0].innerHTML+'</table>';
@@ -138,6 +134,12 @@
                 myWindow.document.write(data);
                 myWindow.focus();
             };
- </script>
+        </script>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script lang='javascript'>
+
     </body>
 </html>
