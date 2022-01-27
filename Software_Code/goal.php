@@ -126,8 +126,8 @@
                                 <h2 class="fs-4 fw-bold">' . $event['name'] . '</h2></a>
                                 <p class="mb-0">' . $event['description'] . '</p>
                                 <p> </p>
-                                <p class="text-start">For more information visit the <a href=' . $event['website'] . '>website</a></p> 
-                                <p class="text-start">Contact: ' . $event['contacts'] . '</p>
+                                <p class="text-start"><strong>For more information visit the <a href=' . $event['website'] . '>website</a></strong></p> 
+                                <p class="text-start"><strong>Contact</strong>: ' . $event['contacts'] . '</p>
 
                             </div>';
                     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
