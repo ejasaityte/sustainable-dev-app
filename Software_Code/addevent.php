@@ -79,7 +79,7 @@
         $description = $_POST['description'];
 
         if("" == trim($_POST['postcode'])){
-            $postcode = NULL;
+            $postcode = 'NULL';
         } 
         else {
             $postcode = "'".$_POST['postcode']."'";
@@ -88,14 +88,14 @@
         $goalName = $_POST['goalName'];
 
         if("" == trim($_POST['website'])){
-            $website = NULL;
+            $website = 'NULL';
         } 
         else {
             $website = "'".$_POST['website']."'";
         } 
 
         if("" == trim($_POST['contacts'])){
-            $contacts = NULL;
+            $contacts ='NULL';
         } 
         else {
             $contacts = "'".$_POST['contacts']."'";
