@@ -79,7 +79,7 @@
                         $response = json_decode($response, true);
 
                         foreach ($response as $goal) {
-                            echo '<li class="nav-item"><a class="nav-link" href="/map/'.$goal['goalID'].'"><img class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4" src="' . $goal['goalPicture'] . '"></a></li>';
+                            echo '<li class="nav-item"><a class="nav-link" href="/map/'.$goal['goalID'].'"><img class="feature bg-primary bg-gradient text-white rounded-3" src="' . $goal['goalPicture'] . '"></a></li>';
                         }
 
                         php?>
