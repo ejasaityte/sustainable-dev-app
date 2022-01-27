@@ -177,7 +177,7 @@
                 closeOnClick: true
                 });
                  
-                map.on('mouseenter', 'places', (e) => {
+                map.on('click', 'places', (e) => {
                 // Change the cursor style as a UI indicator.
                 map.getCanvas().style.cursor = 'pointer';
                  
