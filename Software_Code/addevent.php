@@ -28,10 +28,10 @@
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
           ?>
                 <li class="nav-item"><a class="nav-link" href="/favouriteslist">Favourites</a></li>
-                <li class="nav-item"><a class="nav-link" href="/addevent">Add Event</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/addevent">Add Event</a></li>
                 <?php 
                 if ($_SESSION['username']=='admin') { ?>
-                <li class="nav-item"><a class="nav-link active" href="/adduser">Add User</a></li>
+                <li class="nav-item"><a class="nav-link" href="/adduser">Add User</a></li>
                 <?php } ?>
                 <li class="nav-item"><a class="nav-link" href="/logout">Log out</a></li>
                 <?php } 
@@ -45,49 +45,82 @@
         </nav>
         <br>
         <div class="container-fluid text-center">
-            <h1 class="display-5 fw-bold">Add new user</h1>
+            <h1 class="display-5 fw-bold">Add new event</h1>
         </div>
         <br>
         <div class="position-absolute top-50 start-50 translate-middle">
         <form action="" method="post">
             <div class="d-grid gap-2">
                 <div class="input-group">
-                    <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
-                    <div class="invalid-tooltip"> Please enter a username.</div>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+                    <div class="invalid-tooltip"> Please enter the event name.</div>
                 </div>
                 <div class="input-group">
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" aria-describedby="passwordHelpBlock" required>
-                    <div class="invalid-tooltip"> Please enter a password.</div>
+                    <input type="text" class="form-control" id="description" name="description" placeholder="Description" required>
+                    <div class="invalid-tooltip"> Please enter a description.</div>
                 </div>
-                <button type="submit" class="btn btn-primary">Add User</button>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="postcode" name="postcode" placeholder="Postcode">
+                </div>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="goalName" name="goalName" placeholder="Associated goal" required>
+                    <div class="invalid-tooltip"> Please enter an associated goal.</div>
+                </div>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="website" name="website" placeholder="Website">
+                </div>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="contacts" name="contacts" placeholder="Contacts">
+                </div>
+                <button type="submit" class="btn btn-primary">Add Event</button>
             </div>
         <?php
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        if(($username=="admin")||(!(preg_match("/@/", $username))&&($username!='')))
-        {
-            ?><div class="alert alert-warning" role="alert">
-  Choose another username!
-</div> <?php
-        }
+        $name = $_POST['name'];
+        $description = $_POST['description'];
+
+        if("" == trim($_POST['postcode'])){
+            $postcode = NULL;
+        } 
         else {
-            $sql = "SELECT * FROM users WHERE email='". $username ."'";
-            $rows = array();
-            $result = $db->query($sql);
-            while ($row = $result->fetch_assoc()) {
-                $rows[] = $row;
+            $postcode = "'".$_POST['postcode']."'";
+        }   
 
-            }
+        $goalName = $_POST['goalName'];
 
-            if(empty($rows)){
-                $hashedPass = password_hash($password,PASSWORD_DEFAULT);
-                $updateReq = "INSERT INTO users (userID, email, password) VALUES (NULL,'".$username."','".$hashedPass."')";
-                $updateRes =$db->query($updateReq);
-                ?><div class="alert alert-warning" role="alert">
-    Success!
-    </div> <?php
+        if("" == trim($_POST['website'])){
+            $website = NULL;
+        } 
+        else {
+            $website = "'".$_POST['website']."'";
+        } 
+
+        if("" == trim($_POST['contacts'])){
+            $contacts = NULL;
+        } 
+        else {
+            $contacts = "'".$_POST['contacts']."'";
+        } 
+
+        $sql = "SELECT goalID FROM sustainablegoals WHERE goalName='". $goalName ."'";
+        $rows = array();
+        $result = $db->query($sql);
+        while ($row = $result->fetch_assoc()) {
+            $rows[] = $row;
+        }
+
+        $output = '';
+        foreach($rows as $item) {
+            $output .= implode("\n" , $item);
+        }
+
+        if(!empty($rows)){
+            $updateReq = "INSERT INTO events (id, name, description, postcode, goalID, website, contacts) 
+            VALUES (NULL,'".$name."','".$description."',".$postcode.",".$output.",". $website .",".$contacts.")";
+            $updateRes =$db->query($updateReq);
+            ?><div class="alert alert-warning" role="alert">
+            Success!
+            </div> <?php
             }
-    }
     ?>
 
     </div>
