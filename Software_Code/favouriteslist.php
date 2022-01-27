@@ -59,6 +59,7 @@
                     <div class="table-responsive">
                         <table class="table table-bordered table-striped">
                             <thead>
+                                <th></th>
                                 <th>Name</th>
                                 <th>Description</th>
                                 <th>Goal</th>
