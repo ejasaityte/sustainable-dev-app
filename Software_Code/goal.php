@@ -27,7 +27,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/map">Explore</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/map/0">Explore</a></li>
                         <?php
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
           ?>
@@ -125,7 +125,7 @@
                             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
                                 <h2 class="fs-4 fw-bold">' . $event['name'] . '</h2></a>
                                 <p class="mb-0">' . $event['description'] . '</p>
-                                <p class="text-start">For more information visit the <a href='$event['website']'>website</a></p>
+                                <p class="text-start">For more information visit the </p> <a href='$event['website']'>website</a>
                                 <p class="text-start">Contact: ' . $event['contacts'] . '</p>
 
                             </div>';
