@@ -138,7 +138,7 @@
             <div class="container-fluid text-center">
             <h1 class="display-5 fw-bold" style="padding-top:50px;">Event holding list</h1>
         </div>
-            <div class="container-responsive">
+            <div class="container-responsive pb-5">
                 <div class="row justify-content-center">
                     <div class="col-sm-8 col-sm-offset-2">
                         <div class="table-responsive">
@@ -206,7 +206,7 @@
         }
     ?>
         <!-- Footer-->
-        <footer class="py-5 bg-dark" style="bottom:0; position:fixed;">
+        <footer class="py-5 bg-dark" style="bottom:0;">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Sustainable Dundee 2021</p></div>
         </footer>
         <!-- Bootstrap core JS-->
