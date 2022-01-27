@@ -140,8 +140,6 @@
                                         </div>
                                         </div>
                         ';
-                        if ($_SESSION['username']=="admin")
-                        {
                             echo '
                         <div class="container" style="padding-bottom:10px;">
                                         <div class="row">
@@ -161,7 +159,6 @@
                                         </div>
                                     </div>
                         ';
-                        }
                     } 
 
                     echo '
