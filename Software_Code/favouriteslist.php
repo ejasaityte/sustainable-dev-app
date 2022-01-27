@@ -86,6 +86,7 @@
                                                 <td><?php echo $row['name']; ?></td>
                                                 <td><?php echo $row['description']; ?></td>
                                                 <td>
+                                                <?php
                                                 $sqlQ2 = "SELECT goalName FROM sustainablegoals WHERE sustainablegoals.goalID =". $row['goalID'];      
                                                 $rowsg = array();
                                                 $result = $db->query($sqlQ2);
