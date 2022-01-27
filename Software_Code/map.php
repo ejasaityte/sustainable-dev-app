@@ -180,7 +180,7 @@
             php?>
             <!-- Footer-->
         </div>
-        <div class="d-flex flex-wrap">
+        <div class="d-flex flex-wrap bg-primary">
             <?php
 
                 $curl = curl_init();
