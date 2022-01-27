@@ -68,7 +68,6 @@
                             <tbody>
                             <?php                            
                                     $sqlQ1 = "SELECT id, name, description, goalID, postcode, website FROM events WHERE events.id IN (".implode(',',$_SESSION['favouriteslist']).")";
-                                    $index = 0;
                                     $rows = array();
                                     $result = $db->query($sqlQ1);
 
@@ -79,7 +78,7 @@
                                             ?>
                                             <tr>
                                                 <td>
-                                                    <a href="deleteitem.php?index=<?php echo $index; ?>" class="btn btn-danger btn-sm"></span></a>
+                                                    <a href="deleteitem.php?id= <?php echo $row['id']; ?> "class="btn btn-danger btn-sm"></span></a>
                                                 </td>
                                                 <td><?php echo $row['name']; ?></td>
                                                 <td><?php echo $row['description']; ?></td>
@@ -101,7 +100,6 @@
                                                 <td><?php echo $row['website']; ?></td>
                                             </tr>
                                             <?php
-                                            $index ++;
                                         }
             
                                 ?>
