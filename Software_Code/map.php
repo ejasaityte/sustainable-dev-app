@@ -143,7 +143,7 @@
                             'type': 'Feature',
                             'properties': {
                                 'description':
-                                '<strong> " . $event['name'] . " </strong><p>" . $event['description'] . "</p><strong>For more information visit the <a href=" . $event['website'] . ">website</a></strong><strong>Contact</strong>: " . $event['contacts'] . "</p>'
+                                '<strong> " . $event['name'] . " </strong><p>" . $event['description'] . "</p>'
                             },
                             'geometry': {
                                 'type': 'Point',
@@ -174,7 +174,7 @@
                 // Create a popup, but don't add it to the map yet.
                 const popup = new mapboxgl.Popup({
                 closeButton: false,
-                closeOnClick: false
+                closeOnClick: true
                 });
                  
                 map.on('mouseenter', 'places', (e) => {
