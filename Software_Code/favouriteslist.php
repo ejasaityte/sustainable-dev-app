@@ -57,67 +57,58 @@
             <div class="row">
                 <div class="col-sm-8 col-sm-offset-2">
                     <form method="POST" action="save_cart.php">
-                    <table class="table table-bordered table-striped">
-                        <thead>
-                            <th></th>
-                            <th>Name</th>
-                            <th>Description</th>
-                            <th>Goal</th>
-                            <th>Postcode</th>
-                            <th>Website</th>
-                        </thead>
-                        <tbody>
-                        <?php
-                                $index = 0;
-                           
-                                $sqlQ1 = "SELECT id, name, description, goalID, postcode, website FROM events WHERE events.id IN (".implode(',',$_SESSION['favouriteslist']).")";
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <th></th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Goal</th>
+                                <th>Postcode</th>
+                                <th>Website</th>
+                            </thead>
+                            <tbody>
+                            <?php                            
+                                    $sqlQ1 = "SELECT id, name, description, goalID, postcode, website FROM events WHERE events.id IN (".implode(',',$_SESSION['favouriteslist']).")";
 
-                                $rows = array();
-                                $result = $db->query($sqlQ1);
+                                    $rows = array();
+                                    $result = $db->query($sqlQ1);
 
-                                while ($row = $result->fetch_assoc()) {
-                                    $rows[] = $row;
-                                }
-                                foreach ($rows as $row){
-                                        ?>
-                                        <tr>
-                                            <td>
-                                                <a href="deleteitem.php?id=<?php echo $row['id']; ?>&index=<?php echo $index; ?>" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></a>
-                                            </td>
-                                            <td><?php echo $row['name']; ?></td>
-                                            <td><?php echo $row['description']; ?></td>
-                                            <td>
-                                            <?php
-                                                 ?><div class="alert alert-warning" role="alert">
-                                                 Choose another username!
-                                               </div> <?php
-                                            $sqlQ2 = "SELECT goalName FROM sustainablegoals WHERE sustainablegoals.goalID =". $row['goalID'];      
-                                            $rowsg = array();
-                                            $result = $db->query($sqlQ2);
-
-                                            while ($rowg = $result->fetch_assoc()) {
-                                                $rowsg[] = $rowg;
-                                            }
-                                            foreach ($rowsg as $rowg){
-                                                echo $rowg['goalName'];
-                                            }
-                                            ?>
-                                            </td>
-                                            <td><?php echo $row['postcode']; ?></td>
-                                            <td><?php echo $row['website']; ?></td>
-                                        </tr>
-                                        <?php
-                                        $index ++;
+                                    while ($row = $result->fetch_assoc()) {
+                                        $rows[] = $row;
                                     }
-        
-                            ?>
-                            <tr>
-                                <td colspan="4" align="right"><b>Total</b></td>
-                                <td><b><?php echo number_format($total, 2); ?></b></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <a href="/clearfavourites" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>Clear list</a>
+                                    foreach ($rows as $row){
+                                            ?>
+                                            <tr>
+                                                <td>
+                                                    <a href="deleteitem.php?id=<?php echo $row['id']; ?>&index=<?php echo $index; ?>" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></a>
+                                                </td>
+                                                <td><?php echo $row['name']; ?></td>
+                                                <td><?php echo $row['description']; ?></td>
+                                                <td>
+                                                $sqlQ2 = "SELECT goalName FROM sustainablegoals WHERE sustainablegoals.goalID =". $row['goalID'];      
+                                                $rowsg = array();
+                                                $result = $db->query($sqlQ2);
+
+                                                while ($rowg = $result->fetch_assoc()) {
+                                                    $rowsg[] = $rowg;
+                                                }
+                                                foreach ($rowsg as $rowg){
+                                                    echo $rowg['goalName'];
+                                                }
+                                                ?>
+                                                </td>
+                                                <td><?php echo $row['postcode']; ?></td>
+                                                <td><?php echo $row['website']; ?></td>
+                                            </tr>
+                                            <?php
+                                        }
+            
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <a href="/clearfavourites" class="btn btn-danger">Clear list</a>
                     </form>
                 </div>
             </div>
