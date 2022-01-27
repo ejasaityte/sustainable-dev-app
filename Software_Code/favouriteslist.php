@@ -107,8 +107,8 @@
                             </tbody>
                         </table>
                     </div>
-                    <a href="/clearfavourites" class="btn btn-danger">Clear list</a>
-                    <a href="javascript:void(0);" id="printPage">Print</a> 
+                    <a href="/clearfavourites" class="btn btn-primary btn-sm mt-auto">Clear list</a>
+                    <a href="javascript:void(0);" class="btn btn-primary btn-sm mt-auto" onclick="printPage();">Print</a> 
                 </div>
             </div>
         </div>
