@@ -68,7 +68,7 @@
                             </thead>
                             <tbody>
                             <?php                            
-                                    $sqlQ1 = "SELECT id, name, description, goalID, postcode, website FROM events WHERE events.id IN (".implode(',',$_SESSION['favouriteslist']).")";
+                                    $sqlQ1 = "SELECT id, name, description, goalID, postcode, website, contacts FROM events WHERE events.id IN (".implode(',',$_SESSION['favouriteslist']).")";
                                     $rows = array();
                                     $result = $db->query($sqlQ1);
 
@@ -99,6 +99,7 @@
                                                 </td>
                                                 <td><?php echo $row['postcode']; ?></td>
                                                 <td><?php echo $row['website']; ?></td>
+                                                <td><?php echo $row['contacts']; ?></td>
                                             </tr>
                                             <?php
                                         }
