@@ -4,15 +4,10 @@
 
 ### Group Members:
 
-  Euan Docking (Matriculation Number)
-  
-  Eddie Houghton (Matriculation Number)
-  
-  Jamie McTaggarat (Matriculation Number)
-  
-  Sem Jasaityte (Matriculation Number)
-  
-  Matthew Bain (Matriculation Number)
-  
-  Laura Naslenaite - 190013642
+  - Euan Docking (Matriculation Number)
+  - Eddie Houghton (Matriculation Number)
+  - Jamie McTaggarat (Matriculation Number)
+  - Sem Jasaityte (Matriculation Number)
+  - Matthew Bain (Matriculation Number)
+  - Laura Naslenaite - 190013642
 
