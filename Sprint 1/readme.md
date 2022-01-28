@@ -35,7 +35,7 @@ Jamie, Euan, Sem, Eddie, Matthew, Laura
 ### Summary of Conversation:
 Discussed yesterday's work - having API properly working and displaying data from both tables’ goals and events, having a login for an admin.
 
-Talked about plans for today - discuss additional requirements, making maps working - getting users locations and thus nearby events, adding logins for users, making alterations to product backlog to add new requirements, adding a charter.
+Talked about plans for today - discussing additional requirements, making maps working - getting users locations and thus nearby events, adding logins for users, making alterations to product backlog, adding a charter, programming in pairs.
 
 ## Day 4 - Scrum Meeting summary
 The Scrum Master for this meeting was Laura
