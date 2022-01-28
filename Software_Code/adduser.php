@@ -52,11 +52,11 @@
         <form action="" method="post">
             <div class="d-grid gap-2">
                 <div class="input-group">
-                    <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Username" min-length="3" required>
                     <div class="invalid-tooltip"> Please enter a username.</div>
                 </div>
                 <div class="input-group">
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" aria-describedby="passwordHelpBlock" required>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" min-length="3" aria-describedby="passwordHelpBlock" required>
                     <div class="invalid-tooltip"> Please enter a password.</div>
                 </div>
                 <button type="submit" class="btn btn-primary">Add User</button>
