@@ -8,7 +8,7 @@
   - Eddie Houghton  : 190003973
   - Jamie McTaggarat: 190009079
   - Sem Jasaityte   : 190014736
-  - Matthew Bain    : (Matriculation Number)
+  - Matthew Bain    : 190012264
   - Laura Naslenaite: 190013642
 
 ### Link to the website : https://sustainabledundeeapp.azurewebsites.net/
