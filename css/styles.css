@@ -12288,3 +12288,11 @@ body {
 .black {
   color: #000000;
 }
+
+.heading {
+  font-family: 'Oswald', sans-serif;
+}
+
+.ptext {
+  font-family: 'Roboto', sans-serif;
+}
