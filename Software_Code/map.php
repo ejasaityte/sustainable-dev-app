@@ -182,7 +182,7 @@
             php?>
             <!-- Footer-->
         </div>
-        <div class="d-flex flex-wrap bg-primary">
+        <div class="d-flex flex-wrap bg-primary justify-content-center">
             <a class="m-3" href="/map/0">
                 <h1 class="feature bg-primary bg-gradient text-white rounded-3">All</h1>
             </a>
