@@ -12,3 +12,4 @@
   - Laura Naslenaite: 190013642
 
 ### Link to the website : https://sustainabledundeeapp.azurewebsites.net/
+(P.S. to create a new user, the username must contain @, i.e. be an email)
