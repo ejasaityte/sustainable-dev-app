@@ -76,6 +76,8 @@
   }
 }
 
+
+
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
@@ -12236,4 +12238,37 @@ textarea.form-control-lg {
 
 body {
   padding-bottom: 100px;
+}
+
+/*custom colours*/
+.bg-mikado {
+  background-color: #f9c513;
+}
+
+.bg-ygreen {
+  background-color: #93c718;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.bg-rose {
+  background-color: #c6025c;
+}
+
+.bg-viridian {
+  background-color: #049a9b;
+}
+
+.bg-black {
+  background-color: #049a9b;
+}
+
+.black {
+  color: #000000;
+}
+
+.white {
+  color: #000000;
 }
