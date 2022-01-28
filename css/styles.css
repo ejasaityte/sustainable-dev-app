@@ -7788,6 +7788,7 @@ textarea.form-control-lg {
 
 .fs-4 {
   font-size: calc(1.275rem + 0.3vw) !important;
+  color: #049a9b;
 }
 
 .fs-5 {
@@ -7820,6 +7821,7 @@ textarea.form-control-lg {
 
 .fw-bold {
   font-weight: 700 !important;
+  color: #049a9b;
 }
 
 .fw-bolder {
