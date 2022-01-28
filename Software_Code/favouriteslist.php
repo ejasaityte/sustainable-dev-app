@@ -65,6 +65,7 @@
                                 <th>Goal</th>
                                 <th>Postcode</th>
                                 <th>Website</th>
+                                <th>Contacts</th>
                             </thead>
                             <tbody>
                             <?php                            
