@@ -1,12 +1,13 @@
-#AgileDevelopment_templateCWRepo
-##AC31007/AC51003 Agile Software Engineering - Group Number 8
+# AgileDevelopment_templateCWRepo
 
-###Group Members:
+## AC31007/AC51003 Agile Software Engineering - Group Number 8
 
-Euan Docking (Matriculation Number)
-Eddie Houghton (Matriculation Number)
-Jamie McTaggarat (Matriculation Number)
-Sem Jasaityte (Matriculation Number)
-Matthew Bain (Matriculation Number)
-Laura Naslenaite - 190013642
+### Group Members:
+
+  Euan Docking (Matriculation Number)
+  Eddie Houghton (Matriculation Number)
+  Jamie McTaggarat (Matriculation Number)
+  Sem Jasaityte (Matriculation Number)
+  Matthew Bain (Matriculation Number)
+  Laura Naslenaite - 190013642
 
