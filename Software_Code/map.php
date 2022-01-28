@@ -209,7 +209,7 @@
                 $response = json_decode($response, true);
 
                 foreach ($response as $goal) {
-                    echo '<a class="m-3" href="/map/'.$goal['goalID'].'"><img class="feature bg-primary bg-gradient text-white rounded-3" src="' . $goal['goalPicture'] . '"></a>';
+                    echo '<a class="m-3" href="/map/'.$goal['goalID'].'"><img class="feature bg-primary bg-gradient text-white" src="' . $goal['goalPicture'] . '"></a>';
                 }
 
                 php?>
