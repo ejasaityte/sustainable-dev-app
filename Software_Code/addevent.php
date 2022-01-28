@@ -139,7 +139,7 @@
             <h1 class="display-5 fw-bold" style="padding-top:50px;">Event holding list</h1>
         </div>
             <div class="container-responsive pb-5">
-                <div class="row justify-content-center" style="padding-right:10px; padding-left:10px;">
+                <div class="row justify-content-center" style="margin-right:0px; margin-left:0px;">
                     <div class="col-sm-8 col-sm-offset-2">
                         <div class="table-responsive">
                             <table class="table table-bordered table-striped">
