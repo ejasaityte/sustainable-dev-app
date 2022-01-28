@@ -55,7 +55,7 @@
 
         <div class="container-responsive">
             <div class="row justify-content-center">
-                <div class="col-sm-8 col-sm-offset-2 pb-5">
+                <div class="col-sm-8 col-sm-offset-2 pb-5" style="padding-right:10px; padding-left:10px;">
                     <div class="table-responsive">
                         <table class="table table-bordered table-striped">
                             <thead>
