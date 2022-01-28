@@ -118,12 +118,14 @@
             $contacts = "'".$_POST['contacts']."'";
         } 
 
-        $sql = "UPDATE events SET name='". $name ."', description='". $description . "', postcode='".$postcode."', goalID=".$goalID.", website='".$website."', contacts='".$contacts."' WHERE id=". $params['id'] ."";
+        $sql = "UPDATE events SET name='". $name ."', description='". $description . "', postcode=".$postcode.", goalID=".$goalID.", website=".$website.", contacts=".$contacts." WHERE id=". $params['id'] ."";
         $result = $db->query($sql);
         ?><div class="alert alert-warning" role="alert">
     <?php echo $sql; echo $result; ?>
     </div> <?php
         ?>
+        </form>
+    </div>
         <!-- Footer-->
         <footer class="py-5 bg-dark" style="bottom:0; position:fixed;">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Sustainable Dundee 2021</p></div>
