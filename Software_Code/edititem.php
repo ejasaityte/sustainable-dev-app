@@ -124,8 +124,6 @@
     <?php echo $sql; echo $result; ?>
     </div> <?php
         ?>
-        </form>
-    </div>
         <!-- Footer-->
         <footer class="py-5 bg-dark" style="bottom:0; position:fixed;">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Sustainable Dundee 2021</p></div>
