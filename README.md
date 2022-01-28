@@ -7,7 +7,7 @@
   - Euan Docking (Matriculation Number)
   - Eddie Houghton (Matriculation Number)
   - Jamie McTaggarat (Matriculation Number)
-  - Sem Jasaityte (Matriculation Number)
+  - Sem Jasaityte - 190014736
   - Matthew Bain (Matriculation Number)
   - Laura Naslenaite - 190013642
 
