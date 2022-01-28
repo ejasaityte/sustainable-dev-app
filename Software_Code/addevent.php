@@ -210,7 +210,7 @@
         }
     ?>
         <!-- Footer-->
-        <footer class="py-5 bg-dark" style="bottom:0">
+        <footer class="py-5 bg-dark" style="bottom:0; position:absolute;">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Sustainable Dundee 2021</p></div>
         </footer>
         <!-- Bootstrap core JS-->
