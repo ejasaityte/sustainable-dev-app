@@ -52,18 +52,18 @@
         <form action="" method="post">
             <div class="d-grid gap-2">
                 <div class="input-group">
-                    <input type="text" class="form-control" id="name" min-length="3" name="name" min-length="3" placeholder="Name" required>
+                    <input type="text" class="form-control" id="name" minlength="3" name="name" min-length="3" placeholder="Name" required>
                     <div class="invalid-tooltip"> Please enter the event name.</div>
                 </div>
                 <div class="input-group">
-                    <input type="text" class="form-control" id="description" min-length="3" name="description" placeholder="Description" required>
+                    <input type="text" class="form-control" id="description" minlength="3" name="description" placeholder="Description" required>
                     <div class="invalid-tooltip"> Please enter a description.</div>
                 </div>
                 <div class="input-group">
                     <input type="text" class="form-control" id="postcode" name="postcode" placeholder="Postcode">
                 </div>
                 <div class="input-group">
-                    <input type="text" class="form-control" id="goalName" min-length="3" name="goalName" placeholder="Associated goal" required>
+                    <input type="text" class="form-control" id="goalName" minlength="3" name="goalName" placeholder="Associated goal" required>
                     <div class="invalid-tooltip"> Please enter an associated goal.</div>
                 </div>
                 <div class="input-group">

@@ -66,18 +66,18 @@
         <form action="" method="post">
             <div class="d-grid gap-2">
                 <div class="input-group">
-                    <input type="text" class="form-control" id="name" name="name" min-length="3" value="<?php if (isset($row['name'])) echo $row['name'];?>" placeholder="Name" required>
+                    <input type="text" class="form-control" id="name" name="name" minlength="3" value="<?php if (isset($row['name'])) echo $row['name'];?>" placeholder="Name" required>
                     <div class="invalid-tooltip"> Please enter the event name.</div>
                 </div>
                 <div class="input-group">
-                    <input type="text" class="form-control" id="description" name="description" min-length="3" value="<?php if (isset($row['description'])) echo $row['description'];?>" placeholder="Description" required>
+                    <input type="text" class="form-control" id="description" name="description" minlength="3" value="<?php if (isset($row['description'])) echo $row['description'];?>" placeholder="Description" required>
                     <div class="invalid-tooltip"> Please enter a description.</div>
                 </div>
                 <div class="input-group">
                     <input type="text" class="form-control" id="postcode" name="postcode" value="<?php if (isset($row['postcode'])) echo $row['postcode'];?>" placeholder="Postcode">
                 </div>
                 <div class="input-group">
-                    <input type="text" class="form-control" id="goalName" name="goalName" value="<?php if (isset($row['goalID'])) echo $row['goalID'];?>" placeholder="Associated goal" required>
+                    <input type="text" class="form-control" id="goalName" name="goalName" minlength="3" value="<?php if (isset($row['goalID'])) echo $row['goalID'];?>" placeholder="Associated goal" required>
                     <div class="invalid-tooltip"> Please enter an associated goal.</div>
                 </div>
                 <div class="input-group">
