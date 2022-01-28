@@ -119,7 +119,7 @@
         } 
 
         $sql = "UPDATE events SET name='". $name ."', description='". $description . "', postcode=".$postcode.", goalID=".$goalID.", website=".$website.", contacts=".$contacts." WHERE id=". $params['id'] ."";
-        $result = $db->query($sql);
+        $result = $db->query($sql);?>
         </form>
     </div>
         <!-- Footer-->
