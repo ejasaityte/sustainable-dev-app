@@ -207,8 +207,8 @@
                     echo '<a class="m-3" href="/map/'.$goal['goalID'].'"><img class="feature bg-primary bg-gradient text-white rounded-3" src="' . $goal['goalPicture'] . '"></a>';
                 }
 
-                php?>
-            </div>
+            php?>
+        </div>
 
         <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Sustainable Dundee 2021</p></div>
