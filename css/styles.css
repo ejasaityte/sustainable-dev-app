@@ -12265,10 +12265,26 @@ body {
   background-color: #049a9b;
 }
 
-.black {
-  color: #000000;
+.mikado {
+  color: #f9c513;
+}
+
+.ygreen {
+  color: #93c718;
 }
 
 .white {
-  color: #000000;
+  color: #ffffff;
+}
+
+.rose {
+  color: #c6025c;
+}
+
+.viridian {
+  color: #049a9b;
+}
+
+.black {
+  color: #049a9b;
 }
