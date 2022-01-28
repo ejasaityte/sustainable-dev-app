@@ -53,7 +53,7 @@
                 </div>
             </div>
         </nav>
-            <div class="container-fluid bg-light text-center">
+            <div class="container-fluid text-center">
                 <h1 class="display-5 fw-bold">See our locations!</h1>
             </div>
             <?php

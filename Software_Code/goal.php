@@ -88,10 +88,10 @@
             </div>
         </header>
         <!-- Page Content-->
-        <section class="pt-4">
+        <section class="pt-4 bg-viridian">
             <div class="container px-lg-5">
                 <!-- Page Features-->
-                <div class="row gx-lg-5">
+                <div class="row gx-lg-5 pt-3">
 
                 <?php
                 
