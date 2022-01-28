@@ -9,7 +9,7 @@ The Scrum Master for this meeting was Laura
 Jamie, Euan, Sem, Eddie, Matthew, Laura
 
 ### Summary of Conversation:
-Sprint planning. Created a product backlog with user stories, added priority and task difficulty labels, categorised user stories into sprints, made a to do list for each user story in sprint one. Decided on roles.
+Created a product backlog with user stories, added priority and task difficulty labels, categorised user stories into sprints, made a to do list for each user story in sprint one. Decided on roles.Sprint planning.
 
 Talked about plans for today - watching a video about Microsoft Azure and then started creating API.
 
