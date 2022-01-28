@@ -5,7 +5,7 @@
 ### Group Members:
 
   - Euan Docking    : 190011054
-  - Eddie Houghton  : (Matriculation Number)
+  - Eddie Houghton  : 190003973
   - Jamie McTaggarat: 190009079
   - Sem Jasaityte   : 190014736
   - Matthew Bain    : (Matriculation Number)
