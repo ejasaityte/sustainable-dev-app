@@ -163,13 +163,13 @@
                                             <div class="col text-center">
                                                 <a class="btn btn-primary btn-sm mt-auto" href="https://twitter.com/intent/tweet?text=I%20just%20visited%20%23' . $eventName .'%21&hashtags=sustainableDundee">Tweet</a>
                                             </div>
+                                        </div>
+                                    </div>
                         ';
                     } 
 
                     echo '
                         </div>
-                    </div>
-                    </div>
                     </div>';
                     
                 }
