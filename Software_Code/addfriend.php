@@ -78,14 +78,19 @@
                 while ($row = $result->fetch_assoc()) {
                     $rows[] = $row;
                 }
-                $friendID = -1; // Default, must be changed
                 if (!empty($rows)) {
                     $friendID = $rows[0];
-                }
-                $sql = "INSERT INTO friends (userID, friendID) VALUES (".$_SESSION['userID'].", ".$friendID.");";
-                if ($friendID != -1) {
+                    $sql = "INSERT INTO friends (userID, friendID) VALUES (".$_SESSION['userID'].", ".$friendID.");";
                     $result = $db->query($sql);
-                } //TODO add a check before running to make sure they are not already friends
+                } else {
+                    ?>     
+                        <div class="alert alert-warning" role="alert">
+                            Email not found.
+                        </div>  
+                    <?php
+                }
+                    //TODO add a check before running to make sure they are not already friends
+
             }
         ?>
 
