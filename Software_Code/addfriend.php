@@ -51,7 +51,7 @@
         </nav>
         <br>
         <div class="container-fluid text-center">
-            <h1 class="display-5 fw-bold">Add new friend</h1>
+            <h1 class="display-5 fw-bold">Friends</h1>
         </div>
         <br>
         <div class="position-absolute top-50 start-50 translate-middle">
