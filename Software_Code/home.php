@@ -35,7 +35,7 @@
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             ?>
                   <li class="nav-item"><a class="nav-link" href="/favouriteslist">Favourites</a></li>
-                  
+                  <li class="nav-item"><a class="nav-link" href="/addfriend">Add Friend</a></li>
                   <?php 
                   if ($_SESSION['isadmin']==1) { ?>
                   <li class="nav-item"><a class="nav-link" href="/addevent">Add Event</a></li>

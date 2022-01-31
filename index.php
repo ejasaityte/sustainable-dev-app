@@ -18,6 +18,7 @@ $rules = array(
     //User Pages
     //
     'login' => "/login",
+    'addfriend' => '/addfriend',
     'additem' => "/additem/(?'id'[\w\-]+)",
     'addevent' => '/addevent',
     'adduser' => "/adduser",

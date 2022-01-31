@@ -35,7 +35,7 @@
                   <li class="nav-item"><a class="nav-link" href="/addevent">Add Event</a></li>
                   <?php } 
                       if ($_SESSION['username']=='admin') { ?>
-                      <li class="nav-item"><a class="nav-link active" href="/adduser">Add User</a></li>
+                      <li class="nav-item"><a class="nav-link" href="/adduser">Add User</a></li>
                       <?php } ?>
                   <li class="nav-item"><a class="nav-link" href="/logout">Log out</a></li>
                   <?php } 
@@ -49,62 +49,45 @@
         </nav>
         <br>
         <div class="container-fluid text-center">
-            <h1 class="display-5 fw-bold">Add new user</h1>
+            <h1 class="display-5 fw-bold">Add new friend</h1>
         </div>
         <br>
         <div class="position-absolute top-50 start-50 translate-middle">
         <form action="" method="post">
             <div class="d-grid gap-2">
                 <div class="input-group">
-                    <input type="text" class="form-control" id="username" name="username" placeholder="Username" minlength="3" required>
-                    <div class="invalid-tooltip"> Please enter a username.</div>
+                    <input type="text" class="form-control" id="email" name="email" placeholder="Email" minlength="3" required>
+                    <div class="invalid-tooltip"> Please enter a email.</div>
                 </div>
-                <div class="input-group">
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" minlength="3" aria-describedby="passwordHelpBlock" required>
-                    <div class="invalid-tooltip"> Please enter a password.</div>
-                </div>
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="isadmin" name="isadmin">
-                    <label class="form-check-label" for="isadmin">Has admin privileges</label>
-                </div>
-                <button type="submit" class="btn btn-primary">Add User</button>
+                <button type="submit" class="btn btn-primary">Request friend</button>
             </div>
         <?php
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        if (isset($_POST['isadmin']))
-        {
-            $isadmin = 1;
-        }
-        else
-        {
-            $isadmin = 0;
-        }    
-        if(($username=="admin")||(!(preg_match("/@/", $username))&&($username!='')))
-        {
-            ?><div class="alert alert-warning" role="alert">
-  Choose another username!
-</div> <?php
-        }
-        else {
-            $sql = "SELECT * FROM users WHERE email='". $username ."'";
-            $rows = array();
-            $result = $db->query($sql);
-            while ($row = $result->fetch_assoc()) {
-                $rows[] = $row;
-
+            $friend = $_POST['email'];
+            if(!(preg_match("/@/", $username))&&($username!='')) // Checks it's an email
+            {   
+                ?>     
+                    <div class="alert alert-warning" role="alert">
+                        Choose a valid email!
+                    </div>  
+                <?php
             }
-
-            if(empty($rows)){
-                $hashedPass = password_hash($password,PASSWORD_DEFAULT);
-                $updateReq = "INSERT INTO users (userID, email, password, admin, leaderboard) VALUES (NULL,'".$username."','".$hashedPass."',".$isadmin.",0)";
-                $updateRes =$db->query($updateReq);
-                ?><div class="alert alert-warning" role="alert">
-    Success!
-    </div> <?php
+            else { // This means it is an email *probably*
+                $sql = "SELECT userID FROM users WHERE email='". $friend ."'";
+                $rows = array();
+                $result = $db->query($sql);
+                while ($row = $result->fetch_assoc()) {
+                    $rows[] = $row;
+                }
+                $friendID = -1 // Default, must be changed
+                if (!empty($rows)) {
+                    $friendID = $rows[0];
+                }
+                $sql = "INSERT INTO friends (userID, friendID) VALUES (".$_SESSION['userID'].", ".$friendID.");";
+                if ($friendID != -1) {
+                    $result = $db->query($sql);
+                } //TODO add a check before running to make sure they are not already friends
             }
-    }
-    ?>
+        ?>
 
     </div>
     </div>
