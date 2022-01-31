@@ -112,6 +112,14 @@
                                                     $response = json_decode($response, true);
 
                                                     $i = 0;
+                                                    if (str_word_count($event['name']) > 1)
+                                                    {
+                                                        $str = explode(" ", $event['name']);
+                                                        $name = implode("", $str);
+                                                    }
+                                                    else {
+                                                        $name = $event['name'];
+                                                    }
                                                     foreach ($response as $event) { // TODO refactor
                                                         $i += 1;
                                                         echo "
