@@ -97,8 +97,9 @@
 
             if(empty($rows)){
                 $hashedPass = password_hash($password,PASSWORD_DEFAULT);
-                $updateReq = "INSERT INTO users (userID, email, password, admin, leaderboard) VALUES (NULL,'".$username."','".$hashedPass."',".$isadmin.",0)";
-                $updateRes =$db->query($updateReq);
+                if(strlen($username)!=0)
+                {$updateReq = "INSERT INTO users (userID, email, password, admin, leaderboard) VALUES (NULL,'".$username."','".$hashedPass."',".$isadmin.",0)";
+                $updateRes =$db->query($updateReq);}
                 ?><div class="alert alert-warning" role="alert">
     Success!
     </div> <?php
