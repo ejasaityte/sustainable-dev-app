@@ -84,8 +84,8 @@
                                                 <td><?php echo $row['leaderboard']; ?></td>
                                             </tr>
                                             <?php
+                                            $index ++;
                                         }
-                                $index ++;
                                 ?>
                             </tbody>
                         </table>
