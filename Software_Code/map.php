@@ -74,7 +74,7 @@
                     });
                     
                     map.on('load', () => {
-                        map.loadImage('https://i.imgur.com/5Up6nd9.png',
+                        map.loadImage('https://i.imgur.com/lz3uxL1.png',
                             (error, image) => {
                                 if (error) throw error;
                                 map.addImage('custom-marker', image);
