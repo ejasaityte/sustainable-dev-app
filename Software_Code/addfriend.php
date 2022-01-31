@@ -71,7 +71,7 @@
                     </div>  
                 <?php
             }
-            else { // This means it is an email *probably*
+            else if (isset($_POST['email'])) { // This means it is an email *probably*
                 $sql = "SELECT userID FROM users WHERE email='". $friend ."'";
                 $rows = array();
                 $result = $db->query($sql);
