@@ -125,7 +125,7 @@
                                                                     <a class='btn btn-primary btn-sm mt-auto' href='/checkin/" . $_SESSION['userID'] . "'>Check in</a>
                                                                  </div>";
                                                             }
-                                                        },
+                                                        echo "},
                                                         'geometry': {
                                                             'type': 'Point',
                                                             'coordinates': [" . $event['lon'] . ", " . $event['lat'] . "]
