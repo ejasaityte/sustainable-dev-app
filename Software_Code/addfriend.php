@@ -54,6 +54,45 @@
             <h1 class="display-5 fw-bold">Friends</h1>
         </div>
         <br>
+
+        <div class="container-responsive">
+            <div class="row justify-content-center" style="margin-right:0px; margin-left:0px;">
+                <div class="col-sm-8 col-sm-offset-2 pb-5">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <th>#</th>
+                                <th>Email</th>
+                            </thead>
+                            <tbody>
+                            <?php                            
+                                    $sqlQ1 = "SELECT email FROM `friends` INNER JOIN `users` ON friends.friendID = users.userID WHERE friends.userID = 1 AND friends.accepted = 1;";
+                                    $rows = array();
+                                    $result = $db->query($sqlQ1);
+
+                                    while ($row = $result->fetch_assoc()) {
+                                        $rows[] = $row;
+                                    }
+                                    $index = 1;
+                                    foreach ($rows as $row){
+                                            ?>
+                                            <tr>
+                                                <td>
+                                                    <?php echo $index; ?>
+                                                </td>
+                                                <td><?php echo $row['email']; ?></td>
+                                            </tr>
+                                            <?php
+                                            $index ++;
+                                        }
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="position-absolute top-50 start-50 translate-middle">
         <form action="" method="post">
             <div class="d-grid gap-2">
