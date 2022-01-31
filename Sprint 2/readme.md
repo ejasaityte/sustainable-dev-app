@@ -9,14 +9,16 @@ The Scrum Master for this meeting was Laura
 Jamie, Euan, Sem, Matthew, Laura
 
 ### Summary of Conversation:
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
-Created a product backlog with user stories, added priority and task difficulty labels, categorised user stories into sprints, made a to do list for each user story in sprint one. Decided on roles.Sprint planning.
 
-Talked about plans for today - watching a video about Microsoft Azure and then started creating API.
+Talked about plans for today - reviewing product backlog, reprioritizing user stories, watching a feedback of sprint 1, distributing the tasks
+
+| Who        | What           |
+| ------------- |:-------------:|
+| Euan and Jamie     | Leaderboard | 
+| Sem      | |
+| Matthew |   |
+| Laura | Twitter integration |
+
 
 
 ## Day 2 - Scrum Meeting summary
