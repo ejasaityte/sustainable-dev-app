@@ -82,7 +82,6 @@
                 ?><div class="alert alert-warning" role="alert">
     Successfully registered!
     </div> <?php
-    header('location: https://sustainabledundeeapp.azurewebsites.net/login');
             }
             elseif ($username!="") {
                 ?><div class="alert alert-warning" role="alert">
