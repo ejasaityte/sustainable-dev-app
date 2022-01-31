@@ -83,8 +83,8 @@
                 $friendID = $rows[0]['userID'];
                 if (!empty($rows) && $friendID != $_SESSION['userID']) {
                     $sql = "INSERT INTO friends (userID, friendID) VALUES (".$_SESSION['userID'].", ".$friendID.");";
-                    echo "userID: ".$_SESSION['userID'];
-                    echo "friendID: ".$friendID;
+                    //echo "userID: ".$_SESSION['userID'];
+                    //echo "friendID: ".$friendID;
                     $db->query($sql); /*
                     if (mysqli_query($db, $sql)) {
                         echo "Friend request sent";
