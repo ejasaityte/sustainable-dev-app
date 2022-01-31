@@ -83,7 +83,11 @@
                     $sql = "INSERT INTO friends (userID, friendID) VALUES (".$_SESSION['userID'].", ".$friendID.");";
                     echo "userID: ".$_SESSION['userID'];
                     echo "friendID: ".$friendID;
-                    $result = $db->query($sql);
+                    if (mysqli_query($db, $sql)) {
+                        echo "Friend reques5t sent";
+                      } else {
+                        echo "Error: " . $sql . "<br>" . mysqli_error($db);
+                      }
                 } else {
                     ?>     
                         <div class="alert alert-warning" role="alert">
