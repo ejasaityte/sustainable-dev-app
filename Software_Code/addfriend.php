@@ -63,7 +63,7 @@
             </div>
         <?php
             $friend = $_POST['email'];
-            if(!(preg_match("/@/", $username))&&($username!='')) // Checks it's an email
+            if(!(preg_match("/@/", $friend))&&($friend!='')) // Checks it's an email
             {   
                 ?>     
                     <div class="alert alert-warning" role="alert">
