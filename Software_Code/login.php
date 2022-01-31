@@ -72,12 +72,12 @@
         }
 
         foreach ($rows as $row){
-            if(password_verify($password, $rows['password'])){
+            if(password_verify($password, $row['password'])){
                 if((preg_match("/@/", $username))||($username=="admin"))
                 {
                     $_SESSION['loggedin'] = true;
                     $_SESSION['username'] = $username;
-                    $_SESSION['isadmin'] = $rows['admin'];
+                    $_SESSION['isadmin'] = $row['admin'];
                     header("Location: https://sustainabledundeeapp.azurewebsites.net");
                 }
             }
