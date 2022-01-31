@@ -32,7 +32,7 @@
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             ?>
                   <li class="nav-item"><a class="nav-link" href="/favouriteslist">Favourites</a></li>
-                  <li class="nav-item"><a class="nav-link active" href="/addfriend">Friends</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/addfriend">Friends</a></li>
                   
                   <?php 
                   if ($_SESSION['isadmin']==1) { ?>
@@ -46,6 +46,7 @@
                   else{
                   ?>
                   <li class="nav-item"><a class="nav-link" href="/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
           <?php } ?>
                     </ul>
                 </div>
@@ -158,7 +159,6 @@
                         ';
                         }
                         echo 
-                        $eventName="ScottishWater"    
                         '
                                             <div class="col text-center">
                                                 <a class="btn btn-primary btn-sm mt-auto" href="https://twitter.com/intent/tweet?text=I%20just%20visited%20%23' . $eventName .'%21&hashtags=sustainableDundee">Tweet</a>
