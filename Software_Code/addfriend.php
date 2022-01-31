@@ -78,8 +78,8 @@
                 while ($row = $result->fetch_assoc()) {
                     $rows[] = $row;
                 }
-                if (!empty($rows)) {
-                    $friendID = $rows[0];
+                $friendID = $rows[0];
+                if (!empty($rows) && $friendID != $_SESSION['userID']) {
                     $sql = "INSERT INTO friends (userID, friendID) VALUES (".$_SESSION['userID'].", ".$friendID.");";
                     echo "userID: ".$_SESSION['userID'];
                     echo "friendID: ".$friendID;
@@ -87,7 +87,7 @@
                 } else {
                     ?>     
                         <div class="alert alert-warning" role="alert">
-                            Email not found.
+                            Email invalid.
                         </div>  
                     <?php
                 }
