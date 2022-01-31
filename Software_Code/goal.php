@@ -137,31 +137,19 @@
                                             <div class="col text-center">
                                                 <a class="btn btn-primary btn-sm mt-auto" href="/additem/' . $event['id'] . '"">Favourite</a>
                                             </div>
-                                        </div>
-                                        </div>
                         ';
                             echo '
-                        <div class="container" style="padding-bottom:10px;">
-                                        <div class="row">
                                             <div class="col text-center">
                                                 <a class="btn btn-primary btn-sm mt-auto" href="/edititem/' . $event['id'] . '"">Edit</a>
                                             </div>
-                                        </div>
-                                        </div>
                                     
                         ';
                         echo '
-                        <div class="container" style="padding-bottom:10px;">
-                                        <div class="row">
                                             <div class="col text-center">
                                                 <a class="btn btn-primary btn-sm mt-auto" href="/deleteevent/' . $event['id'] . '"">Delete</a>
                                             </div>
-                                        </div>
-                                    </div>
                         ';
                         echo '
-                        <div class="container">
-                                        <div class="row">
                                             <div class="col text-center">
                                             <a href="https://twitter.com/intent/tweet?button_hashtag=sustainableDundee&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-show-count="false">Tweet #sustainableDundee</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                                             </div>
