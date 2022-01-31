@@ -81,6 +81,8 @@
                 if (!empty($rows)) {
                     $friendID = $rows[0];
                     $sql = "INSERT INTO friends (userID, friendID) VALUES (".$_SESSION['userID'].", ".$friendID.");";
+                    echo "userID: ".$_SESSION['userID'];
+                    echo "friendID: ".$_SESSION['friendID'];
                     $result = $db->query($sql);
                 } else {
                     ?>     
