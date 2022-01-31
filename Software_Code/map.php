@@ -73,7 +73,7 @@
                     });
                     
                     map.on('load', () => {
-                        map.loadImage('https://docs.mapbox.com/mapbox-gl-js/assets/custom_marker.png',
+                        map.loadImage('/img/marker.png',
                             (error, image) => {
                                 if (error) throw error;
                                 map.addImage('custom-marker', image);
