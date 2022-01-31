@@ -114,7 +114,8 @@
                                         <form action="" method="post">
                                             <?php 
                                                 $userID = $row['users.userID'];
-                                                echo "<button label=".$userID." type='submit' class='btn btn-primary'>Request friend</button>";
+                                                echo '**<input name="friendID" type="hidden" value="'.$userID.'"  />**';
+                                                echo "<button type='submit' class='btn btn-primary'>Accept</button>";
                                             ?>
                                         </form>
                                     </td>
