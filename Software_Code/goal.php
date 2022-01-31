@@ -136,32 +136,32 @@
                         echo '
                         <div class="container" style="padding-bottom:10px;">
                                         <div class="row justify-content-center">
-                                            <div class="col-sm-auto text-center">
-                                                <a class="btn btn-primary btn-sm mt-auto" style="padding-bottom:10px;" href="/additem/' . $event['id'] . '"">Favourite</a>
+                                            <div class="col-sm-auto text-center" style="padding-bottom:10px;">
+                                                <a class="btn btn-primary btn-sm mt-auto" href="/additem/' . $event['id'] . '"">Favourite</a>
                                             </div>
                         ';
                         echo '
-                                            <div class="col-sm-auto text-center">
-                                                <a class="btn btn-primary btn-sm mt-auto" style="padding-bottom:10px;" href="/checkin/' . $_SESSION['userID'] . '"">Check in</a>
+                                            <div class="col-sm-auto text-center" style="padding-bottom:10px;">
+                                                <a class="btn btn-primary btn-sm mt-auto" href="/checkin/' . $_SESSION['userID'] . '"">Check in</a>
                                             </div>
                         ';
                         if($_SESSION['isadmin']==1){
                             echo '
-                                            <div class="col-sm-auto text-center">
-                                                <a class="btn btn-primary btn-sm mt-auto" style="padding-bottom:10px;" href="/edititem/' . $event['id'] . '"">Edit</a>
+                                            <div class="col-sm-auto text-center" style="padding-bottom:10px;">
+                                                <a class="btn btn-primary btn-sm mt-auto" href="/edititem/' . $event['id'] . '"">Edit</a>
                                             </div>
                                     
                         ';
                         echo '
-                                            <div class="col-sm-auto text-center">
-                                                <a class="btn btn-primary btn-sm mt-auto" style="padding-bottom:10px;" href="/deleteevent/' . $event['id'] . '"">Delete</a>
+                                            <div class="col-sm-auto text-center" style="padding-bottom:10px;">
+                                                <a class="btn btn-primary btn-sm mt-auto" href="/deleteevent/' . $event['id'] . '"">Delete</a>
                                             </div>
                         ';
                         }
                         echo 
                         '
-                                            <div class="col-sm-auto text-center">
-                                                <a class="btn btn-primary btn-sm mt-auto" style="padding-bottom:10px;" href="https://twitter.com/intent/tweet?text=I%20just%20visited%20%23' . $eventName .'%21&hashtags=sustainableDundee">Tweet</a>
+                                            <div class="col-sm-auto text-center" style="padding-bottom:10px;">
+                                                <a class="btn btn-primary btn-sm mt-auto" href="https://twitter.com/intent/tweet?text=I%20just%20visited%20%23' . $eventName .'%21&hashtags=sustainableDundee">Tweet</a>
                                             </div>
                                         </div>
                                     </div>
