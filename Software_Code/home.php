@@ -105,7 +105,7 @@
                                         <h2 class="fs-4 fw-bold">' . $goal['goalName'] . '</h2></a>
                                         <p class="mb-0">' . $goal['goalDescription'] . '</p>
                                     </div>
-                                    <div class="container" style="padding-bottom:10px;">
+                                    <div class="container pb-4">
                                         <div class="row">
                                             <div class="col text-center">
                                                 <a class="btn btn-primary btn-sm mt-auto" href="/goal/' . $goal['goalID'] . '"">Learn more</a>
