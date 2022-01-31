@@ -78,11 +78,12 @@
                 $hashedPass = password_hash($password,PASSWORD_DEFAULT);
                 if(strlen($username)!=0)
                 {$updateReq = "INSERT INTO users (userID, email, password, admin, leaderboard) VALUES (NULL,'".$username."','".$hashedPass."',0,0)";
-                $updateRes =$db->query($updateReq);}
+                $updateRes =$db->query($updateReq);
                 ?><div class="alert alert-warning" role="alert">
     Successfully registered!
     </div> <?php
             }
+        }
             elseif ($username!="") {
                 ?><div class="alert alert-warning" role="alert">
     Email already registered!
