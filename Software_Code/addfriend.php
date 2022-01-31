@@ -78,7 +78,7 @@
                 while ($row = $result->fetch_assoc()) {
                     $rows[] = $row;
                 }
-                $friendID = $rows[0];
+                $friendID = $rows[0]['userID'];
                 if (!empty($rows) && $friendID != $_SESSION['userID']) {
                     $sql = "INSERT INTO friends (userID, friendID) VALUES (".$_SESSION['userID'].", ".$friendID.");";
                     echo "userID: ".$_SESSION['userID'];
