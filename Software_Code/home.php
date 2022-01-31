@@ -36,7 +36,7 @@
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             ?>
                   <li class="nav-item"><a class="nav-link" href="/favouriteslist">Favourites</a></li>
-                  <li class="nav-item"><a class="nav-link" href="/addfriend">Add Friend</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/addfriend">Friends</a></li>
                   <?php 
                   if ($_SESSION['isadmin']==1) { ?>
                   <li class="nav-item"><a class="nav-link" href="/addevent">Add Event</a></li>
@@ -105,7 +105,7 @@
                                         <h2 class="fs-4 fw-bold">' . $goal['goalName'] . '</h2></a>
                                         <p class="mb-0">' . $goal['goalDescription'] . '</p>
                                     </div>
-                                    <div class="container mb-4">
+                                    <div class="container" style="padding-bottom:10px;">
                                         <div class="row">
                                             <div class="col text-center">
                                                 <a class="btn btn-primary btn-sm mt-auto" href="/goal/' . $goal['goalID'] . '"">Learn more</a>
