@@ -137,7 +137,7 @@
                                     'id': 'places',
                                     'type': 'symbol',
                                     'source': 'places',
-                                    ''layout': {
+                                    'layout': {
                                         'icon-image': 'custom-marker',
                                     }
                                 });
