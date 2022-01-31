@@ -14,10 +14,10 @@ Talked about plans for today - reviewing product backlog, reprioritizing user st
 
 | Who        | What           |
 | ------------- |:-------------:|
-| Euan and Jamie     | Leaderboard | 
-| Sem      | |
-| Matthew |   |
-| Laura | Twitter integration |
+| Euan and Jamie  | Adding registered friends (pair programming)  | 
+| Sem      | Leaderboard, check-in through a website  into an event|
+| Matthew | Fixing design aspects based on clients comments from sprint review |
+| Laura | Check in through twitter, twitter integration|
 
 
 
