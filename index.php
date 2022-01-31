@@ -38,7 +38,8 @@ $rules = array(
     // Home Page
     //
     'home' => "/",
-    'goal' => "/goal/(?'goal'[\w\-]+)"
+    'goal' => "/goal/(?'goal'[\w\-]+)",
+    'news' => "/news"
     //
     // Style
     //
