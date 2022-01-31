@@ -138,6 +138,11 @@
                                                 <a class="btn btn-primary btn-sm mt-auto" href="/additem/' . $event['id'] . '"">Favourite</a>
                                             </div>
                         ';
+                        echo '
+                                            <div class="col text-center">
+                                                <a class="btn btn-primary btn-sm mt-auto" href="/checkin/' . $_SESSION['userID'] . '"">Check in</a>
+                                            </div>
+                        ';
                         if($_SESSION['isadmin']==1){
                             echo '
                                             <div class="col text-center">

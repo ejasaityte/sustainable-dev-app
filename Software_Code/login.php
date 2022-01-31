@@ -59,7 +59,7 @@
         $password = $_POST['password'];
 
 
-        $sql = "SELECT password, admin FROM users WHERE email='". $username ."'";
+        $sql = "SELECT userID, password, admin FROM users WHERE email='". $username ."'";
         $rows = array();
         $result = $db->query($sql);
         while ($row = $result->fetch_assoc()) {
@@ -77,6 +77,7 @@
                 {
                     $_SESSION['loggedin'] = true;
                     $_SESSION['username'] = $username;
+                    $_SESSION['userID'] = $row['userID'];
                     $_SESSION['isadmin'] = $row['admin'];
                     header("Location: https://sustainabledundeeapp.azurewebsites.net");
                 }
