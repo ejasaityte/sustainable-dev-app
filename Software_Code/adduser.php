@@ -63,7 +63,7 @@
                     <div class="invalid-tooltip"> Please enter a password.</div>
                 </div>
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="isadmin">
+                    <input type="checkbox" class="form-check-input" id="isadmin" name="isadmin">
                     <label class="form-check-label" for="isadmin">Has admin privileges</label>
                 </div>
                 <button type="submit" class="btn btn-primary">Add User</button>
