@@ -74,16 +74,10 @@
         if (isset($_POST['isadmin']))
         {
             $isadmin = 1;
-            ?><div class="alert alert-warning" role="alert">
-            Admin user
-          </div> <?php
         }
         else
         {
             $isadmin = 0;
-            ?><div class="alert alert-warning" role="alert">
-            Normal user
-          </div> <?php
         }    
         if(($username=="admin")||(!(preg_match("/@/", $username))&&($username!='')))
         {
@@ -105,7 +99,7 @@
                 $updateReq = "INSERT INTO users (userID, email, password, admin, leaderboard) VALUES (NULL,'".$username."','".$hashedPass."',".$isadmin.",0)";
                 $updateRes =$db->query($updateReq);
                 ?><div class="alert alert-warning" role="alert">
-    Success! <?php echo $updateReq; ?>
+    Success!
     </div> <?php
             }
     }
