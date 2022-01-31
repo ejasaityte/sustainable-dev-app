@@ -29,8 +29,8 @@
                         <li class="nav-item"><a class="nav-link"href="/">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="/map/0">Explore</a></li>
                         <li class="nav-item"><a class="nav-link" href="/leaderboard">Leaderboard</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+                        <li class="nav-item"><a class="nav-link" aria-current="page" href="/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="/register">Register</a></li>
                     </ul>
                 </div>
             </div>
@@ -42,13 +42,13 @@
             <div class="d-grid gap-2">
                 <div class="input-group">
                     <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
-                    <div class="invalid-tooltip"> Please enter a username.</div>
+                    <div class="invalid-tooltip"> Please enter an email.</div>
                 </div>
                 <div class="input-group">
                     <input type="password" class="form-control" id="password" name="password" placeholder="Password" aria-describedby="passwordHelpBlock" required>
                     <div class="invalid-tooltip"> Please enter a password.</div>
                 </div>
-                <button type="submit" class="btn btn-primary">Log in</button>
+                <button type="submit" class="btn btn-primary">Register</button>
             </div>
 
 
@@ -58,34 +58,38 @@
     </form>
     <?php
         $username = $_POST['username'];
-        $password = $_POST['password'];
-
-
-        $sql = "SELECT password, admin, userID FROM users WHERE email='". $username ."'";
-        $rows = array();
-        $result = $db->query($sql);
-        while ($row = $result->fetch_assoc()) {
-            $rows[] = $row;
+        $password = $_POST['password'];  
+        if(($username=="admin")||(!(preg_match("/@/", $username))&&($username!='')))
+        {
+            ?><div class="alert alert-warning" role="alert">
+  Invalid email!
+</div> <?php
         }
+        else {
+            $sql = "SELECT * FROM users WHERE email='". $username ."'";
+            $rows = array();
+            $result = $db->query($sql);
+            while ($row = $result->fetch_assoc()) {
+                $rows[] = $row;
 
-        $output = '';
-        foreach($rows as $item) {
-            $output .= implode("\n" , $item);
-        }
-
-        foreach ($rows as $row){
-            if(password_verify($password, $row['password'])){
-                if((preg_match("/@/", $username))||($username=="admin"))
-                {
-                    $_SESSION['loggedin'] = true;
-                    $_SESSION['userID'] = $row['userID'];
-                    $_SESSION['username'] = $username;
-                    $_SESSION['isadmin'] = $row['admin'];
-                    header("Location: https://sustainabledundeeapp.azurewebsites.net");
-                }
             }
-            break;
-        }
+
+            if(empty($rows)){
+                $hashedPass = password_hash($password,PASSWORD_DEFAULT);
+                if(strlen($username)!=0)
+                {$updateReq = "INSERT INTO users (userID, email, password, admin, leaderboard) VALUES (NULL,'".$username."','".$hashedPass."',0,0)";
+                $updateRes =$db->query($updateReq);}
+                ?><div class="alert alert-warning" role="alert">
+    Successfully registered!
+    </div> <?php
+    header('location: https://sustainabledundeeapp.azurewebsites.net/login');
+            }
+            elseif ($username!="") {
+                ?><div class="alert alert-warning" role="alert">
+    Email already registered!
+    </div> <?php
+            }
+    }
     ?>
     </div>
 

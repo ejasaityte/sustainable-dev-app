@@ -53,6 +53,7 @@
               else{
               ?>
               <li class="nav-item"><a class="nav-link" href="/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+              <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
       <?php } ?>
                     </ul>
                 </div>
