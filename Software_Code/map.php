@@ -74,7 +74,7 @@
                     });
                     
                     map.on('load', () => {
-                        map.loadImage('/img/marker.png',
+                        map.loadImage('https://sustainabledundeeapp.azurewebsites.net/img/marker.png',
                             (error, image) => {
                                 if (error) throw error;
                                 map.addImage('custom-marker', image);
