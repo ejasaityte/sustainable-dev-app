@@ -59,7 +59,7 @@
         $password = $_POST['password'];
 
 
-        $sql = "SELECT password FROM users WHERE email='". $username ."'";
+        $sql = "SELECT password, admin FROM users WHERE email='". $username ."'";
         $rows = array();
         $result = $db->query($sql);
         while ($row = $result->fetch_assoc()) {
@@ -71,14 +71,17 @@
             $output .= implode("\n" , $item);
         }
 
-        if(password_verify($password, $output)){
-            
-            if((preg_match("/@/", $username))||($username=="admin"))
-            {
-                $_SESSION['loggedin'] = true;
-                $_SESSION['username'] = $username;
-                 header("Location: https://sustainabledundeeapp.azurewebsites.net");
+        foreach ($rows as $row){
+            if(password_verify($password, $rows['password'])){
+                if((preg_match("/@/", $username))||($username=="admin"))
+                {
+                    $_SESSION['loggedin'] = true;
+                    $_SESSION['username'] = $username;
+                    $_SESSION['isadmin'] = $rows['admin'];
+                    header("Location: https://sustainabledundeeapp.azurewebsites.net");
+                }
             }
+            break;
         }
     ?>
     </div>

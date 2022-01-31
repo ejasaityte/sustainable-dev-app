@@ -26,19 +26,22 @@
                         <li class="nav-item"><a class="nav-link" href="/map/0">Explore</a></li>
                         <?php
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-          ?>
-                <li class="nav-item"><a class="nav-link" href="/favouriteslist">Favourites</a></li>
-                <li class="nav-item"><a class="nav-link" href="/addevent">Add Event</a></li>
-                <?php 
-                if ($_SESSION['username']=='admin') { ?>
-                <li class="nav-item"><a class="nav-link active" href="/adduser">Add User</a></li>
-                <?php } ?>
-                <li class="nav-item"><a class="nav-link" href="/logout">Log out</a></li>
-                <?php } 
-                else{
-                ?>
-                <li class="nav-item"><a class="nav-link" href="/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
-        <?php } ?>
+            ?>
+                  <li class="nav-item"><a class="nav-link" href="/favouriteslist">Favourites</a></li>
+                  
+                  <?php 
+                  if ($_SESSION['isadmin']==1) { ?>
+                  <li class="nav-item"><a class="nav-link active" href="/addevent">Add Event</a></li>
+                  <?php } 
+                      if ($_SESSION['username']=='admin') { ?>
+                      <li class="nav-item"><a class="nav-link" href="/adduser">Add User</a></li>
+                      <?php } ?>
+                  <li class="nav-item"><a class="nav-link" href="/logout">Log out</a></li>
+                  <?php } 
+                  else{
+                  ?>
+                  <li class="nav-item"><a class="nav-link" href="/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+          <?php } ?>
                     </ul>
                 </div>
             </div>
@@ -59,11 +62,23 @@
                     <input type="password" class="form-control" id="password" name="password" placeholder="Password" minlength="3" aria-describedby="passwordHelpBlock" required>
                     <div class="invalid-tooltip"> Please enter a password.</div>
                 </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="isadmin">
+                    <label class="form-check-label" for="isadmin">Has admin privileges</label>
+                </div>
                 <button type="submit" class="btn btn-primary">Add User</button>
             </div>
         <?php
         $username = $_POST['username'];
         $password = $_POST['password'];
+        if (isset($_POST['isadmin']))
+        {
+            $isadmin = 1;
+        }
+        else
+        {
+            $isadmin = 0;
+        }    
         if(($username=="admin")||(!(preg_match("/@/", $username))&&($username!='')))
         {
             ?><div class="alert alert-warning" role="alert">
@@ -81,7 +96,7 @@
 
             if(empty($rows)){
                 $hashedPass = password_hash($password,PASSWORD_DEFAULT);
-                $updateReq = "INSERT INTO users (userID, email, password) VALUES (NULL,'".$username."','".$hashedPass."')";
+                $updateReq = "INSERT INTO users (userID, email, password, admin, leaderboard) VALUES (NULL,'".$username."','".$hashedPass."',".$isadmin.",0)";
                 $updateRes =$db->query($updateReq);
                 ?><div class="alert alert-warning" role="alert">
     Success!

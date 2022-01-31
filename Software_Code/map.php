@@ -35,20 +35,23 @@
                         <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                         <li class="nav-item"><a class="nav-link active" href="/map/0">Explore</a></li>
                         <?php
-        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-          ?>
-                <li class="nav-item"><a class="nav-link" href="/favouriteslist">Favourites</a></li>
-                <li class="nav-item"><a class="nav-link" href="/addevent">Add Event</a></li>
-                <?php 
-                if ($_SESSION['username']=='admin') { ?>
-                <li class="nav-item"><a class="nav-link" href="/adduser">Add User</a></li>
-                <?php } ?>
-                <li class="nav-item"><a class="nav-link" href="/logout">Log out</a></li>
-                <?php } 
-                else{
-                ?>
-                <li class="nav-item"><a class="nav-link" href="/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
-        <?php } ?>
+       if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+        ?>
+              <li class="nav-item"><a class="nav-link" href="/favouriteslist">Favourites</a></li>
+              
+              <?php 
+              if ($_SESSION['isadmin']==1) { ?>
+              <li class="nav-item"><a class="nav-link active" href="/addevent">Add Event</a></li>
+              <?php } 
+                  if ($_SESSION['username']=='admin') { ?>
+                  <li class="nav-item"><a class="nav-link" href="/adduser">Add User</a></li>
+                  <?php } ?>
+              <li class="nav-item"><a class="nav-link" href="/logout">Log out</a></li>
+              <?php } 
+              else{
+              ?>
+              <li class="nav-item"><a class="nav-link" href="/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+      <?php } ?>
                     </ul>
                 </div>
             </div>
