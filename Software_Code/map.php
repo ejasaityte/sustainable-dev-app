@@ -135,13 +135,10 @@
                                 // Add a layer showing the places.
                                 map.addLayer({
                                     'id': 'places',
-                                    'type': 'circle',
+                                    'type': 'symbol',
                                     'source': 'places',
-                                    'paint': {
-                                        'circle-color': '#4264fb',
-                                        'circle-radius': 6,
-                                        'circle-stroke-width': 2,
-                                        'circle-stroke-color': '#ffffff'
+                                    ''layout': {
+                                        'icon-image': 'custom-marker',
                                     }
                                 });
                             }
