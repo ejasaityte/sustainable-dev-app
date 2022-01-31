@@ -46,7 +46,6 @@
                   else{
                   ?>
                   <li class="nav-item"><a class="nav-link" href="/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
-                  <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
           <?php } ?>
                     </ul>
                 </div>
@@ -135,34 +134,35 @@
                     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                         echo '
                         <div class="container" style="padding-bottom:10px;">
-                                        <div class="row" style="padding-bottom:10px;">
+                                        <div class="row">
                                             <div class="col-sm-auto text-center">
-                                                <a class="btn btn-primary btn-sm mt-auto" href="/additem/' . $event['id'] . '"">Favourite</a>
+                                                <a class="btn btn-primary btn-sm mt-auto" style="width:60px;" href="/additem/' . $event['id'] . '"">Favourite</a>
                                             </div>
                         ';
                         echo '
                                             <div class="col-sm-auto text-center">
-                                                <a class="btn btn-primary btn-sm mt-auto" href="/checkin/' . $_SESSION['userID'] . '"">Check in</a>
+                                                <a class="btn btn-primary btn-sm mt-auto" style="width:60px;" href="/checkin/' . $_SESSION['userID'] . '"">Check in</a>
                                             </div>
                         ';
                         if($_SESSION['isadmin']==1){
                             echo '
                                             <div class="col-sm-auto text-center">
-                                                <a class="btn btn-primary btn-sm mt-auto" href="/edititem/' . $event['id'] . '"">Edit</a>
+                                                <a class="btn btn-primary btn-sm mt-auto" style="width:60px;" href="/edititem/' . $event['id'] . '"">Edit</a>
                                             </div>
                                     
                         ';
                         echo '
                                             <div class="col-sm-auto text-center">
-                                                <a class="btn btn-primary btn-sm mt-auto" href="/deleteevent/' . $event['id'] . '"">Delete</a>
+                                                <a class="btn btn-primary btn-sm mt-auto" style="width:60px;" href="/deleteevent/' . $event['id'] . '"">Delete</a>
                                             </div>
                         ';
                         }
-                        echo '
+                        echo 
+                        $eventName="ScottishWater"    
+                        '
                                             <div class="col text-center">
-                                            <a class="btn btn-primary btn-sm mt-auto" href="https://twitter.com/intent/tweet?text=I%20just%20visited%20%23' . $event['contacts'] .'%21&hashtags=sustainableDundee">Tweet</a>
+                                                <a class="btn btn-primary btn-sm mt-auto" href="https://twitter.com/intent/tweet?text=I%20just%20visited%20%23' . $eventName .'%21&hashtags=sustainableDundee">Tweet</a>
                                             </div>
-                                    </div>
                         ';
                     } 
 
