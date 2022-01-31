@@ -28,7 +28,6 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="/map/0">Explore</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/leaderboard">Leaderboard</a></li>
                         <?php
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             ?>
@@ -160,8 +159,8 @@
                         }
                         echo '
                                             <div class="col text-center">
-                                            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I just visited # ' . $event['name'] . ' ! #sustainableDundee" data-lang="en" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>                                            </div>
-                                        </div>
+                                            <a class="btn btn-primary btn-sm mt-auto" href="https://twitter.com/intent/tweet?text=I%20just%20visited%20%' . $even['contacts'] .'%21&hashtags=sustainableDundee">Tweet</a>
+                                            </div>
                                     </div>
                         ';
                     } 
