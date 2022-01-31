@@ -168,8 +168,9 @@
                         echo 
                                 '
                                             <div class="col-sm-auto  text-center" style="padding-bottom:10px;">
-                                            <a class="btn btn-primary btn-sm mt-auto" href="https://twitter.com/intent/tweet?text=I%20just%20visited%20%23' . $name . '%21&hashtags=sustainableDundee" target="_blank">Tweet</a>                                           </div>
-
+                                            <a class="btn btn-primary btn-sm mt-auto" href="https://twitter.com/intent/tweet?text=I%20just%20visited%20%23' . $name . '%21&hashtags=sustainableDundee" target="_blank"><img src="img/twitterLogo.png" width="50" height="50">
+                                            </a>                                           
+                                            </div>
                                         </div>
                                     </div>
                         ';
