@@ -78,7 +78,7 @@
                 while ($row = $result->fetch_assoc()) {
                     $rows[] = $row;
                 }
-                $friendID = -1 // Default, must be changed
+                $friendID = -1; // Default, must be changed
                 if (!empty($rows)) {
                     $friendID = $rows[0];
                 }
