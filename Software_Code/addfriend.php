@@ -239,7 +239,7 @@
                                             Email invalid.
                                         </div>  
                                     <?php
-                                    return
+                                    return;
                                 }
                                 $sql = "INSERT INTO friends (userID, friendID) VALUES (".$_SESSION['userID'].", ".$friendID.");";
                                 //echo "userID: ".$_SESSION['userID'];
