@@ -130,7 +130,7 @@
                 </tbody>
             </table>
         </div>
-
+        <br>
         <div class="position-absolute top-50 start-50 translate-middle">
         <form action="" method="post">
             <div class="d-grid gap-2">
