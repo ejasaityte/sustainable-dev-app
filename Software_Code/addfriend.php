@@ -67,7 +67,7 @@
                         </thead>
                         <tbody>
                         <?php                            
-                                $sqlQ1 = "SELECT email FROM `friends` INNER JOIN `users` ON friends.friendID = users.userID WHERE friends.userID = 1 AND friends.accepted = 1;";
+                                $sqlQ1 = "SELECT email FROM `friends` INNER JOIN `users` ON friends.friendID = users.userID WHERE friends.userID = ".$_SESSION['userID']." AND friends.accepted = 1;";
                                 $rows = array();
                                 $result = $db->query($sqlQ1);
 
