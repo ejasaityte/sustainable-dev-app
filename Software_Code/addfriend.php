@@ -95,8 +95,9 @@
                                                 <?php
                                                     if (isset($_POST['userID'])) {
                                                         $sql = "DELETE FROM friends WHERE (userID = ".$_SESSION['userID']."AND friendID = ".$_POST['userID'].") OR (userID = ".$_POST['userID']." AND friendID = ".$_SESSION['userID'].");";
+                                                        echo $sql;
                                                         $db->query($sql);
-                                                        echo "<script>location.reload()</script>";
+                                                        //echo "<script>location.reload()</script>";
                                                     }
                                                 ?>
                                             </td>
