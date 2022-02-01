@@ -77,64 +77,13 @@
                     });
                     
                     map.on('load', () => {
-                        map.loadImage('https://i.imgur.com/lz3uxL1.png',
-                            (error, image) => {
-                                if (error) throw error;
-                                map.addImage('custom-marker', image);
-                                map.addSource('places', {
-                                    'type': 'geojson',
-                                    'data': {
-                                        'type': 'FeatureCollection',
-                                        'features': [";
+                        map.addSource('places', {
+                            type: 'geojson',
+                            // Use a URL for the value for the `data` property.
+                            data: 'http://inspire.dundeecity.gov.uk/geoserver/opendata/wfs?version=2.0.0&service=wfs&request=GetFeature&typeName=opendata:recycling_facilities&outputFormat=json'
+                            });
 
-                                            $url = "http://inspire.dundeecity.gov.uk/geoserver/opendata/wfs?version=2.0.0&service=wfs&request=GetFeature&typeName=opendata:recycling_facilities&outputFormat=json";
-                                            
-
-                                            $curl = curl_init();
-                                                    curl_setopt_array($curl, array(
-                                                    CURLOPT_URL => $url,
-                                                    CURLOPT_RETURNTRANSFER => true,
-                                                    CURLOPT_TIMEOUT => 29,
-                                                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_0_1,
-                                                    CURLOPT_CUSTOMREQUEST => "GET",
-                                                    CURLOPT_HTTPHEADER => array(
-                                                        "cache-control: no-cache"
-                                                    ),
-                                                    ));
-
-                                                    $response = curl_exec($curl);
-                                                    $err = curl_error($curl);
-
-                                                    curl_close($curl);
-                                                    // Decode JSON data into PHP array
-                                                    $response = json_decode($response, true);
-
-                                                    $i = 0;
-                                                    foreach ($response as $point) { // TODO refactor
-                                                        $i += 1;
-                                                        echo "
-                                                        {
-                                                        'type': 'Feature',
-                                                        'properties': {
-                                                            'description':
-                                                            '<strong> " . $point['NAME'] . " </strong><p>" . $point['LOCATION_TYPE'] . "</p><strong>For more information visit the <a href=" . $event['website'] . ">website</a></strong><p><strong>Contact</strong>: " . $event['contacts'] . "</p><p><strong>Address</strong>: " . $event['address'] . "</p>";
-                                                            ''
-                                                            echo "'},
-
-                                                        'geometry': {
-                                                            'type': 'Point',
-                                                            'coordinates': [" . $point['LONGITUDE'] . ", " . $point['LATITUDE'] . "]
-                                                        }
-                                                        }";
-                                                        if ($i != count($response)) {
-                                                            echo ","; 
-                                                        }
-                                                    }
-                                            echo "
-                                        ]
-                                    }
-                                });
-
+                        
                                 // Add a layer showing the places.
                                 map.addLayer({
                                     'id': 'places',
@@ -146,7 +95,7 @@
                                 });
                             }
                         );
-                    });
+                   
                     
                     // Create a popup, but don't add it to the map yet.
                     const popup = new mapboxgl.Popup({
@@ -195,37 +144,7 @@
             php?>
             <!-- Footer-->
         </div>
-        <div class="d-flex flex-wrap bg-primary justify-content-center">
-            <a class="m-3" href="/map/0">
-                <h1 class="feature bg-primary bg-gradient text-white rounded-3">All</h1>
-            </a>
-            <?php
-
-                $curl = curl_init();
-
-                curl_setopt_array($curl, array(
-                CURLOPT_URL => "http://inspire.dundeecity.gov.uk/geoserver/opendata/wfs?version=2.0.0&service=wfs&request=GetFeature&typeName=opendata:recycling_facilities&outputFormat=json",
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_TIMEOUT => 30,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "GET",
-                CURLOPT_HTTPHEADER => array(
-                    "cache-control: no-cache"
-                ),
-                ));
-
-                $response = curl_exec($curl);
-                $err = curl_error($curl);
-
-                curl_close($curl);
-                // Decode JSON data into PHP array
-                $response = json_decode($response, true);
-
-               
-
-                php?>
-            </div>
-    
+       
         <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Sustainable Dundee 2021</p></div>
         </footer>
