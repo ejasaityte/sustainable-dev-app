@@ -98,7 +98,7 @@
                 </thead>
                 <tbody>
                 <?php                            
-                        $sqlQ1 = "SELECT email, friends.userID FROM `friends` INNER JOIN `users` ON friends.userID = users.userID WHERE friends.friendID = $_SESSION['userID'] AND friends.accepted = 0";
+                        $sqlQ1 = "SELECT email, friends.userID FROM `friends` INNER JOIN `users` ON friends.userID = users.userID WHERE friends.friendID = ".$_SESSION['userID']." AND friends.accepted = 0";
                         $rows = array();
                         $result = $db->query($sqlQ1);
 
