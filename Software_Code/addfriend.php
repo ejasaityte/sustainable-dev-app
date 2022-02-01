@@ -120,7 +120,7 @@
                                                     <?php 
                                                         $userID = $row['userID'];
                                                         
-                                                        echo '**<input name="friendID" class="d-none" type="hidden" value="'.$userID.'"  />**';
+                                                        echo '<input name="friendID" class="d-none" type="hidden" value="'.$userID.'"  />';
                                                         echo "<button type='submit' class='btn btn-primary'>Accept</button>";
                                                     ?>
                                                 </form>
