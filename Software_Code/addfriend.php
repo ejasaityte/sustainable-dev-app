@@ -108,31 +108,31 @@
                                 }
                                 $index = 1;
                                 foreach ($rows as $row){
-                                        ?>
-                                        <tr>
-                                            <td>
-                                                <?php echo $index; ?>
-                                            </td>
-                                            <td><?php echo $row['email']; ?></td>
-                                            <td>
-                                                <form action="" method="post">
-                                                    <?php 
-                                                        $userID = $row['users.userID'];
-                                                        echo '**<input name="friendID" class="d-none" type="hidden" value="'.$userID.'"  />**';
-                                                        echo "<button type='submit' class='btn btn-primary'>Accept</button>";
-                                                    ?>
-                                                </form>
-                                                <?php
-                                                    if (isset($_POST['friendID'])) {
-                                                        echo "friendID: ".$_POST['friendID'];
-                                                        print_r($_POST);
-                                                    }
+                        ?>
+                                    <tr>
+                                        <td>
+                                            <?php echo $index; ?>
+                                        </td>
+                                        <td><?php echo $row['email']; ?></td>
+                                        <td>
+                                            <form action="" method="post">
+                                                <?php 
+                                                    $userID = $row['users.userID'];
+                                                    echo '<input name="friendID" class="d-none" type="hidden" value="'.$userID.'"/>';
+                                                    echo "<button type='submit' class='btn btn-primary'>Accept</button>";
                                                 ?>
-                                            </td>
-                                        </tr>
-                                        <?php
-                                        $index ++;
-                                    }
+                                            </form>
+                                            <?php
+                                                if (isset($_POST['friendID'])) {
+                                                    echo "friendID: ".$_POST['friendID'];
+                                                    print_r($_POST);
+                                                }
+                                            ?>
+                                        </td>
+                                    </tr>
+                            <?php
+                                    $index ++;
+                                }
                             ?>
                         </tbody>
                     </table>
