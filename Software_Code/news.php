@@ -67,7 +67,7 @@
             </div>
         </header>
         <!-- Page Content-->
-        <div class="container">
+        <div class="container px-lg-5">
             <a class="twitter-timeline" href="https://twitter.com/sust_dundee?ref_src=twsrc%5Etfw">Tweets by sust_dundee</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
             <!-- Footer-->
