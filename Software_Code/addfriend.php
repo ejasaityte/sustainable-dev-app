@@ -130,7 +130,7 @@
                                                         $insertSQL = "INSERT INTO `friends` (userID, friendID, accepted) VALUES (".$_SESSION['userID'].", ".$_POST['friendID'].", 1);";
                                                         $db->query($sql);
                                                         $db->query($insertSQL);
-                                                        header("Refresh:1");
+                                                        echo "<script>location.reload()</script>";
                                                     }
                                                 ?>
                                             </td>
