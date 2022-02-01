@@ -64,6 +64,7 @@
                         <thead>
                             <th>#</th>
                             <th>Email</th>
+                            <th>Remove</th>
                         </thead>
                         <tbody>
                         <?php                            
@@ -82,6 +83,23 @@
                                                 <?php echo $index; ?>
                                             </td>
                                             <td><?php echo $row['email']; ?></td>
+                                            <td>
+                                                <form action="" method="post">
+                                                    <?php 
+                                                        $userID = $row['userID'];
+                                                        
+                                                        echo '<input name="friendID" class="d-none" type="hidden" value="'.$userID.'"  />';
+                                                        echo "<button type='submit' class='btn btn-primary'>Remove</button>";
+                                                    ?>
+                                                </form>
+                                                <?php
+                                                    if (isset($_POST['friendID'])) {
+                                                        $sql = "DELETE FROM friends WHERE (userID = ".$_SESSION['userID']."AND friendID = ".$userID.") OR (userID = ".$userID." AND friendID = ".$_SESSION['userID'].");";
+                                                        $db->query($sql);
+                                                        echo "<script>location.reload()</script>";
+                                                    }
+                                                ?>
+                                            </td>
                                         </tr>
                                         <?php
                                         $index ++;
