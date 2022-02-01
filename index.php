@@ -26,7 +26,6 @@ $rules = array(
     'adduser' => "/adduser",
     'deleteitem' => "/deleteitem/(?'id'[\w\-]+)",
     'edititem' => "/edititem/(?'id'[\w\-]+)",
-    'editlocation' => "/editlocation/(?'id'[\w\-]+)",
     'deleteevent' => "/deleteevent/(?'id'[\w\-]+)",
     'addeventtodatabase' => "/addeventtodatabase/(?'id'[\w\-]+)",
     'deleteeventfromholding' => "/deleteeventfromholding/(?'id'[\w\-]+)",
@@ -40,7 +39,8 @@ $rules = array(
     //
     'home' => "/",
     'goal' => "/goal/(?'goal'[\w\-]+)",
-    'news' => "/news"
+    'news' => "/news",
+    'recycle' => "/recycle"
     //
     // Style
     //
