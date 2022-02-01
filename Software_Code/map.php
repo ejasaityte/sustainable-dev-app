@@ -142,7 +142,7 @@
 
                                                             foreach ($responsen as $eventn)
                                                             {
-                                                                echo '<strong>Address:</strong><p>'.$eventn.'</p>';
+                                                                echo '<strong>Address:</strong><p>'.$eventn['place_name'].'</p>';
                                                                 break;
                                                             }
 
