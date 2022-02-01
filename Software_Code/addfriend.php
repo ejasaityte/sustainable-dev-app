@@ -188,6 +188,7 @@
                                                 <?php
                                                     if (isset($_POST['friendID'])) {
                                                         $sql = "DELETE FROM `friends` WHERE userID = ".$_POST['friendID']." AND friendID = ".$_SESSION['userID'].";";
+                                                        echo $sql;
                                                         $db->query($sql);
                                                         echo "<script>location.reload()</script>";
                                                     }
