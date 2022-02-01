@@ -24,6 +24,7 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="/map/0">Explore</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/news">News</a></li>
                         <li class="nav-item"><a class="nav-link" href="/leaderboard">Leaderboard</a></li>
                         <?php
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
@@ -108,31 +109,31 @@
                                 }
                                 $index = 1;
                                 foreach ($rows as $row){
-                        ?>
-                                    <tr>
-                                        <td>
-                                            <?php echo $index; ?>
-                                        </td>
-                                        <td><?php echo $row['email']; ?></td>
-                                        <td>
-                                            <form action="" method="post">
-                                                <?php 
-                                                    $userID = $row['users.userID'];
-                                                    echo '<input name="friendID" class="d-none" type="hidden" value="'.$userID.'"/>';
-                                                    echo "<button type='submit' class='btn btn-primary'>Accept</button>";
+                                        ?>
+                                        <tr>
+                                            <td>
+                                                <?php echo $index; ?>
+                                            </td>
+                                            <td><?php echo $row['email']; ?></td>
+                                            <td>
+                                                <form action="" method="post">
+                                                    <?php 
+                                                        $userID = $row['users.userID'];
+                                                        echo '**<input name="friendID" class="d-none" type="hidden" value="'.$userID.'"  />**';
+                                                        echo "<button type='submit' class='btn btn-primary'>Accept</button>";
+                                                    ?>
+                                                </form>
+                                                <?php
+                                                    if (isset($_POST['friendID'])) {
+                                                        echo "friendID: ".$_POST['friendID'];
+                                                        print_r($_POST);
+                                                    }
                                                 ?>
-                                            </form>
-                                            <?php
-                                                if (isset($_POST['friendID'])) {
-                                                    echo "friendID: ".$_POST['friendID'];
-                                                    print_r($_POST);
-                                                }
-                                            ?>
-                                        </td>
-                                    </tr>
-                            <?php
-                                    $index ++;
-                                }
+                                            </td>
+                                        </tr>
+                                        <?php
+                                        $index ++;
+                                    }
                             ?>
                         </tbody>
                     </table>
