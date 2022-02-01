@@ -1,3 +1,5 @@
+<link rel="manifest" href="/static/manifest.json">
+
 <?php
 
 define('INCLUDE_DIR', dirname(__FILE__) . '/Software_Code/');
