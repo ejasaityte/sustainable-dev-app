@@ -57,7 +57,7 @@
 
         <div class="container-responsive">
             <div class="row justify-content-center" style="margin-right:0px; margin-left:0px;">
-                <div class="col-sm-8 col-sm-offset-2 pb-5">
+                <div class="col-sm-5 col-sm-offset-2 pb-5">
                     <h3>Friends list</h3>
                     <table class="table table-bordered table-striped">
                         <thead>
@@ -89,12 +89,7 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
-        </div>
-        <br>
-        <div class="container-responsive">
-            <div class="row justify-content-center" style="margin-right:0px; margin-left:0px;">
-                <div class="col-sm-8 col-sm-offset-2 pb-5">
+                <div class="col-sm-5 col-sm-offset-2 pb-5">
                     <h3>Friend requests</h3>
                     <table class="table table-bordered table-striped">
                         <thead>
@@ -136,63 +131,63 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="col-sm-2 col-sm-offset-2 pb-5">
+                    <form action="" method="post">
+                        <div class="d-grid gap-2">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="email" name="email" placeholder="Email" minlength="3" required>
+                                <div class="invalid-tooltip"> Please enter a email.</div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Request friend</button>
+                        </div>
+                    </form>
+                    <?php
+                        $friend = $_POST['email'];
+                        if(!(preg_match("/@/", $friend))&&($friend!='')) // Checks it's an email
+                        {   
+                            ?>     
+                                <div class="alert alert-warning" role="alert">
+                                    Choose a valid email!
+                                </div>  
+                            <?php
+                        }
+                        else if (isset($_POST['friendID'])) {
+                            echo "friendID: ".$_POST['friendID'];
+                            print_r($_POST);
+                        }
+                        else if (isset($_POST['email'])) { // This means it is an email *probably*
+                            $sql = "SELECT userID FROM users WHERE email='". $friend ."'";
+                            $rows = array();
+                            $result = $db->query($sql);
+                            while ($row = $result->fetch_assoc()) {
+                                $rows[] = $row;
+                            }
+                            $friendID = $rows[0]['userID'];
+                            if (!empty($rows) && $friendID != $_SESSION['userID']) {
+                                $sql = "INSERT INTO friends (userID, friendID) VALUES (".$_SESSION['userID'].", ".$friendID.");";
+                                //echo "userID: ".$_SESSION['userID'];
+                                //echo "friendID: ".$friendID;
+                                $db->query($sql); /*
+                                if (mysqli_query($db, $sql)) {
+                                    echo "Friend request sent";
+                                } else {
+                                    echo "Error: " . $sql . "<br>" . mysqli_error($db);
+                                } */
+                            } else {
+                                ?>     
+                                    <div class="alert alert-warning" role="alert">
+                                        Email invalid.
+                                    </div>  
+                                <?php
+                            }
+                                //TODO add a check before running to make sure they are not already friends
+            
+                        }
+                    ?>
+                </div>
             </div>
         </div>
-        <br>
-        <div class="position-absolute top-50 start-50 translate-middle">
-        <form action="" method="post">
-            <div class="d-grid gap-2">
-                <div class="input-group">
-                    <input type="text" class="form-control" id="email" name="email" placeholder="Email" minlength="3" required>
-                    <div class="invalid-tooltip"> Please enter a email.</div>
-                </div>
-                <button type="submit" class="btn btn-primary">Request friend</button>
-            </div>
-        <?php
-            $friend = $_POST['email'];
-            if(!(preg_match("/@/", $friend))&&($friend!='')) // Checks it's an email
-            {   
-                ?>     
-                    <div class="alert alert-warning" role="alert">
-                        Choose a valid email!
-                    </div>  
-                <?php
-            }
-            else if (isset($_POST['friendID'])) {
-                echo "friendID: ".$_POST['friendID'];
-                print_r($_POST);
-            }
-            else if (isset($_POST['email'])) { // This means it is an email *probably*
-                $sql = "SELECT userID FROM users WHERE email='". $friend ."'";
-                $rows = array();
-                $result = $db->query($sql);
-                while ($row = $result->fetch_assoc()) {
-                    $rows[] = $row;
-                }
-                $friendID = $rows[0]['userID'];
-                if (!empty($rows) && $friendID != $_SESSION['userID']) {
-                    $sql = "INSERT INTO friends (userID, friendID) VALUES (".$_SESSION['userID'].", ".$friendID.");";
-                    //echo "userID: ".$_SESSION['userID'];
-                    //echo "friendID: ".$friendID;
-                    $db->query($sql); /*
-                    if (mysqli_query($db, $sql)) {
-                        echo "Friend request sent";
-                      } else {
-                        echo "Error: " . $sql . "<br>" . mysqli_error($db);
-                      } */
-                } else {
-                    ?>     
-                        <div class="alert alert-warning" role="alert">
-                            Email invalid.
-                        </div>  
-                    <?php
-                }
-                    //TODO add a check before running to make sure they are not already friends
 
-            }
-        ?>
-
-    </div>
     </div>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
