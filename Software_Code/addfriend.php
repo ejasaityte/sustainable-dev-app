@@ -234,14 +234,14 @@
                                 $sql = "SELECT * FROM `friends` WHERE (userID = ".$_SESSION['userID']." and friendID = ".$friendID.") OR (userID = ".$friendID." and friendID = ".$_SESSION['userID'].");";
                                 echo $sql;
                                 $result = $db->query($sql); 
-                                $row = array();
+                                $rows = array();
                                 while ($row = $result->fetch_assoc()) {
                                     $rows[] = $row;
                                 }
                                 if (!empty($rows)) {
                                     ?>     
                                         <div class="alert alert-warning" role="alert">
-                                            Email invalid.
+                                            Email already requested.
                                         </div>  
                                     <?php
                                     return;
