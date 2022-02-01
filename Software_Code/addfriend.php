@@ -68,7 +68,7 @@
                         </thead>
                         <tbody>
                         <?php                            
-                                $sqlQ1 = "SELECT email FROM `friends` INNER JOIN `users` ON friends.friendID = users.userID WHERE friends.userID = ".$_SESSION['userID']." AND friends.accepted = 1;";
+                                $sqlQ1 = "SELECT email, friendID FROM `friends` INNER JOIN `users` ON friends.friendID = users.userID WHERE friends.userID = ".$_SESSION['userID']." AND friends.accepted = 1;";
                                 $rows = array();
                                 $result = $db->query($sqlQ1);
 
@@ -86,7 +86,7 @@
                                             <td>
                                                 <form action="" method="post">
                                                     <?php 
-                                                        $userID = $row['userID'];
+                                                        $userID = $row['friendID'];
                                                         
                                                         echo '<input name="userID" class="d-none" type="hidden" value="'.$userID.'"  />';
                                                         echo "<button type='submit' class='btn btn-primary'>Remove</button>";
@@ -94,7 +94,7 @@
                                                 </form>
                                                 <?php
                                                     if (isset($_POST['userID'])) {
-                                                        $sql = "DELETE FROM friends WHERE (userID = ".$_SESSION['userID']."AND friendID = ".$_POST['userID'].") OR (userID = ".$_POST['userID']." AND friendID = ".$_SESSION['userID'].");";
+                                                        $sql = "DELETE FROM friends WHERE (userID = ".$_SESSION['userID']." AND friendID = ".$_POST['userID'].") OR (userID = ".$_POST['userID']." AND friendID = ".$_SESSION['userID'].");";
                                                         echo $sql;
                                                         $db->query($sql);
                                                         //echo "<script>location.reload()</script>";
