@@ -119,7 +119,8 @@
                                                             'description':
                                                             '<strong> " . $point['NAME'] . " </strong><p>" . $point['LOCATION_TYPE'] . "</p><strong>For more information visit the <a href=" . $event['website'] . ">website</a></strong><p><strong>Contact</strong>: " . $event['contacts'] . "</p><p><strong>Address</strong>: " . $event['address'] . "</p>";
 
-                                                            
+                                                            echo "'},
+
                                                         'geometry': {
                                                             'type': 'Point',
                                                             'coordinates': [" . $point['LONGITUDE'] . ", " . $point['LATITUDE'] . "]
