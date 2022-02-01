@@ -103,6 +103,7 @@
                         $result = $db->query($sqlQ1);
 
                         while ($row = $result->fetch_assoc()) {
+                            print_r($rows);
                             $rows[] = $row;
                         }
                         $index = 1;
