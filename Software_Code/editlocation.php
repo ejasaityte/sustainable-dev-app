@@ -123,7 +123,7 @@
             <?php 
         if("" == trim($_POST['postcode'])){
             if(!isset($row['postcode'])) $postcode = 'NULL';
-            else $postode = $row['postcode'];
+            else $postode = "'".$row['postcode']."'";
         } 
         else {
             $postcode = "'".$_POST['postcode']."'";
@@ -154,14 +154,14 @@
             $lon = $_POST['lon'];
         } 
 
-        if ($postode != $row['postcode'])
+        if ($_POST['postcode'] != $row['postcode'])
         {
             $sql = "UPDATE events SET postcode=".$postcode." WHERE id=".$params['id'];
             $result = $db->query($sql);
         }
         if($empty==False)
             {
-                $sql = "UPDATE coord SET postcode=". $postcode .", address=". $address . ", lat='".$lat."', lon='".$lon."' WHERE postcode=". $row['postcode'] ."";
+                $sql = "UPDATE coord SET postcode=". $postcode .", address=". $address . ", lat='".$lat."', lon='".$lon."' WHERE postcode='". $row['postcode'] ."'";
             }
         else {
             $sql = "INSERT INTO coord (postcode, address, lat, lon) VALUES (". $postcode .", ". $address . ",'".$lat."','".$lon."')";
