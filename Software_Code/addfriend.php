@@ -24,7 +24,6 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="/map/0">Explore</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/news">News</a></li>
                         <li class="nav-item"><a class="nav-link" href="/leaderboard">Leaderboard</a></li>
                         <?php
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
@@ -123,6 +122,12 @@
                                                         echo "<button type='submit' class='btn btn-primary'>Accept</button>";
                                                     ?>
                                                 </form>
+                                                <?php
+                                                    if (isset($_POST['friendID'])) {
+                                                        echo "friendID: ".$_POST['friendID'];
+                                                        print_r($_POST);
+                                                    }
+                                                ?>
                                             </td>
                                         </tr>
                                         <?php
@@ -133,6 +138,7 @@
                     </table>
                 </div>
                 <div class="col-sm-4">
+                    <h3>Add friend</h3>
                     <form action="" method="post">
                         <div class="d-grid gap-2">
                             <div class="input-group">
@@ -151,10 +157,6 @@
                                     Choose a valid email!
                                 </div>  
                             <?php
-                        }
-                        else if (isset($_POST['friendID'])) {
-                            echo "friendID: ".$_POST['friendID'];
-                            print_r($_POST);
                         }
                         else if (isset($_POST['email'])) { // This means it is an email *probably*
                             $sql = "SELECT userID FROM users WHERE email='". $friend ."'";
