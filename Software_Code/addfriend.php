@@ -56,79 +56,87 @@
         <br>
 
         <div class="container-responsive">
-            <h3>Friends list</h3>
-            <table class="table table-bordered table-striped">
-                <thead>
-                    <th>#</th>
-                    <th>Email</th>
-                </thead>
-                <tbody>
-                <?php                            
-                        $sqlQ1 = "SELECT email FROM `friends` INNER JOIN `users` ON friends.friendID = users.userID WHERE friends.userID = 1 AND friends.accepted = 1;";
-                        $rows = array();
-                        $result = $db->query($sqlQ1);
+            <div class="row justify-content-center" style="margin-right:0px; margin-left:0px;">
+                <div class="col-sm-8 col-sm-offset-2 pb-5">
+                    <h3>Friends list</h3>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <th>#</th>
+                            <th>Email</th>
+                        </thead>
+                        <tbody>
+                        <?php                            
+                                $sqlQ1 = "SELECT email FROM `friends` INNER JOIN `users` ON friends.friendID = users.userID WHERE friends.userID = 1 AND friends.accepted = 1;";
+                                $rows = array();
+                                $result = $db->query($sqlQ1);
 
-                        while ($row = $result->fetch_assoc()) {
-                            $rows[] = $row;
-                        }
-                        $index = 1;
-                        foreach ($rows as $row){
-                                ?>
-                                <tr>
-                                    <td>
-                                        <?php echo $index; ?>
-                                    </td>
-                                    <td><?php echo $row['email']; ?></td>
-                                </tr>
-                                <?php
-                                $index ++;
-                            }
-                    ?>
-                </tbody>
-            </table>
+                                while ($row = $result->fetch_assoc()) {
+                                    $rows[] = $row;
+                                }
+                                $index = 1;
+                                foreach ($rows as $row){
+                                        ?>
+                                        <tr>
+                                            <td>
+                                                <?php echo $index; ?>
+                                            </td>
+                                            <td><?php echo $row['email']; ?></td>
+                                        </tr>
+                                        <?php
+                                        $index ++;
+                                    }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
         <br>
         <div class="container-responsive">
-            <h3>Friend requests</h3>
-            <table class="table table-bordered table-striped">
-                <thead>
-                    <th>#</th>
-                    <th>Email</th>
-                    <th>Accept</th>
-                </thead>
-                <tbody>
-                <?php                            
-                        $sqlQ1 = "SELECT email, friends.userID FROM `friends` INNER JOIN `users` ON friends.userID = users.userID WHERE friends.friendID = ".$_SESSION['userID']." AND friends.accepted = 0";
-                        $rows = array();
-                        $result = $db->query($sqlQ1);
+            <div class="row justify-content-center" style="margin-right:0px; margin-left:0px;">
+                <div class="col-sm-8 col-sm-offset-2 pb-5">
+                    <h3>Friend requests</h3>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <th>#</th>
+                            <th>Email</th>
+                            <th>Accept</th>
+                        </thead>
+                        <tbody>
+                        <?php                            
+                                $sqlQ1 = "SELECT email, friends.userID FROM `friends` INNER JOIN `users` ON friends.userID = users.userID WHERE friends.friendID = ".$_SESSION['userID']." AND friends.accepted = 0";
+                                $rows = array();
+                                $result = $db->query($sqlQ1);
 
-                        while ($row = $result->fetch_assoc()) {
-                            $rows[] = $row;
-                        }
-                        $index = 1;
-                        foreach ($rows as $row){
-                                ?>
-                                <tr>
-                                    <td>
-                                        <?php echo $index; ?>
-                                    </td>
-                                    <td><?php echo $row['email']; ?></td>
-                                    <td>
-                                        <form action="" method="post">
-                                            <?php 
-                                                $userID = $row['users.userID'];
-                                                echo '**<input name="friendID" class="d-none" type="hidden" value="'.$userID.'"  />**';
-                                                echo "<button type='submit' class='btn btn-primary'>Accept</button>";
-                                            ?>
-                                        </form>
-                                    </td>
-                                </tr>
-                                <?php
-                                $index ++;
-                            }
-                    ?>
-                </tbody>
-            </table>
+                                while ($row = $result->fetch_assoc()) {
+                                    $rows[] = $row;
+                                }
+                                $index = 1;
+                                foreach ($rows as $row){
+                                        ?>
+                                        <tr>
+                                            <td>
+                                                <?php echo $index; ?>
+                                            </td>
+                                            <td><?php echo $row['email']; ?></td>
+                                            <td>
+                                                <form action="" method="post">
+                                                    <?php 
+                                                        $userID = $row['users.userID'];
+                                                        echo '**<input name="friendID" class="d-none" type="hidden" value="'.$userID.'"  />**';
+                                                        echo "<button type='submit' class='btn btn-primary'>Accept</button>";
+                                                    ?>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        <?php
+                                        $index ++;
+                                    }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
         <br>
         <div class="position-absolute top-50 start-50 translate-middle">
@@ -152,6 +160,7 @@
             }
             else if (isset($_POST['friendID'])) {
                 echo "friendID: ".$_POST['friendID'];
+                print_r($_POST);
             }
             else if (isset($_POST['email'])) { // This means it is an email *probably*
                 $sql = "SELECT userID FROM users WHERE email='". $friend ."'";
