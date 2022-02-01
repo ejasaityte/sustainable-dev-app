@@ -57,7 +57,6 @@
         <br>
 
         <?php
-        /*
             $updateReq = "SELECT postcode FROM events WHERE id=".$params['id'];
             
             $rows = array();
@@ -67,7 +66,7 @@
             }
             foreach ($rows as $row)
             {
-                $coordReq = "SELECT * FROM events WHERE postcode=".$row['postcode'];
+                $coordReq = "SELECT * FROM coord WHERE postcode=".$row['postcode'];
             
                 $rowsL = array();
                 $resultL = $db->query($coordReq);
@@ -137,7 +136,7 @@
         ?><div class="alert alert-warning" role="alert">
   <?php echo $sql; ?>
 </div> <?php
-        $result = $db->query($sql);*/?>
+        $result = $db->query($sql);?>
         </form>
     </div>
         <!-- Bootstrap core JS-->
