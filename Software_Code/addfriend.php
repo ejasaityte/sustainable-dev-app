@@ -232,6 +232,7 @@
                             $friendID = $rows[0]['userID'];
                             if (!empty($rows) && $friendID != $_SESSION['userID']) {
                                 $sql = "SELECT * FROM `friends` WHERE (userID = ".$_SESSION['userID']." and friendID = ".$friendID.") OR (userID = ".$friendID." and friendID = ".$_SESSION['userID'].");";
+                                echo $sql;
                                 $result = $db->query($sql); 
                                 if (!empty($result)) {
                                     ?>     
