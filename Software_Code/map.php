@@ -120,7 +120,7 @@
                                                         'type': 'Feature',
                                                         'properties': {
                                                             'description':
-                                                            '<strong> " . $event['name'] . " </strong><p>" . $event['description'] . "</p><strong>For more information visit the <a href=" . $event['website'] . ">website</a></strong><p><strong>Contact</strong>: " . $event['contacts'] . "<strong>Address</strong>: " . $event['address'] . "</p>";
+                                                            '<strong> " . $event['name'] . " </strong><p>" . $event['description'] . "</p><strong>For more information visit the <a href=" . $event['website'] . ">website</a></strong><p><strong>Contact</strong>: " . $event['contacts'] . "</p><p><strong>Address</strong>: " . $event['address'] . "</p>";
 
                                                             if($_SESSION['loggedin'] == true){
                                                             echo "<div class=\'col-sm-auto text-center\' style=\'padding-bottom:10px;\'\> <a class=\'btn btn-primary btn-sm mt-auto\' href=\'/checkin/" . $_SESSION['userID'] . "\'>Check in</a></div\>";
