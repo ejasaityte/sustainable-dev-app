@@ -28,17 +28,16 @@ The Scrum Master for this meeting was Laura
 Jamie, Euan, Sem, Eddie, Matthew, Laura
 
 ### Summary of Conversation:
-Discussed yesterday's work - creating a back-end API using Microsoft Azure, populating 17goals table, trying to make API work, working on home page and implementation of maps, processing data of events held in Dundee, making a footer properly displayed.
+Discussed yesterday's work : updating design features of the website as requested by a client, started implementing friends feature (sending a request), having a leaderboard properly working as well as check in into events system via both our website and social media(i.e. twitter).
 
-Talked about plans for today - finding errors in applying API in index page, creating events and users table, formalising product backlog, implementing - a favourite's list, maps, and user logins, properly displaying goals and events happening in Dundee based on each goal in home page.
-sen request
+Talked about plans for today :
 
 | Who        | What           |
 | ------------- |:-------------:|
 | Euan and Jamie  | notifying a friend receiving a friend request (pair programming)  | 
-| Sem      |check-in through a social on a map|
-| Matthew and Eddie | web app into a phone app, tour |
-| Laura | continue with a twitter integration|
+| Sem      |check-in through a social on a map, update address of events (requested by a clients)|
+| Matthew and Eddie | web app into a phone app, tour of events |
+| Laura | continue with a twitter integration, maps using online dataset|
 
 ## Day 3 - Scrum Meeting summary
 The Scrum Master for this meeting was Laura
@@ -47,7 +46,7 @@ The Scrum Master for this meeting was Laura
 Jamie, Euan, Sem, Eddie, Matthew, Laura
 
 ### Summary of Conversation:
-Discussed yesterday's work - having API properly working and displaying data from both tables’ goals and events, having a login for an admin.
+Discussed yesterday's work - issues with mobile app implementation (manifest.js file completely crashing the website or not displaying information from a database)
 
 Talked about plans for today - discussing additional requirements, making maps working - getting users locations and thus nearby events, adding logins for users, making alterations to product backlog, adding a charter, programming in pairs.
 
