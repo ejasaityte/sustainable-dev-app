@@ -126,7 +126,7 @@
                                                 </form>
                                                 <?php
                                                     if (isset($_POST['friendID'])) {
-                                                        $sql = "UPDATE `friends` SET accepted = 1 WHERE userID = ".$_SESSION['userID']." AND friendID = ".$_POST['friendID'].";";
+                                                        $sql = "UPDATE `friends` SET accepted = 1 WHERE userID = ".$_POST['friendID']." AND friendID = ".$_SESSION['userID'].";";
                                                         $insertSQL = "INSERT INTO `friends` (userID, friendID, accepted) VALUES (".$_SESSION['userID'].", ".$_POST['friendID'].", 1);";
                                                         $db->query($sql);
                                                         $db->query($insertSQL);
