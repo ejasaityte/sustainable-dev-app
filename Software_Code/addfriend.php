@@ -234,6 +234,7 @@
                                 $sql = "SELECT * FROM `friends` WHERE (userID = ".$_SESSION['userID']." and friendID = ".$friendID.") OR (userID = ".$friendID." and friendID = ".$_SESSION['userID'].");";
                                 echo $sql;
                                 $result = $db->query($sql); 
+                                print_r($result);
                                 if (!empty($result)) {
                                     ?>     
                                         <div class="alert alert-warning" role="alert">
