@@ -119,7 +119,7 @@
                                             <td>
                                                 <form action="" method="post">
                                                     <?php 
-                                                        $userID = $row['users.userID'];
+                                                        $userID = $row['userID'];
                                                         
                                                         echo '**<input name="friendID" class="d-none" type="hidden" value="'.$userID.'"  />**';
                                                         echo "<button type='submit' class='btn btn-primary'>Accept</button>";
