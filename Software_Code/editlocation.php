@@ -86,6 +86,7 @@
             while ($row = $result->fetch_assoc()) {
                 $rows[] = $row;
             }
+            /*
             foreach ($rows as $row)
             {
                 $coordReq = "SELECT * FROM coord WHERE postcode='".$row['postcode']."'";
@@ -161,7 +162,7 @@
             break;
         }
         break;
-    }
+    }*/
 ?>
         </form>
     </div>
