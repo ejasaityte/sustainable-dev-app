@@ -88,13 +88,13 @@
                                                     <?php 
                                                         $userID = $row['userID'];
                                                         
-                                                        echo '<input name="friendID" class="d-none" type="hidden" value="'.$userID.'"  />';
+                                                        echo '<input name="userID" class="d-none" type="hidden" value="'.$userID.'"  />';
                                                         echo "<button type='submit' class='btn btn-primary'>Remove</button>";
                                                     ?>
                                                 </form>
                                                 <?php
-                                                    if (isset($_POST['friendID'])) {
-                                                        $sql = "DELETE FROM friends WHERE (userID = ".$_SESSION['userID']."AND friendID = ".$userID.") OR (userID = ".$userID." AND friendID = ".$_SESSION['userID'].");";
+                                                    if (isset($_POST['userID'])) {
+                                                        $sql = "DELETE FROM friends WHERE (userID = ".$_SESSION['userID']."AND friendID = ".$_POST['userID'].") OR (userID = ".$_POST['userID']." AND friendID = ".$_SESSION['userID'].");";
                                                         $db->query($sql);
                                                         echo "<script>location.reload()</script>";
                                                     }
