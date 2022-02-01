@@ -16,13 +16,13 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto&display=swap" rel="stylesheet">
     </head>
-    <?php session_start(); 
+<?php session_start(); 
+    include("dbconnect.php");
     if (!isset($_SESSION['favouriteslist']))
     {
         $_SESSION['favouriteslist'] = array();
-        include("dbconnect.php");
     }
-    ?>
+?>
     <body>
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
