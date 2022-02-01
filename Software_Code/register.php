@@ -28,6 +28,7 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link"href="/">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="/map/0">Explore</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/news">News</a></li>
                         <li class="nav-item"><a class="nav-link" href="/leaderboard">Leaderboard</a></li>
                         <li class="nav-item"><a class="nav-link"href="/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
                         <li class="nav-item"><a class="nav-link active" href="/register">Register</a></li>
