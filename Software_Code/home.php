@@ -20,6 +20,7 @@
     if (!isset($_SESSION['favouriteslist']))
     {
         $_SESSION['favouriteslist'] = array();
+        include("dbconnect.php");
     }
     ?>
     <body>
@@ -53,12 +54,14 @@
 ?>
                         <li class="nav-item"><a class="nav-link viridian" href="/addfriend">Friends</a></li>
 <?php
-    }
+        }
         if ($_SESSION['isadmin']==1) { 
 ?>
                         <li class="nav-item"><a class="nav-link" href="/addevent">Add Event</a></li>
-<?php } 
-        if ($_SESSION['username']=='admin') { ?>
+<?php 
+        } 
+        if ($_SESSION['username']=='admin') { 
+?>
                         <li class="nav-item"><a class="nav-link" href="/adduser">Add User</a></li>
 <?php 
         } 

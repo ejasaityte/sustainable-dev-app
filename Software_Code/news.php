@@ -20,6 +20,7 @@
     if (!isset($_SESSION['favouriteslist']))
     {
         $_SESSION['favouriteslist'] = array();
+        include("dbconnect.php");
     }
     ?>
     <body>

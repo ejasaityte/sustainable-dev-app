@@ -19,7 +19,9 @@
     #map { position: relative; width: 100%; height: 500px; }
     </style>
     </head>
-    <?php session_start(); ?>
+    <?php session_start();
+        include("dbconnect.php");
+     ?>
     <body>
         <style>
         .mapboxgl-popup {

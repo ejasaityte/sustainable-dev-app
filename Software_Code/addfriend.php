@@ -214,6 +214,8 @@
                             }
                             $friendID = $rows[0]['userID'];
                             if (!empty($rows) && $friendID != $_SESSION['userID']) {
+                                $sql = "SELECT userID FROM users WHERE email='". $friend ."'";
+                                
                                 $sql = "INSERT INTO friends (userID, friendID) VALUES (".$_SESSION['userID'].", ".$friendID.");";
                                 //echo "userID: ".$_SESSION['userID'];
                                 //echo "friendID: ".$friendID;
