@@ -140,6 +140,7 @@
                             <th>#</th>
                             <th>Email</th>
                             <th>Accept</th>
+                            <th>Decline</th>
                         </thead>
                         <tbody>
                         <?php                            
@@ -172,6 +173,22 @@
                                                         $insertSQL = "INSERT INTO `friends` (userID, friendID, accepted) VALUES (".$_SESSION['userID'].", ".$_POST['friendID'].", 1);";
                                                         $db->query($sql);
                                                         $db->query($insertSQL);
+                                                        echo "<script>location.reload()</script>";
+                                                    }
+                                                ?>
+                                            </td>
+                                            <td>
+                                                <form action="" method="post">
+                                                    <?php 
+                                                        $userID = $row['userID'];
+                                                        echo '<input name="friendID" class="d-none" type="hidden" value="'.$userID.'"  />';
+                                                        echo "<button type='submit' class='btn btn-primary'>Decline</button>";
+                                                    ?>
+                                                </form>
+                                                <?php
+                                                    if (isset($_POST['friendID'])) {
+                                                        $sql = "DELETE FROM `friends` WHERE userID = ".$_POST['friendID']." AND friendID = ".$_SESSION['userID'].";";
+                                                        $db->query($sql);
                                                         echo "<script>location.reload()</script>";
                                                     }
                                                 ?>
