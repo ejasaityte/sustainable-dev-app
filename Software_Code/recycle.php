@@ -118,7 +118,7 @@
                                                         'properties': {
                                                             'description':
                                                             '<strong> " . $point['NAME'] . " </strong><p>" . $point['LOCATION_TYPE'] . "</p><strong>For more information visit the <a href=" . $event['website'] . ">website</a></strong><p><strong>Contact</strong>: " . $event['contacts'] . "</p><p><strong>Address</strong>: " . $event['address'] . "</p>";
-
+                                                            ''
                                                             echo "'},
 
                                                         'geometry': {
@@ -204,7 +204,7 @@
                 $curl = curl_init();
 
                 curl_setopt_array($curl, array(
-                CURLOPT_URL => "https://sustainabledundeeapp.azurewebsites.net/api/allGoals",
+                CURLOPT_URL => "http://inspire.dundeecity.gov.uk/geoserver/opendata/wfs?version=2.0.0&service=wfs&request=GetFeature&typeName=opendata:recycling_facilities&outputFormat=json",
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_TIMEOUT => 30,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
@@ -221,9 +221,7 @@
                 // Decode JSON data into PHP array
                 $response = json_decode($response, true);
 
-                foreach ($response as $goal) {
-                    echo '<a class="m-3" href="/map/'.$goal['goalID'].'"><img class="feature bg-primary bg-gradient text-white" src="' . $goal['goalPicture'] . '"></a>';
-                }
+               
 
                 php?>
             </div>
