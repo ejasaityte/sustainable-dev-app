@@ -57,7 +57,7 @@
 
         <div class="container-responsive">
             <div class="row justify-content-center" style="margin-right:0px; margin-left:0px;">
-                <div class="col-sm-5 col-sm-offset-2 pb-5">
+                <div class="col-sm-4">
                     <h3>Friends list</h3>
                     <table class="table table-bordered table-striped">
                         <thead>
@@ -89,7 +89,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="col-sm-5 col-sm-offset-2 pb-5">
+                <div class="col-sm-4">
                     <h3>Friend requests</h3>
                     <table class="table table-bordered table-striped">
                         <thead>
@@ -131,7 +131,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="col-sm-2 col-sm-offset-2 pb-5">
+                <div class="col-sm-4">
                     <form action="" method="post">
                         <div class="d-grid gap-2">
                             <div class="input-group">
