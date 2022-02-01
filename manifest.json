@@ -5,7 +5,7 @@
     "background_color": "#ffffff",
     "display": "standalone",
     "scope": "/",
-    "start_url": "https://sustainabledundeeapp.azurewebsites.net/",
+    "start_url": "/",
     "description": "Sustainable Dundee Web App",
     "orientation": "any",
     "icons": [
