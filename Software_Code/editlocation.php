@@ -78,7 +78,7 @@
         </div>
         <br>
 
-        <?php
+        <?php /*
             $updateReq = "SELECT postcode FROM events WHERE id=".$params['id'];
             
             $rows = array();
