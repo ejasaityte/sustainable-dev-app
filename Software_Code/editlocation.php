@@ -78,7 +78,7 @@
         </div>
         <br>
 
-        <?php /*
+        <?php 
             $updateReq = "SELECT postcode FROM events WHERE id=".$params['id'];
             
             $rows = array();
@@ -86,7 +86,6 @@
             while ($row = $result->fetch_assoc()) {
                 $rows[] = $row;
             }
-            /*
             foreach ($rows as $row)
             {
                 $coordReq = "SELECT * FROM coord WHERE postcode='".$row['postcode']."'";
@@ -162,7 +161,7 @@
             break;
         }
         break;
-    }*/
+    }
 ?>
         </form>
     </div>
