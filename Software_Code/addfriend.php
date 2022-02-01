@@ -214,8 +214,16 @@
                             }
                             $friendID = $rows[0]['userID'];
                             if (!empty($rows) && $friendID != $_SESSION['userID']) {
-                                $sql = "SELECT userID FROM users WHERE email='". $friend ."'";
-                                
+                                $sql = "SELECT * FROM `friends` WHERE (userID = ".$_SESSION['userID']." and friendID = ".$friendID.") OR (userID = ".$friendID." and friendID = ".$_SESSION['userID'].");";
+                                $result = $db->query($sql); 
+                                if (!empty($result)) {
+                                    ?>     
+                                        <div class="alert alert-warning" role="alert">
+                                            Email invalid.
+                                        </div>  
+                                    <?php
+                                    return
+                                }
                                 $sql = "INSERT INTO friends (userID, friendID) VALUES (".$_SESSION['userID'].", ".$friendID.");";
                                 //echo "userID: ".$_SESSION['userID'];
                                 //echo "friendID: ".$friendID;
