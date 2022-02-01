@@ -108,6 +108,7 @@
                                     $rows[] = $row;
                                 }
                                 $index = 1;
+                                print_r($rows);
                                 foreach ($rows as $row){
                                         ?>
                                         <tr>
@@ -119,6 +120,7 @@
                                                 <form action="" method="post">
                                                     <?php 
                                                         $userID = $row['users.userID'];
+                                                        
                                                         echo '**<input name="friendID" class="d-none" type="hidden" value="'.$userID.'"  />**';
                                                         echo "<button type='submit' class='btn btn-primary'>Accept</button>";
                                                     ?>
