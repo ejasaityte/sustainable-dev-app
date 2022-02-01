@@ -86,12 +86,10 @@
                         
                                 // Add a layer showing the places.
                                 map.addLayer({
-                                    'id': 'places',
-                                    'type': 'symbol',
+                                    'id': 'places-layer',
+                                    'type': 'circle',
                                     'source': 'places',
-                                    'layout': {
-                                        'icon-image': 'custom-marker',
-                                    }
+                                    
                                 });
                             }
                         );
