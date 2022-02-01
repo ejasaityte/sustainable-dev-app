@@ -1,3 +1,7 @@
+<head>
+    <link rel="manifest" crossorigin="use-credentials" href="manifest.json"/>
+</head>
+
 <?php
 
 define('INCLUDE_DIR', dirname(__FILE__) . '/Software_Code/');
