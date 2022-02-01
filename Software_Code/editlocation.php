@@ -156,15 +156,15 @@
 
         if ($postode != $row['postcode'])
         {
-            $sql = "UPDATE events SET postcode='".$postcode."' WHERE id=".$params['id'];
+            $sql = "UPDATE events SET postcode=".$postcode." WHERE id=".$params['id'];
             $result = $db->query($sql);
         }
         if($empty==False)
             {
-                $sql = "UPDATE coord SET postcode='". $postcode ."', address='". $address . "', lat='".$lat."', lon='".$lon."' WHERE postcode='". $row['postcode'] ."'";
+                $sql = "UPDATE coord SET postcode=". $postcode .", address=". $address . ", lat='".$lat."', lon='".$lon."' WHERE postcode=". $row['postcode'] ."";
             }
         else {
-            $sql = "INSERT INTO coord (postcode, address, lat, lon) VALUES ('". $postcode ."', '". $address . "','".$lat."','".$lon."')";
+            $sql = "INSERT INTO coord (postcode, address, lat, lon) VALUES (". $postcode .", ". $address . ",'".$lat."','".$lon."')";
         }
         ?><div class="alert alert-warning" role="alert">
   <?php echo $sql; ?>
