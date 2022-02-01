@@ -88,7 +88,7 @@
             }
             foreach ($rows as $row)
             {
-                $coordReq = "SELECT * FROM events WHERE postcode=".$row['postcode'];
+                $coordReq = "SELECT * FROM coord WHERE postcode='".$row['postcode']."'";
             
                 $rowsL = array();
                 $resultL = $db->query($coordReq);
