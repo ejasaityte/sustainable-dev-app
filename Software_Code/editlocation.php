@@ -95,8 +95,12 @@
                 while ($rowL = $resultL->fetch_assoc()) {
                     $rowsL[] = $rowL;
                 }
-                foreach ($rowsL as $rowL)
+                $empty = True;
+                foreach ($rowsL as $rowLt)
                 {
+                    $empty = False;
+                    $rowL = $rowLt;
+                }
                 ?>
                 <div class="container-fluid" style="width:30%; min-width:200px;">
                 <form action="" method="post">
@@ -150,10 +154,14 @@
             $lon = $_POST['lon'];
         } 
 
-        $sql = "UPDATE coord SET postcode='". $postcode ."', address='". $address . "', lat=".$lat.", lon=".$lon."WHERE postcode=". $row['postcode'] ."";
-            $result = $db->query($sql);
-            break;
+        if($empty=False)
+            {
+                $sql = "UPDATE coord SET postcode='". $postcode ."', address='". $address . "', lat=".$lat.", lon=".$lon."WHERE postcode='". $row['postcode'] ."'";
+            }
+        else {
+            $sql = "INSERT INTO coord (postcode, address, lat, lon) VALUES ('". $postcode ."', '". $address . "',".$lat.",".$lon.")";
         }
+        $result = $db->query($sql);
         break;
     }
 ?>
