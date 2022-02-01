@@ -1,6 +1,6 @@
-<head>
+<!--<head>
     <link rel="manifest" href="static/manifest.json">
-</head>
+</head>-->
 
 <?php
 
