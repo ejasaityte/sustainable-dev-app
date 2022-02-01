@@ -1,5 +1,5 @@
 <head>
-    <link rel="manifest" href="/static/manifest.json">
+    <link rel="manifest" href="assets/manifest.json">
 </head>
 
 <?php
