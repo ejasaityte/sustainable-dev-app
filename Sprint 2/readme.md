@@ -31,7 +31,14 @@ Jamie, Euan, Sem, Eddie, Matthew, Laura
 Discussed yesterday's work - creating a back-end API using Microsoft Azure, populating 17goals table, trying to make API work, working on home page and implementation of maps, processing data of events held in Dundee, making a footer properly displayed.
 
 Talked about plans for today - finding errors in applying API in index page, creating events and users table, formalising product backlog, implementing - a favourite's list, maps, and user logins, properly displaying goals and events happening in Dundee based on each goal in home page.
+sen request
 
+| Who        | What           |
+| ------------- |:-------------:|
+| Euan and Jamie  | notifying a friend receiving a friend request (pair programming)  | 
+| Sem      |check-in through a social on a map|
+| Matthew | web app into a phone app, tour |
+| Laura | continue with a twitter integration|
 
 ## Day 3 - Scrum Meeting summary
 The Scrum Master for this meeting was Laura
