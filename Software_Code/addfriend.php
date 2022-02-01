@@ -125,6 +125,9 @@
                                 while ($row = $result->fetch_assoc()) {
                                     $rows[] = $row;
                                 }
+                                if (empty($rows)) {
+                                    echo "eyo u got no mates";
+                                }
                                 $index = 1;
                                 foreach ($rows as $row){
                                         ?>
