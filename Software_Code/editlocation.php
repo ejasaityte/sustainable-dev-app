@@ -23,29 +23,51 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/map">Explore</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/map/0">Explore</a></li>
                         <li class="nav-item"><a class="nav-link" href="/news">News</a></li>
                         <li class="nav-item"><a class="nav-link" href="/leaderboard">Leaderboard</a></li>
-                        <?php
-        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-            ?>
-                  <li class="nav-item"><a class="nav-link" href="/favouriteslist">Favourites</a></li>
-                  <li class="nav-item"><a class="nav-link" href="/addfriend">Friends</a></li>
-                  
-                  <?php 
-                  if ($_SESSION['isadmin']==1) { ?>
-                  <li class="nav-item"><a class="nav-link" href="/addevent">Add Event</a></li>
-                  <?php } 
-                      if ($_SESSION['username']=='admin') { ?>
-                      <li class="nav-item"><a class="nav-link" href="/adduser">Add User</a></li>
-                      <?php } ?>
-                  <li class="nav-item"><a class="nav-link" href="/logout">Log out</a></li>
-                  <?php } 
-                  else{
-                  ?>
-                  <li class="nav-item"><a class="nav-link" href="/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
-                  <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
-          <?php } ?>
+<?php
+    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+?>
+                        <li class="nav-item"><a class="nav-link" href="/favouriteslist">Favourites</a></li>
+<?php
+        $sql = "SELECT friends.userID FROM `friends` INNER JOIN `users` ON friends.userID = users.userID WHERE friends.friendID = ".$_SESSION['userID']." AND friends.accepted = 0";
+        $rows = array();
+        $result = $db->query($sql);
+
+        while ($row = $result->fetch_assoc()) {
+            $rows[] = $row;
+        }
+        if (empty($rows)) {
+?>
+                        <li class="nav-item"><a class="nav-link " href="/addfriend">Friends</a></li>
+<?php
+        } else {
+?>
+                        <li class="nav-item"><a class="nav-link viridian" href="/addfriend">Friends</a></li>
+<?php
+    }
+        if ($_SESSION['isadmin']==1) { 
+?>
+                        <li class="nav-item"><a class="nav-link" href="/addevent">Add Event</a></li>
+<?php } 
+        if ($_SESSION['username']=='admin') { ?>
+                        <li class="nav-item"><a class="nav-link" href="/adduser">Add User</a></li>
+<?php 
+        } 
+
+?>
+
+                        <li class="nav-item"><a class="nav-link" href="/logout">Log out</a></li>
+<?php 
+    } 
+    else{
+?>
+                        <li class="nav-item"><a class="nav-link" href="/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+<?php 
+    } 
+?>
                     </ul>
                 </div>
             </div>
@@ -66,7 +88,7 @@
             }
             foreach ($rows as $row)
             {
-                $coordReq = "SELECT * FROM coord WHERE postcode=".$row['postcode'];
+                $coordReq = "SELECT * FROM events WHERE postcode=".$row['postcode'];
             
                 $rowsL = array();
                 $resultL = $db->query($coordReq);
@@ -95,49 +117,52 @@
                     </div> 
 
             <?php 
-            if("" == trim($_POST['postcode'])){
-                if(!isset($row['postcode'])) $postcode = 'NULL';
-                else $postode = $row['postcode'];
-            } 
-            else {
-                $postcode = "'".$_POST['postcode']."'";
-            }   
-    
-    
-            if("" == trim($_POST['address'])){
-                if(!isset($row['address'])) $address = 'NULL';
-                else $address = $row['address'];
-            } 
-            else {
-                $address = "'".$_POST['address']."'";
-            } 
-    
-            if("" == trim($_POST['lat'])){
-                if(!isset($row['lat'])) $lat = 'NULL';
-                else $lat = $row['lat'];
-            } 
-            else {
-                $lat = $_POST['lat'];
-            } 
-    
-            if("" == trim($_POST['lon'])){
-                if(!isset($row['lon'])) $lon = 'NULL';
-                else $lon = $row['lon'];
-            } 
-            else {
-                $lon = $_POST['lon'];
-            } 
-    
-            $sql = "UPDATE coord SET postcode='". $postcode ."', address='". $address . "', lat=".$lat.", lon=".$lon."WHERE postcode=". $row['postcode'] ."";
-            ?><div class="alert alert-warning" role="alert">
-                <?php echo $sql; ?>
-            </div> 
-            <?php
+        if("" == trim($_POST['postcode'])){
+            if(!isset($row['postcode']) $postcode = 'NULL';
+            else $postode = $row['postcode'];
+        } 
+        else {
+            $postcode = "'".$_POST['postcode']."'";
+        }   
+
+
+        if("" == trim($_POST['address'])){
+            if(!isset($row['address']) $address = 'NULL';
+            else $address = $row['address'];
+        } 
+        else {
+            $address = "'".$_POST['address']."'";
+        } 
+
+        if("" == trim($_POST['lat'])){
+            if(!isset($row['lat']) $lat = 'NULL';
+            else $lat = $row['lat'];
+        } 
+        else {
+            $lat = $_POST['lat'];
+        } 
+
+        if("" == trim($_POST['lon'])){
+            if(!isset($row['lon']) $lon = 'NULL';
+            else $lon = $row['lon'];
+        } 
+        else {
+            $lon = $_POST['lon'];
+        } 
+
+        $sql = "UPDATE coord SET postcode='". $postcode ."', address='". $address . "', lat=".$lat.", lon=".$lon."WHERE postcode=". $row['postcode'] ."";
+        ?><div class="alert alert-warning" role="alert">
+<?php 
+    echo $sql; 
+?>
+</div> 
+<?php
             $result = $db->query($sql);
             break;
-            }
-            break;
-            }?>
+        }
+        break;
+    }
+?>
         </form>
     </div>
         <!-- Bootstrap core JS-->

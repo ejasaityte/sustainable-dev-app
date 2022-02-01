@@ -12282,7 +12282,7 @@ body {
 }
 
 .viridian {
-  color: #049a9b;
+  color: #049a9b !important;
 }
 
 .black {
