@@ -78,22 +78,44 @@
                     
                     map.on('load', () => {
                         map.addSource('places', {
-                            type: 'geojson',
+                            'type': 'geojson',
                             // Use a URL for the value for the `data` property.
-                            data: 'http://inspire.dundeecity.gov.uk/geoserver/opendata/wfs?version=2.0.0&service=wfs&request=GetFeature&typeName=opendata:recycling_facilities&outputFormat=json'
-                            });
-
-                        
-                                // Add a layer showing the places.
-                                map.addLayer({
-                                    'id': 'places-layer',
-                                    'type': 'circle',
-                                    'source': 'places',
+                            'data': {
+                                'type': 'FeatureCollection',
+                                'features': [";
+                                    $url = "https://sustainabledundeeapp.azurewebsites.net/api/allEventsCoords";
                                     
-                                });
-                            }
-                        );
-                   
+
+                                    // Decode JSON data into PHP array
+                                    $array = json_decode($url, true);
+
+                                    $i = 0;
+                                    foreach ($array as $point) { // TODO refactor
+                                        $i += 1;
+                                        echo "
+                                        { 'type': 'Feature',
+                                        echo "'},
+                                        'geometry': {
+                                            'type': 'Point',
+                                            'coordinates': [" . $point['LONGITUDE'] . ", " . $point['LATITUDE'] . "]
+                                        }
+                                        }";
+                                        if ($i != count($response)) {
+                                            echo ","; 
+                                        }
+                                    }
+                                ]
+                            }  
+                        });
+                        // Add a layer showing the places.
+                        map.addLayer({
+                            'id': 'places-layer',
+                            'type': 'circle',
+                            'source': 'places',
+                            
+                        });
+
+                    });
                     
                     
                     
