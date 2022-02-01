@@ -238,7 +238,7 @@
                                 while ($row = $result->fetch_assoc()) {
                                     $rows[] = $row;
                                 }
-                                if (empty($rows)) {
+                                if (!empty($rows)) {
                                     ?>     
                                         <div class="alert alert-warning" role="alert">
                                             Email invalid.
