@@ -122,6 +122,12 @@
                                                         echo "<button type='submit' class='btn btn-primary'>Accept</button>";
                                                     ?>
                                                 </form>
+                                                <?php
+                                                    else if (isset($_POST['friendID'])) {
+                                                        echo "friendID: ".$_POST['friendID'];
+                                                        print_r($_POST);
+                                                    }
+                                                ?>
                                             </td>
                                         </tr>
                                         <?php
@@ -132,6 +138,7 @@
                     </table>
                 </div>
                 <div class="col-sm-4">
+                    <h3>Add friend</h3>
                     <form action="" method="post">
                         <div class="d-grid gap-2">
                             <div class="input-group">
@@ -150,10 +157,6 @@
                                     Choose a valid email!
                                 </div>  
                             <?php
-                        }
-                        else if (isset($_POST['friendID'])) {
-                            echo "friendID: ".$_POST['friendID'];
-                            print_r($_POST);
                         }
                         else if (isset($_POST['email'])) { // This means it is an email *probably*
                             $sql = "SELECT userID FROM users WHERE email='". $friend ."'";
