@@ -57,6 +57,7 @@
         <br>
 
         <?php
+        /*
             $updateReq = "SELECT postcode FROM events WHERE id=".$params['id'];
             
             $rows = array();
@@ -136,7 +137,7 @@
         ?><div class="alert alert-warning" role="alert">
   <?php echo $sql; ?>
 </div> <?php
-        $result = $db->query($sql);?>
+        $result = $db->query($sql);*/?>
         </form>
     </div>
         <!-- Bootstrap core JS-->
