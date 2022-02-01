@@ -34,6 +34,7 @@ $rules = array(
     'clearfavourites' => "/clearfavourites",
     'checkin' => "/checkin/(?'userid'[\w\-]+)",
     'logout' => "/logout",
+    'tours' => "/tours",
     //
     // Home Page
     //
