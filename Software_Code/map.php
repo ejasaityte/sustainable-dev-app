@@ -121,7 +121,7 @@
                                                             'description':
                                                             '<strong> " . $event['name'] . " </strong><p>" . $event['description'] . "</p><strong>For more information visit the <a href=" . $event['website'] . ">website</a></strong><p><strong>Contact</strong>: " . $event['contacts'] . "</p>";
                                                             if($_SESSION['loggedin'] == true){
-                                                            echo "<div class=\'col-sm-auto text-center\' style=\'padding-bottom:10px;\'\> <a class=\'btn btn-primary btn-sm mt-auto\' href=\'/checkin/" . $_SESSION['userID'] . "\'>Check in</a></div>";
+                                                            echo "<div class=\'col-sm-auto text-center\' style=\'padding-bottom:10px;\'\> <a class=\'btn btn-primary btn-sm mt-auto\' href=\'/checkin/" . $_SESSION['userID'] . "\'>Check in</a></div\>";
                                                             if (str_word_count($event['name']) > 1)
                                                             {
                                                                 $str = explode(" ", $event['name']);
@@ -131,14 +131,7 @@
                                                                 $name = $event['name'];
                                                             }
                                                             echo 
-                                                                "
-                                                                            <div class=\'col-sm-auto  text-center\' style=\'padding-bottom:10px;\'\>
-                                                                            <a data-bs-toggle=\'tooltip\' data-bs-placement=\'right\' title=\'Tweet\' href=\'https://twitter.com/intent/tweet?text=I%20just%20visited%20%23" . $name . "%21&hashtags=sustainabledundee\' target=\'_blank\'\><img src=\'https://logos-world.net/wp-content/uploads/2020/04/Twitter-Emblem.png\'  style=\'width:50px;height:28px;\'\>
-                                                                            </a>                                           
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                ";
+                                                                "<div class=\'col-sm-auto  text-center\' style=\'padding-bottom:10px;\'\><a data-bs-toggle=\'tooltip\' data-bs-placement=\'right\' title=\'Tweet\' href=\'https://twitter.com/intent/tweet?text=I%20just%20visited%20%23" . $name . "%21&hashtags=sustainabledundee\' target=\'_blank\'\><img src=\'https://logos-world.net/wp-content/uploads/2020/04/Twitter-Emblem.png\'  style=\'width:50px;height:28px;\'\></a></div></div></div>";
                                                             }
                                                         echo "'},
                                                         'geometry': {
