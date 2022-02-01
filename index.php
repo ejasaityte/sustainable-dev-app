@@ -5,6 +5,7 @@ define('INCLUDE_DIR', dirname(__FILE__) . '/Software_Code/');
 $rules = array(
     //
     //API Routes
+    'addAddressesFromMapbox' => "/api/addAddresses",
     'apiShowGoals' => "/api/allGoals",
     'apiShowSingleGoal' => "/api/singleGoal/(?'goalID'[\w\-]+)",
     'apiShowSingleEvent' => "/api/allEvents/(?'goalID'[\w\-]+)",
