@@ -95,48 +95,49 @@
                     </div> 
 
             <?php 
+            if("" == trim($_POST['postcode'])){
+                if(!isset($row['postcode']) $postcode = 'NULL';
+                else $postode = $row['postcode'];
+            } 
+            else {
+                $postcode = "'".$_POST['postcode']."'";
+            }   
+    
+    
+            if("" == trim($_POST['address'])){
+                if(!isset($row['address']) $address = 'NULL';
+                else $address = $row['address'];
+            } 
+            else {
+                $address = "'".$_POST['address']."'";
+            } 
+    
+            if("" == trim($_POST['lat'])){
+                if(!isset($row['lat']) $lat = 'NULL';
+                else $lat = $row['lat'];
+            } 
+            else {
+                $lat = $_POST['lat'];
+            } 
+    
+            if("" == trim($_POST['lon'])){
+                if(!isset($row['lon']) $lon = 'NULL';
+                else $lon = $row['lon'];
+            } 
+            else {
+                $lon = $_POST['lon'];
+            } 
+    
+            $sql = "UPDATE coord SET postcode='". $postcode ."', address='". $address . "', lat=".$lat.", lon=".$lon."WHERE postcode=". $row['postcode'] ."";
+            ?><div class="alert alert-warning" role="alert">
+                <?php echo $sql; ?>
+            </div> 
+            <?php
+            $result = $db->query($sql);
             break;
             }
             break;
-            }
-        if("" == trim($_POST['postcode'])){
-            if(!isset($row['postcode']) $postcode = 'NULL';
-            else $postode = $row['postcode'];
-        } 
-        else {
-            $postcode = "'".$_POST['postcode']."'";
-        }   
-
-
-        if("" == trim($_POST['address'])){
-            if(!isset($row['address']) $address = 'NULL';
-            else $address = $row['address'];
-        } 
-        else {
-            $address = "'".$_POST['address']."'";
-        } 
-
-        if("" == trim($_POST['lat'])){
-            if(!isset($row['lat']) $lat = 'NULL';
-            else $lat = $row['lat'];
-        } 
-        else {
-            $lat = $_POST['lat'];
-        } 
-
-        if("" == trim($_POST['lon'])){
-            if(!isset($row['lon']) $lon = 'NULL';
-            else $lon = $row['lon'];
-        } 
-        else {
-            $lon = $_POST['lon'];
-        } 
-
-        $sql = "UPDATE coord SET postcode='". $postcode ."', address='". $address . "', lat=".$lat.", lon=".$lon."WHERE postcode=". $row['postcode'] ."";
-        ?><div class="alert alert-warning" role="alert">
-  <?php echo $sql; ?>
-</div> <?php
-        $result = $db->query($sql);?>
+            }?>
         </form>
     </div>
         <!-- Bootstrap core JS-->
