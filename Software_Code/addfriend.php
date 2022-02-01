@@ -181,13 +181,13 @@
                                                 <form action="" method="post">
                                                     <?php 
                                                         $userID = $row['userID'];
-                                                        echo '<input name="friendID" class="d-none" type="hidden" value="'.$userID.'"  />';
+                                                        echo '<input name="userID" class="d-none" type="hidden" value="'.$userID.'"  />';
                                                         echo "<button type='submit' class='btn btn-primary'>Decline</button>";
                                                     ?>
                                                 </form>
                                                 <?php
-                                                    if (isset($_POST['friendID'])) {
-                                                        $sql = "DELETE FROM `friends` WHERE userID = ".$_POST['friendID']." AND friendID = ".$_SESSION['userID'].";";
+                                                    if (isset($_POST['userID'])) {
+                                                        $sql = "DELETE FROM `friends` WHERE userID = ".$_POST['userID']." AND friendID = ".$_SESSION['userID'].";";
                                                         echo $sql;
                                                         $db->query($sql);
                                                         echo "<script>location.reload()</script>";
