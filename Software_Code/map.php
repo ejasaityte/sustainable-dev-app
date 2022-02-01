@@ -121,31 +121,6 @@
                                                         'properties': {
                                                             'description':
                                                             '<strong> " . $event['name'] . " </strong><p>" . $event['description'] . "</p><strong>For more information visit the <a href=" . $event['website'] . ">website</a></strong><p><strong>Contact</strong>: " . $event['contacts'] . "</p>";
-                                                            $url = "https://api.mapbox.com/geocoding/v5/mapbox.places/". $event['lon'] .",". $event['lat'] .".json?access_token=pk.eyJ1IjoiZXVhbmRvY2tpbmciLCJhIjoiY2t5dmt1aTZvMXpqMTJxcHR2eTF2Z21zOCJ9.yZNbnAG0QP59OzGsTYFX1A";
-
-                                                            $curl = curl_init();
-                                                                    curl_setopt_array($curl, array(
-                                                                    CURLOPT_URL => $url,
-                                                                    CURLOPT_RETURNTRANSFER => true,
-                                                                    CURLOPT_TIMEOUT => 29,
-                                                                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_0_1,
-                                                                    CURLOPT_CUSTOMREQUEST => "GET",
-                                                                    CURLOPT_HTTPHEADER => array(
-                                                                        "cache-control: no-cache"
-                                                                    ),
-                                                                    ));
-
-                                                                    $responsen = curl_exec($curl);
-                                                                    $err = curl_error($curl);
-
-                                                                    curl_close($curl);
-                                                            $responsen = json_decode($responsen, true);
-
-                                                            foreach ($responsen as $eventn)
-                                                            {
-                                                                echo '<strong>Address:</strong><p>'.$eventn['features']['properties']['place_name'].'</p>';
-                                                                break;
-                                                            }
 
                                                             if($_SESSION['loggedin'] == true){
                                                             echo "<div class=\'col-sm-auto text-center\' style=\'padding-bottom:10px;\'\> <a class=\'btn btn-primary btn-sm mt-auto\' href=\'/checkin/" . $_SESSION['userID'] . "\'>Check in</a></div\>";
