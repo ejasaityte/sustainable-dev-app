@@ -108,7 +108,6 @@
                                     $rows[] = $row;
                                 }
                                 $index = 1;
-                                print_r($rows);
                                 foreach ($rows as $row){
                                         ?>
                                         <tr>
@@ -127,8 +126,11 @@
                                                 </form>
                                                 <?php
                                                     if (isset($_POST['friendID'])) {
-                                                        echo "friendID: ".$_POST['friendID'];
-                                                        print_r($_POST);
+                                                        $sql = "UPDATE `friends` SET accepted = 1 WHERE userID = ".$_SESSION['userID']." AND friendID = ".$_POST['friendID'].";";
+                                                        $insertSQL = "INSERT INTO `friends` (userID, friendID, accepted) VALUES (".$_SESSION['userID'].", ".$_POST['friendID'].", 1);";
+                                                        $db->query($sql);
+                                                        $db->query($insertSQL);
+                                                        header("/addfriend");
                                                     }
                                                 ?>
                                             </td>
