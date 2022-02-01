@@ -118,7 +118,7 @@
 
             <?php 
         if("" == trim($_POST['postcode'])){
-            if(!isset($row['postcode']) $postcode = 'NULL';
+            if(!isset($row['postcode'])) $postcode = 'NULL';
             else $postode = $row['postcode'];
         } 
         else {
@@ -127,7 +127,7 @@
 
 
         if("" == trim($_POST['address'])){
-            if(!isset($row['address']) $address = 'NULL';
+            if(!isset($row['address'])) $address = 'NULL';
             else $address = $row['address'];
         } 
         else {
@@ -135,7 +135,7 @@
         } 
 
         if("" == trim($_POST['lat'])){
-            if(!isset($row['lat']) $lat = 'NULL';
+            if(!isset($row['lat'])) $lat = 'NULL';
             else $lat = $row['lat'];
         } 
         else {
@@ -143,7 +143,7 @@
         } 
 
         if("" == trim($_POST['lon'])){
-            if(!isset($row['lon']) $lon = 'NULL';
+            if(!isset($row['lon'])) $lon = 'NULL';
             else $lon = $row['lon'];
         } 
         else {
