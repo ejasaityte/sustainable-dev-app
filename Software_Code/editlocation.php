@@ -161,7 +161,16 @@
         else {
             $sql = "INSERT INTO coord (postcode, address, lat, lon) VALUES ('". $postcode ."', '". $address . "',".$lat.",".$lon.")";
         }
+        ?><div class="alert alert-warning" role="alert">
+  <?php echo $sql; ?>
+</div> <?php
         $result = $db->query($sql);
+
+        if ($postode != $row['postcode'])
+        {
+            $sql = "UPDATE events SET postcode='".$postcode."' WHERE id=".$params['id'];
+            $result = $db->query($sql);
+        }
         break;
     }
 ?>
