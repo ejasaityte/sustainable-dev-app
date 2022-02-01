@@ -61,14 +61,16 @@
                 <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
                     <div class="m-4 m-lg-5">
                         <h1 class="display-5 fw-bold">What's New</h1>
-                        <p class="fs-4">by @sust_dundee</p>
+                        <a class="fs-4" href="https://twitter.com/sust_dundee">@sust_dundee</a>
                     </div>
                 </div>
             </div>
         </header>
         <!-- Page Content-->
-        <a class="twitter-timeline" href="https://twitter.com/sust_dundee?ref_src=twsrc%5Etfw">Tweets by sust_dundee</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        <!-- Footer-->
+        <div class="container">
+            <a class="twitter-timeline" href="https://twitter.com/sust_dundee?ref_src=twsrc%5Etfw">Tweets by sust_dundee</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+            <!-- Footer-->
         <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Sustainable Dundee 2021</p></div>
         </footer>
