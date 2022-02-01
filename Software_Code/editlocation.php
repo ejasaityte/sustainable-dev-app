@@ -154,7 +154,7 @@
             $lon = $_POST['lon'];
         } 
 
-        if($empty=False)
+        if($empty==False)
             {
                 $sql = "UPDATE coord SET postcode='". $postcode ."', address='". $address . "', lat=".$lat.", lon=".$lon."WHERE postcode='". $row['postcode'] ."'";
             }
