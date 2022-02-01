@@ -37,7 +37,7 @@ sen request
 | ------------- |:-------------:|
 | Euan and Jamie  | notifying a friend receiving a friend request (pair programming)  | 
 | Sem      |check-in through a social on a map|
-| Matthew | web app into a phone app, tour |
+| Matthew and Eddie | web app into a phone app, tour |
 | Laura | continue with a twitter integration|
 
 ## Day 3 - Scrum Meeting summary
