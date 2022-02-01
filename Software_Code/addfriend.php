@@ -103,7 +103,6 @@
                         $result = $db->query($sqlQ1);
 
                         while ($row = $result->fetch_assoc()) {
-                            print_r($rows);
                             $rows[] = $row;
                         }
                         $index = 1;
@@ -118,7 +117,7 @@
                                         <form action="" method="post">
                                             <?php 
                                                 $userID = $row['users.userID'];
-                                                echo '**<input name="friendID" type="hidden" value="'.$userID.'"  />**';
+                                                echo '**<input name="friendID" class="d-none" type="hidden" value="'.$userID.'"  />**';
                                                 echo "<button type='submit' class='btn btn-primary'>Accept</button>";
                                             ?>
                                         </form>
@@ -150,6 +149,9 @@
                         Choose a valid email!
                     </div>  
                 <?php
+            }
+            else if (isset($_POST['friendID'])) {
+                echo "friendID: ".$_POST['friendID'];
             }
             else if (isset($_POST['email'])) { // This means it is an email *probably*
                 $sql = "SELECT userID FROM users WHERE email='". $friend ."'";
