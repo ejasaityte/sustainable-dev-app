@@ -97,9 +97,6 @@
                                 while ($row = $result->fetch_assoc()) {
                                     $rows[] = $row;
                                 }
-                                if (empty($rows)) {
-                                    echo "eyo u got no mates, go add some that way ->";
-                                }
                                 $index = 1;
                                 foreach ($rows as $row){
                                         ?>
@@ -188,7 +185,6 @@
                                                 <?php
                                                     if (isset($_POST['userID'])) {
                                                         $sql = "DELETE FROM `friends` WHERE userID = ".$_POST['userID']." AND friendID = ".$_SESSION['userID'].";";
-                                                        echo $sql;
                                                         $db->query($sql);
                                                         echo "<script>location.reload()</script>";
                                                     }
@@ -233,7 +229,6 @@
                             $friendID = $rows[0]['userID'];
                             if (!empty($rows) && $friendID != $_SESSION['userID']) {
                                 $sql = "SELECT * FROM `friends` WHERE (userID = ".$_SESSION['userID']." and friendID = ".$friendID.") OR (userID = ".$friendID." and friendID = ".$_SESSION['userID'].");";
-                                echo $sql;
                                 $result = $db->query($sql); 
                                 $rows = array();
                                 while ($row = $result->fetch_assoc()) {
@@ -248,14 +243,7 @@
                                     return;
                                 }
                                 $sql = "INSERT INTO friends (userID, friendID) VALUES (".$_SESSION['userID'].", ".$friendID.");";
-                                //echo "userID: ".$_SESSION['userID'];
-                                //echo "friendID: ".$friendID;
-                                $db->query($sql); /*
-                                if (mysqli_query($db, $sql)) {
-                                    echo "Friend request sent";
-                                } else {
-                                    echo "Error: " . $sql . "<br>" . mysqli_error($db);
-                                } */
+                                $db->query($sql); 
                             } else {
                                 ?>     
                                     <div class="alert alert-warning" role="alert">
@@ -263,8 +251,6 @@
                                     </div>  
                                 <?php
                             }
-                                //TODO add a check before running to make sure they are not already friends
-            
                         }
                     ?>
                 </div>
