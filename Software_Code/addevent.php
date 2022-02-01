@@ -92,7 +92,7 @@
                     <input type="text" class="form-control" id="postcode" name="postcode" placeholder="Postcode">
                 </div>
                 <div class="input-group">
-                    <input type="text" class="form-control" id="goalName" minlength="3" name="goalName" placeholder="Associated goal" required>
+                    <input type="text" class="form-control" id="goalName" name="goalName" placeholder="Associated goal" required>
                     <div class="invalid-tooltip"> Please enter an associated goal.</div>
                 </div>
                 <div class="input-group">

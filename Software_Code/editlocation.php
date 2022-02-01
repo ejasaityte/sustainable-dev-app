@@ -151,12 +151,6 @@
         } 
 
         $sql = "UPDATE coord SET postcode='". $postcode ."', address='". $address . "', lat=".$lat.", lon=".$lon."WHERE postcode=". $row['postcode'] ."";
-        ?><div class="alert alert-warning" role="alert">
-<?php 
-    echo $sql; 
-?>
-</div> 
-<?php
             $result = $db->query($sql);
             break;
         }
