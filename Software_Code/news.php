@@ -61,7 +61,7 @@
                 <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
                     <div class="m-4 m-lg-5">
                         <h1 class="display-5 fw-bold">What's New</h1>
-                        <a class="fs-4" href="https://twitter.com/sust_dundee" style="text-decoration:none;">@sust_dundee <img src="https://pbs.twimg.com/profile_images/1143445803744288768/TtjvvOiL_400x400.jpg"  style="width:50px;height:50px;"></a>
+                        <a class="fs-4" href="https://twitter.com/sust_dundee" style="text-decoration:none;">@sust_dundee <img src="logo.png"  style="width:50px;height:50px;"></a>
                     </div>
                 </div>
             </div>
