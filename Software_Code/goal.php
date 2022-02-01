@@ -14,6 +14,7 @@
         <link href="/css/styles.css" rel="stylesheet" />
     </head>
     <?php session_start(); 
+    include("dbconnect.php");
     if (!isset($_SESSION['favouriteslist']))
     {
         $_SESSION['favouriteslist'] = array();
