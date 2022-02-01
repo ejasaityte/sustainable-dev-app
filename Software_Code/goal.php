@@ -157,6 +157,11 @@
                                                 <a class="btn btn-primary btn-sm mt-auto" href="/deleteevent/' . $event['id'] . '"">Delete</a>
                                             </div>
                         ';
+                        echo '
+                                            <div class="col-sm-auto text-center" style="padding-bottom:10px;">
+                                                <a class="btn btn-primary btn-sm mt-auto" href="/editlocation/' . $event['id'] . '"">Edit location</a>
+                                            </div>
+                        ';
                         }
                         if (str_word_count($event['name']) > 1)
                         {
