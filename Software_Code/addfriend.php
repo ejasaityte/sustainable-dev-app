@@ -26,26 +26,48 @@
                         <li class="nav-item"><a class="nav-link" href="/map/0">Explore</a></li>
                         <li class="nav-item"><a class="nav-link" href="/news">News</a></li>
                         <li class="nav-item"><a class="nav-link" href="/leaderboard">Leaderboard</a></li>
-                        <?php
-        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-            ?>
-                  <li class="nav-item"><a class="nav-link" href="/favouriteslist">Favourites</a></li>
-                  <li class="nav-item"><a class="nav-link active" href="/addfriend">Friends</a></li>
-                  
-                  <?php 
-                  if ($_SESSION['isadmin']==1) { ?>
-                  <li class="nav-item"><a class="nav-link" href="/addevent">Add Event</a></li>
-                  <?php } 
-                      if ($_SESSION['username']=='admin') { ?>
-                      <li class="nav-item"><a class="nav-link" href="/adduser">Add User</a></li>
-                      <?php } ?>
-                  <li class="nav-item"><a class="nav-link" href="/logout">Log out</a></li>
-                  <?php } 
-                  else{
-                  ?>
-                  <li class="nav-item"><a class="nav-link" href="/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
-                  <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
-          <?php } ?>
+<?php
+    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+?>
+                        <li class="nav-item"><a class="nav-link" href="/favouriteslist">Favourites</a></li>
+<?php
+        $sql = "SELECT friends.userID FROM `friends` INNER JOIN `users` ON friends.userID = users.userID WHERE friends.friendID = ".$_SESSION['userID']." AND friends.accepted = 0";
+        $rows = array();
+        $result = $db->query($sql);
+
+        while ($row = $result->fetch_assoc()) {
+            $rows[] = $row;
+        }
+        if (empty($rows)) {
+?>
+                        <li class="nav-item"><a class="nav-link active" href="/addfriend">Friends</a></li>
+<?php
+        } else {
+?>
+                        <li class="nav-item"><a class="nav-link viridian" href="/addfriend">Friends</a></li>
+<?php
+    }
+        if ($_SESSION['isadmin']==1) { 
+?>
+                        <li class="nav-item"><a class="nav-link" href="/addevent">Add Event</a></li>
+<?php } 
+        if ($_SESSION['username']=='admin') { ?>
+                        <li class="nav-item"><a class="nav-link" href="/adduser">Add User</a></li>
+<?php 
+        } 
+
+?>
+
+                        <li class="nav-item"><a class="nav-link" href="/logout">Log out</a></li>
+<?php 
+    } 
+    else{
+?>
+                        <li class="nav-item"><a class="nav-link" href="/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+<?php 
+    } 
+?>
                     </ul>
                 </div>
             </div>
@@ -68,12 +90,15 @@
                         </thead>
                         <tbody>
                         <?php                            
-                                $sqlQ1 = "SELECT email, friendID FROM `friends` INNER JOIN `users` ON friends.friendID = users.userID WHERE friends.userID = ".$_SESSION['userID']." AND friends.accepted = 1;";
+                                $sql = "SELECT email, friendID FROM `friends` INNER JOIN `users` ON friends.friendID = users.userID WHERE friends.userID = ".$_SESSION['userID']." AND friends.accepted = 1;";
                                 $rows = array();
-                                $result = $db->query($sqlQ1);
+                                $result = $db->query($sql);
 
                                 while ($row = $result->fetch_assoc()) {
                                     $rows[] = $row;
+                                }
+                                if (empty($rows)) {
+                                    echo "eyo u got no mates, go add some that way ->";
                                 }
                                 $index = 1;
                                 foreach ($rows as $row){
@@ -118,15 +143,12 @@
                         </thead>
                         <tbody>
                         <?php                            
-                                $sqlQ1 = "SELECT email, friends.userID FROM `friends` INNER JOIN `users` ON friends.userID = users.userID WHERE friends.friendID = ".$_SESSION['userID']." AND friends.accepted = 0";
+                                $sql = "SELECT email, friends.userID FROM `friends` INNER JOIN `users` ON friends.userID = users.userID WHERE friends.friendID = ".$_SESSION['userID']." AND friends.accepted = 0";
                                 $rows = array();
-                                $result = $db->query($sqlQ1);
+                                $result = $db->query($sql);
 
                                 while ($row = $result->fetch_assoc()) {
                                     $rows[] = $row;
-                                }
-                                if (empty($rows)) {
-                                    echo "eyo u got no mates";
                                 }
                                 $index = 1;
                                 foreach ($rows as $row){
