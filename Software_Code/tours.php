@@ -35,7 +35,7 @@
                 width: 70%;
                 height: 30%
             }
-            #features {
+            .features {
                 width: 50%;
                 margin-left: 50%;
                 font-family: sans-serif;
