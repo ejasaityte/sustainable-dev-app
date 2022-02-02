@@ -103,12 +103,14 @@
     curl_close($curl);
     // Decode JSON data into PHP array
     $response = json_decode($response, true);
-
-    foreach ($response as $goal) { // TODO refactor
+    print_r($response);
+    echo '<h1 class="display-5 fw-bold">'.$response[0]['goalName'].'</h1>';
+    echo '<p class="fs-4">'.$response[0]['goalDescription'].'</p>';
+    /*foreach ($response as $goal) { // TODO refactor
         echo '<h1 class="display-5 fw-bold">'.$goal['goalName'].'</h1>';
         echo '<p class="fs-4">'.$goal['goalDescription'].'</p>';
         break; // This should run once
-    }
+    }*/
     
     echo "<a class='btn btn-primary btn-lg' href='/map/" . $goalID . "'>Explore the map!</a>";
 ?>
