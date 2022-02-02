@@ -305,6 +305,13 @@ footer {
   width:100%;
 }
 
+#footer {
+  height: 100px;
+  position: fixed;
+  display: flex;
+  bottom:0;
+  width:100%;
+}
 
 kbd {
   padding: 0.2rem 0.4rem;
