@@ -108,7 +108,7 @@
             </div>
         </nav>
         <!-- Page Content-->
-        <div class="container px-lg-5">
+        <div class="container-fluid px-lg-5">
             <!-- Page Features-->
             <?php
                 echo "<div id='map'></div>
