@@ -72,7 +72,7 @@
         </nav>
         <br>
         <div class="container-fluid text-center">
-            <h1 class="display-5 fw-bold">Add new user</h1>
+            <h1 class="display-5 fw-bold">Change password</h1>
         </div>
         <br>
         <div class="position-absolute top-50 start-50 translate-middle">
@@ -101,17 +101,15 @@
         foreach($rows as $row)
         {
             $oldHashedPass = password_hash($oldpassword,PASSWORD_DEFAULT);
+            echo '<div class="alert alert-warning" role="alert">'. $oldHashedPass .'</div>';
             if(password_verify($oldpassword, $row['password']))
             {
                 $hashedPass = password_hash($password,PASSWORD_DEFAULT);
-                if(strlen($username)!=0)
-                {
-                    $updateReq = "UPDATE users SET password='". $hashedPass ."' WHERE email='". $_SESSION['username'] ."'";
-                    $updateRes =$db->query($updateReq);
-                    echo '<div class="alert alert-warning" role="alert">Successfully changed password!</div>';
-                }
+                $updateReq = "UPDATE users SET password='". $hashedPass ."' WHERE email='". $_SESSION['username'] ."'";
+                $updateRes =$db->query($updateReq);
+                echo '<div class="alert alert-warning" role="alert">Successfully changed password!</div>';
             }
-            elseif($row['password']!="") {
+            elseif($oldpassword!="") {
                 echo '<div class="alert alert-warning" role="alert">Wrong current password.</div>'; 
             }
             break;
