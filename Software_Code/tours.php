@@ -194,6 +194,10 @@
                             speed: 0.5
                             }
                         };
+
+                        map.on('load', function () {
+                            map.resize();
+                        });
                                 
                         let activeChapterName = 'tour1';
                         function setActiveChapter(chapterName) {
