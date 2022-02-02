@@ -113,8 +113,8 @@ element.classList.add("active");
                 width:100%;
                 background-color:black;
                 color:white;
-                text-align: center;
                 justify-content: center;
+                align-items: center;
         </style>
         <div class = "footer">
             <p>Copyright &copy; Sustainable Dundee 2021</p>
