@@ -30,9 +30,7 @@
             #map {
                 position: fixed;
                 width: 50%;
-            }
-            .map-container{
-                height: 30%
+                height: 400px;
             }
             #features {
                 width: 50%;
@@ -232,9 +230,7 @@
             <div>
                 <h1>Tours Avaialable</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, aut suscipit mollitia eaque ipsam, aspernatur neque reprehenderit, quasi veritatis ipsum eos? Assumenda odit expedita adipisci earum minima distinctio, amet praesentium.</p>
-
             </div>
-
         </div>
         <!-- Footer-->
         <footer class="py-5 bg-dark">
