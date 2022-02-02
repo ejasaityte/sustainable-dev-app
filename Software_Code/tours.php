@@ -30,6 +30,7 @@
             #features {
                 width: 50%;
                 margin-left: 50%;
+                max-height: 400px;
                 font-family: sans-serif;
                 overflow-y: scroll;
                 background-color: #fafafa;
