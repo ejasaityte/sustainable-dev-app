@@ -26,7 +26,7 @@
         <!-- Header-->
         <div class="container">
             <img src="https://www.dundeecity.gov.uk/sites/default/files/imagebank/sustainable800.png" class="mx-auto d-block" alt="Sustainable Dundee">
-            <div class="bg-mikado">
+            <div class="bg-mikado rounded-3">
                 <p class="fs-4">Sustainability is concerned with looking after our natural environment whilst ensuring a strong economy and a fair and healthy society.</p>
             </div>
             <a class="btn btn-ygreen btn-lg" href="/map/0">Click here to explore the sustainability map of Dundee!</a>
