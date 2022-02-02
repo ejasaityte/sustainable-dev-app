@@ -42,7 +42,7 @@ $rules = array(
     'home' => "/",
     'goal' => "/goal/(?'goal'[\w\-]+)",
     'news' => "/news",
-    'recycle' => "/recycle"
+    'recycle' => "/recycle",
     //
     // Style
     //
