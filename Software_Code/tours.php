@@ -31,6 +31,10 @@
                 position: fixed;
                 width: 50%;
             }
+            #map-container{
+                width: 70%;
+                height: 30%
+            }
             #features {
                 width: 50%;
                 margin-left: 50%;
@@ -108,7 +112,7 @@
             </div>
         </nav>
         <!-- Page Content-->
-        <div class="container-fluid px-lg-5">
+        <div class="container-fluid px-lg-5 map-container">
             <!-- Page Features-->
             <?php
                 echo "<div id='map'></div>
