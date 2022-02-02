@@ -77,7 +77,7 @@
             <div class="container px-lg-5">
                 <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
                     <div class="m-4 m-lg-5">
-                        <img src="/img/sustainable800.png" alt="A Sustainable Dundee">
+                        <img src="https://www.dundeecity.gov.uk/sites/default/files/imagebank/sustainable800.png" class="mx-auto d-block" alt="A Sustainable Dundee">
                         <p class="fs-4">Sustainability is concerned with looking after our natural environment whilst ensuring a strong economy and a fair and healthy society.</p>
                         <a class="btn btn-primary btn-lg" href="/map/0">Explore the map!</a>
                     </div>
