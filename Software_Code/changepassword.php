@@ -101,7 +101,7 @@
         foreach($rows as $row)
         {
             $oldHashedPass = password_hash($oldpassword,PASSWORD_DEFAULT);
-            if($oldHashedPass==$row['password'])
+            if(password_verify($oldpassword, $row['password']))
             {
                 $hashedPass = password_hash($password,PASSWORD_DEFAULT);
                 if(strlen($username)!=0)
@@ -111,7 +111,7 @@
                     echo '<div class="alert alert-warning" role="alert">Successfully changed password!</div>';
                 }
             }
-            else {
+            elseif($row['password']!="") {
                 echo '<div class="alert alert-warning" role="alert">Wrong current password.</div>'; 
             }
             break;
