@@ -92,6 +92,10 @@
                     <input type="checkbox" class="form-check-input" id="isadmin" name="isadmin">
                     <label class="form-check-label" for="isadmin">Has admin privileges</label>
                 </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="isorganiser" name="isorganiser">
+                    <label class="form-check-label" for="isorganiser">Is event organiser</label>
+                </div>
                 <button type="submit" class="btn btn-primary">Add User</button>
             </div>
         <?php
@@ -104,6 +108,14 @@
         else
         {
             $isadmin = 0;
+        }    
+        if (isset($_POST['isorganiser']))
+        {
+            $isorganiser = 1;
+        }
+        else
+        {
+            $isorganiser = 0;
         }    
         if(($username=="admin")||(!(preg_match("/@/", $username))&&($username!='')))
         {
@@ -123,7 +135,7 @@
             if(empty($rows)){
                 $hashedPass = password_hash($password,PASSWORD_DEFAULT);
                 if(strlen($username)!=0)
-                {$updateReq = "INSERT INTO users (userID, email, password, admin, leaderboard) VALUES (NULL,'".$username."','".$hashedPass."',".$isadmin.",0)";
+                {$updateReq = "INSERT INTO users (userID, email, password, admin, leaderboard) VALUES (NULL,'".$username."','".$hashedPass."',".$isadmin.",0,".$isorganiser.")";
                 $updateRes =$db->query($updateReq);
                 ?><div class="alert alert-warning" role="alert">
     Success!
