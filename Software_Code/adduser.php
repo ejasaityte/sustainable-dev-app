@@ -105,14 +105,16 @@ element.classList.add("active");
         <!-- footer -->
         <style>
             .footer {
-                height: 50px;
+                height: 100px;
                 position: fixed;
+                display: flex;
                 left: 0;
                 bottom: 0;
                 width:100%;
                 background-color:black;
                 color:white;
                 text-align: center;
+                justify-content: center;
         </style>
         <div class = "footer">
             <p>Copyright &copy; Sustainable Dundee 2021</p>
