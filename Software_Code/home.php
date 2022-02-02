@@ -18,10 +18,7 @@
     </head>
 <?php session_start(); 
     include("dbconnect.php");
-    if (!isset($_SESSION['favouriteslist']))
-    {
-        $_SESSION['favouriteslist'] = array();
-    }
+    if (!isset($_SESSION['favouriteslist'])) $_SESSION['favouriteslist'] = array();
     ?>
     <body>
         <!-- Responsive navbar-->
@@ -42,10 +39,7 @@
         $sql = "SELECT friends.userID FROM `friends` INNER JOIN `users` ON friends.userID = users.userID WHERE friends.friendID = ".$_SESSION['userID']." AND friends.accepted = 0";
         $rows = array();
         $result = $db->query($sql);
-
-        while ($row = $result->fetch_assoc()) {
-            $rows[] = $row;
-        }
+        while ($row = $result->fetch_assoc()) $rows[] = $row;
         if (empty($rows)) {
 ?>
                         <li class="nav-item"><a class="nav-link " href="/addfriend">Friends</a></li>
@@ -67,7 +61,6 @@
         } 
 
 ?>
-
                         <li class="nav-item"><a class="nav-link" href="/logout">Log out</a></li>
 <?php 
     } 
@@ -87,7 +80,7 @@
             <div class="container px-lg-5">
                 <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
                     <div class="m-4 m-lg-5">
-                        <h1 class="display-5 fw-bold">A Sustainable Dundee v0.3.3.2</h1>
+                        <h1 class="display-5 fw-bold">A Sustainable Dundee v0.3.3.3</h1>
                         <p class="fs-4">Sustainability is concerned with looking after our natural environment whilst ensuring a strong economy and a fair and healthy society.</p>
                         <a class="btn btn-primary btn-lg" href="/map/0">Explore the map!</a>
                     </div>
@@ -99,52 +92,44 @@
             <div class="container px-lg-5">
                 <!-- Page Features-->
                 <div class="row gx-lg-5 pt-3">
-
-                    <?php
-
-                        $curl = curl_init();
-
-                        curl_setopt_array($curl, array(
-                        CURLOPT_URL => "https://sustainabledundeeapp.azurewebsites.net/api/allGoals",
-                        CURLOPT_RETURNTRANSFER => true,
-                        CURLOPT_TIMEOUT => 30,
-                        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                        CURLOPT_CUSTOMREQUEST => "GET",
-                        CURLOPT_HTTPHEADER => array(
-                            "cache-control: no-cache"
-                        ),
-                        ));
-
-                        $response = curl_exec($curl);
-                        $err = curl_error($curl);
-
-                        curl_close($curl);
-                        // Decode JSON data into PHP array
-                        $response = json_decode($response, true);
-
-
-                        foreach ($response as $goal) {
-                            echo '
-                            <div class="col-lg-6 col-xxl-4 mb-5">
-                                <div class="card bg-light border-0 h-100">
-                                    <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                                        <img style="height: 11rem; width: 11rem;" class="feature bg-primary bg-gradient text-white mb-4 mt-4" src="' . $goal['goalPicture'] . '">
-                                        <h2 class="fs-4 fw-bold">' . $goal['goalName'] . '</h2></a>
-                                        <p class="mb-0">' . $goal['goalDescription'] . '</p>
-                                    </div>
-                                    <div class="container pb-4">
-                                        <div class="row">
-                                            <div class="col text-center">
-                                                <a class="btn btn-primary btn-sm mt-auto" href="/goal/' . $goal['goalID'] . '"">Learn more</a>
-                                            </div>
-                                        </div>
+<?php
+    $curl = curl_init();
+    curl_setopt_array(
+        $curl, 
+        array(
+            CURLOPT_URL => "https://sustainabledundeeapp.azurewebsites.net/api/allGoals",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => array(
+                "cache-control: no-cache"
+            ),
+        )
+    );
+    $response = curl_exec($curl);
+    $err = curl_error($curl);
+    curl_close($curl);
+    $response = json_decode($response, true);// Decode JSON data into PHP array
+    foreach ($response as $goal)
+        echo '
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                        <div class="card bg-light border-0 h-100">
+                            <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                                <img style="height: 11rem; width: 11rem;" class="feature bg-primary bg-gradient text-white mb-4 mt-4" src="' . $goal['goalPicture'] . '">
+                                <h2 class="fs-4 fw-bold">' . $goal['goalName'] . '</h2></a>
+                                <p class="mb-0">' . $goal['goalDescription'] . '</p>
+                            </div>
+                            <div class="container pb-4">
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <a class="btn btn-primary btn-sm mt-auto" href="/goal/' . $goal['goalID'] . '"">Learn more</a>
                                     </div>
                                 </div>
-                            </div>';
-                        }
-                        
-                    php?>
-
+                            </div>
+                        </div>
+                    </div>';
+php?>
                 </div>
             </div>
         </section>
