@@ -101,7 +101,6 @@
         foreach($rows as $row)
         {
             $oldHashedPass = password_hash($oldpassword,PASSWORD_DEFAULT);
-            echo '<div class="alert alert-warning" role="alert">'. $oldHashedPass .'</div>';
             if(password_verify($oldpassword, $row['password']))
             {
                 $hashedPass = password_hash($password,PASSWORD_DEFAULT);
