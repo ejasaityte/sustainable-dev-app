@@ -93,7 +93,7 @@
                             </thead>
                             <tbody>
                             <?php                            
-                                    $sql = "SELECT email, leaderboard FROM `friends` INNER JOIN `users` ON friends.friendID = users.userID WHERE friends.accepted = 1 and friends.userID = ".$_SESSION['userID'].";";
+                                    $sql = "SELECT email, leaderboard FROM `friends` INNER JOIN `users` ON friends.friendID = users.userID WHERE friends.accepted = 1 and friends.userID = ".$_SESSION['userID']." ORDER BY leaderboard DESC;";
                                     $rows = array();
                                     $result = $db->query($sql);
 
