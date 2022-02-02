@@ -15,6 +15,8 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
+        <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
         <style>
             body { margin: 0; padding: 0; }
             #map { position: absolute; top: 0; bottom: 0; width: 100%; }
@@ -97,10 +99,10 @@
         <section class="pt-4 bg-viridian">
             <div class="container px-lg-5">
                 <!-- Page Features-->
-                    <h1 class="display-5 fw-bold">See our locations!</h1>
-                    <?php
-                        echo "<div id='map'></div>
-                        <div id="features">
+                <h1 class="display-5 fw-bold">See our locations!</h1>
+                <?php
+                    echo "<div id='map'></div>
+                    <div id="features">
                         <section id="baker" class="active">
                             <h3>221b Baker St.</h3>
                             <p>
@@ -270,7 +272,7 @@
                             return bounds.top < window.innerHeight && bounds.bottom > 0;
                         }
                                 
-                            // On every scroll event, check which element is on screen
+                        // On every scroll event, check which element is on screen
                         window.onscroll = () => {
                             for (const chapterName in chapters) {
                                 if (isElementOnScreen(chapterName)) {
@@ -281,7 +283,7 @@
                         };
                             
                     </script>";
-                    php?>
+                php?>
             </div>
         </section>
         <!-- Footer-->
