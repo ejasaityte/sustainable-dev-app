@@ -16,9 +16,7 @@
 <?php 
     session_start(); 
     include("dbconnect.php");
-    if (!isset($_SESSION['favouriteslist'])) {
-        $_SESSION['favouriteslist'] = array();
-    }
+    if (!isset($_SESSION['favouriteslist'])) $_SESSION['favouriteslist'] = array();
 ?>
     <body>
         <!-- Responsive navbar-->
@@ -39,10 +37,7 @@
         $sql = "SELECT friends.userID FROM `friends` INNER JOIN `users` ON friends.userID = users.userID WHERE friends.friendID = ".$_SESSION['userID']." AND friends.accepted = 0";
         $rows = array();
         $result = $db->query($sql);
-
-        while ($row = $result->fetch_assoc()) {
-            $rows[] = $row;
-        }
+        while ($row = $result->fetch_assoc()) $rows[] = $row;
         if (empty($rows)) {
 ?>
                         <li class="nav-item"><a class="nav-link " href="/addfriend">Friends</a></li>
@@ -51,16 +46,16 @@
 ?>
                         <li class="nav-item"><a class="nav-link viridian" href="/addfriend">Friends</a></li>
 <?php
-    }
+        }
         if ($_SESSION['isadmin']==1) { 
 ?>
                         <li class="nav-item"><a class="nav-link" href="/addevent">Add Event</a></li>
-<?php } 
+<?php 
+        } 
         if ($_SESSION['username']=='admin') { ?>
                         <li class="nav-item"><a class="nav-link" href="/adduser">Add User</a></li>
 <?php 
         } 
-
 ?>
                         <li class="nav-item"><a class="nav-link" href="/logout">Log out</a></li>
 <?php 
@@ -134,7 +129,7 @@
     curl_close($curl);
     $response = json_decode($response, true);// Decode JSON data into PHP array
     foreach ($response as $event) {
-?>
+        echo '
                     <div class="col-lg-6 col-xxl-4 mb-5">
                         <div class="card bg-light border-0 h-100">
                             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
@@ -144,10 +139,9 @@
                                 <p class="text-start"><strong>For more information visit the <a href=' . $event['website'] . '>website</a></strong></p> 
                                 <p class="text-start"><strong>Contact</strong>: ' . $event['contacts'] . '</p>
 
-                            </div>
-<?php
+                            </div>';
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-?>
+            echo '
                             <div class="container" style="padding-bottom:10px;">
                                 <div class="row justify-content-center">
                                     <div class="col-sm-auto text-center" style="padding-bottom:10px;">
@@ -155,10 +149,9 @@
                                     </div>
                                     <div class="col-sm-auto text-center" style="padding-bottom:10px;">
                                         <a class="btn btn-primary btn-sm mt-auto" href="/checkin/' . $_SESSION['userID'] . '"">Check in</a>
-                                    </div>
-<?php
-            if($_SESSION['isadmin']==1){
-?>
+                                    </div>';
+            if($_SESSION['isadmin']==1)
+                echo '
                                     <div class="col-sm-auto text-center" style="padding-bottom:10px;">
                                         <a class="btn btn-primary btn-sm mt-auto" href="/edititem/' . $event['id'] . '"">Edit</a>
                                     </div>
@@ -167,17 +160,12 @@
                                     </div>
                                     <div class="col-sm-auto text-center" style="padding-bottom:10px;">
                                         <a class="btn btn-primary btn-sm mt-auto" href="/editlocation/' . $event['id'] . '"">Edit location</a>
-                                    </div>
-<?php
-            }
-            if (str_word_count($event['name']) > 1)
-            {
+                                    </div>';
+            if (str_word_count($event['name']) > 1){
                 $str = explode(" ", $event['name']);
                 $name = implode("", $str);
             }
-            else {
-                $name = $event['name'];
-            }
+            else $name = $event['name'];
 ?>
                                     <div class="col-sm-auto  text-center" style="padding-bottom:10px;">
                                         <a data-bs-toggle="tooltip" data-bs-placement="right" title="Tweet" href="https://twitter.com/intent/tweet?text=I%20just%20visited%20%23' . $name . '%21&hashtags=sustainabledundee" target="_blank"><img src="https://logos-world.net/wp-content/uploads/2020/04/Twitter-Emblem.png"  style="width:50px;height:28px;">
