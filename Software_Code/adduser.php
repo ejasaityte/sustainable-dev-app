@@ -97,10 +97,7 @@
                 <button type="submit" class="btn btn-primary">Add User</button>
             </div>
             
-            <!-- footer -->
-        <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Sustainable Dundee 2021</p></div>
-        </footer>
+            
             
         <?php
         $username = $_POST['username'];
@@ -150,6 +147,11 @@
     ?>
 
     </div>
+            <!-- footer -->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Sustainable Dundee 2021</p></div>
+        </footer>
+            
     </div>
         
         
