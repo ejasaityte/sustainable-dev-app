@@ -52,11 +52,12 @@ Talked about plans for today - Talked about plans for today :
 
 | Who        | What           |
 | ------------- |:-------------:|
-| Jamie  | helping with tour feature| 
-| Euan  | updating leaderboard feature| 
-| Sem      |checking UN guidance, editing feature |
-| Matthew and Eddie |tour of events |
-| Laura | maps using online dataset|
+| Jamie  | helping with tour feature, refactorising code, working on navbars| 
+| Euan  | updating leaderboard feature, working on website design| 
+| Sem      |checking UN guidance, testing that different features are working|
+| Matthew  | implementing tour feature of events |
+| Eddie | refactorising code|
+| Laura | implementing maps using online dataset|
 
 
 ## Day 4 - Scrum Meeting summary
