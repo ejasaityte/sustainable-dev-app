@@ -19,7 +19,10 @@
     <body>
         <!-- Responsive navbar-->
 <?php include("navbar.php"); ?>
-
+<script> 
+var element = document.getElementById('leaderboard');
+element.classList.add(" active");
+</script>
 <br>
 <?php
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
