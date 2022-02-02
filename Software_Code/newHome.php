@@ -29,13 +29,8 @@
             <div class="bg-mikado">
                 <p class="fs-4">Sustainability is concerned with looking after our natural environment whilst ensuring a strong economy and a fair and healthy society.</p>
             </div>
-            <a class="btn btn-primary btn-lg" href="/map/0">Click here to explore the sustainability map of Dundee!</a>
+            <a class="btn btn-ygreen btn-lg" href="/map/0">Click here to explore the sustainability map of Dundee!</a>
         </div>
-            <div class="container px-lg-5">
-                <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
-
-                </div>
-            </div>
         </header>
         <!-- Page Content-->
         <section class="pt-4 bg-viridian">
