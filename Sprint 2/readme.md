@@ -52,8 +52,9 @@ Talked about plans for today - Talked about plans for today :
 
 | Who        | What           |
 | ------------- |:-------------:|
-| Euan and Jamie  | helping with tour feature| 
-| Sem      |checking UN guidance|
+| Jamie  | helping with tour feature| 
+| Euan  | updating leaderboard feature| 
+| Sem      |checking UN guidance, editing feature |
 | Matthew and Eddie |tour of events |
 | Laura | maps using online dataset|
 
