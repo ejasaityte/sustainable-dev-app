@@ -103,9 +103,20 @@ element.classList.add("active");
             
     </div>
         <!-- footer -->
-        <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Sustainable Dundee 2021</p></div>
-        </footer>
+        <style>
+            .footer {
+                height: 100px;
+                position: fixed;
+                display: flex;
+                bottom:0;
+                width:100%;
+                background-color:black;
+                color:white;
+                text-align: center;
+        </style>
+        <div class = "footer">
+            <p>Copyright &copy; Sustainable Dundee 2021</p>
+        </div>
         
         
         <!-- Bootstrap core JS-->
