@@ -18,6 +18,7 @@ $rules = array(
     //User Pages
     //
     'login' => "/login",
+    'changepassword' => "/changepassword",
     'register' => "/register",
     'leaderboard' => "/leaderboard",
     'addfriend' => '/addfriend',
