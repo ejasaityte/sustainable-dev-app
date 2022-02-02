@@ -105,6 +105,7 @@ element.classList.add("active");
         <!-- footer -->
         <style>
             .footer {
+                height: 100px;
                 position: fixed;
                 left: 0;
                 bottom: 0;
