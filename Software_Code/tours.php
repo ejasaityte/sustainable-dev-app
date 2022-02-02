@@ -113,6 +113,7 @@
         </nav>
         <!-- Page Content-->
         <div class="container-fluid px-lg-5">
+            <div></div>
             <div style="" class="map-container">
                 <!-- Page Features-->
                 <?php
@@ -230,6 +231,7 @@
                     </script>";
                 php?>
             </div>
+            <div></div>
         </div>
         <!-- Footer-->
         <footer class="py-5 bg-dark">
