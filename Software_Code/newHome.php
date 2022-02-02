@@ -73,18 +73,14 @@
                 </div>
             </div>
         </nav>
-        <!-- Header-->
-        <header class="py-5">
-            <div class="container px-lg-5">
-                <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
-                    <div class="m-4 m-lg-5">
-                        <img src="https://www.dundeecity.gov.uk/sites/default/files/imagebank/sustainable800.png" class="mx-auto d-block" alt="A Sustainable Dundee">
-                        <p class="fs-4">Sustainability is concerned with looking after our natural environment whilst ensuring a strong economy and a fair and healthy society.</p>
-                        <a class="btn btn-primary btn-lg" href="/map/0">Explore the map!</a>
-                    </div>
-                </div>
+        <div class="container">
+            <img src="https://www.dundeecity.gov.uk/sites/default/files/imagebank/sustainable800.png" class="mx-auto d-block" alt="A Sustainable Dundee">   
+            <div class="bg-mikado rounded-3 text-center">
+                <p class="fs-4">Sustainability is concerned with looking after our natural environment whilst ensuring a strong economy and a fair and healthy society.</p>
             </div>
-        </header>
+            <a class="btn btn-ygreen btn-lg" href="/map/0">Explore the map!</a>
+        </div>
+
         <!-- Page Content-->
         <section class="pt-4 bg-viridian">
             <div class="container px-lg-5">

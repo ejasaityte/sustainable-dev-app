@@ -12289,6 +12289,14 @@ body {
   color: #000000;
 }
 
+.btn-ygreen {
+  background-color: #93c718;
+}
+
+.btn-ygreen:hover {
+  background-color: #b0e633;
+}
+
 .heading {
   font-family: 'Oswald', sans-serif;
 }
