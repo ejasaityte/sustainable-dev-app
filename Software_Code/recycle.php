@@ -48,6 +48,7 @@
                   if ($_SESSION['username']=='admin') { ?>
                   <li class="nav-item"><a class="nav-link" href="/adduser">Add User</a></li>
                   <?php } ?>
+                  <li class="nav-item"><a class="nav-link" href="/changepassword">Change Password</a></li>
               <li class="nav-item"><a class="nav-link" href="/logout">Log out</a></li>
               <?php } 
               else{
