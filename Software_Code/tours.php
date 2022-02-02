@@ -18,7 +18,6 @@
         <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
         <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
         <style>
-            body { margin: 0; padding: 0; }
             #map { position: absolute; top: 0; bottom: 0; width: 100%; }
         </style>
     </head>
@@ -40,20 +39,6 @@
                 font-family: sans-serif;
                 overflow-y: scroll;
                 background-color: #fafafa;
-            }
-            section {
-                padding: 25px 50px;
-                line-height: 25px;
-                border-bottom: 1px solid #ddd;
-                opacity: 0.25;
-                font-size: 13px;
-            }
-            section.active {
-                opacity: 1;
-            }
-            section:last-child {
-                border-bottom: none;
-                margin-bottom: 200px;
             }
         </style>
         <!-- Responsive navbar-->
