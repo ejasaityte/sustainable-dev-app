@@ -46,9 +46,17 @@ The Scrum Master for this meeting was Laura
 Jamie, Euan, Sem, Eddie, Matthew, Laura
 
 ### Summary of Conversation:
-Discussed yesterday's work - issues with mobile app implementation (manifest.js file completely crashing the website or not displaying information from a database)
+Discussed yesterday's work - issues with mobile app implementation (manifest.js file completely crashing the website or not displaying information from a database), implenting friends feature and testing it thourouphly.
 
-Talked about plans for today - discussing additional requirements, making maps working - getting users locations and thus nearby events, adding logins for users, making alterations to product backlog, adding a charter, programming in pairs.
+Talked about plans for today - Talked about plans for today :
+
+| Who        | What           |
+| ------------- |:-------------:|
+| Euan and Jamie  | helping with tour feature| 
+| Sem      |checking UN guidance|
+| Matthew and Eddie |tour of events |
+| Laura | maps using online dataset|
+
 
 ## Day 4 - Scrum Meeting summary
 The Scrum Master for this meeting was Laura
