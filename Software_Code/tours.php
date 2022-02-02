@@ -16,7 +16,7 @@
         <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
         <style>
             body { margin: 0; padding: 0; }
-            #map { position: fixed; top: 0; bottom: 0; width: 50%; height: 400px}
+            #map { top: 0; bottom: 0; width: 50%; height: 400px; float: left;}
         </style>
     </head>
     <?php session_start(); 
@@ -29,7 +29,6 @@
         <style>
             #features {
                 width: 50%;
-                margin-left: 50%;
                 max-height: 400px;
                 font-family: sans-serif;
                 overflow-y: scroll;
