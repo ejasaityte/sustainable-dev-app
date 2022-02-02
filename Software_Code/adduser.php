@@ -25,7 +25,7 @@ element.classList.add("active");
         <br>
         <div class="container-fluid text-center">
             <h1 class="display-5 fw-bold">Add new user</h1>
-        </div>
+        
         <br>
         <div class="position-absolute top-50 start-50 translate-middle">
         <form action="" method="post">
@@ -48,7 +48,7 @@ element.classList.add("active");
                 </div>
                 <button type="submit" class="btn btn-primary">Add User</button>
             </div>
-            
+            </div>
             
             
         <?php
