@@ -73,8 +73,59 @@
             </div>
         </nav>
         <br>
+        <?php
+        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+        ?>
         <div class="container-fluid text-center">
-            <h1 class="display-5 fw-bold">Leaderboard</h1>
+            <h1 class="display-5 fw-bold">Friends' Leaderboard</h1>
+        </div>
+        <br>
+        
+        <div class="container-responsive">
+            <div class="row justify-content-center" style="margin-right:0px; margin-left:0px;">
+                <div class="col-sm-8 col-sm-offset-2 pb-5">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <th>Rank</th>
+                                <th>Name</th>
+                                <th>Score</th>
+                            </thead>
+                            <tbody>
+                            <?php                            
+                                    $sql = "SELECT email, leaderboard FROM `friends` INNER JOIN `users` ON friends.friendID = users.userID WHERE friends.accepted = 1 and friends.userID = 1";
+                                    $rows = array();
+                                    $result = $db->query($sql);
+
+                                    while ($row = $result->fetch_assoc()) {
+                                        $rows[] = $row;
+                                    }
+                                    $index = 1;
+                                    foreach ($rows as $row){
+                                            ?>
+                                            <tr>
+                                                <td>
+                                                    <?php echo $index; ?>
+                                                </td>
+                                                <td><?php echo $row['email']; ?></td>
+                                                <td><?php echo $row['leaderboard']; ?></td>
+                                            </tr>
+                                            <?php
+                                            $index ++;
+                                        }
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php
+        }
+        ?>
+
+        <div class="container-fluid text-center">
+            <h1 class="display-5 fw-bold">Global Leaderboard</h1>
         </div>
         <br>
         
