@@ -112,118 +112,120 @@
             </div>
         </nav>
         <!-- Page Content-->
-        <div class="container-fluid px-lg-5 map-container">
-            <!-- Page Features-->
-            <?php
-                echo "<div id='map'></div>
-                <div id='features'>
-                    <section id='tour1' class='active'>
-                        <h3>Tour Destination 1</h3>
-                        <p>
-                        Test
-                        </p>
-                    </section>
-                    <section id='tour2'>
-                        <h3>Tour Destination 2</h3>
-                        <p>
-                        Test
-                        </p>
-                    </section>
-                    <section id='tour3'>
-                        <h3>Tour Destination 3</h3>
-                        <p>
-                        Test
-                        </p>
-                    </section>
-                    <section id='tour4'>
-                        <h3>Tour Destination 4</h3>
-                        <p>
-                        Test
-                        </p>
-                    </section>
-                    <section id='tour5'>
-                        <h3>Tour Destination 5</h3>
-                        <p>
-                        Test
-                        </p>
-                    </section>
-                </div>
-                <script>
-                    mapboxgl.accessToken = 'pk.eyJ1IjoiZXVhbmRvY2tpbmciLCJhIjoiY2t5dmt1aTZvMXpqMTJxcHR2eTF2Z21zOCJ9.yZNbnAG0QP59OzGsTYFX1A';
-                    const map = new mapboxgl.Map({
-                        container: 'map',
-                        style: 'mapbox://styles/mapbox/streets-v11',
-                        center: [-2.9707, 56.4620],
-                        pitchWithRotate: false,
-                        trackResize: true,
-                        zoom: 13
-                    });
-                        
-                    const chapters = {
-                        'tour1': {
-                        bearing: 27,
-                        center: [-0.15591514, 51.51830379],
-                        zoom: 15.5,
-                        pitch: 20
-                        },
-                        'tour2': {
-                        duration: 6000,
-                        center: [-0.07571203, 51.51424049],
-                        bearing: 150,
-                        zoom: 15,
-                        pitch: 0
-                        },
-                        'tour3': {
-                        bearing: 90,
-                        center: [-0.08533793, 51.50438536],
-                        zoom: 13,
-                        speed: 0.6,
-                        pitch: 40
-                        },
-                        'tour4': {
-                        bearing: 90,
-                        center: [0.05991101, 51.48752939],
-                        zoom: 12.3
-                        },
-                        'tour5': {
-                        bearing: 45,
-                        center: [-0.18335806, 51.49439521],
-                        zoom: 15.3,
-                        pitch: 20,
-                        speed: 0.5
-                        }
-                    };
+        <div class="container-fluid px-lg-5">
+            <div style="" class="map-container">
+                <!-- Page Features-->
+                <?php
+                    echo "<div id='map'></div>
+                    <div id='features'>
+                        <section id='tour1' class='active'>
+                            <h3>Tour Destination 1</h3>
+                            <p>
+                            Test
+                            </p>
+                        </section>
+                        <section id='tour2'>
+                            <h3>Tour Destination 2</h3>
+                            <p>
+                            Test
+                            </p>
+                        </section>
+                        <section id='tour3'>
+                            <h3>Tour Destination 3</h3>
+                            <p>
+                            Test
+                            </p>
+                        </section>
+                        <section id='tour4'>
+                            <h3>Tour Destination 4</h3>
+                            <p>
+                            Test
+                            </p>
+                        </section>
+                        <section id='tour5'>
+                            <h3>Tour Destination 5</h3>
+                            <p>
+                            Test
+                            </p>
+                        </section>
+                    </div>
+                    <script>
+                        mapboxgl.accessToken = 'pk.eyJ1IjoiZXVhbmRvY2tpbmciLCJhIjoiY2t5dmt1aTZvMXpqMTJxcHR2eTF2Z21zOCJ9.yZNbnAG0QP59OzGsTYFX1A';
+                        const map = new mapboxgl.Map({
+                            container: 'map',
+                            style: 'mapbox://styles/mapbox/streets-v11',
+                            center: [-2.9707, 56.4620],
+                            pitchWithRotate: false,
+                            trackResize: true,
+                            zoom: 13
+                        });
                             
-                    let activeChapterName = 'tour1';
-                    function setActiveChapter(chapterName) {
-                        if (chapterName === activeChapterName) return;
-                            
-                        map.flyTo(chapters[chapterName]);
-                            
-                        document.getElementById(chapterName).classList.add('active');
-                        document.getElementById(activeChapterName).classList.remove('active');
-                            
-                        activeChapterName = chapterName;
-                    }
-                            
-                    function isElementOnScreen(id) {
-                        const element = document.getElementById(id);
-                        const bounds = element.getBoundingClientRect();
-                        return bounds.top < window.innerHeight && bounds.bottom > 0;
-                    }
-                            
-                    // On every scroll event, check which element is on screen
-                    window.onscroll = () => {
-                        for (const chapterName in chapters) {
-                            if (isElementOnScreen(chapterName)) {
-                                setActiveChapter(chapterName);
-                                break;
+                        const chapters = {
+                            'tour1': {
+                            bearing: 27,
+                            center: [-0.15591514, 51.51830379],
+                            zoom: 15.5,
+                            pitch: 20
+                            },
+                            'tour2': {
+                            duration: 6000,
+                            center: [-0.07571203, 51.51424049],
+                            bearing: 150,
+                            zoom: 15,
+                            pitch: 0
+                            },
+                            'tour3': {
+                            bearing: 90,
+                            center: [-0.08533793, 51.50438536],
+                            zoom: 13,
+                            speed: 0.6,
+                            pitch: 40
+                            },
+                            'tour4': {
+                            bearing: 90,
+                            center: [0.05991101, 51.48752939],
+                            zoom: 12.3
+                            },
+                            'tour5': {
+                            bearing: 45,
+                            center: [-0.18335806, 51.49439521],
+                            zoom: 15.3,
+                            pitch: 20,
+                            speed: 0.5
                             }
+                        };
+                                
+                        let activeChapterName = 'tour1';
+                        function setActiveChapter(chapterName) {
+                            if (chapterName === activeChapterName) return;
+                                
+                            map.flyTo(chapters[chapterName]);
+                                
+                            document.getElementById(chapterName).classList.add('active');
+                            document.getElementById(activeChapterName).classList.remove('active');
+                                
+                            activeChapterName = chapterName;
                         }
-                    };
-                        
-                </script>";
-            php?>
+                                
+                        function isElementOnScreen(id) {
+                            const element = document.getElementById(id);
+                            const bounds = element.getBoundingClientRect();
+                            return bounds.top < window.innerHeight && bounds.bottom > 0;
+                        }
+                                
+                        // On every scroll event, check which element is on screen
+                        window.onscroll = () => {
+                            for (const chapterName in chapters) {
+                                if (isElementOnScreen(chapterName)) {
+                                    setActiveChapter(chapterName);
+                                    break;
+                                }
+                            }
+                        };
+                            
+                    </script>";
+                php?>
+            </div>
         </div>
         <!-- Footer-->
         <footer class="py-5 bg-dark">
