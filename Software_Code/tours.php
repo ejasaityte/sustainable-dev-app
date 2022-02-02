@@ -207,7 +207,7 @@
                         function isElementOnScreen(id) {
                             const element = document.getElementById(id);
                             const bounds = element.getBoundingClientRect();
-                            return bounds.top < window.innerHeight && bounds.bottom > 0;
+                            return bounds.top < document.getElementById('features').innerHeight && bounds.bottom > 0;
                         }
                                 
                         // On every scroll event, check which element is on screen
