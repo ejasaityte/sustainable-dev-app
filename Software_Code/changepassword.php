@@ -18,6 +18,10 @@
     <body>
         <!-- Responsive navbar-->
 <?php include("navbar.php"); ?>
+<script> 
+var element = document.getElementById('changepassword');
+element.classList.add("active");
+</script>
         <br>
         <div class="container-fluid text-center">
             <h1 class="display-5 fw-bold">Change password</h1>
