@@ -34,7 +34,7 @@
         $result = $db->query($sql);
         while ($row = $result->fetch_assoc()) $rows[] = $row;
         if (empty($rows)) echo '<li class="nav-item"><a class="nav-link " href="/addfriend">Friends</a></li>';
-        } else echo '<li class="nav-item"><a class="nav-link viridian" href="/addfriend">Friends</a></li>';
+        else echo '<li class="nav-item"><a class="nav-link viridian" href="/addfriend">Friends</a></li>';
         if ($_SESSION['username']=='admin') echo '<li class="nav-item"><a class="nav-link" href="/addevent">Add Event</a></li><li class="nav-item"><a class="nav-link" href="/adduser">Add User</a></li>';
         echo '<li class="nav-item"><a class="nav-link" href="/favouriteslist">Favourites</a></li><li class="nav-item"><a class="nav-link" href="/logout">Log out</a></li>';
     } 
