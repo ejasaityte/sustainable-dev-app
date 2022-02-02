@@ -211,7 +211,7 @@
                         }
                                 
                         // On every scroll event, check which element is on screen
-                        window.onscroll = () => {
+                        document.getElementById("features").onscroll = () => {
                             for (const chapterName in chapters) {
                                 if (isElementOnScreen(chapterName)) {
                                     setActiveChapter(chapterName);
