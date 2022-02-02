@@ -32,7 +32,6 @@
                 width: 50%;
             }
             .map-container{
-                width: 70%;
                 height: 30%
             }
             #features {
@@ -113,7 +112,6 @@
         </nav>
         <!-- Page Content-->
         <div class="container-fluid px-lg-5">
-            <div></div>
             <div style="" class="map-container">
                 <!-- Page Features-->
                 <?php
@@ -231,7 +229,12 @@
                     </script>";
                 php?>
             </div>
-            <div></div>
+            <div>
+                <h1>Tours Avaialable</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, aut suscipit mollitia eaque ipsam, aspernatur neque reprehenderit, quasi veritatis ipsum eos? Assumenda odit expedita adipisci earum minima distinctio, amet praesentium.</p>
+
+            </div>
+
         </div>
         <!-- Footer-->
         <footer class="py-5 bg-dark">
