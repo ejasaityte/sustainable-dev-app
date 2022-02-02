@@ -23,19 +23,15 @@
     <body>
         <!-- Responsive navbar-->
 <?php include("navbar.php"); ?>
-        <!-- Header-->
         <div class="container text-center">
             <img src="https://www.dundeecity.gov.uk/sites/default/files/imagebank/sustainable800.png" class="mx-auto d-block mw-100" alt="Sustainable Dundee">
             <div class="bg-mikado rounded-3">
                 <p class="fs-4">Sustainability is concerned with looking after our natural environment whilst ensuring a strong economy and a fair and healthy society.</p>
             </div>
             <a class="btn btn-ygreen btn-lg white w-100" href="/map/0"><u>Click here to explore the sustainability map of Dundee!</u></a>
-        </div>
-        <!-- Page Content-->
-        <section class="pt-4 bg-viridian">
-            <div class="container px-lg-5">
-                <!-- Page Features-->
-                <div class="row gx-lg-5 pt-3">
+            <section class="pt-4 bg-viridian rounded-3">
+                <div class="container px-lg-5">
+                    <div class="row gx-lg-5 pt-3">
 <?php
     $curl = curl_init();
     curl_setopt_array(
@@ -77,6 +73,8 @@ php?>
                 </div>
             </div>
         </section>
+        </div>
+        
         <!-- Footer-->
         <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Sustainable Dundee 2021</p></div>
