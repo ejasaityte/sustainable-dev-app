@@ -135,7 +135,7 @@
             if(empty($rows)){
                 $hashedPass = password_hash($password,PASSWORD_DEFAULT);
                 if(strlen($username)!=0)
-                {$updateReq = "INSERT INTO users (userID, email, password, admin, leaderboard) VALUES (NULL,'".$username."','".$hashedPass."',".$isadmin.",0,".$isorganiser.")";
+                {$updateReq = "INSERT INTO users (userID, email, password, admin, leaderboard, eventOrganiser) VALUES (NULL,'".$username."','".$hashedPass."',".$isadmin.",0,".$isorganiser.")";
                 $updateRes =$db->query($updateReq);
                 ?><div class="alert alert-warning" role="alert">
     Success!
