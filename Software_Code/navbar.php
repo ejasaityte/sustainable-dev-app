@@ -1,4 +1,3 @@
-<?php echo '
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container px-lg-5">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -7,7 +6,8 @@
                 <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="/map/0">Explore</a></li>
                 <li class="nav-item"><a class="nav-link" href="/news">News</a></li>
-                <li class="nav-item"><a class="nav-link active" href="/leaderboard">Leaderboard</a></li>';
+                <li class="nav-item"><a class="nav-link active" href="/leaderboard">Leaderboard</a></li>
+<?php
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         $sql = "SELECT friends.userID FROM `friends` INNER JOIN `users` ON friends.userID = users.userID WHERE friends.friendID = ".$_SESSION['userID']." AND friends.accepted = 0";
         $rows = array();
@@ -19,9 +19,8 @@
         echo '<li class="nav-item"><a class="nav-link" href="/favouriteslist">Favourites</a></li><li class="nav-item"><a class="nav-link" href="/logout">Log out</a></li>';
     } 
     else echo '<li class="nav-item"><a class="nav-link" href="/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li><li class="nav-item"><a class="nav-link" href="/register">Register</a></li>';
-    echo '
+?>
             </ul>
         </div>
     </div>
-</nav>';
-?>
+</nav>
