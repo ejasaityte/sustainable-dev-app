@@ -29,9 +29,8 @@
                 <p class="fs-4">Sustainability is concerned with looking after our natural environment whilst ensuring a strong economy and a fair and healthy society.</p>
             </div>
             <a class="btn btn-ygreen btn-lg white w-100" href="/map/0"><u>Click here to explore the sustainability map of Dundee!</u></a>
-            <section class="pt-4 bg-viridian rounded-3">
-                <div class="container px-lg-5">
-                    <div class="row gx-lg-5 pt-3">
+            <div class="container bg-viridian rounded-3">
+                <div class="row gx-lg-5 pt-3">
 <?php
     $curl = curl_init();
     curl_setopt_array(
@@ -72,7 +71,6 @@
 php?>
                 </div>
             </div>
-        </section>
         </div>
         
         <!-- Footer-->
