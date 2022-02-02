@@ -2,6 +2,6 @@
 session_start();
 session_unset();
 session_destroy();
-header('Location: https://sustainabledundeeapp.azurewebsites.net');
+header('Location: ' . $_SERVER['HTTP_REFERER']);
 exit;
 ?>
