@@ -78,7 +78,7 @@
             <div class="bg-mikado rounded-3 text-center">
                 <p class="fs-4">Sustainability is concerned with looking after our natural environment whilst ensuring a strong economy and a fair and healthy society.</p>
             </div>
-            <a class="btn btn-ygreen btn-lg" href="/map/0">Explore the map!</a>
+            <a class="btn btn-ygreen btn-lg" href="/map/0"><u>Explore the map!</u></a>
         </div>
 
         <!-- Page Content-->
