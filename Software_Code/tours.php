@@ -16,7 +16,7 @@
         <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
         <style>
             body { margin: 0; padding: 0; }
-            #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+            #map { position: relative; top: 0; bottom: 0; width: 50%; height: 400px}
         </style>
     </head>
     <?php session_start(); 
@@ -27,11 +27,6 @@
     ?>
     <body>
         <style>
-            #map {
-                position: fixed;
-                width: 50%;
-                height: 400px;
-            }
             #features {
                 width: 50%;
                 margin-left: 50%;
