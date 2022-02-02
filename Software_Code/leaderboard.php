@@ -21,7 +21,7 @@
 <?php include("navbar.php"); ?>
 <script> 
 var element = document.getElementById('leaderboard');
-element.classList.add(" active");
+element.classList.add("active");
 </script>
 <br>
 <?php
