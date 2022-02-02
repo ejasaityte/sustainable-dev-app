@@ -13,63 +13,12 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
-    <?php session_start(); 
-    include("dbconnect.php");?>
+<?php session_start(); 
+    include("dbconnect.php");
+?>
     <body>
         <!-- Responsive navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container px-lg-5">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/map/0">Explore</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/news">News</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="/leaderboard">Leaderboard</a></li>
-<?php
-    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-?>
-                        <li class="nav-item"><a class="nav-link" href="/favouriteslist">Favourites</a></li>
-<?php
-        $sql = "SELECT friends.userID FROM `friends` INNER JOIN `users` ON friends.userID = users.userID WHERE friends.friendID = ".$_SESSION['userID']." AND friends.accepted = 0";
-        $rows = array();
-        $result = $db->query($sql);
-
-        while ($row = $result->fetch_assoc()) {
-            $rows[] = $row;
-        }
-        if (empty($rows)) {
-?>
-                        <li class="nav-item"><a class="nav-link " href="/addfriend">Friends</a></li>
-<?php
-        } else {
-?>
-                        <li class="nav-item"><a class="nav-link viridian" href="/addfriend">Friends</a></li>
-<?php
-    }
-    ?>
-    <li class="nav-item"><a class="nav-link" href="/addevent">Add Event</a></li><?php
-        if ($_SESSION['username']=='admin') { ?>
-                        <li class="nav-item"><a class="nav-link" href="/adduser">Add User</a></li>
-<?php 
-        } 
-
-?>
-
-                        <li class="nav-item"><a class="nav-link" href="/logout">Log out</a></li>
-<?php 
-    } 
-    else{
-?>
-                        <li class="nav-item"><a class="nav-link" href="/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
-<?php 
-    } 
-?>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <?php include("navbar.php"); ?>
         <br>
         <?php
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
