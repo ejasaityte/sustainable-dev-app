@@ -20,7 +20,6 @@
             #map { position: absolute; top: 0; bottom: 0; width: 100%; }
         </style>
     </head>
-    
     <?php session_start(); 
     if (!isset($_SESSION['favouriteslist']))
     {
@@ -66,24 +65,30 @@
                         <li class="nav-item"><a class="nav-link" href="/news">News</a></li>
                         <li class="nav-item"><a class="nav-link" href="/leaderboard">Leaderboard</a></li>
                         <?php
-        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-            ?>
-                  <li class="nav-item"><a class="nav-link" href="/favouriteslist">Favourites</a></li>
-                  <li class="nav-item"><a class="nav-link" href="/addfriend">Friends</a></li>
-                  <?php 
-                  if ($_SESSION['isadmin']==1) { ?>
-                  <li class="nav-item"><a class="nav-link" href="/addevent">Add Event</a></li>
-                  <?php } 
-                      if ($_SESSION['username']=='admin') { ?>
-                      <li class="nav-item"><a class="nav-link" href="/adduser">Add User</a></li>
-                      <?php } ?>
-                  <li class="nav-item"><a class="nav-link" href="/logout">Log out</a></li>
-                  <?php } 
-                  else{
-                  ?>
-                  <li class="nav-item"><a class="nav-link" href="/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
-                  <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
-          <?php } ?>
+                            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                        ?>
+                        <li class="nav-item"><a class="nav-link" href="/favouriteslist">Favourites</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/addfriend">Friends</a></li>
+                        <?php 
+                            if ($_SESSION['isadmin']==1) { 
+                        ?>
+                        <li class="nav-item"><a class="nav-link" href="/addevent">Add Event</a></li>
+                        <?php } 
+                            if ($_SESSION['username']=='admin') { 
+                        ?>
+                        <li class="nav-item"><a class="nav-link" href="/adduser">Add User</a></li>
+                        <?php 
+                                } 
+                        ?>
+                        <li class="nav-item"><a class="nav-link" href="/logout">Log out</a></li>
+                        <?php 
+                            }else{
+                        ?>
+                        <li class="nav-item"><a class="nav-link" href="/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+                        <?php 
+                            } 
+                        ?>
                     </ul>
                 </div>
             </div>
@@ -92,7 +97,6 @@
         <section class="pt-4 bg-viridian">
             <div class="container px-lg-5">
                 <!-- Page Features-->
-                <div class="row gx-lg-5 pt-3">
                     <h1 class="display-5 fw-bold">See our locations!</h1>
                     <?php
                         echo "<div id='map'></div>
@@ -278,7 +282,6 @@
                             
                     </script>";
                     php?>
-                </div>
             </div>
         </section>
         <!-- Footer-->
