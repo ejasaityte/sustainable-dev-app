@@ -25,7 +25,7 @@
 <?php include("navbar.php"); ?>
         <!-- Header-->
         <div class="container text-center">
-            <img src="https://www.dundeecity.gov.uk/sites/default/files/imagebank/sustainable800.png" class="mx-auto d-block" alt="Sustainable Dundee">
+            <img src="https://www.dundeecity.gov.uk/sites/default/files/imagebank/sustainable800.png" class="mx-auto d-block mw-100" alt="Sustainable Dundee">
             <div class="bg-mikado rounded-3">
                 <p class="fs-4">Sustainability is concerned with looking after our natural environment whilst ensuring a strong economy and a fair and healthy society.</p>
             </div>
