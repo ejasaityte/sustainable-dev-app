@@ -105,10 +105,9 @@ element.classList.add("active");
         <!-- footer -->
         <style>
             .footer {
-                height: 100px;
                 position: fixed;
-                display: flex;
-                bottom:0;
+                left: 0;
+                bottom: 0;
                 width:100%;
                 background-color:black;
                 color:white;
