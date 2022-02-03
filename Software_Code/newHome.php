@@ -30,6 +30,7 @@
             </div>
             <a class="btn btn-ygreen btn-lg white w-100 mb-3" href="/map/0"><u>Click here to explore the sustainability map of Dundee!</u></a>
             <div class="container bg-viridian rounded-3">
+                <p class="fs-4 white"><u>Select one of the 17 Sustainability Goals below to find out more.</u></p>
                 <div class="d-flex flex-wrap">
                                
 <?php
