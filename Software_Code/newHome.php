@@ -30,7 +30,8 @@
             </div>
             <a class="btn btn-ygreen btn-lg white w-100 mb-3" href="/map/0"><u>Click here to explore the sustainability map of Dundee!</u></a>
             <div class="container bg-viridian rounded-3">
-                <div class="row gx-lg-5 pt-3">
+                <div class="d-flex flex-wrap">
+                               
 <?php
     $curl = curl_init();
     curl_setopt_array(
@@ -51,23 +52,7 @@
     curl_close($curl);
     $response = json_decode($response, true);// Decode JSON data into PHP array
     foreach ($response as $goal)
-        echo '
-                    <div class="col-lg-6 col-xxl-4 mb-5">
-                        <div class="card bg-light border-0 h-100">
-                            <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                                <img style="height: 11rem; width: 11rem;" class="feature bg-primary bg-gradient text-white mb-4 mt-4" src="' . $goal['goalPicture'] . '">
-                                <h2 class="fs-4 fw-bold">' . $goal['goalName'] . '</h2></a>
-                                <p class="mb-0">' . $goal['goalDescription'] . '</p>
-                            </div>
-                            <div class="container pb-4">
-                                <div class="row">
-                                    <div class="col text-center">
-                                        <a class="btn btn-primary btn-sm mt-auto" href="/goal/' . $goal['goalID'] . '"">Learn more</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>';
+        echo '<a class="" href="/goal/' . $goal['goalID'] . '"><img class="feature bg-primary bg-gradient text-white" src="' . $goal['goalPicture'] . '"></a>;
 php?>
                 </div>
             </div>
