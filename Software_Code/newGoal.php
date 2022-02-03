@@ -78,7 +78,7 @@
     curl_close($curl);
     $response = json_decode($response, true);// Decode JSON data into PHP array
     foreach ($response as $event)
-        echo $event['name'].' '. $event['description'] . ' '.$event['website']. ' ' .$event['contacts'];
+        //echo $event['name'].' '. $event['description'] . ' '.$event['website']. ' ' .$event['contacts'];
 php?>
                 </div>
             </div>
