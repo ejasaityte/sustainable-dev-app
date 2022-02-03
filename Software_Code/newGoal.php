@@ -26,32 +26,7 @@
     <!-- Responsive navbar-->
     <?php include("navbar.php"); ?>
     <div class="d-block mx-auto text-center p-3" style="max-width:800px;">
-    <?php
-    $goalID = $params['goal'];
-    $curl = curl_init();
-    curl_setopt_array(
-        $curl,
-        array(
-            CURLOPT_URL => "https://sustainabledundeeapp.azurewebsites.net/api/singleGoal/$goalID",
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_TIMEOUT => 29,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_0_1,
-            CURLOPT_CUSTOMREQUEST => "GET",
-            CURLOPT_HTTPHEADER => array(
-                "cache-control: no-cache"
-            ),
-        )
-    );
-    $response = curl_exec($curl);
-    $err = curl_error($curl);
-    curl_close($curl);
-    $response = json_decode($response, true);// Decode JSON data into PHP array
-    echo '<img alt="'.$response[0]['goalName'].'" src="' . $response[0]['goalPicture'] . '">';
-    echo '        
-        <div class="bg-mikado rounded-3 mb-3">
-            <p class="fs-4">'.$response[0]['goalDescription'].'</p>
-        </div>'
-    echo '<a class="btn btn-ygreen btn-lg white w-100 mb-3" href="/map/'.$goalID.'"><u>Click here to see events related to this goal on the map!</u></a>';
+
 ?>
         <div class="bg-viridian rounded-3">
             <p class="fs-4 white"><u>View events related to this goal in Dundee below.</u></p>
