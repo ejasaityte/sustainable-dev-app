@@ -26,7 +26,7 @@
 
         <script> 
             var items_to_show = "h";
-        localStorage.setItem("items_to_show","all");
+        //localStorage.setItem("items_to_show","all");
             document.getElementById("demo").innerHTML = localStorage.getItem("items_to_show");
          </script>
         <style>
