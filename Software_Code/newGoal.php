@@ -26,7 +26,6 @@
     <!-- Responsive navbar-->
     <?php include("navbar.php"); ?>
     <div class="d-block mx-auto text-center p-3" style="max-width:800px;">
-        <div class="d-flex justify-content-center flex-wrap">
 
     <?php
     $goalID = $params['goal'];
@@ -51,8 +50,9 @@
 
             echo '<img style="max-width: 350px;" src="'.$response[0]['goalPicture'].'" class="mx-auto d-block mw-100" alt="'.$response[0]['goalName'].'">';
             echo '<div class="bg-mikado rounded-3 my-3 w-100"><p class="fs-4">'.$response[0]['goalDescription'].'</p></div>';
+            echo '<a class="btn btn-ygreen btn-lg white w-100 mb-3" href="/map/'.$goalID.'"><u>Click here to see related events on the map!</u></a>';
     ?>
-        </div>
+        
         <div class="bg-viridian rounded-3">
             <p class="fs-4 white"><u>View events related to this goal in Dundee below.</u></p>
             <div class="d-flex justify-content-center">
