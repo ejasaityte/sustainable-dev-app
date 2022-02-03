@@ -73,7 +73,7 @@
                                         curl_close($curl);
                                         // Decode JSON data into PHP array
                                         $response = json_decode($response, true);
-                                        print_r($response);
+                                        print_r($response[1]['properties']);
                                         $i = 0;
                                         
                                         foreach ($response as $point) { // TODO refactor
@@ -83,7 +83,7 @@
                                                     'type': 'Feature',
                                                     'properties': {
                                                     'NAME':
-                                                        '<strong> " . $point['properties']['NAME'] . " </strong><p>(" . $point['properties']['ACCESS_PUBLIC_PRIVATE'] . ")</p><p><strong>Paper</strong>: " . $point['properties']['PAPER_CARD'] . "</p><p><strong>Glass</strong>: " . $point['properties']['GLASS'] . "</p><p><strong>Plastic</strong>: " . $point['properties']['PLASTIC_BOTTLES'] . "</p><p><strong>Books/Music</strong>: " . $point['properties']['BOOKS_MUSIC'] . "</p>";
+                                                        '<strong> " . $point['NAME'] . " </strong><p>(" . $point['ACCESS_PUBLIC_PRIVATE'] . ")</p><p><strong>Paper</strong>: " . $point['PAPER_CARD'] . "</p><p><strong>Glass</strong>: " . $point['GLASS'] . "</p><p><strong>Plastic</strong>: " . $point['PLASTIC_BOTTLES'] . "</p><p><strong>Books/Music</strong>: " . $point['BOOKS_MUSIC'] . "</p>";
                                                     echo "'},
                                                     'geometry': {
                                                         'type': 'Point',
