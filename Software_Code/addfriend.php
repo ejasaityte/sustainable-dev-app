@@ -68,7 +68,7 @@ element.classList.add("active");
                                                     if (isset($_POST['userID'])) {
                                                         $sql = "DELETE FROM friends WHERE (userID = ".$_SESSION['userID']." AND friendID = ".$_POST['userID'].") OR (userID = ".$_POST['userID']." AND friendID = ".$_SESSION['userID'].");";
                                                         $db->query($sql);
-                                                        echo "<script>location.reload()</script>";
+                                                        header('location: https://sustainabledundeeapp.azurewebsites.net/addfriend');
                                                     }
                                                 ?>
                                             </td>
@@ -120,7 +120,7 @@ element.classList.add("active");
                                                         $insertSQL = "INSERT INTO `friends` (userID, friendID, accepted) VALUES (".$_SESSION['userID'].", ".$_POST['friendID'].", 1);";
                                                         $db->query($sql);
                                                         $db->query($insertSQL);
-                                                        echo "<script>location.reload()</script>";
+                                                        header('location: https://sustainabledundeeapp.azurewebsites.net/addfriend');
                                                     }
                                                 ?>
                                             </td>
@@ -136,7 +136,7 @@ element.classList.add("active");
                                                     if (isset($_POST['userID'])) {
                                                         $sql = "DELETE FROM `friends` WHERE userID = ".$_POST['userID']." AND friendID = ".$_SESSION['userID'].";";
                                                         $db->query($sql);
-                                                        echo "<script>location.reload()</script>";
+                                                        header('location: https://sustainabledundeeapp.azurewebsites.net/addfriend');
                                                     }
                                                 ?>
                                             </td>
