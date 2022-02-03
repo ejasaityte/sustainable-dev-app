@@ -73,20 +73,21 @@
                                         curl_close($curl);
                                         // Decode JSON data into PHP array
                                         $response = json_decode($response, true);
+                                        print_r($response);
                                         $i = 0;
                                         
-                                        foreach ($response as $event) { // TODO refactor
+                                        foreach ($response as $point) { // TODO refactor
                                             $i += 1;
                                             echo "
                                                 {
                                                     'type': 'Feature',
                                                     'properties': {
                                                     'NAME':
-                                                        '<strong> " . $event['NAME'] . " </strong><p>(" . $event['ACCESS_PUBLIC_PRIVATE'] . ")</p><p><strong>Paper</strong>: " . $event['PAPER_CARD'] . "</p><p><strong>Glass</strong>: " . $event['GLASS'] . "</p><p><strong>Plastic</strong>: " . $event['PLASTIC_BOTTLES'] . "</p><p><strong>Books/Music</strong>: " . $event['BOOKS_MUSIC'] . "</p>";
+                                                        '<strong> " . $point['NAME'] . " </strong><p>(" . $point['ACCESS_PUBLIC_PRIVATE'] . ")</p><p><strong>Paper</strong>: " . $point['PAPER_CARD'] . "</p><p><strong>Glass</strong>: " . $point['GLASS'] . "</p><p><strong>Plastic</strong>: " . $point['PLASTIC_BOTTLES'] . "</p><p><strong>Books/Music</strong>: " . $point['BOOKS_MUSIC'] . "</p>";
                                                     echo "'},
                                                     'geometry': {
                                                         'type': 'Point',
-                                                        'coordinates': [" . $event["properties"]["LONGITUDE"] . ", " . $event["properties"]["LATITUDE"] . "]
+                                                        'coordinates': [" . $point["properties"]["LONGITUDE"] . ", " . $point["properties"]["LATITUDE"] . "]
                                                         }
                                                     }";
                                                     if ($i != count($response)) {
