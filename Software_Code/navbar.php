@@ -5,6 +5,7 @@
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link" id="home" href="/">Home</a></li>
                 <li class="nav-item"><a class="nav-link" id="explore" href="/map/0">Explore</a></li>
+                <li class="nav-item"><a class="nav-link" id="explore" href="/tours">Tours</a></li>
                 <li class="nav-item"><a class="nav-link" id="news" href="/news">News</a></li>
                 <li class="nav-item"><a class="nav-link" id="leaderboard" href="/leaderboard">Leaderboard</a></li>
 <?php
