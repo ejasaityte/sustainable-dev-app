@@ -76,6 +76,7 @@
                                         $i = 0;
                                         
                                         foreach ($response[1] as $event) { // TODO refactor
+                                            $i += 1;
                                             echo "
                                                 {
                                                     'type': 'Feature',
@@ -87,11 +88,13 @@
                                                         'type': 'Point',
                                                         'coordinates': [" . $event["properties"]["LONGITUDE"] . ", " . $event["properties"]["LATITUDE"] . "]
                                                         }
-                                                }";
-                                                
-                                                    
-                                        }
-                                        echo ","; 
+                                                    }";
+                                                    if ($i != count($response[1])) {
+                                                        echo ","; 
+                                                    }
+                                                //echo "},";       
+                                            }
+                                        //echo ","; 
                                         echo "
                                         ]
                                     }         
