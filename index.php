@@ -48,8 +48,9 @@ $rules = array(
     // Style
     //
 
-    // Testing page
-    'newHome' => '/designtest'
+    // Testing pages
+    'newHome' => '/designtest',
+    'newGoal' => '/goaltest'
 );
 
 $uri = rtrim(dirname($_SERVER["SCRIPT_NAME"]), '/');
