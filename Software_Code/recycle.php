@@ -191,7 +191,7 @@ php?>
         </div>
         <div class="d-flex flex-wrap bg-primary justify-content-center">
         
-        <a class="m-3" href="/recycle" style="text-decoration: none; width: 75px;">
+        <a class="m-3" href="/recycle" style="text-decoration: none; width: 75px; background-color:black;">
             <h1 class="feature text-white">All</h1>
         </a>
         <a class="m-3"  href="/recycle" ">
