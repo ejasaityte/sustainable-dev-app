@@ -77,8 +77,9 @@ echo "<div id='map'></div>
                            
                             foreach ($response['features'] as $point) { // TODO refactor
                                 $i += 1;
-                                if($point["properties"][type] == "y")
-                                {
+                                if($point["properties"][type] == "n")
+                                { continue;}
+                                else {
                                     echo "
                                         {
                                             'type': 'Feature',
@@ -94,8 +95,8 @@ echo "<div id='map'></div>
                                             if ($i != count($response['features'])) {
                                                 echo ","; 
                                             }
-                                        //echo "},";     
-                                }  
+                                    }    //echo "},";     
+                                  
                             }
                             //echo ","; 
                             echo "
