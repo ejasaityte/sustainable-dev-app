@@ -79,10 +79,9 @@ echo "<div id='map'></div>
                            
                             foreach ($response['features'] as $point) { // TODO refactor
                                 $i += 1;
-                                if($_SESSION['items_to_show'] != "all" )
+                                if($_POST['items_to_show'] == "all" )
                                 //if($point["properties"]["BOOKS_MUSIC"] == "n")
-                                { continue;}
-                                else {
+                                 {
                                     echo "
                                         {
                                             'type': 'Feature',
@@ -98,7 +97,8 @@ echo "<div id='map'></div>
                                             if ($i != count($response['features'])) {
                                                 echo ","; 
                                             }
-                                    }    //echo "},";     
+                                    }    //echo "},";    
+                                    else {continue;} 
                                   
                             }
                             //echo ","; 
