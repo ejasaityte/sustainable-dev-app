@@ -1,43 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Sustainable Dundee</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="/css/styles.css" rel="stylesheet" />
-        <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
-        <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
-        <style>
-    body { margin: 0; padding: 0; }
-    #map { position: relative; width: 100%; height: 500px; }
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Sustainable Dundee</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="/css/styles.css" rel="stylesheet" />
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: relative;
+            width: 100%;
+            height: 500px;
+        }
     </style>
-    </head>
+</head>
 <?php session_start();
     include("dbconnect.php");
 ?>
-    <body>
-        <style>
+
+<body>
+    <style>
         .mapboxgl-popup {
-        max-width: 500px;
-        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            max-width: 500px;
+            font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
         }
-        </style>
-<?php include("navbar.php"); ?>
-<script> 
-var element = document.getElementById('explore');
-element.classList.add("active");
-</script>
-            <div class="container-fluid text-center">
-                <h1 class="display-5 fw-bold">See our locations!</h1>
-            </div>
-            <?php
+    </style>
+    <?php include("navbar.php"); ?>
+    <script>
+        var element = document.getElementById('explore');
+        element.classList.add("active");
+    </script>
+    <div class="container-fluid text-center">
+        <h1 class="display-5 fw-bold">See our locations!</h1>
+    </div>
+    <?php
                 echo "<div id='map'></div>
                 <script>
                     mapboxgl.accessToken = 'pk.eyJ1IjoiZXVhbmRvY2tpbmciLCJhIjoiY2t5dmt1aTZvMXpqMTJxcHR2eTF2Z21zOCJ9.yZNbnAG0QP59OzGsTYFX1A';
@@ -182,13 +192,13 @@ element.classList.add("active");
                     
                 </script>";
             php?>
-            <!-- Footer-->
-        </div>
-        <div class="d-flex flex-wrap bg-primary justify-content-center">
-            <a class="m-3" href="/map/0">
-                <h1 class="feature bg-primary bg-gradient text-white rounded-3">All</h1>
-            </a>
-            <?php
+    <!-- Footer-->
+    </div>
+    <div class="d-flex flex-wrap bg-primary justify-content-center">
+        <a class="m-3" href="/map/0">
+            <h1 class="feature bg-primary bg-gradient text-white rounded-3">All</h1>
+        </a>
+        <?php
 
                 $curl = curl_init();
 
@@ -215,11 +225,12 @@ element.classList.add("active");
                 }
 
                 php?>
-            </div>
-    
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+    </div>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
+
 </html>
