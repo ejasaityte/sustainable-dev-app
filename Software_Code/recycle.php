@@ -73,11 +73,13 @@
                                         curl_close($curl);
                                         // Decode JSON data into PHP array
                                         $response = json_decode($response, true);
-                                        print_r($response[1]['properties']);
+                                        print_r($response);
                                         $i = 0;
                                         
-                                        foreach ($response as $point) { // TODO refactor
+                                        foreach ($response['features'] as $point) { // TODO refactor
+                                           
                                             $i += 1;
+
                                             echo "
                                                 {
                                                     'type': 'Feature',
@@ -90,7 +92,7 @@
                                                         'coordinates': [" . $point["properties"]["LONGITUDE"] . ", " . $point["properties"]["LATITUDE"] . "]
                                                         }
                                                     }";
-                                                    if ($i != count($response)) {
+                                                    if ($i != count($response['features'])) {
                                                         echo ","; 
                                                     }
                                                 //echo "},";       
