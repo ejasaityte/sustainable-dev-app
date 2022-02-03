@@ -1,48 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Sustainable Dundee</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!-- Bootstrap icons-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="/css/styles.css" rel="stylesheet" />
-    <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
-    <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        #map {
-            position: relative;
-            width: 100%;
-            height: 500px;
-        }
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Sustainable Dundee</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="/css/styles.css" rel="stylesheet" />
+        <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
+        <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+        <style>
+    body { margin: 0; padding: 0; }
+    #map { position: relative; width: 100%; height: 500px; }
     </style>
-</head>
-<?php session_start();
+    </head>
+    <?php session_start();
     include("dbconnect.php"); ?>
-
-<body>
-    <style>
+    <body>
+        <style>
         .mapboxgl-popup {
-            max-width: 500px;
-            font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        max-width: 500px;
+        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
         }
-    </style>
-    <?php include("navbar.php"); ?>
-    <div class="container-fluid text-center">
-        <h1 class="display-5 fw-bold">Find recycling points in Dundee!</h1>
-    </div>
-    <?php
+        </style>
+        <?php include("navbar.php"); ?>
+            <div class="container-fluid text-center">
+                <h1 class="display-5 fw-bold">Find recycling points in Dundee!</h1>
+            </div>
+<?php
 echo "<div id='map'></div>
 <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoibGF1cmFuYXMiLCJhIjoiY2sybnRqODB5MHE5cjNibnozNnlndGEwcyJ9.oaxzA4cGRd_-3QgjdqKETg';
@@ -56,7 +46,7 @@ echo "<div id='map'></div>
     });
         
     map.on('load', () => {
-            map.loadImage('https://icons.iconarchive.com/icons/royalflushxx/systematrix/32/Trash-icon.png',
+            map.loadImage('https://i.imgur.com/lz3uxL1.png',
                 (error, image) => {
                     if (error) throw error;
                     map.addImage('custom-marker', image);
@@ -93,7 +83,7 @@ echo "<div id='map'></div>
                                         'type': 'Feature',
                                         'properties': {
                                         'description':
-                                            '<strong> " . $point['NAME'] . " </strong><p>(" . $point['ACCESS_PUBLIC_PRIVATE'] . ")</p><p><strong>Paper</strong>: " . $point['PAPER_CARD'] . "</p><p><strong>Glass</strong>: " . $point['GLASS'] . "</p><p><strong>Plastic</strong>: " . $point['PLASTIC_BOTTLES'] . "</p><p><strong>Books/Music</strong>: " . $point['BOOKS_MUSIC'] . "</p>";
+                                            '<strong> " . $point["properties"]["NAME"] . " </strong><p>(" . $point["properties"]["ACCESS_PUBLIC_PRIVATE"] . ")</p><p><strong>Paper</strong>: " . $point["properties"]["PAPER_CARD"] . "</p><p><strong>Glass</strong>: " . $point["properties"]["GLASS"] . "</p><p><strong>Plastic</strong>: " . $point["properties"]["PLASTIC_BOTTLES"] . "</p><p><strong>Books/Music</strong>: " . $point["properties"]["BOOKS_MUSIC"] . "</p>";
                                         echo "'},
                                         'geometry': {
                                             'type': 'Point',
@@ -123,24 +113,63 @@ echo "<div id='map'></div>
                 }
             );
         });
+        // Create a popup, but don't add it to the map yet.
+                    const popup = new mapboxgl.Popup({
+                        closeButton: false,
+                        closeOnClick: true
+                    });
+                    
+                    map.on('click', 'places', (e) => {
+                        // Change the cursor style as a UI indicator.
+                        map.getCanvas().style.cursor = 'pointer';
+                    
+                        // Copy coordinates array.
+                        const coordinates = e.features[0].geometry.coordinates.slice();
+                        const description = e.features[0].properties.description;
+                    
+                        // Ensure that if the map is zoomed out such that multiple
+                        // copies of the feature are visible, the popup appears
+                        // over the copy being pointed to.
+                        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                        }
+                    
+                        // Populate the popup and set its coordinates
+                        // based on the feature found.
+                        popup.setLngLat(coordinates).setHTML(description).addTo(map);
+                    });
+
+                    map.on('mouseleave', 'places', () => {
+                        map.getCanvas().style.cursor = '';
+                    });
+
+                    // Add geolocate control to the map.
+                    map.addControl(
+                        new mapboxgl.GeolocateControl({
+                            positionOptions: {
+                                enableHighAccuracy: true
+                            },
+                            // When active the map will receive updates to the device's location as it changes.
+                            trackUserLocation: true,
+                            // Draw an arrow next to the location dot to indicate which direction the device is heading.
+                            showUserHeading: true
+                        })
+                    );
         
         
         
 </script>";
 php?>
-    <!-- Footer-->
-    </div>
-
-    <footer class="py-5 bg-dark">
-        <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Sustainable Dundee 2021</p>
+            <!-- Footer-->
         </div>
-    </footer>
-
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
-</body>
-
+       
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Sustainable Dundee 2021</p></div>
+        </footer>
+    
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
 </html>
