@@ -49,7 +49,7 @@
     curl_close($curl);
     $response = json_decode($response, true);// Decode JSON data into PHP array
 
-            echo '<img src="'.$response[0]['goalPicture'].'" class="mx-auto d-block mw-100" alt="'.$response[0]['goalName'].'">';
+            echo '<img style="max-width: 350px;" src="'.$response[0]['goalPicture'].'" class="mx-auto d-block mw-100" alt="'.$response[0]['goalName'].'">';
             echo '<div class="bg-mikado rounded-3 my-3 w-100"><p class="fs-4">'.$response[0]['goalDescription'].'</p></div>';
     ?>
         </div>
