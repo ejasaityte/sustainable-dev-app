@@ -26,8 +26,6 @@
     <!-- Responsive navbar-->
     <?php include("navbar.php"); ?>
     <div class="d-block mx-auto text-center p-3" style="max-width:800px;">
-
-?>
         <div class="bg-viridian rounded-3">
             <p class="fs-4 white"><u>View events related to this goal in Dundee below.</u></p>
             <div class="d-flex justify-content-center">
