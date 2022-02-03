@@ -61,7 +61,7 @@
 
                     echo '<div class="input-group">
                             <select class="form-select" aria-label="Pick a goal" id="goal">
-                                <option selected>Pick a goal this tour relates to</option>'    
+                                <option selected>Pick a goal this tour relates to</option>';
 
                     for ($i = 0; $i < 17; $i++)
                     {
