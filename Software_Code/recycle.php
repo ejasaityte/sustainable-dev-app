@@ -175,7 +175,12 @@ php?>
             <!-- Footer-->
         </div>
         <div class="d-flex flex-wrap bg-primary justify-content-center">
-        
+        <script>
+            function myfunction(type){
+                localStorage.setItem("items_to_show", "TEXTILES");
+                window.location.reload();
+            }
+        </script>
         <a class="m-3" href="/recycle">
             <h1 class="feature bg-primary bg-gradient text-white rounded-3">All</h1>
         </a>
@@ -195,12 +200,7 @@ php?>
             <h1 class="feature bg-primary bg-gradient text-white rounded-3"><img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/aluminium_cans_p75.png" alt="Aluminium cans"></h1>
         </a>
 
-        <script>
-            function myfunction(type){
-                localStorage.setItem("items_to_show", type);
-                window.location.reload();
-            }
-        </script>
+        
        
         
     </div>
