@@ -87,7 +87,7 @@ echo "<div id='map'></div>
                                             'properties': {
                                                 'icon': 'theatre',
                                                 'description':
-                                                    '<strong> " . str_replace("'","\'",$point["properties"]["NAME"]) . " </strong><p>(" . $point["properties"]["ACCESS_PUBLIC_PRIVATE"] . ")</p><p>Recyclable items: </p>";
+                                                    '<strong> " . str_replace("'","\'",$point["properties"]["NAME"]) . " </strong><p>(" . $point["properties"]["ACCESS_PUBLIC_PRIVATE"] . ")</p><p style="text-decoration: underline;">Recyclable items: </p>";
                                                     if($point["properties"]["PAPER_CARD"] == "y")
                                                     {
                                                         echo "<p><strong>Paper</strong></p>";
@@ -191,7 +191,7 @@ php?>
         </div>
         <div class="d-flex flex-wrap bg-primary justify-content-center">
         
-        <a class="m-3" href="/recycle" style="text-decoration: none; width: 75px; background-color:black;">
+        <a class="m-3" href="/recycle" style="text-decoration: none; width: 75px;">
             <h1 class="feature text-white">All</h1>
         </a>
         <a class="m-3"  href="/recycle" ">
