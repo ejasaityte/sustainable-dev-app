@@ -177,7 +177,7 @@ php?>
         <a class="m-3" href="/recycle">
             <h1 class="feature bg-primary bg-gradient text-white rounded-3">All</h1>
         </a>
-        <button class="m-3" id="TEXTILES" onclick="myFunction("TEXTILES")">
+        <button class="m-3" id="TEXTILES" onclick="myFunction('TEXTILES')">
             <img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/mixed_textiles_p75.png" alt="Textile">
         </button>
         <a class="m-3" href="/recycle">
@@ -196,7 +196,7 @@ php?>
         <script>
         function myfunction(type){
             localStorage.setItem(items_to_show, type);
-            location.reload();
+            window.location.reload();
         }
         </script>
        
