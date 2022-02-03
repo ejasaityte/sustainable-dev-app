@@ -87,7 +87,28 @@ echo "<div id='map'></div>
                                             'properties': {
                                                 'icon': 'theatre',
                                                 'description':
-                                                    '<strong> " . str_replace("'","\'",$point["properties"]["NAME"]) . " </strong><p>(" . $point["properties"]["ACCESS_PUBLIC_PRIVATE"] . ")</p><p><strong>Paper</strong>: " . $point["properties"]["PAPER_CARD"] . "</p><p><strong>Glass</strong>: " . $point["properties"]["GLASS"] . "</p><p><strong>Plastic</strong>: " . $point["properties"]["PLASTIC_BOTTLES"] . "</p><p><strong>Aluminium cans</strong>: " . $point["properties"]["ALUMINIUM_CANS"] . "</p><p><strong>Textiles</strong>: " . $point["properties"]["TEXTILES"] . "</p><p><strong>Books/Music</strong>: " . $point["properties"]["BOOKS_MUSIC"] . "</p>";                                        echo "'},
+                                                    '<strong> " . str_replace("'","\'",$point["properties"]["NAME"]) . " </strong><p>(" . $point["properties"]["ACCESS_PUBLIC_PRIVATE"] . ")</p><p style='text-decoration:underline'>Recyclable items: </p>";
+                                                    if($point["properties"]["PAPER_CARD"] == "y")
+                                                    {
+                                                        echo "<p><strong>Paper</strong></p>";
+                                                    }
+                                                    if($point["properties"]["GLASS"] == "y")
+                                                    {
+                                                        echo "<p><strong>Glass</strong></p>";
+                                                    }
+                                                    if($point["properties"]["PLASTIC_BOTTLES"] == "y")
+                                                    {
+                                                        echo "<p><strong>Plastic</strong></p>";
+                                                    }
+                                                    if($point["properties"]["ALUMINIUM_CANS"] == "y")
+                                                    {
+                                                        echo "<p><strong>Aluminium cans</strong></p>";
+                                                    }
+                                                    if($point["properties"]["TEXTILES"] == "y")
+                                                    {
+                                                        echo "<p><strong>Textiles</strong></p>";
+                                                    }
+                                                    echo "'},
                                             'geometry': {
                                                 'type': 'Point',
                                                 'coordinates': [" . $point["properties"]["LONGITUDE"] . ", " . $point["properties"]["LATITUDE"] . "]
