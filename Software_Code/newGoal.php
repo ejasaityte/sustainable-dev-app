@@ -82,7 +82,7 @@
             <div class="bg-rose rounded-3 p-3">
                 <h1 class="white"><h1>'.$event['name'].'</h1>  
             </div>
-        '
+        ';
 php?>
 
 
