@@ -7,6 +7,7 @@
                 <li class="nav-item"><a class="nav-link" id="explore" href="/map/0">Explore</a></li>
                 <li class="nav-item"><a class="nav-link" id="tours" href="/tours">Tours</a></li>
                 <li class="nav-item"><a class="nav-link" id="news" href="/news">News</a></li>
+                <li class="nav-item"><a class="nav-link" id="recycle" href="/recycle">Recycle</a></li>
                 <li class="nav-item"><a class="nav-link" id="leaderboard" href="/leaderboard">Leaderboard</a></li>
 <?php
     session_start();
