@@ -65,7 +65,7 @@
 
                     foreach ($response as $goal)
                     {
-                        echo "<option id='" . $goal['id'] . "' value='" . $goal['id'] . "'>" . $goal['id'] . ". " . $goal['name'] . "</option>";
+                        echo "<option id='" . $goal['goalID'] . "' value='" . $goal['goalID'] . "'>" . $goal['goalID'] . ". " . $goal['goalName'] . "</option>";
                     }
 
                     echo '</select>
@@ -89,19 +89,22 @@
                     $err = curl_error($curl);
                     curl_close($curl);
                     $response = json_decode($response, true);
+                    
+                    for($i = 0; $i < 4; $i++){
+                        
+                        echo '<div class="input-group">
+                            <select class="form-select" aria-label="Pick a destination" id="destination">
+                                <option selected>Pick an event to add to the tour</option>';
 
-                    echo '<div class="input-group">
-                        <select class="form-select" aria-label="Pick a destination" id="destination">
-                            <option selected>Pick an event to add to the tour</option>';
+                        foreach ($response as $event)
+                        {
+                            echo "<option id='" . $event['id'] . "' value='" . $event['id'] . "'> Goal(" . $event['goalID'] . "). " . $event['name'] . "</option>";
+                        }
 
-                    foreach ($response as $event)
-                    {
-                        echo "<option id='" . $event['id'] . "' value='" . $event['id'] . "'> Goal(" . $event['goalID'] . "). " . $event['name'] . "</option>";
+                        echo '</select>
+                        </div>';
+
                     }
-
-                    echo '</select>
-                    </div>';
-
                 ?>
                 <button type="submit" class="btn btn-primary">Add Tour</button>
             </div>
