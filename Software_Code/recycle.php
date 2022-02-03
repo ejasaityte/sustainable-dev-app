@@ -76,7 +76,7 @@ echo "<div id='map'></div>
                             $response = json_decode($response, true);
                             $i = 0;
                            
-                           
+                           print_r($_POST['items_to_show']);
                             foreach ($response['features'] as $point) { // TODO refactor
                                 $i += 1;
                                 if($_POST['items_to_show'] == "all" )
@@ -173,7 +173,7 @@ php?>
         <a class="m-3" href="/recycle">
             <h1 class="feature bg-primary bg-gradient text-white rounded-3">All</h1>
         </a>
-        <button class="m-3" id="TEXTILES" onclick="myFunction(id)">
+        <button class="m-3" id="TEXTILES" onclick="myFunction("TEXTILES")">
             <img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/mixed_textiles_p75.png" alt="Textile">
         </button>
         <a class="m-3" href="/recycle">
@@ -190,10 +190,10 @@ php?>
         </a>
 
         <script>
-            function myfunction(id){
-                localStorage.setItem('items_to_show', id);
-            }
-            </script>
+        function myfunction(type){
+            localStorage.setItem('items_to_show', type);
+        }
+        </script>
        
         
     </div>
