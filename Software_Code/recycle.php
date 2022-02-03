@@ -129,7 +129,6 @@ echo "<div id='map'></div>
                         }         
                     });
                     
-                    print_r($glass);
                     // Add a layer showing the places.
                     map.addLayer({
                         'id': 'places',
@@ -191,11 +190,26 @@ php?>
             <!-- Footer-->
         </div>
         <div class="d-flex flex-wrap bg-primary justify-content-center">
-        <nav id='filter-group' class='filter-group '></nav>
         
-        <a class="m-3" href="/map/0">
+        <a class="m-3" href="/recycle">
             <h1 class="feature bg-primary bg-gradient text-white rounded-3">All</h1>
         </a>
+        <a class="m-3" href="/recycle">
+            <h1 class="feature bg-primary bg-gradient text-white rounded-3"><img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/mixed_textiles_p75.png" alt="Textile"></h1>
+        </a>
+        <a class="m-3" href="/recycle">
+            <h1 class="feature bg-primary bg-gradient text-white rounded-3"><img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/plastic_pack_p75.png" alt="Plastic"></h1>
+        </a>
+        <a class="m-3" href="/recycle">
+            <h1 class="feature bg-primary bg-gradient text-white rounded-3"><img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/mixed_glass_p75.png" alt="Glass"></h1>
+        </a>
+        <a class="m-3" href="/recycle">
+            <h1 class="feature bg-primary bg-gradient text-white rounded-3"><img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/mixed_paper_p75.png" alt="Paper"></h1>
+        </a>
+        <a class="m-3" href="/recycle">
+            <h1 class="feature bg-primary bg-gradient text-white rounded-3"><img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/aluminium_cans_p75.png" alt="Aluminium cans"></h1>
+        </a>
+       
         
     </div>
         <footer class="py-5 bg-dark">
