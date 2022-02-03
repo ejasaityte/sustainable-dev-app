@@ -85,12 +85,42 @@
                 <p class="white">Postcode: '.$event['postcode'].'</p> 
                 <p class="white">Contacts: '.$event['contacts'].'</p>
                 <a class="btn bg-mikado btn-lgw-100 mb-3" href="'.$event['website'].'"><u>Click here to find out more</u></a>
-            </div>
         ';
-php?>
-
-
-
+        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+            echo '
+                            <div class="container" style="padding-bottom:10px;">
+                                <div class="row justify-content-center">
+                                    <div class="col-sm-auto text-center" style="padding-bottom:10px;">
+                                        <a class="btn btn-primary btn-sm mt-auto" href="/additem/' . $event['id'] . '"">Favourite</a>
+                                    </div>
+                                    <div class="col-sm-auto text-center" style="padding-bottom:10px;">
+                                        <a class="btn btn-primary btn-sm mt-auto" href="/checkin/' . $_SESSION['userID'] . '"">Check in</a>
+                                    </div>';
+            if($_SESSION['isadmin']==1)
+                echo '
+                                    <div class="col-sm-auto text-center" style="padding-bottom:10px;">
+                                        <a class="btn btn-primary btn-sm mt-auto" href="/edititem/' . $event['id'] . '"">Edit</a>
+                                    </div>
+                                    <div class="col-sm-auto text-center" style="padding-bottom:10px;">
+                                        <a class="btn btn-primary btn-sm mt-auto" href="/deleteevent/' . $event['id'] . '"">Delete</a>
+                                    </div>
+                                    <div class="col-sm-auto text-center" style="padding-bottom:10px;">
+                                        <a class="btn btn-primary btn-sm mt-auto" href="/editlocation/' . $event['id'] . '"">Edit location</a>
+                                    </div>';
+            if (str_word_count($event['name']) > 1){
+                $str = explode(" ", $event['name']);
+                $name = implode("", $str);
+            }
+            else $name = $event['name'];
+?>
+                    <div class="col-sm-auto  text-center" style="padding-bottom:10px;">
+                        <a data-bs-toggle="tooltip" data-bs-placement="right" title="Tweet"
+                            href="https://twitter.com/intent/tweet?text=I%20just%20visited%20%23<?php echo $name; ?>%21%20@DundeeCouncil&hashtags=sustainabledundee"
+                            target="_blank"><img
+                                src="https://logos-world.net/wp-content/uploads/2020/04/Twitter-Emblem.png"
+                                style="width:50px;height:28px;">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
