@@ -22,7 +22,11 @@
     <?php session_start();
     include("dbconnect.php"); ?>
     <body>
-        <script> var items_to_show = "all"; </script>
+    <p id="demo"></p>
+
+        <script> var items_to_show = "all";
+            document.getElementById("demo").innerHTML = items_to_show;
+         </script>
         <style>
         .mapboxgl-popup {
         max-width: 500px;
@@ -192,6 +196,7 @@ php?>
         <script>
         function myfunction(type){
             localStorage.setItem('items_to_show', type);
+            location.reload();
         }
         </script>
        
