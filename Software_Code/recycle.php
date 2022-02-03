@@ -82,7 +82,7 @@ echo "<div id='map'></div>
                                         'type': 'Feature',
                                         'properties': {
                                         'description':
-                                            '<strong> " . $point["properties"]['NAME'] . " </strong><p>(" . $point["properties"]['ACCESS_PUBLIC_PRIVATE'] . ")</p><p><strong>Paper</strong>: " . $point['PAPER_CARD'] . "</p><p><strong>Glass</strong>: " . $point['GLASS'] . "</p><p><strong>Plastic</strong>: " . $point['PLASTIC_BOTTLES'] . "</p><p><strong>Books/Music</strong>: " . $point['BOOKS_MUSIC'] . "</p>";
+                                            '<strong> " . $point['NAME'] . " </strong><p>(" . $point['ACCESS_PUBLIC_PRIVATE'] . ")</p><p><strong>Paper</strong>: " . $point['PAPER_CARD'] . "</p><p><strong>Glass</strong>: " . $point['GLASS'] . "</p><p><strong>Plastic</strong>: " . $point['PLASTIC_BOTTLES'] . "</p><p><strong>Books/Music</strong>: " . $point['BOOKS_MUSIC'] . "</p>";
                                         echo "'},
                                         'geometry': {
                                             'type': 'Point',
