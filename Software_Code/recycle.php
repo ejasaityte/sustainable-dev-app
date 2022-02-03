@@ -27,7 +27,7 @@
         <script> 
             var items_to_show = "h";
         //localStorage.setItem("items_to_show","all");
-            document.getElementById("demo").innerHTML = sessionStorage.getItem("items_to_show");
+            document.getElementById("demo").innerHTML = sessionStorage.getItem(items_to_show);
          </script>
         <style>
         .mapboxgl-popup {
