@@ -107,8 +107,7 @@ echo "<div id='map'></div>
                         'source': 'places',
                         'layout': {
                             'icon-image': 'custom-marker',
-                            'icon-size': 0.1
-                        }
+                                                }
                     });
                 }
             );
