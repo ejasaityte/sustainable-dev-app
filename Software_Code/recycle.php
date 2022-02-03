@@ -24,7 +24,9 @@
     <body>
     <p id="demo"></p>
 
-        <script> localStorage.setItem("items_to_show","all");
+        <script> 
+            var items_to_show = "h";
+        localStorage.setItem("items_to_show","all");
             document.getElementById("demo").innerHTML = localStorage.getItem("items_to_show");
          </script>
         <style>
@@ -194,10 +196,10 @@ php?>
         </a>
 
         <script>
-        function myfunction(type){
-            localStorage.setItem("items_to_show", type);
-            window.location.reload();
-        }
+            function myfunction(type){
+                localStorage.setItem("items_to_show", type);
+                window.location.reload();
+            }
         </script>
        
         
