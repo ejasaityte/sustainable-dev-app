@@ -195,7 +195,7 @@ php?>
 
         <script>
         function myfunction(type){
-            localStorage.setItem('items_to_show', type);
+            localStorage.setItem(items_to_show, type);
             location.reload();
         }
         </script>
