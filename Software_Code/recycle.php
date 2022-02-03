@@ -27,67 +27,90 @@
         font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
         }
         </style>
-<?php include("navbar.php"); ?>
+        <?php include("navbar.php"); ?>
             <div class="container-fluid text-center">
                 <h1 class="display-5 fw-bold">Find recycling points in Dundee!</h1>
             </div>
             <?php
-                echo "<div id='map'></div>
-                <script>
-                    mapboxgl.accessToken = 'pk.eyJ1IjoiZXVhbmRvY2tpbmciLCJhIjoiY2t5dmt1aTZvMXpqMTJxcHR2eTF2Z21zOCJ9.yZNbnAG0QP59OzGsTYFX1A';
-                    const map = new mapboxgl.Map({
-                        container: 'map',
-                        style: 'mapbox://styles/mapbox/streets-v11',
-                        center: [-2.9707, 56.4620],
-                        pitchWithRotate: false,
-                        trackResize: true,
-                        zoom: 13
-                    });
+            echo "<div id='map'></div>
+            <script>
+                mapboxgl.accessToken = 'pk.eyJ1IjoibGF1cmFuYXMiLCJhIjoiY2sybnRqODB5MHE5cjNibnozNnlndGEwcyJ9.oaxzA4cGRd_-3QgjdqKETg';
+                const map = new mapboxgl.Map({
+                    container: 'map',
+                    style: 'mapbox://styles/mapbox/streets-v11',
+                    center: [-2.9707, 56.4620],
+                    pitchWithRotate: false,
+                    trackResize: true,
+                    zoom: 13
+                });
                     
-                    map.on('load', () => {
-                        map.addSource('places', {
-                            'type': 'geojson',
-                            // Use a URL for the value for the `data` property.
-                            'data': {
-                                'type': 'FeatureCollection',
-                                'features': [";
-                                    $url = "https://sustainabledundeeapp.azurewebsites.net/api/allEventsCoords";
-                                    
+                map.on('load', () => {
+                        map.loadImage('https://i.imgur.com/lz3uxL1.png',
+                            (error, image) => {
+                                if (error) throw error;
+                                map.addImage('custom-marker', image);
+                                map.addSource('places', {
+                                    'type': 'geojson',
+                                    'data': {";
+                                        $url = "http://inspire.dundeecity.gov.uk/geoserver/opendata/wfs?version=2.0.0&service=wfs&request=GetFeature&typeName=opendata:recycling_facilities&outputFormat=json";
+                                        $curl = curl_init();
+                                        curl_setopt_array($curl, array(
+                                        CURLOPT_URL => $url,
+                                        CURLOPT_RETURNTRANSFER => true,
+                                        CURLOPT_TIMEOUT => 29,
+                                        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_0_1,
+                                        CURLOPT_CUSTOMREQUEST => "GET",
+                                        CURLOPT_HTTPHEADER => array(
+                                            "cache-control: no-cache"
+                                        ),
+                                        ));
 
-                                    // Decode JSON data into PHP array
-                                    $array = json_decode($url, true);
+                                        $response = curl_exec($curl);
+                                        $err = curl_error($curl);
 
-                                    $i = 0;
-                                    foreach ($array as $point) { // TODO refactor
-                                        $i += 1;
+                                        curl_close($curl);
+                                        // Decode JSON data into PHP array
+                                        $response = json_decode($response, true);
+                                        $i = 0;
+                                        
+                                        foreach ($response[1] as $event) { // TODO refactor
+                                            echo "
+                                                {
+                                                    'type': 'Feature',
+                                                    'properties': {
+                                                    'description':
+                                                        '<strong> " . $event['NAME'] . " </strong><p>(" . $event['ACCESS_PUBLIC_PRIVATE'] . ")</p><p><strong>Paper</strong>: " . $event['PAPER_CARD'] . "</p><p><strong>Glass</strong>: " . $event['GLASS'] . "</p><p><strong>Plastic</strong>: " . $event['PLASTIC_BOTTLES'] . "</p><p><strong>Books/Music</strong>: " . $event['BOOKS_MUSIC'] . "</p>";
+                                                    echo "'},
+                                                    'geometry': {
+                                                        'type': 'Point',
+                                                        'coordinates': [" . $event["properties"]["LONGITUDE"] . ", " . $event["properties"]["LATITUDE"] . "]
+                                                        }
+                                                }";
+                                                if ($i != count($response)) {
+                                                    echo ","; 
+                                                }
+                                                    
+                                        }
                                         echo "
-                                        { 'type': 'Feature',
-                                        echo "'},
-                                        'geometry': {
-                                            'type': 'Point',
-                                            'coordinates': [" . $point['LONGITUDE'] . ", " . $point['LATITUDE'] . "]
-                                        }
-                                        }";
-                                        if ($i != count($response)) {
-                                            echo ","; 
-                                        }
+                                    }         
+                                });
+                                
+                                // Add a layer showing the places.
+                                map.addLayer({
+                                    'id': 'places',
+                                    'type': 'symbol',
+                                    'source': 'places',
+                                    'layout': {
+                                        'icon-image': 'custom-marker',
                                     }
-                                ]
-                            }  
-                        });
-                        // Add a layer showing the places.
-                        map.addLayer({
-                            'id': 'places-layer',
-                            'type': 'circle',
-                            'source': 'places',
-                            
-                        });
-
+                                });
+                            }
+                        );
                     });
                     
+                   
                     
-                    
-                </script>";
+            </script>";
             php?>
             <!-- Footer-->
         </div>
