@@ -84,7 +84,7 @@
                 <p class="white">'.$event['description'].'</p> 
                 <p class="white">Postcode: '.$event['postcode'].'</p> 
                 <p class="white">Contacts: '.$event['contacts'].'</p>
-                <a href="'.$event['website'].'">Find out more</a>
+                <a class="btn bg-mikado btn-lgw-100 mb-3" href="'.$event['website'].'"><u>Click here to find out more</u></a>
             </div>
         ';
 php?>
