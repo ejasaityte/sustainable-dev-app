@@ -45,6 +45,9 @@ $rules = array(
     'goal' => "/goal/(?'goal'[\w\-]+)",
     'news' => "/news",
     'recycle' => "/recycle",
+    'recycle_glass' => "/recycle/",
+    
+
     //
     // Style
     //
