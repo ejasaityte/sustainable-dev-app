@@ -88,11 +88,10 @@
                                                         'coordinates': [" . $event["properties"]["LONGITUDE"] . ", " . $event["properties"]["LATITUDE"] . "]
                                                         }
                                                 }";
-                                                if ($i != count($response)) {
-                                                    echo ","; 
-                                                }
+                                                
                                                     
                                         }
+                                        echo ","; 
                                         echo "
                                         ]
                                     }         
