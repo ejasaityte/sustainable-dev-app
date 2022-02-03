@@ -87,7 +87,7 @@ echo "<div id='map'></div>
                                             'properties': {
                                                 'icon': 'theatre',
                                                 'description':
-                                                    '<strong> " . str_replace("'","\'",$point["properties"]["NAME"]) . " </strong><p>(" . $point["properties"]["ACCESS_PUBLIC_PRIVATE"] . ")</p><p style="text-decoration: underline;">Recyclable items: </p>";
+                                                    '<strong> " . str_replace("'","\'",$point["properties"]["NAME"]) . " </strong><p>(" . $point["properties"]["ACCESS_PUBLIC_PRIVATE"] . ")</p><p>Recyclable items: </p>";
                                                     if($point["properties"]["PAPER_CARD"] == "y")
                                                     {
                                                         echo "<p><strong>Paper</strong></p>";
