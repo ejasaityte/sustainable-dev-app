@@ -196,7 +196,7 @@ php?>
     <?php  
        echo" <script> function myFunction(type)
        {
-        document.getElementById("demo") = type;
+        document.getElementById("demo").innerHTML = type;
        }
        </script>";
     ?>
