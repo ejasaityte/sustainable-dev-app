@@ -63,21 +63,51 @@
                             <select class="form-select" aria-label="Pick a goal" id="goal">
                                 <option selected>Pick a goal this tour relates to</option>';
 
-                    for ($i = 0; $i < 17; $i++)
+                    foreach ($response as $goal)
                     {
-                        $j = $i + 1;
-                        echo "<option value='" . $j . "'>" . $j . ". " . $response[$i]['goalName'] . "</option>";
+                        echo "<option id='" . $goal['id'] . "' value='" . $goal['id'] . "'>" . $goal['id'] . ". " . $goal['name'] . "</option>";
                     }
 
                     echo '</select>
-                    </div>';
+                    </div>
+                            $curl = curl_init();
+                            curl_setopt_array(
+                                $curl, 
+                                array(
+                                    CURLOPT_URL => "https://sustainabledundeeapp.azurewebsites.net/api/allEvents",
+                                    CURLOPT_RETURNTRANSFER => true,
+                                    CURLOPT_TIMEOUT => 30,
+                                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                                    CURLOPT_CUSTOMREQUEST => "GET",
+                                    CURLOPT_HTTPHEADER => array(
+                                        "cache-control: no-cache"
+                                    ),
+                                )
+                            );
+        
+                            $response = curl_exec($curl);
+                            $err = curl_error($curl);
+                            curl_close($curl);
+                            $response = json_decode($response, true);
+        
+                            <div class="input-group">
+                                <select class="form-select" aria-label="Pick a destination" id="destination">
+                                    <option selected>Pick an event to add to the tour</option>';
+        
+                            foreach ($response as $event)
+                            {
+                                echo "<option id='" . $event['id'] . "' value='" . $event['id'] . "'> Goal(" . $event['goalID'] . "). " . $event['name'] . "</option>";
+                            }
+        
+                            echo '</select>
+                            </div>;
+
                 ?>
                     
-                <!--<div class="input-group">
-                    <select class="form-select" aria-label="Pick a destination" id="destination">
+                
                         
                     </select>
-                </div>-->
+                </div>
                 <button type="submit" class="btn btn-primary">Add Tour</button>
             </div>
         </form>
