@@ -52,7 +52,7 @@
         <!-- Responsive navbar-->
 <?php include("navbar.php"); ?>
         <!-- Page Content-->
-        <div class="container-fluid px-lg-5">
+        <div class="container px-lg-5">
             <div style="" class="map-container">
                 <!-- Page Features-->
                 <?php
