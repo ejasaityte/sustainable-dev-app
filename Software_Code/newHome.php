@@ -31,7 +31,8 @@
             <a class="btn btn-ygreen btn-lg white w-100 mb-3" href="/map/0"><u>Click here to explore the sustainability map of Dundee!</u></a>
             <div class="container bg-viridian rounded-3">
                 <p class="fs-4 white"><u>Select one of the 17 Sustainability Goals below to find out more.</u></p>
-                <div class="d-flex flex-wrap">
+                <div class="d-flex justify-content-center">
+                    <div class="d-flex flex-wrap w-75">
                                
 <?php
     $curl = curl_init();
@@ -53,8 +54,9 @@
     curl_close($curl);
     $response = json_decode($response, true);// Decode JSON data into PHP array
     foreach ($response as $goal)
-        echo '<a class="" href="/goal/' . $goal['goalID'] . '"><img alt="'.$goal['goalName'].'" class="feature bg-primary bg-gradient text-white" src="' . $goal['goalPicture'] . '"></a>';
+        echo '<a class="" href="/goal/' . $goal['goalID'] . '"><img style="width: 200px;" alt="'.$goal['goalName'].'" class="feature bg-primary bg-gradient text-white" src="' . $goal['goalPicture'] . '"></a>';
 php?>
+                    </div>
                 </div>
             </div>
         </div>
