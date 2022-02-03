@@ -22,8 +22,6 @@
     <?php session_start();
     include("dbconnect.php"); ?>
     <body>
-
-    <p id="demo"></p>
         <style>
         .mapboxgl-popup {
         max-width: 500px;
@@ -193,13 +191,7 @@ php?>
          
     </div>
 
-    <?php  
-       echo" <script> function myFunction(type)
-       {
-        document.getElementById("demo").innerHTML = type;
-       }
-       </script>";
-    ?>
+    
         <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Sustainable Dundee 2021</p></div>
         </footer>
