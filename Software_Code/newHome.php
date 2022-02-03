@@ -52,7 +52,7 @@
     curl_close($curl);
     $response = json_decode($response, true);// Decode JSON data into PHP array
     foreach ($response as $goal)
-        echo '<a class="" href="/goal/' . $goal['goalID'] . '"><img class="feature bg-primary bg-gradient text-white" src="' . $goal['goalPicture'] . '"></a>;
+        echo '<a class="" href="/goal/' . $goal['goalID'] . '"><img class="feature bg-primary bg-gradient text-white" src="' . $goal['goalPicture'] . '"></a>';
 php?>
                 </div>
             </div>
