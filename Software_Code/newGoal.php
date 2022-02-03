@@ -80,7 +80,11 @@
     foreach ($response as $event)
         echo '
             <div class="bg-rose rounded-3 p-3">
-                <h1 class="white">'.$event['name'].'</h1>  
+                <h1 class="white">'.$event['name'].'</h1> 
+                <p class="white>'.$event['description'].'</p> 
+                <p class="white>Postcode: '.$event['postcode'].'</p> 
+                <p class="white">Contacts: '.$event['contacts'].'</p>
+                <a href="Website: '.$event['website'].'"></a>
             </div>
         ';
 php?>
