@@ -83,7 +83,7 @@ echo "<div id='map'></div>
                                         'type': 'Feature',
                                         'properties': {
                                         'description':
-                                            '<strong> " . str_replace("'","\'",$point["properties"]["NAME"]) . " </strong><p>(" . $point["properties"]["ACCESS_PUBLIC_PRIVATE"] . ")</p><p><strong>Paper</strong>: " . $point["properties"]["PAPER_CARD"] . "</p><p><strong>Glass</strong>: " . $point["properties"]["GLASS"] . "</p><p><strong>Plastic</strong>: " . $point["properties"]["PLASTIC_BOTTLES"] . "</p><p><strong>Books/Music</strong>: " . $point["properties"]["BOOKS_MUSIC"] . "</p>";
+                                            '<strong> " . $point["properties"]["NAME"] . " </strong><p>(" . $point["properties"]["ACCESS_PUBLIC_PRIVATE"] . ")</p><p><strong>Paper</strong>: " . $point["properties"]["PAPER_CARD"] . "</p><p><strong>Glass</strong>: " . $point["properties"]["GLASS"] . "</p><p><strong>Plastic</strong>: " . $point["properties"]["PLASTIC_BOTTLES"] . "</p><p><strong>Books/Music</strong>: " . $point["properties"]["BOOKS_MUSIC"] . "</p>";
                                         echo "'},
                                         'geometry': {
                                             'type': 'Point',
@@ -113,35 +113,7 @@ echo "<div id='map'></div>
                 }
             );
         });
-        // Create a popup, but don't add it to the map yet.
-                    const popup = new mapboxgl.Popup({
-                        closeButton: false,
-                        closeOnClick: true
-                    });
-                    
-                    map.on('click', 'places', (e) => {
-                        // Change the cursor style as a UI indicator.
-                        map.getCanvas().style.cursor = 'pointer';
-                    
-                        // Copy coordinates array.
-                        const coordinates = e.features[0].geometry.coordinates.slice();
-                        const description = e.features[0].properties.description;
-                    
-                        // Ensure that if the map is zoomed out such that multiple
-                        // copies of the feature are visible, the popup appears
-                        // over the copy being pointed to.
-                        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-                            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-                        }
-                    
-                        // Populate the popup and set its coordinates
-                        // based on the feature found.
-                        popup.setLngLat(coordinates).setHTML(description).addTo(map);
-                    });
-
-                    map.on('mouseleave', 'places', () => {
-                        map.getCanvas().style.cursor = '';
-                    });
+    
 
                     // Add geolocate control to the map.
                     map.addControl(
