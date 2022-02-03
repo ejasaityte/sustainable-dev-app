@@ -46,12 +46,12 @@
     $err = curl_error($curl);
     curl_close($curl);
     $response = json_decode($response, true);// Decode JSON data into PHP array
-    echo '<img style="width: 200px; height: 200px;" alt="'.$response[0]['goalName'].'" class="transparentLink" src="' . $response[0]['goalPicture'] . '">';
+    echo '<img alt="'.$response[0]['goalName'].'" src="' . $response[0]['goalPicture'] . '">';
     echo '        
         <div class="bg-mikado rounded-3 mb-3">
             <p class="fs-4">'.$response[0]['goalDescription'].'</p>
         </div>'
-    echo '<a class="btn btn-ygreen btn-lg white w-100 mb-3" href="/map/'.$goalID.'"><u>Click here to explore the sustainability map of Dundee!</u></a>';
+    echo '<a class="btn btn-ygreen btn-lg white w-100 mb-3" href="/map/'.$goalID.'"><u>Click here to see events related to this goal on the map!</u></a>';
 ?>
         <div class="bg-viridian rounded-3">
             <p class="fs-4 white"><u>View events related to this goal in Dundee below.</u></p>
