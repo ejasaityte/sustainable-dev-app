@@ -24,6 +24,7 @@ $rules = array(
     'addfriend' => '/addfriend',
     'additem' => "/additem/(?'id'[\w\-]+)",
     'addevent' => '/addevent',
+    'addtour' => '/addtour',
     'editlocation' => "/editlocation/(?'id'[\w\-]+)",
     'adduser' => "/adduser",
     'deleteitem' => "/deleteitem/(?'id'[\w\-]+)",
