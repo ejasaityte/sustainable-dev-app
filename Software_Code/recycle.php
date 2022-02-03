@@ -51,7 +51,9 @@
                                 map.addImage('custom-marker', image);
                                 map.addSource('places', {
                                     'type': 'geojson',
-                                    'data': {";
+                                    'data': {
+                                        'type': 'FeatureCollection',
+                                        'features': [";
                                         $url = "http://inspire.dundeecity.gov.uk/geoserver/opendata/wfs?version=2.0.0&service=wfs&request=GetFeature&typeName=opendata:recycling_facilities&outputFormat=json";
                                         $curl = curl_init();
                                         curl_setopt_array($curl, array(
@@ -92,6 +94,7 @@
                                                     
                                         }
                                         echo "
+                                        ]
                                     }         
                                 });
                                 
