@@ -34,7 +34,7 @@
 <?php
 echo "<div id='map'></div>
 <script>
-mapboxgl.accessToken = 'pk.eyJ1IjoiZXVhbmRvY2tpbmciLCJhIjoiY2t5dmt1aTZvMXpqMTJxcHR2eTF2Z21zOCJ9.yZNbnAG0QP59OzGsTYFX1A';
+    mapboxgl.accessToken = 'pk.eyJ1IjoibGF1cmFuYXMiLCJhIjoiY2sybnRqODB5MHE5cjNibnozNnlndGEwcyJ9.oaxzA4cGRd_-3QgjdqKETg';
     const map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
@@ -75,14 +75,14 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZXVhbmRvY2tpbmciLCJhIjoiY2t5dmt1aTZvMXpqMTJxc
                             $response = json_decode($response, true);
                             $i = 0;
                             
-                            foreach ($response['features'] as $point) { 
+                            foreach ($response['features'] as $point) { // TODO refactor
                                 $i += 1;
                                 echo "
                                     {
                                         'type': 'Feature',
                                         'properties': {
                                         'description':
-                                            '<strong> " . $point['properties']['NAME'] . " </strong><p>(" . $point['properties']['ACCESS_PUBLIC_PRIVATE'] . ")</p><p><strong>Paper</strong>: " . $point['properties']['PAPER_CARD'] . "</p><p><strong>Glass</strong>: " . $point['properties']['GLASS'] . "</p><p><strong>Plastic</strong>: " . $point['properties']['PLASTIC_BOTTLES'] . "</p><p><strong>Books/Music</strong>: " . $point['properties']['BOOKS_MUSIC'] . "</p>";
+                                            '<strong> " . $point['NAME'] . " </strong><p>(" . $point['ACCESS_PUBLIC_PRIVATE'] . ")</p><p><strong>Paper</strong>: " . $point['PAPER_CARD'] . "</p><p><strong>Glass</strong>: " . $point['GLASS'] . "</p><p><strong>Plastic</strong>: " . $point['PLASTIC_BOTTLES'] . "</p><p><strong>Books/Music</strong>: " . $point['BOOKS_MUSIC'] . "</p>";
                                         echo "'},
                                         'geometry': {
                                             'type': 'Point',
@@ -113,7 +113,6 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZXVhbmRvY2tpbmciLCJhIjoiY2t5dmt1aTZvMXpqMTJxc
                 }
             );
         });
-        
         
         
         
