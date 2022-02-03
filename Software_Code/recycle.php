@@ -195,33 +195,7 @@ php?>
         <a class="m-3" href="/map/0">
             <h1 class="feature bg-primary bg-gradient text-white rounded-3">All</h1>
         </a>
-        <?php
-
-                $curl = curl_init();
-
-                curl_setopt_array($curl, array(
-                CURLOPT_URL => "https://sustainabledundeeapp.azurewebsites.net/api/allGoals",
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_TIMEOUT => 30,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "GET",
-                CURLOPT_HTTPHEADER => array(
-                    "cache-control: no-cache"
-                ),
-                ));
-
-                $response = curl_exec($curl);
-                $err = curl_error($curl);
-
-                curl_close($curl);
-                // Decode JSON data into PHP array
-                $response = json_decode($response, true);
-
-                foreach ($response as $goal) {
-                    echo '<a class="m-3" href="/map/'.$goal['goalID'].'"><img class="feature bg-primary bg-gradient text-white" src="' . $goal['goalPicture'] . '"></a>';
-                }
-
-                php?>
+        
     </div>
         <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Sustainable Dundee 2021</p></div>
