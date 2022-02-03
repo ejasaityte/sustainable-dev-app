@@ -24,7 +24,11 @@
 
 <body>
     <!-- Responsive navbar-->
-    <?php include("navbar.php"); ?>
+    <?php include("navbar.php"); ?>    
+    <script>
+        var element = document.getElementById('home');
+        element.classList.add("active");
+    </script>
     <div class="d-block mx-auto text-center p-3" style="max-width:800px;">
         <img src="https://www.dundeecity.gov.uk/sites/default/files/imagebank/sustainable800.png"
             class="mx-auto d-block mw-100" alt="Sustainable Dundee">
