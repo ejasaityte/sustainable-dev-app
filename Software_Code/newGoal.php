@@ -58,6 +58,31 @@
             <div class="d-flex justify-content-center">
                 <div class="d-flex flex-wrap justify-content-center p-3">
 
+                <?php
+    $curl = curl_init();
+    curl_setopt_array(
+        $curl, 
+        array(
+            CURLOPT_URL => "https://sustainabledundeeapp.azurewebsites.net/api/allEvents/$goalID",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => array(
+                "cache-control: no-cache"
+            ),
+        )
+    );
+    $response = curl_exec($curl);
+    $err = curl_error($curl);
+    curl_close($curl);
+    $response = json_decode($response, true);// Decode JSON data into PHP array
+    foreach ($response as $event)
+        echo '<h1>'.$event['name'].'</h1>';
+php?>
+
+
+
                 </div>
             </div>
         </div>
