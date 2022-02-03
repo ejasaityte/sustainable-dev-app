@@ -79,7 +79,7 @@ echo "<div id='map'></div>
                            print_r($_POST['items_to_show']);
                             foreach ($response['features'] as $point) { // TODO refactor
                                 $i += 1;
-                                if($_POST['items_to_show'] == "all" )
+                                if("all" == "all" )
                                 //if($point["properties"]["BOOKS_MUSIC"] == "n")
                                  {
                                     echo "
