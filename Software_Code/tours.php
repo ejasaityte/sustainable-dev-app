@@ -52,6 +52,9 @@
         <!-- Responsive navbar-->
 <?php include("navbar.php"); ?>
         <!-- Page Content-->
+        <div class="container-fluid text-center">
+            <h1 class="display-5 fw-bold">Tours Avaialable</h1>
+        </div>
         <div class="container px-lg-5">
             <div style="" class="map-container">
                 <!-- Page Features-->
@@ -154,7 +157,7 @@
                         function isElementOnScreen(id) {
                             const element = document.getElementById(id);
                             const bounds = element.getBoundingClientRect();
-                            return bounds.top < document.getElementById('features').clientHeight && bounds.bottom > 100;
+                            return bounds.top < document.getElementById('features').clientHeight && bounds.bottom > 150;
                         }
                                 
                         // On every scroll event, check which element is on screen
@@ -171,7 +174,6 @@
                 php?>
             </div>
             <div>
-                <h1>Tours Avaialable</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, aut suscipit mollitia eaque ipsam, aspernatur neque reprehenderit, quasi veritatis ipsum eos? Assumenda odit expedita adipisci earum minima distinctio, amet praesentium.</p>
             </div>
         </div>
