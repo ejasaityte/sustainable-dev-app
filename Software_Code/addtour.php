@@ -38,43 +38,46 @@
                     <div class="invalid-tooltip"> Please enter the tour name.</div>
                 </div>
                 <div class="input-group">
-                    <select class="form-select" aria-label="Pick a goal" id="goal">
-                        <option selected>Pick a goal this tour relates to</option>
-                        <?php
-                            $curl = curl_init();
-                            curl_setopt_array(
-                                $curl, 
-                                array(
-                                    CURLOPT_URL => "https://sustainabledundeeapp.azurewebsites.net/api/allGoals",
-                                    CURLOPT_RETURNTRANSFER => true,
-                                    CURLOPT_TIMEOUT => 30,
-                                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                                    CURLOPT_CUSTOMREQUEST => "GET",
-                                    CURLOPT_HTTPHEADER => array(
-                                        "cache-control: no-cache"
-                                    ),
-                                )
-                            );
+                    <?php
+                        $curl = curl_init();
+                        curl_setopt_array(
+                            $curl, 
+                            array(
+                                CURLOPT_URL => "https://sustainabledundeeapp.azurewebsites.net/api/allGoals",
+                                CURLOPT_RETURNTRANSFER => true,
+                                CURLOPT_TIMEOUT => 30,
+                                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                                CURLOPT_CUSTOMREQUEST => "GET",
+                                CURLOPT_HTTPHEADER => array(
+                                    "cache-control: no-cache"
+                                ),
+                            )
+                        );
 
-                            $response = curl_exec($curl);
-                            $err = curl_error($curl);
-                            curl_close($curl);
-                            $response = json_decode($response, true);
+                        $response = curl_exec($curl);
+                        $err = curl_error($curl);
+                        curl_close($curl);
+                        $response = json_decode($response, true);
 
-                            for ($i = 0; $i < 17; $i++)
-                            {
-                                echo "<option value='" . $i . "'>" . $response[i]['goalName'] . "</option>"
-                            }
-                        php?>
-                    </select>
-                </div>
+                        echo '<div class="input-group">
+                                <select class="form-select" aria-label="Pick a goal" id="goal">
+                                    <option selected>Pick a goal this tour relates to</option>'    
+
+                        for ($i = 0; $i < 17; $i++)
+                        {
+                            echo "<option value='" . $i . "'>" . $response[i]['goalName'] . "</option>"
+                        }
+
+                        echo '</select>
+                        </div>'
+                    php?>
+                    
                 <div class="input-group">
                     <select class="form-select" aria-label="Pick a destination" id="destination">
-                        <option selected>Pick a destination</option>
                         
                     </select>
                 </div>
-                <button type="submit" class="btn btn-primary">Add Event</button>
+                <button type="submit" class="btn btn-primary">Add Tour</button>
             </div>
         </form>
     </div>
