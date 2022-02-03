@@ -50,8 +50,8 @@ $rules = array(
     //
 
     // Testing pages
-    'newHome' => '/designtest',
-    'newGoal' => '/goaltest'
+    'newHome' => "/designtest",
+    'newGoal' => "/goaltest/(?'goal'[\w\-]+)"
 );
 
 $uri = rtrim(dirname($_SERVER["SCRIPT_NAME"]), '/');
