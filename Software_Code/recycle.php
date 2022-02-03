@@ -78,7 +78,7 @@ echo "<div id='map'></div>
                            
                             foreach ($response['features'] as $point) { // TODO refactor
                                 $i += 1;
-                                if($point["properties"]["TEXTILES"] == "n")
+                                if($point["properties"]["BOOKS_MUSIC"] == "n")
                                 { continue;}
                                 else {
                                     echo "
