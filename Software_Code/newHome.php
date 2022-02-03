@@ -32,7 +32,7 @@
             <div class="container bg-viridian rounded-3">
                 <p class="fs-4 white"><u>Select one of the 17 Sustainability Goals below to find out more.</u></p>
                 <div class="d-flex justify-content-center">
-                    <div class="d-flex flex-wrap w-75">
+                    <div class="d-flex flex-wrap w-75 justify-content-center">
                                
 <?php
     $curl = curl_init();
