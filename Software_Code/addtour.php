@@ -70,7 +70,7 @@
 
                         echo '</select>
                         </div>'
-                    php?>
+                    ?>
                     
                 <div class="input-group">
                     <select class="form-select" aria-label="Pick a destination" id="destination">
