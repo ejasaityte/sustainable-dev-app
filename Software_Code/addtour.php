@@ -63,7 +63,7 @@
 
                             for ($i = 0; $i < 17; $i++)
                             {
-                                echo '<option value="$i">' . $response[i]["goalName"] . '</option>'
+                                echo '<option value="' . $i . '">' . $response[i]["goalName"] . '</option>'
                             }
                         php?>
                     </select>
