@@ -44,7 +44,6 @@ echo "<div id='map'></div>
         trackResize: true,
         zoom: 13
     });
-    function myFunction(type){   
         map.on('load', () => {
             map.loadImage('https://i.imgur.com/lz3uxL1.png',
                 (error, image) => {
@@ -116,7 +115,7 @@ echo "<div id='map'></div>
                 }
             );
         });
-    }
+    
                 // Create a popup, but don't add it to the map yet.
                     const popup = new mapboxgl.Popup({
                         closeButton: false,
@@ -170,7 +169,7 @@ php?>
         <a class="m-3" href="/recycle">
             <h1 class="feature bg-primary bg-gradient text-white rounded-3">All</h1>
         </a>
-        <button class="m-3" onclick="myFunction("TEXTILES")>
+        <button class="m-3" >
             <img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/mixed_textiles_p75.png" alt="Textile">
         </button>
         <a class="m-3" href="/recycle">
