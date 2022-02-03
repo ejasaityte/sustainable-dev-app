@@ -27,6 +27,7 @@
         <script> 
             var items_to_show = "h";
         //localStorage.setItem("items_to_show","all");
+            document.cookie = items_to_show;
             document.getElementById("demo").innerHTML = sessionStorage.getItem(items_to_show);
          </script>
         <style>
@@ -194,12 +195,86 @@ php?>
         <a class="m-3" href="/recycle">
             <h1 class="feature bg-primary bg-gradient text-white rounded-3"><img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/aluminium_cans_p75.png" alt="Aluminium cans"></h1>
         </a>
+
+    <?php 
+    echo "
         <script>
             function myfunction(type){
-                sessionStorage.setItem("items_to_show", "TEXTILES");
-                window.location.reload();
-            }
-        </script>
+                map.on('load', () => {
+            map.loadImage('https://i.imgur.com/lz3uxL1.png',
+                (error, image) => {
+                    if (error) throw error;
+                    map.addImage('custom-marker', image);
+                    map.addSource('places', {
+                        'type': 'geojson',
+                        'data': {
+                            'type': 'FeatureCollection',
+                            'features': [";
+                            $url = "http://inspire.dundeecity.gov.uk/geoserver/opendata/wfs?version=2.0.0&service=wfs&request=GetFeature&typeName=opendata:recycling_facilities&outputFormat=json";
+                            $curl = curl_init();
+                            curl_setopt_array($curl, array(
+                            CURLOPT_URL => $url,
+                            CURLOPT_RETURNTRANSFER => true,
+                            CURLOPT_TIMEOUT => 29,
+                            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_0_1,
+                            CURLOPT_CUSTOMREQUEST => "GET",
+                            CURLOPT_HTTPHEADER => array(
+                                "cache-control: no-cache"
+                            ),
+                            ));
+
+                            $response = curl_exec($curl);
+                            $err = curl_error($curl);
+
+                            curl_close($curl);
+                            // Decode JSON data into PHP array
+                            $response = json_decode($response, true);
+                            $i = 0;
+                           
+                            foreach ($response['features'] as $point) { // TODO refactor
+                                $i += 1;
+                                if($point["properties"][type] == "y" )
+                                //if($point["properties"]["BOOKS_MUSIC"] == "n")
+                                 {
+                                    echo "
+                                        {
+                                            'type': 'Feature',
+                                            'properties': {
+                                            'description':
+                                            '<strong> " . str_replace("'","\'",$point["properties"]["NAME"]) . " </strong><p>(" . $point["properties"]["ACCESS_PUBLIC_PRIVATE"] . ")</p><p><strong>Paper</strong>: " . $point["properties"]["PAPER_CARD"] . "</p><p><strong>Glass</strong>: " . $point["properties"]["GLASS"] . "</p><p><strong>Plastic</strong>: " . $point["properties"]["PLASTIC_BOTTLES"] . "</p><p><strong>Aluminium cans</strong>: " . $point["properties"]["ALUMINIUM_CANS"] . "</p><p><strong>Textiles</strong>: " . $point["properties"]["TEXTILES"] . "</p><p><strong>Books/Music</strong>: " . $point["properties"]["BOOKS_MUSIC"] . "</p>";                                        echo "'},
+                                            'geometry': {
+                                                'type': 'Point',
+                                                'coordinates': [" . $point["properties"]["LONGITUDE"] . ", " . $point["properties"]["LATITUDE"] . "]
+                                                }
+                                            }";
+                                            
+                                            if ($i != count($response['features'])) {
+                                                echo ","; 
+                                            }
+                                    }    //echo "},";    
+                                    else {continue;} 
+                                  
+                            }
+                            //echo ","; 
+                            echo "
+                            ]
+                        }         
+                    });
+                    
+                    // Add a layer showing the places.
+                    map.addLayer({
+                        'id': 'places',
+                        'type': 'symbol',
+                        'source': 'places',
+                        'layout': {
+                            'icon-image': 'custom-marker',
+                        }
+                    });
+                }
+            );
+        });
+        }
+        </script>"; ?>
         
        
         
