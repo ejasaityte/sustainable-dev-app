@@ -24,8 +24,8 @@
     <body>
     <p id="demo"></p>
 
-        <script> var items_to_show = "all";
-            document.getElementById("demo").innerHTML = items_to_show;
+        <script> localStorage.setItem("items_to_show","all");
+            document.getElementById("demo").innerHTML = localStorage.getItem("items_to_show");
          </script>
         <style>
         .mapboxgl-popup {
@@ -195,7 +195,7 @@ php?>
 
         <script>
         function myfunction(type){
-            localStorage.setItem(items_to_show, type);
+            localStorage.setItem("items_to_show", type);
             window.location.reload();
         }
         </script>
