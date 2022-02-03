@@ -22,7 +22,7 @@
     <?php session_start();
     include("dbconnect.php"); ?>
     <body>
-        <?php echo "<script> var items_to_show = "all"; </script>"; ?>
+        <script> var items_to_show = "all"; </script>
         <style>
         .mapboxgl-popup {
         max-width: 500px;
