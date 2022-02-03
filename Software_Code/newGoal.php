@@ -84,7 +84,7 @@
                 <p class="white">'.$event['description'].'</p> 
                 <p class="white">Postcode: '.$event['postcode'].'</p> 
                 <p class="white">Contacts: '.$event['contacts'].'</p>
-                <a href="Website: '.$event['website'].'"></a>
+                <a href="'.$event['website'].'">Find out more</a>
             </div>
         ';
 php?>
