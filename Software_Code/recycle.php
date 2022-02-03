@@ -191,8 +191,8 @@ php?>
         </div>
         <div class="d-flex flex-wrap bg-primary justify-content-center">
         
-        <a class="m-3" href="/recycle">
-            <h1 class="feature  bg-gradient text-white">All</h1>
+        <a class="m-3" href="/recycle" style="text-decoration: none; width: 75px;">
+            <h1 class="feature text-white">All</h1>
         </a>
         <a class="m-3"  href="/recycle" ">
             <img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/mixed_textiles_p75.png" alt="Textile">
