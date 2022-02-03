@@ -75,7 +75,7 @@
                                         $response = json_decode($response, true);
                                         $i = 0;
                                         
-                                        foreach ($response[1] as $event) { // TODO refactor
+                                        foreach ($response as $event) { // TODO refactor
                                             $i += 1;
                                             echo "
                                                 {
@@ -89,7 +89,7 @@
                                                         'coordinates': [" . $event["properties"]["LONGITUDE"] . ", " . $event["properties"]["LATITUDE"] . "]
                                                         }
                                                     }";
-                                                    if ($i != count($response[1])) {
+                                                    if ($i != count($response)) {
                                                         echo ","; 
                                                     }
                                                 //echo "},";       
