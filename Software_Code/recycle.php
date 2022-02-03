@@ -22,14 +22,8 @@
     <?php session_start();
     include("dbconnect.php"); ?>
     <body>
-    <p id="demo"></p>
 
-        <script> 
-            var items_to_show = "h";
-        //localStorage.setItem("items_to_show","all");
-            document.cookie = items_to_show;
-            document.getElementById("demo").innerHTML = sessionStorage.getItem(items_to_show);
-         </script>
+    <p id="demo"></p>
         <style>
         .mapboxgl-popup {
         max-width: 500px;
@@ -196,12 +190,16 @@ php?>
         <a class="m-3" href="/recycle">
             <h1 class="feature bg-primary bg-gradient text-white rounded-3"><img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/aluminium_cans_p75.png" alt="Aluminium cans"></h1>
         </a>
-
-
-        
-       
-        
+         
     </div>
+
+    <?php  
+       echo" <script> function myFunction(type)
+       {
+        document.getElementById("demo") = type;
+       }
+       </script>";
+    ?>
         <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Sustainable Dundee 2021</p></div>
         </footer>
