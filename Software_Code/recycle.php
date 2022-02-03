@@ -83,7 +83,7 @@ echo "<div id='map'></div>
                                         'type': 'Feature',
                                         'properties': {
                                         'description':
-                                            '<strong> " . $point["properties"]["NAME"] . " </strong><p>(" . $point["properties"]["ACCESS_PUBLIC_PRIVATE"] . ")</p><p><strong>Paper</strong>: " . $point["properties"]["PAPER_CARD"] . "</p><p><strong>Glass</strong>: " . $point["properties"]["GLASS"] . "</p><p><strong>Plastic</strong>: " . $point["properties"]["PLASTIC_BOTTLES"] . "</p><p><strong>Books/Music</strong>: " . $point["properties"]["BOOKS_MUSIC"] . "</p>";
+                                            '<strong> " . str_replace("'","\'",$point["properties"]["NAME"]) . " </strong><p>(" . $point["properties"]["ACCESS_PUBLIC_PRIVATE"] . ")</p><p><strong>Paper</strong>: " . $point["properties"]["PAPER_CARD"] . "</p><p><strong>Glass</strong>: " . $point["properties"]["GLASS"] . "</p><p><strong>Plastic</strong>: " . $point["properties"]["PLASTIC_BOTTLES"] . "</p><p><strong>Books/Music</strong>: " . $point["properties"]["BOOKS_MUSIC"] . "</p>";
                                         echo "'},
                                         'geometry': {
                                             'type': 'Point',
