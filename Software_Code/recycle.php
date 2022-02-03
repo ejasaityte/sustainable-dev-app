@@ -75,9 +75,10 @@ echo "<div id='map'></div>
                             $response = json_decode($response, true);
                             $i = 0;
                            
+                            $type="TEXTILES";
                             foreach ($response['features'] as $point) { // TODO refactor
                                 $i += 1;
-                                if($point["properties"][type] == "n")
+                                if($point["properties"][$type] == "n")
                                 { continue;}
                                 else {
                                     echo "
