@@ -129,6 +129,7 @@ echo "<div id='map'></div>
                         }         
                     });
                     
+                    print_r($glass);
                     // Add a layer showing the places.
                     map.addLayer({
                         'id': 'places',
@@ -189,7 +190,7 @@ echo "<div id='map'></div>
 php?>
             <!-- Footer-->
         </div>
-        div class="d-flex flex-wrap bg-primary justify-content-center">
+        <div class="d-flex flex-wrap bg-primary justify-content-center">
         <nav id='filter-group' class='filter-group '></nav>
         
         <a class="m-3" href="/map/0">
