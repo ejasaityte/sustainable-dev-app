@@ -44,8 +44,8 @@ echo "<div id='map'></div>
         trackResize: true,
         zoom: 13
     });
-        
-    map.on('load', () => {
+    function myFunction(type){   
+        map.on('load', () => {
             map.loadImage('https://i.imgur.com/lz3uxL1.png',
                 (error, image) => {
                     if (error) throw error;
@@ -75,54 +75,29 @@ echo "<div id='map'></div>
                             // Decode JSON data into PHP array
                             $response = json_decode($response, true);
                             $i = 0;
-                            $glass=[];
-                            $paper=[];
-                            $books=[];
-                            $textile=[];
-                            $alum=[];
-                            $plastic=[];
+                           
                             foreach ($response['features'] as $point) { // TODO refactor
                                 $i += 1;
-                                echo "
-                                    {
-                                        'type': 'Feature',
-                                        'properties': {
-                                        'description':
-                                        '<strong> " . str_replace("'","\'",$point["properties"]["NAME"]) . " </strong><p>(" . $point["properties"]["ACCESS_PUBLIC_PRIVATE"] . ")</p><p><strong>Paper</strong>: " . $point["properties"]["PAPER_CARD"] . "</p><p><strong>Glass</strong>: " . $point["properties"]["GLASS"] . "</p><p><strong>Plastic</strong>: " . $point["properties"]["PLASTIC_BOTTLES"] . "</p><p><strong>Aluminium cans</strong>: " . $point["properties"]["ALUMINIUM_CANS"] . "</p><p><strong>Textiles</strong>: " . $point["properties"]["TEXTILES"] . "</p><p><strong>Books/Music</strong>: " . $point["properties"]["BOOKS_MUSIC"] . "</p>";                                        echo "'},
-                                        'geometry': {
-                                            'type': 'Point',
-                                            'coordinates': [" . $point["properties"]["LONGITUDE"] . ", " . $point["properties"]["LATITUDE"] . "]
+                                if($point["properties"][type] == "y")
+                                {
+                                    echo "
+                                        {
+                                            'type': 'Feature',
+                                            'properties': {
+                                            'description':
+                                            '<strong> " . str_replace("'","\'",$point["properties"]["NAME"]) . " </strong><p>(" . $point["properties"]["ACCESS_PUBLIC_PRIVATE"] . ")</p><p><strong>Paper</strong>: " . $point["properties"]["PAPER_CARD"] . "</p><p><strong>Glass</strong>: " . $point["properties"]["GLASS"] . "</p><p><strong>Plastic</strong>: " . $point["properties"]["PLASTIC_BOTTLES"] . "</p><p><strong>Aluminium cans</strong>: " . $point["properties"]["ALUMINIUM_CANS"] . "</p><p><strong>Textiles</strong>: " . $point["properties"]["TEXTILES"] . "</p><p><strong>Books/Music</strong>: " . $point["properties"]["BOOKS_MUSIC"] . "</p>";                                        echo "'},
+                                            'geometry': {
+                                                'type': 'Point',
+                                                'coordinates': [" . $point["properties"]["LONGITUDE"] . ", " . $point["properties"]["LATITUDE"] . "]
+                                                }
+                                            }";
+                                            
+                                            if ($i != count($response['features'])) {
+                                                echo ","; 
                                             }
-                                        }";
-                                        if($point["properties"]["GLASS"] == "y")
-                                        {
-                                            array_push($glass, $point);
-                                        }
-                                        if($point["properties"]["PLASTIC_BOTTLES"] == "y")
-                                        {
-                                            array_push($plastic, $point);
-                                        }
-                                        if($point["properties"]["BOOKS_MUSIC"] == "y")
-                                        {
-                                            array_push($books, $point);
-                                        }
-                                        if($point["properties"]["ALUMINIUM_CANS"] == "y")
-                                        {
-                                            array_push($alum, $point);
-                                        }
-                                        if($point["properties"]["TEXTILES"] == "y")
-                                        {
-                                            array_push($textile, $point);
-                                        }
-                                        if($point["properties"]["PAPER_CARD"] == "y")
-                                        {
-                                            array_push($paper, $point);
-                                        }
-                                        if ($i != count($response['features'])) {
-                                            echo ","; 
-                                        }
-                                    //echo "},";       
-                                }
+                                        //echo "},";     
+                                }  
+                            }
                             //echo ","; 
                             echo "
                             ]
@@ -141,7 +116,8 @@ echo "<div id='map'></div>
                 }
             );
         });
-        // Create a popup, but don't add it to the map yet.
+    }
+                // Create a popup, but don't add it to the map yet.
                     const popup = new mapboxgl.Popup({
                         closeButton: false,
                         closeOnClick: true
@@ -183,7 +159,7 @@ echo "<div id='map'></div>
                             showUserHeading: true
                         })
                     );
-        
+                
         
 </script>";
 php?>
@@ -195,7 +171,7 @@ php?>
             <h1 class="feature bg-primary bg-gradient text-white rounded-3">All</h1>
         </a>
         <a class="m-3" href="/recycle">
-            <h1 class="feature bg-primary bg-gradient text-white rounded-3"><img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/mixed_textiles_p75.png" alt="Textile"></h1>
+            <h1 class="feature bg-primary bg-gradient text-white rounded-3" onclick="myFunction("TEXTILES")><img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/mixed_textiles_p75.png" alt="Textile"></h1>
         </a>
         <a class="m-3" href="/recycle">
             <h1 class="feature bg-primary bg-gradient text-white rounded-3"><img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/plastic_pack_p75.png" alt="Plastic"></h1>
