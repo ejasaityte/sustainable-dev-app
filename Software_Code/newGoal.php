@@ -79,7 +79,7 @@
     $response = json_decode($response, true);// Decode JSON data into PHP array
     foreach ($response as $event)
         echo '
-            <div class="bg-rose rounded-3 p-3 m-2">
+            <div class="bg-rose rounded-3 p-3 m-2 w-100">
                 <h1 class="white">'.$event['name'].'</h1> 
                 <p class="white">'.$event['description'].'</p> 
                 <p class="white">Postcode: '.$event['postcode'].'</p> 
