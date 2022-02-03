@@ -22,6 +22,7 @@
     <?php session_start();
     include("dbconnect.php"); ?>
     <body>
+        <?php echo "<script> var items_to_show = "all"; </script>"; ?>
         <style>
         .mapboxgl-popup {
         max-width: 500px;
@@ -78,7 +79,8 @@ echo "<div id='map'></div>
                            
                             foreach ($response['features'] as $point) { // TODO refactor
                                 $i += 1;
-                                if($point["properties"]["BOOKS_MUSIC"] == "n")
+                                if($_SESSION['items_to_show'] != "all" )
+                                //if($point["properties"]["BOOKS_MUSIC"] == "n")
                                 { continue;}
                                 else {
                                     echo "
@@ -171,7 +173,7 @@ php?>
         <a class="m-3" href="/recycle">
             <h1 class="feature bg-primary bg-gradient text-white rounded-3">All</h1>
         </a>
-        <button class="m-3" >
+        <button class="m-3" id="TEXTILES" onclick="myFunction(id)">
             <img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/mixed_textiles_p75.png" alt="Textile">
         </button>
         <a class="m-3" href="/recycle">
@@ -186,6 +188,12 @@ php?>
         <a class="m-3" href="/recycle">
             <h1 class="feature bg-primary bg-gradient text-white rounded-3"><img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/aluminium_cans_p75.png" alt="Aluminium cans"></h1>
         </a>
+
+        <script>
+            function myfunction(id){
+                localStorage.setItem('items_to_show', id);
+            }
+            </script>
        
         
     </div>
