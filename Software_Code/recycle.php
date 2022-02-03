@@ -81,7 +81,7 @@
                                                 {
                                                     'type': 'Feature',
                                                     'properties': {
-                                                    'description':
+                                                    'NAME':
                                                         '<strong> " . $event['NAME'] . " </strong><p>(" . $event['ACCESS_PUBLIC_PRIVATE'] . ")</p><p><strong>Paper</strong>: " . $event['PAPER_CARD'] . "</p><p><strong>Glass</strong>: " . $event['GLASS'] . "</p><p><strong>Plastic</strong>: " . $event['PLASTIC_BOTTLES'] . "</p><p><strong>Books/Music</strong>: " . $event['BOOKS_MUSIC'] . "</p>";
                                                     echo "'},
                                                     'geometry': {
