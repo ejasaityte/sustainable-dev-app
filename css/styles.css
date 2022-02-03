@@ -12305,3 +12305,6 @@ body {
 .ptext {
   font-family: 'Roboto', sans-serif;
 }
+ .transparentLink:hover {
+   opacity: 0.8;
+ }
