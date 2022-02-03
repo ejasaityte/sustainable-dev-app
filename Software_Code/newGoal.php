@@ -113,14 +113,19 @@
             }
             else $name = $event['name'];
 ?>
-                    <div class="col-sm-auto  text-center" style="padding-bottom:10px;">
-                        <a data-bs-toggle="tooltip" data-bs-placement="right" title="Tweet"
-                            href="https://twitter.com/intent/tweet?text=I%20just%20visited%20%23<?php echo $name; ?>%21%20@DundeeCouncil&hashtags=sustainabledundee"
-                            target="_blank"><img
-                                src="https://logos-world.net/wp-content/uploads/2020/04/Twitter-Emblem.png"
-                                style="width:50px;height:28px;">
-                        </a>
-                    </div>
+                                    <div class="col-sm-auto  text-center" style="padding-bottom:10px;">
+                                        <a data-bs-toggle="tooltip" data-bs-placement="right" title="Tweet"
+                                            href="https://twitter.com/intent/tweet?text=I%20just%20visited%20%23<?php echo $name; ?>%21%20@DundeeCouncil&hashtags=sustainabledundee"
+                                            target="_blank"><img
+                                                src="https://logos-world.net/wp-content/uploads/2020/04/Twitter-Emblem.png"
+                                                style="width:50px;height:28px;">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+        <?php
+            } 
+        ?>
                 </div>
             </div>
         </div>
