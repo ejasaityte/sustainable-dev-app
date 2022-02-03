@@ -69,7 +69,7 @@
                     }
 
                     echo '</select>
-                    </div>'
+                    </div>';
                 ?>
                     
                 <!--<div class="input-group">
