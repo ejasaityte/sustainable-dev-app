@@ -54,7 +54,7 @@
     curl_close($curl);
     $response = json_decode($response, true);// Decode JSON data into PHP array
     foreach ($response as $goal)
-        echo '<a class="" href="/goal/' . $goal['goalID'] . '"><img style="width: 200px;" alt="'.$goal['goalName'].'" class="feature bg-primary bg-gradient text-white" src="' . $goal['goalPicture'] . '"></a>';
+        echo '<a class="" href="/goal/' . $goal['goalID'] . '"><img style="width: 200px; height: 200px;" alt="'.$goal['goalName'].'" class="feature bg-primary bg-gradient text-white" src="' . $goal['goalPicture'] . '"></a>';
 php?>
                     </div>
                 </div>
