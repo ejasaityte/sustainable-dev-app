@@ -45,7 +45,7 @@ echo "<div id='map'></div>
     });
         
     map.on('load', () => {
-            map.loadImage('https://icons.iconarchive.com/icons/robinweatherall/recycling/256/recycle-2-icon.png',
+            map.loadImage('https://i.imgur.com/lz3uxL1.png',
                 (error, image) => {
                     if (error) throw error;
                     map.addImage('custom-marker', image);
@@ -107,7 +107,7 @@ echo "<div id='map'></div>
                         'source': 'places',
                         'layout': {
                             'icon-image': 'custom-marker',
-                                                }
+                        }
                     });
                 }
             );
