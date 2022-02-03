@@ -170,9 +170,9 @@ php?>
         <a class="m-3" href="/recycle">
             <h1 class="feature bg-primary bg-gradient text-white rounded-3">All</h1>
         </a>
-        <a class="m-3" href="/recycle">
-            <h1 class="feature bg-primary bg-gradient text-white rounded-3" onclick="myFunction("TEXTILES")><img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/mixed_textiles_p75.png" alt="Textile"></h1>
-        </a>
+        <button class="m-3" onclick="myFunction("TEXTILES")>
+            <img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/mixed_textiles_p75.png" alt="Textile">
+        </button>
         <a class="m-3" href="/recycle">
             <h1 class="feature bg-primary bg-gradient text-white rounded-3"><img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/plastic_pack_p75.png" alt="Plastic"></h1>
         </a>
