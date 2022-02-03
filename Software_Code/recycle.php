@@ -76,7 +76,6 @@ echo "<div id='map'></div>
                             $i = 0;
                             
                             foreach ($response['features'] as $point) { // TODO refactor
-                                echo "TEST".$point[id];
                                 $i += 1;
                                 echo "
                                     {
