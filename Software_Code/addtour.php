@@ -65,7 +65,8 @@
 
                     for ($i = 0; $i < 17; $i++)
                     {
-                        echo "<option value='" . $i+1 . "'>" . $i+1 . ". " . $response[$i]['goalName'] . "</option>";
+                        $j = $i + 1;
+                        echo "<option value='" . $j . "'>" . $j . ". " . $response[$i]['goalName'] . "</option>";
                     }
 
                     echo '</select>
