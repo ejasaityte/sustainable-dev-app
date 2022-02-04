@@ -33,16 +33,9 @@
         element.classList.add("active");
     </script>
     <!-- Header-->
-    <header class="py-5">
-        <div class="container px-lg-5">
-            <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
-                <div class="m-4 m-lg-5">
-                    <img src="https://www.dundeecity.gov.uk/sites/default/files/imagebank/sustainable800.png"
-                        class="img-fluid">
-                    <h1 class="display-5 fw-bold">What's New</h1>
-                </div>
-            </div>
-        </div>
+    <header class="">
+        <img src="https://www.dundeecity.gov.uk/sites/default/files/imagebank/sustainable800.png" class="img-fluid d-block mx-auto">
+        <h1 class="fw-bold black text-center">What's New</h1>
     </header>
     <!-- Page Content-->
     <div class="container px-lg-5" style="max-width: 650px;">
