@@ -81,7 +81,7 @@ Discussed yesterday's work - struggling to parse online json file into website, 
 The Scrum Master for this meeting was Laura
 
 ### Members Present:
-Jamie, Euan, Sem, Eddie, Matthew, Laura
+Euan, Sem, Eddie, Laura
 
 ### Summary of Conversation:
 Discussed yesterday's work - having a map of recycling points fully implemented, experimenting with different designs for homepage.
