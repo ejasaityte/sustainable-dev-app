@@ -49,16 +49,12 @@ $rules = array(
     'recycle_glass' => "/recycle/recycle_glass",
     'recycle_paper' => "/recycle/recycle_paper",
     'recycle_alum' => "/recycle/recycle_alum",
-    'recycle_plastic' => "/recycle/recycle_plastic",
+    'recycle_plastic' => "/recycle/recycle_plastic"
 
 
     //
     // Style
     //
-
-    // Testing pages
-    'newHome' => "/designtest",
-    'newGoal' => "/goaltest/(?'goal'[\w\-]+)"
 );
 
 $uri = rtrim(dirname($_SERVER["SCRIPT_NAME"]), '/');
