@@ -13,3 +13,12 @@
 
 ### Link to the website : https://sustainabledundeeapp.azurewebsites.net/
 (P.S. to create a new user, the username must contain @, i.e. be an email)
+
+Login info:
+### Admin account
+Username: admin
+Password: admin
+
+### Regular User
+Username: user@gmail.com
+Password: password
