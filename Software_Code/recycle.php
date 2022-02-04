@@ -134,7 +134,7 @@ echo "<div id='map'></div>
                         'type': 'symbol',
                         'source': 'places',
                         'layout': {
-                            'icon-image': 'custom-marker',
+                            'icon-image': 'custom-marker'
                         }
                     });
                 }
