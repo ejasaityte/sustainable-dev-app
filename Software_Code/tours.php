@@ -81,33 +81,33 @@
                     echo "<div id='map'></div>
                     <div id='features'>
                         <section id='tour1' class='active'>
-                            <h3>Tour Destination 1</h3>
+                            <h3>Shelter</h3>
                             <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            Charity shops are awesome for those times when you leave home and realise you're really quite chilly and need a new hat or a nice cosy jumper. And our lovely Dundee shop will deliver in spades, make sure you pop in to say hi!
                             </p>
                         </section>
                         <section id='tour2'>
-                            <h3>Tour Destination 2</h3>
+                            <h3>Red Cross</h3>
                             <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            Our shops across the UK are now open. Through our shops, we sell pre-loved fashion, furniture, books, and more to help fund our life-changing work in the UK and abroad.
                             </p>
                         </section>
                         <section id='tour3'>
-                            <h3>Tour Destination 3</h3>
+                            <h3>Barnardo's</h3>
                             <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            The scale of what we do may be big and complex, but our aim is simple - to provide the best outcome for every child, no matter who they are or what they have been through.
                             </p>
                         </section>
                         <section id='tour4'>
-                            <h3>Tour Destination 4</h3>
+                            <h3>British Heart Foundation</h3>
                             <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            We fund around £100 million of research each year into all heart and circulatory diseases and the things that cause them. Heart diseases. Stroke. Vascular dementia. Diabetes. They're all connected, and they're all under our microscope.
                             </p>
                         </section>
                         <section id='tour5'>
-                            <h3>Tour Destination 5</h3>
+                            <h3>Central Library</h3>
                             <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            Leisure & Culture Dundee Libraries. Read, Relax, Rediscover. 
                             </p>
                         </section>
                     </div>
@@ -125,32 +125,32 @@
                         const chapters = {
                             'tour1': {
                             bearing: 27,
-                            center: [-0.15591514, 51.51830379],
+                            center: [-2.97471769630174, 56.4609700297359],
                             zoom: 15.5,
                             pitch: 20
                             },
                             'tour2': {
                             duration: 6000,
-                            center: [-0.07571203, 51.51424049],
+                            center: [-2.9708298272469, 56.4608004085128],
                             bearing: 150,
                             zoom: 15,
                             pitch: 0
                             },
                             'tour3': {
                             bearing: 90,
-                            center: [-0.08533793, 51.50438536],
+                            center: [-2.97139839444701, 56.4619002567239],
                             zoom: 13,
                             speed: 0.6,
                             pitch: 40
                             },
                             'tour4': {
                             bearing: 90,
-                            center: [0.05991101, 51.48752939],
+                            center: [-2.96944658862882, 56.4639343262982],
                             zoom: 12.3
                             },
                             'tour5': {
                             bearing: 45,
-                            center: [-0.18335806, 51.49439521],
+                            center: [-2.96930793466534, 56.4647174282653],
                             zoom: 15.3,
                             pitch: 20,
                             speed: 0.5
@@ -193,9 +193,7 @@
                 php?>
         </div>
         <div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, aut suscipit mollitia eaque ipsam,
-                aspernatur neque reprehenderit, quasi veritatis ipsum eos? Assumenda odit expedita adipisci earum minima
-                distinctio, amet praesentium.</p>
+            <p>Go on our Quality Education tour! Visit Dundee's four famous charity shops, and end the tour at the grand Central Library.</p>
         </div>
     </div>
     <!-- Bootstrap core JS-->
