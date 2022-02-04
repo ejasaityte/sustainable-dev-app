@@ -31,7 +31,10 @@
         }
         </style>
         <?php include("navbar.php"); ?>
-
+        <script>
+        var element = document.getElementById('recycle');
+        element.classList.add("active");
+        </script>
         <div class="container-fluid text-center">
             <h1 class="display-5 fw-bold">Find recycling points in Dundee!</h1>
         </div>
