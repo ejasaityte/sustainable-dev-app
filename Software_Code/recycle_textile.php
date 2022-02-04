@@ -107,36 +107,33 @@
                                                                 echo "<p><strong>Textiles</strong></p>";
                                                             }
                                                             echo "'},
-                                                    'geometry': {
-                                                        'type': 'Point',
-                                                        'coordinates': [" . $point["properties"]["LONGITUDE"] . ", " . $point["properties"]["LATITUDE"] . "]
-                                                        }
+                                                        'geometry': {
+                                                            'type': 'Point',
+                                                            'coordinates': [" . $point["properties"]["LONGITUDE"] . ", " . $point["properties"]["LATITUDE"] . "]
+                                                            }
                                                     }";    
-                                                if ($i != count($response['features'])) {
-                                                    echo ","; 
-                                                }
-                                            }    //echo "},";    
-                                            else {continue;} 
-                                        
+                                                    if ($i != count($response['features'])) {
+                                                        echo ","; 
+                                                    }
+                                                }    
+                                        else {continue;} 
                                     }
-                                    //echo ","; 
                                     echo "
                                     ]
                                 }         
+                            });  
+                            // Add a layer showing the places.
+                            map.addLayer({
+                                'id': 'places',
+                                'type': 'symbol',
+                                'source': 'places',
+                                'layout': {
+                                    'icon-image': 'custom-marker'
+                                }
                             });
-                            
-                    // Add a layer showing the places.
-                    map.addLayer({
-                        'id': 'places',
-                        'type': 'symbol',
-                        'source': 'places',
-                        'layout': {
-                            'icon-image': 'custom-marker'
                         }
-                    });
-                }
-            );
-        });
+                    );
+                });
     
                 // Create a popup, but don't add it to the map yet.
                     const popup = new mapboxgl.Popup({
@@ -182,32 +179,31 @@
                     );
                 
         
-</script>";
-php?>
-            <!-- Footer-->
+            </script>";
+        php?>
         </div>
+
         <div class="d-flex flex-wrap bg-primary justify-content-center">
-        
-        <a class="m-3" href="/recycle" style="text-decoration: none; width: 75px;">
-            <h1 class="feature text-white">All</h1>
-        </a>
-        <a class="m-3"  href="/recycle/recycle_textile" ">
-            <img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/mixed_textiles_p75.png" alt="Textile">
-        </a>
-        <a class="m-3" href="/recycle">
-            <img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/plastic_pack_p75.png" alt="Plastic">
-        </a>
-        <a class="m-3" href="/recycle">
-           <img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/mixed_glass_p75.png" alt="Glass">
-        </a>
-        <a class="m-3" href="/recycle">
-            <img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/mixed_paper_p75.png" alt="Paper">
-        </a>
-        <a class="m-3" href="/recycle">
-            <img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/aluminium_cans_p75.png" alt="Aluminium cans">
-        </a>
+            <a class="m-3" href="/recycle" style="text-decoration: none; width: 75px;">
+                <h1 class="feature text-white">All</h1>
+            </a>
+            <a class="m-3"  href="/recycle/recycle_textile" ">
+                <img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/mixed_textiles_p75.png" alt="Textile">
+            </a>
+            <a class="m-3" href="/recycle/recycle_plastic">
+                <img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/plastic_pack_p75.png" alt="Plastic">
+            </a>
+            <a class="m-3" href="/recycle/recycle_glass">
+            <img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/mixed_glass_p75.png" alt="Glass">
+            </a>
+            <a class="m-3" href="/recyclerecycle_paper">
+                <img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/mixed_paper_p75.png" alt="Paper">
+            </a>
+            <a class="m-3" href="/recyclerecycle_alum">
+                <img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/aluminium_cans_p75.png" alt="Aluminium cans">
+            </a>
          
-    </div>
+        </div>
 
     
         <footer class="py-5 bg-dark">

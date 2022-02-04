@@ -19,8 +19,10 @@
     #map { position: relative; width: 100%; height: 500px; }
     </style>
     </head>
+
     <?php session_start();
-    include("dbconnect.php"); ?>
+        include("dbconnect.php"); ?>
+
     <body>
         <style>
         .mapboxgl-popup {
@@ -29,190 +31,187 @@
         }
         </style>
         <?php include("navbar.php"); ?>
-            <div class="container-fluid text-center">
-                <h1 class="display-5 fw-bold">Find recycling points in Dundee!</h1>
-            </div>
-<?php
-echo "<div id='map'></div>
-<script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoibGF1cmFuYXMiLCJhIjoiY2sybnRqODB5MHE5cjNibnozNnlndGEwcyJ9.oaxzA4cGRd_-3QgjdqKETg';
-    const map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v11',
-        center: [-2.9707, 56.4620],
-        pitchWithRotate: false,
-        trackResize: true,
-        zoom: 13
-    });
-        map.on('load', () => {
-            map.loadImage('https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Recycle001.svg/30px-Recycle001.svg.png',
-                (error, image) => {
-                    if (error) throw error;
-                    map.addImage('custom-marker', image);
-                    map.addSource('places', {
-                        'type': 'geojson',
-                        'data': {
-                            'type': 'FeatureCollection',
-                            'features': [";
-                            $url = "http://inspire.dundeecity.gov.uk/geoserver/opendata/wfs?version=2.0.0&service=wfs&request=GetFeature&typeName=opendata:recycling_facilities&outputFormat=json";
-                            $curl = curl_init();
-                            curl_setopt_array($curl, array(
-                            CURLOPT_URL => $url,
-                            CURLOPT_RETURNTRANSFER => true,
-                            CURLOPT_TIMEOUT => 29,
-                            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_0_1,
-                            CURLOPT_CUSTOMREQUEST => "GET",
-                            CURLOPT_HTTPHEADER => array(
-                                "cache-control: no-cache"
-                            ),
-                            ));
 
-                            $response = curl_exec($curl);
-                            $err = curl_error($curl);
+        <div class="container-fluid text-center">
+            <h1 class="display-5 fw-bold">Find recycling points in Dundee!</h1>
+        </div>
 
-                            curl_close($curl);
-                            // Decode JSON data into PHP array
-                            $response = json_decode($response, true);
-                            $i = 0;
-                           
-                            foreach ($response['features'] as $point) { // TODO refactor
-                                $i += 1;
-                                echo "
-                                    {
-                                        'type': 'Feature',
-                                        'properties': {
-                                            'icon': 'theatre',
-                                            'description':
-                                                '<strong> " . str_replace("'","\'",$point["properties"]["NAME"]) . " </strong><p>(" . $point["properties"]["ACCESS_PUBLIC_PRIVATE"] . ")</p><hr>";
-                                                if($point["properties"]["PAPER_CARD"] == "y")
-                                                {
-                                                    echo "<p><strong>Paper</strong></p>";
-                                                }
-                                                if($point["properties"]["GLASS"] == "y")
-                                                {
-                                                    echo "<p><strong>Glass</strong></p>";
-                                                }
-                                                if($point["properties"]["PLASTIC_BOTTLES"] == "y")
-                                                {
-                                                    echo "<p><strong>Plastic</strong></p>";
-                                                }
-                                                if($point["properties"]["ALUMINIUM_CANS"] == "y")
-                                                {
-                                                    echo "<p><strong>Aluminium cans</strong></p>";
-                                                }
-                                                if($point["properties"]["TEXTILES"] == "y")
-                                                {
-                                                    echo "<p><strong>Textiles</strong></p>";
-                                                }
-                                                echo "'},
-                                        'geometry': {
-                                            'type': 'Point',
-                                            'coordinates': [" . $point["properties"]["LONGITUDE"] . ", " . $point["properties"]["LATITUDE"] . "]
-                                            }
-                                        }";
-                                        
+        <?php
+        echo "<div id='map'></div>
+        <script>
+            mapboxgl.accessToken = 'pk.eyJ1IjoibGF1cmFuYXMiLCJhIjoiY2sybnRqODB5MHE5cjNibnozNnlndGEwcyJ9.oaxzA4cGRd_-3QgjdqKETg';
+            const map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v11',
+                center: [-2.9707, 56.4620],
+                pitchWithRotate: false,
+                trackResize: true,
+                zoom: 13
+            });
+            map.on('load', () => {
+                map.loadImage('https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Recycle001.svg/30px-Recycle001.svg.png',
+                    (error, image) => {
+                        if (error) throw error;
+                        map.addImage('custom-marker', image);
+                        map.addSource('places', {
+                            'type': 'geojson',
+                            'data': {
+                                'type': 'FeatureCollection',
+                                'features': [";
+                                    $url = "http://inspire.dundeecity.gov.uk/geoserver/opendata/wfs?version=2.0.0&service=wfs&request=GetFeature&typeName=opendata:recycling_facilities&outputFormat=json";
+                                    $curl = curl_init();
+                                    curl_setopt_array($curl, array(
+                                    CURLOPT_URL => $url,
+                                    CURLOPT_RETURNTRANSFER => true,
+                                    CURLOPT_TIMEOUT => 29,
+                                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_0_1,
+                                    CURLOPT_CUSTOMREQUEST => "GET",
+                                    CURLOPT_HTTPHEADER => array(
+                                        "cache-control: no-cache"
+                                    ),
+                                    ));
+
+                                    $response = curl_exec($curl);
+                                    $err = curl_error($curl);
+
+                                    curl_close($curl);
+                                    // Decode JSON data into PHP array
+                                    $response = json_decode($response, true);
+                                    $i = 0;
+                                
+                                    foreach ($response['features'] as $point) { // TODO refactor
+                                        $i += 1;
+                                        echo "
+                                            {
+                                                'type': 'Feature',
+                                                'properties': {
+                                                    'icon': 'theatre',
+                                                    'description':
+                                                        '<strong> " . str_replace("'","\'",$point["properties"]["NAME"]) . " </strong><p>(" . $point["properties"]["ACCESS_PUBLIC_PRIVATE"] . ")</p><hr>";
+                                                        if($point["properties"]["PAPER_CARD"] == "y")
+                                                        {
+                                                            echo "<p><strong>Paper</strong></p>";
+                                                        }
+                                                        if($point["properties"]["GLASS"] == "y")
+                                                        {
+                                                            echo "<p><strong>Glass</strong></p>";
+                                                        }
+                                                        if($point["properties"]["PLASTIC_BOTTLES"] == "y")
+                                                        {
+                                                            echo "<p><strong>Plastic</strong></p>";
+                                                        }
+                                                        if($point["properties"]["ALUMINIUM_CANS"] == "y")
+                                                        {
+                                                            echo "<p><strong>Aluminium cans</strong></p>";
+                                                        }
+                                                        if($point["properties"]["TEXTILES"] == "y")
+                                                        {
+                                                            echo "<p><strong>Textiles</strong></p>";
+                                                        }
+                                                        echo "'},
+                                                'geometry': {
+                                                    'type': 'Point',
+                                                    'coordinates': [" . $point["properties"]["LONGITUDE"] . ", " . $point["properties"]["LATITUDE"] . "]
+                                                    }
+                                            }";
                                         if ($i != count($response['features'])) {
                                             echo ","; 
-                                        }
-                                    //echo "},";    
-                                     
-                                  
+                                        }  
+                                    }
+                                    echo "
+                                ]
+                            }         
+                        });
+                    
+                        // Add a layer showing the places.
+                        map.addLayer({
+                            'id': 'places',
+                            'type': 'symbol',
+                            'source': 'places',
+                            'layout': {
+                                'icon-image': 'custom-marker'
                             }
-                            //echo ","; 
-                            echo "
-                            ]
-                        }         
-                    });
-                    
-                    // Add a layer showing the places.
-                    map.addLayer({
-                        'id': 'places',
-                        'type': 'symbol',
-                        'source': 'places',
-                        'layout': {
-                            'icon-image': 'custom-marker'
-                        }
-                    });
-                }
-            );
-        });
+                        });
+                    }
+                );
+            });
     
-                // Create a popup, but don't add it to the map yet.
-                    const popup = new mapboxgl.Popup({
-                        closeButton: false,
-                        closeOnClick: true
-                    });
-                    
-                    map.on('click', 'places', (e) => {
-                        // Change the cursor style as a UI indicator.
-                        map.getCanvas().style.cursor = 'pointer';
-                    
-                        // Copy coordinates array.
-                        const coordinates = e.features[0].geometry.coordinates.slice();
-                        const description = e.features[0].properties.description;
-                    
-                        // Ensure that if the map is zoomed out such that multiple
-                        // copies of the feature are visible, the popup appears
-                        // over the copy being pointed to.
-                        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-                            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-                        }
-                    
-                        // Populate the popup and set its coordinates
-                        // based on the feature found.
-                        popup.setLngLat(coordinates).setHTML(description).addTo(map);
-                    });
+            // Create a popup, but don't add it to the map yet.
+            const popup = new mapboxgl.Popup({
+                closeButton: false,
+                closeOnClick: true
+            });
+            
+            map.on('click', 'places', (e) => {
+                // Change the cursor style as a UI indicator.
+                map.getCanvas().style.cursor = 'pointer';
+            
+                // Copy coordinates array.
+                const coordinates = e.features[0].geometry.coordinates.slice();
+                const description = e.features[0].properties.description;
+            
+                // Ensure that if the map is zoomed out such that multiple
+                // copies of the feature are visible, the popup appears
+                // over the copy being pointed to.
+                while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                    coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                }
+            
+                // Populate the popup and set its coordinates
+                // based on the feature found.
+                popup.setLngLat(coordinates).setHTML(description).addTo(map);
+            });
 
-                    map.on('mouseleave', 'places', () => {
-                        map.getCanvas().style.cursor = '';
-                    });
+            map.on('mouseleave', 'places', () => {
+                map.getCanvas().style.cursor = '';
+            });
 
-                    // Add geolocate control to the map.
-                    map.addControl(
-                        new mapboxgl.GeolocateControl({
-                            positionOptions: {
-                                enableHighAccuracy: true
-                            },
-                            // When active the map will receive updates to the device's location as it changes.
-                            trackUserLocation: true,
-                            // Draw an arrow next to the location dot to indicate which direction the device is heading.
-                            showUserHeading: true
-                        })
-                    );
-                
+            // Add geolocate control to the map.
+            map.addControl(
+                new mapboxgl.GeolocateControl({
+                    positionOptions: {
+                        enableHighAccuracy: true
+                    },
+                    // When active the map will receive updates to the device's location as it changes.
+                    trackUserLocation: true,
+                    // Draw an arrow next to the location dot to indicate which direction the device is heading.
+                    showUserHeading: true
+                })
+            );
         
-</script>";
-php?>
-            <!-- Footer-->
+        
+        </script>";
+        php?>
         </div>
+
         <div class="d-flex flex-wrap bg-primary justify-content-center">
         
-        <a class="m-3" href="/recycle" style="text-decoration: none; width: 75px;">
-            <h1 class="feature text-white">All</h1>
-        </a>
-        <a class="m-3"  href="/recycle/recycle_textile" ">
-            <img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/mixed_textiles_p75.png" alt="Textile">
-        </a>
-        <a class="m-3" href="/recycle">
-            <img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/plastic_pack_p75.png" alt="Plastic">
-        </a>
-        <a class="m-3" href="/recycle">
-           <img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/mixed_glass_p75.png" alt="Glass">
-        </a>
-        <a class="m-3" href="/recycle">
-            <img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/mixed_paper_p75.png" alt="Paper">
-        </a>
-        <a class="m-3" href="/recycle">
-            <img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/aluminium_cans_p75.png" alt="Aluminium cans">
-        </a>
-         
-    </div>
+            <a class="m-3" href="/recycle" style="text-decoration: none; width: 75px;">
+                <h1 class="feature text-white">All</h1>
+            </a>
+            <a class="m-3"  href="/recycle/recycle_textile" ">
+                <img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/mixed_textiles_p75.png" alt="Textile">
+            </a>
+            <a class="m-3" href="/recycle/recycle_plastic">
+                <img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/plastic_pack_p75.png" alt="Plastic">
+            </a>
+            <a class="m-3" href="/recycle/recycle_glass">
+            <img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/mixed_glass_p75.png" alt="Glass">
+            </a>
+            <a class="m-3" href="/recyclerecycle_paper">
+                <img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/mixed_paper_p75.png" alt="Paper">
+            </a>
+            <a class="m-3" href="/recyclerecycle_alum">
+                <img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/aluminium_cans_p75.png" alt="Aluminium cans">
+            </a>
+            
+        </div>
 
     
         <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Sustainable Dundee 2021</p></div>
         </footer>
-    
+
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->

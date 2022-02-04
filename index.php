@@ -46,7 +46,11 @@ $rules = array(
     'news' => "/news",
     'recycle' => "/recycle",
     'recycle_textile' => "/recycle/recycle_textile",
-    
+    'recycle_glass' => "/recycle/recycle_glass",
+    'recycle_paper' => "/recycle/recycle_paper",
+    'recycle_alum' => "/recycle/recycle_alum",
+    'recycle_plastic' => "/recycle/recycle_plastic",
+
 
     //
     // Style
