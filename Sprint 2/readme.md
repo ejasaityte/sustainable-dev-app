@@ -10,15 +10,14 @@ Jamie, Euan, Sem, Matthew, Laura
 
 ### Summary of Conversation:
 
-Talked about plans for today - reviewing product backlog, reprioritizing user stories, watching a feedback of sprint 1, distributing the tasks
+Talked about plans for today - reviewing product backlog, reprioritizing user stories, watching feedback of sprint 1, distributing the tasks
 
 | Who        | What           |
 | ------------- |:-------------:|
-| Euan and Jamie  | Adding registered friends (pair programming)  | 
-| Sem      | Leaderboard, check-in through a website  into an event|
-| Matthew | Fixing design aspects based on clients comments from sprint review |
-| Laura | Check in through twitter, twitter integration|
-
+| Euan and Jamie  | Adding registration feature for friends (pair programming)  | 
+| Sem      | Leader board, checking-in through a website  into an event|
+| Matthew | Fixing design aspects based on client's comments from sprint review |
+| Laura | Checking in through twitter, twitter integration|
 
 
 ## Day 2 - Scrum Meeting summary
@@ -28,16 +27,16 @@ The Scrum Master for this meeting was Laura
 Jamie, Euan, Sem, Eddie, Matthew, Laura
 
 ### Summary of Conversation:
-Discussed yesterday's work : updating design features of the website as requested by a client, started implementing friends feature (sending a request), having a leaderboard properly working as well as check in into events system via both our website and social media(i.e. twitter).
+Discussed yesterday's work : updating design features of the website as requested by a client, started implementing friends feature (sending a request), having a leader board properly working as well as check in into events system via both our website and social media(i.e. twitter).
 
 Talked about plans for today :
 
 | Who        | What           |
 | ------------- |:-------------:|
 | Euan and Jamie  | notifying a friend receiving a friend request (pair programming)  | 
-| Sem      |check-in through a social on a map, update address of events (requested by a clients)|
-| Matthew and Eddie | web app into a phone app, tour of events |
-| Laura | continue with a twitter integration, maps using online dataset|
+| Sem      |checking-in through a social media on a map, update address of events (requested by a clients)|
+| Matthew and Eddie | turning a web app into a phone app, tour of events |
+| Laura | continuing with a twitter integration, starting on applying online dataset on a map|
 
 ## Day 3 - Scrum Meeting summary
 The Scrum Master for this meeting was Laura
@@ -46,15 +45,15 @@ The Scrum Master for this meeting was Laura
 Jamie, Euan, Sem, Eddie, Matthew, Laura
 
 ### Summary of Conversation:
-Discussed yesterday's work - issues with mobile app implementation (manifest.js file completely crashing the website or not displaying information from a database), implenting friends feature and testing it thourouphly.
+Discussed yesterday's work - issues with mobile app implementation (manifest.js file completely crashing the website or not displaying information from a database), implementing friends feature and testing it thoroughly.
 
 Talked about plans for today - Talked about plans for today :
 
 | Who        | What           |
 | ------------- |:-------------:|
 | Jamie  | helping with tour feature, refactorising code, working on navbars| 
-| Euan  | updating leaderboard feature, working on website design| 
-| Sem      |checking UN guidance, testing that different features are working|
+| Euan  | updating leader board feature, working on website design| 
+| Sem      |checking UN guidance, testing that different features are working properly|
 | Matthew  | implementing tour feature of events |
 | Eddie | refactorising code|
 | Laura | implementing maps using online dataset|
@@ -64,12 +63,19 @@ Talked about plans for today - Talked about plans for today :
 The Scrum Master for this meeting was Laura
 
 ### Members Present:
-Euan, Sem, Eddie, Matthew, Laura
+Jamie, Euan, Sem, Eddie, Matthew, Laura
 
 ### Summary of Conversation:
-Discussed yesterday's work - working on the map, logins of an admin - add new events and user; issue with the map only showing specific events for a particular goal, but not all events, writing a project charter, altering product backlog.
+Discussed yesterday's work - struggling to parse online json file into website, difficulties with touring feature.
 
-Talked about plans for today - continuing working on a map , detecting users’ location, implementing an option for an admin to edit events.
+| Who        | What           |
+| ------------- |:-------------:|
+| Jamie  | solving json issue, refactorising code, editing pair programming video| 
+| Euan  | solving json issue, changing the design of the website| 
+| Sem      | solving json issue, refactorising code |
+| Matthew  | continuing working on tours feature |
+| Eddie | refactorising code|
+| Laura | solving json issue, adding a custom marker, filtering feature|
 
 ## Day 5 - Scrum Meeting summary
 The Scrum Master for this meeting was Laura
@@ -78,9 +84,8 @@ The Scrum Master for this meeting was Laura
 Jamie, Euan, Sem, Eddie, Matthew, Laura
 
 ### Summary of Conversation:
-Discussed yesterday's work - having a map fully functional with an option to detect users’ location, implementing edit option for an event, yet needs some debugging.
-
-Talked about plans for today - finding bugs in edit option for an event, preparing for a sprint review, refactorising the code, finishing sprint backlog.
+Discussed yesterday's work - having a map of recycling points fully implemented, experimenting with different designs for homepage.
+Talked about plans for today - choosing final design for homepage, preparing for a sprint review, refactorising the code, finalising artifacts: sprint backlog and product backlog.
 
 
 
