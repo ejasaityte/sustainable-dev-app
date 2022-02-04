@@ -157,6 +157,12 @@
                             }
                         };
 
+                        const marker1 = new mapboxgl.Marker().setLngLat([-2.97471769630174, 56.4609700297359]).addTo(map);
+                        const marker2 = new mapboxgl.Marker().setLngLat([-2.9708298272469, 56.4608004085128]).addTo(map);
+                        const marker3 = new mapboxgl.Marker().setLngLat([-2.97139839444701, 56.4619002567239]).addTo(map);
+                        const marker4 = new mapboxgl.Marker().setLngLat([-2.96930793466534, 56.4647174282653]).addTo(map);
+                        const marker5 = new mapboxgl.Marker().setLngLat([-2.96944658862882, 56.4639343262982]).addTo(map);
+
                         map.on('load', function () {
                             map.resize();
                         });
