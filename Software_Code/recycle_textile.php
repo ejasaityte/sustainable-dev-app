@@ -15,117 +15,116 @@
         <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
         <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
         <style>
-    body { margin: 0; padding: 0; }
-    #map { position: relative; width: 100%; height: 500px; }
-    </style>
+        body { margin: 0; padding: 0; }
+        #map { position: relative; width: 100%; height: 500px; }
+        </style>
     </head>
     <?php session_start();
-    include("dbconnect.php"); ?>
+        include("dbconnect.php"); ?>
     <body>
         <style>
-        .mapboxgl-popup {
-        max-width: 500px;
-        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-        }
+            .mapboxgl-popup {
+            max-width: 500px;
+            font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            }
         </style>
         <?php include("navbar.php"); ?>
             <div class="container-fluid text-center">
                 <h1 class="display-5 fw-bold">Find recycling points in Dundee!</h1>
             </div>
-<?php
-echo "<div id='map'></div>
-<script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoibGF1cmFuYXMiLCJhIjoiY2sybnRqODB5MHE5cjNibnozNnlndGEwcyJ9.oaxzA4cGRd_-3QgjdqKETg';
-    const map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v11',
-        center: [-2.9707, 56.4620],
-        pitchWithRotate: false,
-        trackResize: true,
-        zoom: 13
-    });
-        map.on('load', () => {
-            map.loadImage('https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Recycle001.svg/30px-Recycle001.svg.png',
-                (error, image) => {
-                    if (error) throw error;
-                    map.addImage('custom-marker', image);
-                    map.addSource('places', {
-                        'type': 'geojson',
-                        'data': {
-                            'type': 'FeatureCollection',
-                            'features': [";
-                            $url = "http://inspire.dundeecity.gov.uk/geoserver/opendata/wfs?version=2.0.0&service=wfs&request=GetFeature&typeName=opendata:recycling_facilities&outputFormat=json";
-                            $curl = curl_init();
-                            curl_setopt_array($curl, array(
-                            CURLOPT_URL => $url,
-                            CURLOPT_RETURNTRANSFER => true,
-                            CURLOPT_TIMEOUT => 29,
-                            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_0_1,
-                            CURLOPT_CUSTOMREQUEST => "GET",
-                            CURLOPT_HTTPHEADER => array(
-                                "cache-control: no-cache"
-                            ),
-                            ));
+        <?php
+            echo "<div id='map'></div>
+            <script>
+                mapboxgl.accessToken = 'pk.eyJ1IjoibGF1cmFuYXMiLCJhIjoiY2sybnRqODB5MHE5cjNibnozNnlndGEwcyJ9.oaxzA4cGRd_-3QgjdqKETg';
+                const map = new mapboxgl.Map({
+                    container: 'map',
+                    style: 'mapbox://styles/mapbox/streets-v11',
+                    center: [-2.9707, 56.4620],
+                    pitchWithRotate: false,
+                    trackResize: true,
+                    zoom: 13
+                });
+                map.on('load', () => {
+                    map.loadImage('https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Recycle001.svg/30px-Recycle001.svg.png',
+                        (error, image) => {
+                            if (error) throw error;
+                            map.addImage('custom-marker', image);
+                            map.addSource('places', {
+                                'type': 'geojson',
+                                'data': {
+                                    'type': 'FeatureCollection',
+                                    'features': [";
+                                    $url = "http://inspire.dundeecity.gov.uk/geoserver/opendata/wfs?version=2.0.0&service=wfs&request=GetFeature&typeName=opendata:recycling_facilities&outputFormat=json";
+                                    $curl = curl_init();
+                                    curl_setopt_array($curl, array(
+                                    CURLOPT_URL => $url,
+                                    CURLOPT_RETURNTRANSFER => true,
+                                    CURLOPT_TIMEOUT => 29,
+                                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_0_1,
+                                    CURLOPT_CUSTOMREQUEST => "GET",
+                                    CURLOPT_HTTPHEADER => array(
+                                        "cache-control: no-cache"
+                                    ),
+                                    ));
 
-                            $response = curl_exec($curl);
-                            $err = curl_error($curl);
+                                    $response = curl_exec($curl);
+                                    $err = curl_error($curl);
 
-                            curl_close($curl);
-                            // Decode JSON data into PHP array
-                            $response = json_decode($response, true);
-                            $i = 0;
-                           
-                            foreach ($response['features'] as $point) { // TODO refactor
-                                $i += 1;
-                                if($point["properties"]["TEXTILES"] == "y" )
-                                 {
-                                    echo "
+                                    curl_close($curl);
+                                    // Decode JSON data into PHP array
+                                    $response = json_decode($response, true);
+                                    $i = 0;
+                                
+                                    foreach ($response['features'] as $point) { // TODO refactor
+                                        $i += 1;
+                                        if($point["properties"]["TEXTILES"] == "y" )
                                         {
-                                            'type': 'Feature',
-                                            'properties': {
-                                                'icon': 'theatre',
-                                                'description':
-                                                    '<strong> " . str_replace("'","\'",$point["properties"]["NAME"]) . " </strong><p>(" . $point["properties"]["ACCESS_PUBLIC_PRIVATE"] . ")</p><hr>";
-                                                    if($point["properties"]["PAPER_CARD"] == "y")
-                                                    {
-                                                        echo "<p><strong>Paper</strong></p>";
-                                                    }
-                                                    if($point["properties"]["GLASS"] == "y")
-                                                    {
-                                                        echo "<p><strong>Glass</strong></p>";
-                                                    }
-                                                    if($point["properties"]["PLASTIC_BOTTLES"] == "y")
-                                                    {
-                                                        echo "<p><strong>Plastic</strong></p>";
-                                                    }
-                                                    if($point["properties"]["ALUMINIUM_CANS"] == "y")
-                                                    {
-                                                        echo "<p><strong>Aluminium cans</strong></p>";
-                                                    }
-                                                    if($point["properties"]["TEXTILES"] == "y")
-                                                    {
-                                                        echo "<p style="color:red;"><strong>Textiles</strong></p>";
-                                                    }
-                                                    echo "'},
-                                            'geometry': {
-                                                'type': 'Point',
-                                                'coordinates': [" . $point["properties"]["LONGITUDE"] . ", " . $point["properties"]["LATITUDE"] . "]
+                                            echo "
+                                                {
+                                                    'type': 'Feature',
+                                                    'properties': {
+                                                        'icon': 'theatre',
+                                                        'description':
+                                                            '<strong> " . str_replace("'","\'",$point["properties"]["NAME"]) . " </strong><p>(" . $point["properties"]["ACCESS_PUBLIC_PRIVATE"] . ")</p><hr>";
+                                                            if($point["properties"]["PAPER_CARD"] == "y")
+                                                            {
+                                                                echo "<p><strong>Paper</strong></p>";
+                                                            }
+                                                            if($point["properties"]["GLASS"] == "y")
+                                                            {
+                                                                echo "<p><strong>Glass</strong></p>";
+                                                            }
+                                                            if($point["properties"]["PLASTIC_BOTTLES"] == "y")
+                                                            {
+                                                                echo "<p><strong>Plastic</strong></p>";
+                                                            }
+                                                            if($point["properties"]["ALUMINIUM_CANS"] == "y")
+                                                            {
+                                                                echo "<p><strong>Aluminium cans</strong></p>";
+                                                            }
+                                                            if($point["properties"]["TEXTILES"] == "y")
+                                                            {
+                                                                echo "<p><strong>Textiles</strong></p>";
+                                                            }
+                                                            echo "'},
+                                                    'geometry': {
+                                                        'type': 'Point',
+                                                        'coordinates': [" . $point["properties"]["LONGITUDE"] . ", " . $point["properties"]["LATITUDE"] . "]
+                                                        }
+                                                    }";    
+                                                if ($i != count($response['features'])) {
+                                                    echo ","; 
                                                 }
-                                            }";
-                                            
-                                            if ($i != count($response['features'])) {
-                                                echo ","; 
-                                            }
-                                    }    //echo "},";    
-                                    else {continue;} 
-                                  
-                            }
-                            //echo ","; 
-                            echo "
-                            ]
-                        }         
-                    });
-                    
+                                            }    //echo "},";    
+                                            else {continue;} 
+                                        
+                                    }
+                                    //echo ","; 
+                                    echo "
+                                    ]
+                                }         
+                            });
+                            
                     // Add a layer showing the places.
                     map.addLayer({
                         'id': 'places',
