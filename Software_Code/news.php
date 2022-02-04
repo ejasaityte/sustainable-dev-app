@@ -38,7 +38,7 @@
         <h1 class="fw-bold black text-center">What's New</h1>
     </header>
     <!-- Page Content-->
-    <div class="container px-lg-5" style="max-width: 650px;">
+    <div class="container bg-viridian px-lg-5 p-3 rounded-3" style="max-width: 650px;">
         <a class="twitter-timeline" href="https://twitter.com/sust_dundee?ref_src=twsrc%5Etfw">Tweets by sust_dundee</a>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
