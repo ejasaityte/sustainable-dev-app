@@ -45,7 +45,7 @@ echo "<div id='map'></div>
         zoom: 13
     });
         map.on('load', () => {
-            map.loadImage('https://icons.iconarchive.com/icons/royalflushxx/systematrix/24/Trash-icon.png',
+            map.loadImage('https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Recycle001.svg/30px-Recycle001.svg.png',
                 (error, image) => {
                     if (error) throw error;
                     map.addImage('custom-marker', image);
