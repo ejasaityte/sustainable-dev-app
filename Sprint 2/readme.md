@@ -10,7 +10,8 @@ Jamie, Euan, Sem, Matthew, Laura
 
 ### Summary of Conversation:
 
-Talked about plans for today - reviewing product backlog, reprioritizing user stories, watching feedback of sprint 1, distributing the tasks
+# Talked about plans for today 
+Reviewing product backlog, reprioritizing user stories, watching feedback of sprint 1, distributing the tasks
 
 | Who        | What           |
 | ------------- |:-------------:|
@@ -27,9 +28,10 @@ The Scrum Master for this meeting was Laura
 Jamie, Euan, Sem, Eddie, Matthew, Laura
 
 ### Summary of Conversation:
-Discussed yesterday's work : updating design features of the website as requested by a client, started implementing friends feature (sending a request), having a leader board properly working as well as check in into events system via both our website and social media(i.e. twitter).
+# Discussed yesterday's work 
+Updating design features of the website as requested by a client, started implementing friends feature (sending a request), having a leader board properly working as well as check in into events system via both our website and social media(i.e. twitter).
 
-Talked about plans for today :
+# Talked about plans for today :
 
 | Who        | What           |
 | ------------- |:-------------:|
