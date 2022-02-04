@@ -84,7 +84,7 @@
                 <p class="white">'.$event['description'].'</p> 
                 <p class="white">Postcode: '.$event['postcode'].'</p> 
                 <p class="white">Contacts: '.$event['contacts'].'</p>
-                <a class="btn bg-mikado btn-lgw-100 mb-3" href="'.$event['website'].'"><u>Click here to find out more</u></a>
+                <a class="btn bg-mikado btn-lgw-100 mb-3" href="'.$event['website'].'">Click here to find out more</a>
         ';
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             echo '
