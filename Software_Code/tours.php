@@ -72,7 +72,7 @@
     </script>
     <!-- Page Content-->
     <div class="container-fluid text-center">
-        <h1 class="display-5 fw-bold">Tours Avaialable</h1>
+        <h1 class="display-5 fw-bold">Tours Available</h1>
     </div>
     <div class="container px-lg-5">
         <div style="" class="map-container">
