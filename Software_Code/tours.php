@@ -99,15 +99,15 @@
                             </p>
                         </section>
                         <section id='tour4'>
-                            <h3>British Heart Foundation</h3>
-                            <p>
-                            We fund around £100 million of research each year into all heart and circulatory diseases and the things that cause them. Heart diseases. Stroke. Vascular dementia. Diabetes. They're all connected, and they're all under our microscope.
-                            </p>
-                        </section>
-                        <section id='tour5'>
                             <h3>Central Library</h3>
                             <p>
                             Leisure & Culture Dundee Libraries. Read, Relax, Rediscover. 
+                            </p>
+                        </section>
+                        <section id='tour5'>
+                            <h3>British Heart Foundation</h3>
+                            <p>
+                            We fund around £100 million of research each year into all heart and circulatory diseases and the things that cause them. Heart diseases. Stroke. Vascular dementia. Diabetes. They're all connected, and they're all under our microscope.
                             </p>
                         </section>
                     </div>
@@ -126,32 +126,32 @@
                             'tour1': {
                             bearing: 27,
                             center: [-2.97471769630174, 56.4609700297359],
-                            zoom: 15.5,
+                            zoom: 16,
                             pitch: 20
                             },
                             'tour2': {
                             duration: 6000,
                             center: [-2.9708298272469, 56.4608004085128],
                             bearing: 150,
-                            zoom: 15,
+                            zoom: 16,
                             pitch: 0
                             },
                             'tour3': {
                             bearing: 90,
                             center: [-2.97139839444701, 56.4619002567239],
-                            zoom: 13,
+                            zoom: 16,
                             speed: 0.6,
                             pitch: 40
                             },
                             'tour4': {
                             bearing: 90,
                             center: [-2.96944658862882, 56.4639343262982],
-                            zoom: 12.3
+                            zoom: 16
                             },
                             'tour5': {
                             bearing: 45,
                             center: [-2.96930793466534, 56.4647174282653],
-                            zoom: 15.3,
+                            zoom: 16,
                             pitch: 20,
                             speed: 0.5
                             }
