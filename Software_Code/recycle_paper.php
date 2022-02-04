@@ -196,10 +196,10 @@
             <a class="m-3" href="/recycle/recycle_glass">
             <img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/mixed_glass_p75.png" alt="Glass">
             </a>
-            <a class="m-3" href="/recyclerecycle_paper">
+            <a class="m-3" href="/recycle/recycle_paper">
                 <img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/mixed_paper_p75.png" alt="Paper">
             </a>
-            <a class="m-3" href="/recyclerecycle_alum">
+            <a class="m-3" href="/recycle/recycle_alum">
                 <img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/aluminium_cans_p75.png" alt="Aluminium cans">
             </a>
          
