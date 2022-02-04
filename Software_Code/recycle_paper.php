@@ -85,10 +85,10 @@
                                                     'properties': {
                                                         'icon': 'theatre',
                                                         'description':
-                                                            '<strong> " . str_replace("'","\'",$point["properties"]["NAME"]) . " </strong><p>(" . $point["properties"]["ACCESS_PUBLIC_PRIVATE"] . ")</p><hr>";
+                                                            '<p style=\'font-size: 15px;\'><strong> " . str_replace("'","\'",$point["properties"]["NAME"]) . " </strong></p><p>(" . $point["properties"]["ACCESS_PUBLIC_PRIVATE"] . ")</p><hr>";
                                                             if($point["properties"]["PAPER_CARD"] == "y")
                                                             {
-                                                                echo "<p><strong>Paper</strong></p>";
+                                                                echo "<p style=\'color:red;\'><strong>Paper</strong></p>";
                                                             }
                                                             if($point["properties"]["GLASS"] == "y")
                                                             {
