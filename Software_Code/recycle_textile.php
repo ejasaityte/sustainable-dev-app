@@ -104,7 +104,7 @@
                                                             }
                                                             if($point["properties"]["TEXTILES"] == "y")
                                                             {
-                                                                echo "<p><strong>Textiles</strong></p>";
+                                                                echo "<p style=\'color:red;\'><strong>Textiles</strong></p>";
                                                             }
                                                             echo "'},
                                                         'geometry': {
