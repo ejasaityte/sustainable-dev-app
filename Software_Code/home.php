@@ -36,10 +36,10 @@
             <p class="fs-4">Sustainability is concerned with looking after our natural environment whilst ensuring a
                 strong economy and a fair and healthy society.</p>
         </div>
-        <a class="btn btn-ygreen btn-lg white w-100 mb-3" href="/map/0"><u>Click here to explore the sustainability map
-                of Dundee!</u></a>
+        <a class="btn btn-ygreen btn-lg white w-100 mb-3" href="/map/0">Click here to explore the sustainability map
+                of Dundee!</a>
         <div class="bg-viridian rounded-3">
-            <p class="fs-4 white"><u>Select one of the 17 Sustainability Goals below to find out more.</u></p>
+            <p class="fs-4 white">Select one of the 17 Sustainability Goals below to find out more.</p>
             <div class="d-flex justify-content-center">
                 <div class="d-flex flex-wrap justify-content-center p-3">
 
