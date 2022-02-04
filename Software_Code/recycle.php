@@ -75,51 +75,47 @@ echo "<div id='map'></div>
                             $response = json_decode($response, true);
                             $i = 0;
                            
-                           print_r($_POST['items_to_show']);
                             foreach ($response['features'] as $point) { // TODO refactor
                                 $i += 1;
-                                if("all" == "all" )
-                                //if($point["properties"]["BOOKS_MUSIC"] == "n")
-                                 {
-                                    echo "
-                                        {
-                                            'type': 'Feature',
-                                            'properties': {
-                                                'icon': 'theatre',
-                                                'description':
-                                                    '<strong> " . str_replace("'","\'",$point["properties"]["NAME"]) . " </strong><p>(" . $point["properties"]["ACCESS_PUBLIC_PRIVATE"] . ")</p><hr>";
-                                                    if($point["properties"]["PAPER_CARD"] == "y")
-                                                    {
-                                                        echo "<p><strong>Paper</strong></p>";
-                                                    }
-                                                    if($point["properties"]["GLASS"] == "y")
-                                                    {
-                                                        echo "<p><strong>Glass</strong></p>";
-                                                    }
-                                                    if($point["properties"]["PLASTIC_BOTTLES"] == "y")
-                                                    {
-                                                        echo "<p><strong>Plastic</strong></p>";
-                                                    }
-                                                    if($point["properties"]["ALUMINIUM_CANS"] == "y")
-                                                    {
-                                                        echo "<p><strong>Aluminium cans</strong></p>";
-                                                    }
-                                                    if($point["properties"]["TEXTILES"] == "y")
-                                                    {
-                                                        echo "<p><strong>Textiles</strong></p>";
-                                                    }
-                                                    echo "'},
-                                            'geometry': {
-                                                'type': 'Point',
-                                                'coordinates': [" . $point["properties"]["LONGITUDE"] . ", " . $point["properties"]["LATITUDE"] . "]
+                                echo "
+                                    {
+                                        'type': 'Feature',
+                                        'properties': {
+                                            'icon': 'theatre',
+                                            'description':
+                                                '<strong> " . str_replace("'","\'",$point["properties"]["NAME"]) . " </strong><p>(" . $point["properties"]["ACCESS_PUBLIC_PRIVATE"] . ")</p><hr>";
+                                                if($point["properties"]["PAPER_CARD"] == "y")
+                                                {
+                                                    echo "<p><strong>Paper</strong></p>";
                                                 }
-                                            }";
-                                            
-                                            if ($i != count($response['features'])) {
-                                                echo ","; 
+                                                if($point["properties"]["GLASS"] == "y")
+                                                {
+                                                    echo "<p><strong>Glass</strong></p>";
+                                                }
+                                                if($point["properties"]["PLASTIC_BOTTLES"] == "y")
+                                                {
+                                                    echo "<p><strong>Plastic</strong></p>";
+                                                }
+                                                if($point["properties"]["ALUMINIUM_CANS"] == "y")
+                                                {
+                                                    echo "<p><strong>Aluminium cans</strong></p>";
+                                                }
+                                                if($point["properties"]["TEXTILES"] == "y")
+                                                {
+                                                    echo "<p><strong>Textiles</strong></p>";
+                                                }
+                                                echo "'},
+                                        'geometry': {
+                                            'type': 'Point',
+                                            'coordinates': [" . $point["properties"]["LONGITUDE"] . ", " . $point["properties"]["LATITUDE"] . "]
                                             }
-                                    }    //echo "},";    
-                                    else {continue;} 
+                                        }";
+                                        
+                                        if ($i != count($response['features'])) {
+                                            echo ","; 
+                                        }
+                                    //echo "},";    
+                                     
                                   
                             }
                             //echo ","; 
@@ -194,7 +190,7 @@ php?>
         <a class="m-3" href="/recycle" style="text-decoration: none; width: 75px;">
             <h1 class="feature text-white">All</h1>
         </a>
-        <a class="m-3"  href="/recycle" ">
+        <a class="m-3"  href="/recycle/recycle_textile" ">
             <img src="https://mapsonline.dundeecity.gov.uk/dcc_gis_root/dcc_gis_config/app_config/recycling/icons/mixed_textiles_p75.png" alt="Textile">
         </a>
         <a class="m-3" href="/recycle">
