@@ -11,6 +11,7 @@
                 <li class="nav-item"><a class="nav-link" id="leaderboard" href="/leaderboard">Leaderboard</a></li>
 <?php
     session_start();
+    include("dbconnect.php");
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         $sql = "SELECT friends.userID FROM `friends` INNER JOIN `users` ON friends.userID = users.userID WHERE friends.friendID = ".$_SESSION['userID']." AND friends.accepted = 0";
         $rows = array();
